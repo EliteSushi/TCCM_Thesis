@@ -1,0 +1,208 @@
+%\documentclass[showinstructions,faculty=firw,department=cws,phddegree=cws,helveticaneue]{adsphd}
+\documentclass[showinstructions,doctoralschool=sci,faculty=dc,department=che,phddegree=tccm]{adsphd}
+%\documentclass[showinstructions,faculty=firw,department=cws,phddegree=cws,doctoralschool=ads]{adsphd}
+%\documentclass[showinstructions,showlabels,coverfontpercent=100,faculty=firw,department=cws,phddegree=cws]{adsphd}
+%\documentclass[croppedpdf,showinstructions,faculty=firw,department=cws,phddegree=cws]{adsphd}
+%\documentclass[online,faculty=firw,department=cws,phddegree=cws]{adsphd}
+%\documentclass[print,bleed,cropmarks,faculty=firw,department=cws,phddegree=cws]{adsphd} % include bleed for the print service
+%\documentclass[print,faculty=firw,department=cws,phddegree=cws]{adsphd}
+%\documentclass[final,faculty=firw,department=cws,phddegree=cws]{adsphd}
+%\documentclass[showinstructions,faculty=firw,department=cws,phddegree=cws,epub]{adsphd}
+%\documentclass[showinstructions,faculty=firw,department=cws,phddegree=cws,joint]{adsphd}
+
+
+% !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+% !!                                                               !!
+% !!  WARNING: do not remove the following lines between           !!
+% !!  "%%% COVER: Settings %%%" and "%%% COVER: End settings %%%"  !!
+% !!                                                               !!
+% !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+%%% COVER: Settings %%%
+\title{A very cool Title:}
+\subtitle{An even cooler subtitle}
+
+\author{Mauro}{Gascón Navas}
+
+\supervisor{Prof.~Dr.~Thomas Jagau}{}
+\supervisor{Prof.~dr.~ir.~S.~Leader}{}
+\president{Prof.~dr.~ir.~The~Chairman}{}
+\jurymember{Prof.~dr.~ir.~The~One}{}
+\jurymember{Prof.~dr.~ir.~The~Other}{}
+\externaljurymember{Prof.~dr.~External~Jurymember}{Far Away}
+
+% Your research group within the department
+% e.g. DTAI, MICAS
+\researchgroup{Theoretical Chemistry of Unbound Electrons}
+\website{https://chem.kuleuven.be/en/research/qcpc/tue/} % Leave empty to hide
+%\email{first.last@cs.kuleuven.be} % Leave empty to hide
+
+\address{Celestijnenlaan 200A box 2402}
+% \addresscity{B-3001 Leuven} % This is the default value. Note
+                              % that 'B-3001 Heverlee' is _incorrect_!!
+                              % https://www.kuleuven.be/english/language-guide
+
+%%%%%%%%%%%% For joint PhDs only %%%%%%%%%%%%%%%%%%%%%%
+% Add 'joint' to the options to the adsphd class.
+% Change "PARTNER_LOGO.eps" in image folder!
+\facultypartner{Faculty Partner}
+\departmentpartner{Department Partner}
+\addresspartner{Address Partner}
+\addresscitypartner{City Partner}
+\emailpartner{} % Leave empty to hide
+\websitepartner{} % Leave empty to hide
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\date{June 2025}
+\copyyear{2025}
+\copyaddress{Leuven}
+%\udc{XXX.XX}             % UDC, deposit number and ISBN are no longer necessary.
+%\depot{XXXX/XXXX/XX}     % Leave out the initial D/ (it is added
+%\isbn{XXX-XX-XXXX-XXX-X} % automatically)
+
+
+% Set spine width:
+\setlength{\adsphdspinewidth}{9mm}
+% This is not directly used by the printing service, they calculate this
+% themselves because it depends on the number of pages, paper types, etc.
+
+%% Set bleeds
+%\setlength{\defaultlbleed}{0mm}
+%\setlength{\defaultrbleed}{5mm}
+%\setlength{\defaulttbleed}{0mm}
+%\setlength{\defaultbbleed}{0mm}
+
+% Set custom cover page
+% \setcustomcoverpage{mycoverpage.tex} % mycoverpage.tex is the default
+
+%%% COVER: End settings %%%
+
+% for the nomenclature (comment out if you do not use the nomencl package
+\usepackage{nomencl}   % For nomenclature
+\renewcommand{\nomname}{List of Symbols}
+\newcommand{\myprintnomenclature}{%
+  \cleardoublepage%
+  \printnomenclature%
+  \chaptermark{\nomname}
+  \addcontentsline{toc}{chapter}{\nomname} %% comment to exclude from TOC
+}
+\makenomenclature%
+
+% for the list of abbreviations (comment out if you do not use the glossaries package
+\usepackage{glossaries} % For list of abbreviations
+\newcommand{\glossname}{List of Abbreviations}
+\newcommand{\myprintglossary}{%
+  \renewcommand{\glossaryname}{\glossname}
+  \cleardoublepage%
+  \printglossary[title=\glossname]
+  \chaptermark{\glossname}
+  \addcontentsline{toc}{chapter}{\glossname} %% comment to exclude from TOC
+}
+\makeglossaries%
+
+
+% BibLaTeX
+%\usepackage[utf8]{inputenc}
+%\usepackage{csquotes}
+%\usepackage[
+  %hyperref=auto,
+  %mincrossrefs=999,
+  %backend=biber,
+  %style=authoryear-icomp
+%]{biblatex}
+%\addbibresource{allpapers.bib}
+
+% Fonts
+\usepackage{textcomp} % nice greek alphabet
+\usepackage{pifont}   % Dingbats
+\usepackage{booktabs}
+\usepackage{amssymb,amsthm}
+\usepackage{amsmath}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\makefrontcoverXXIV
+
+\maketitle
+
+\frontmatter % to get \pagenumbering{roman}
+
+\includepopabstractnl{acknowledgements}
+\includeabstract{abstract}
+\includeabstractnl{abstractnl}
+
+% To create a list of abbreviations, there are 2 options
+% 1. manual creation of list of abbreviations and inclusion as a chapter
+%    \includeabbreviations{abbreviations}
+% 2. automatic generation via the glossary package
+%    \glossary{name=MD,description=molecular dynamics}
+\myprintglossary
+
+% To create a list of symbols, there are 2 options
+% 1. include a manually created nomenclature as a chapter
+%    \includenomenclature{nomenclaturechapter}
+% 2. automatic generation via the nomencl package
+%    \nomenclature[cB]{$c_B(\vec{x})$}{Characteristic function of $B$}
+\myprintnomenclature
+
+\tableofcontents
+\listoffigures
+\listoftables
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\mainmatter % to get \pagenumbering{arabic}
+
+% Show instructions on a separate page
+\instructionschapters\cleardoublepage
+
+\includechapter{introduction}
+\includechapter{theory}
+\includechapter{methods}
+\includechapter{results}
+\includechapter{conclusion}
+\includechapter{manual} % Remove this chapter
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\appendix
+
+\includeappendix{myappendix}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\backmatter
+
+\includebibliography
+% BibTex
+\bibliographystyle{acm}
+\bibliography{allpapers}
+% BibLatex (comment out lines above and uncomment biblatex lines in preamble)
+%\printbibliography[title=\bibname]
+\instructionsbibliography
+
+
+
+% Uncomment the appropriate sentences in and expand the text where needed to make it more specific and add topics if they are not covered by any of the indicated topics.
+\useOfGenAI{%
+  % I did not use generative AI assistance tools during the research/writing process of my thesis, except for mere language assistance. % The use of GenAI tools for language assistance does not need to be further specified. (The part 'except for mere language assistance' can be left out if not applicable)
+  % I did use the generative AI assistance tools ... % specify which e.g. MS Copilot/ ChatGPT/ResearchRabbit/... Please indicate in which way(s) you were using it and replace Generative AI with the specific AI tool(s) that was/were used:
+  % Generative AI was used as a search engine to learn about a particular topic. % If yes, please specify the usage.
+  % Generative AI was used for carrying out a literature review. % If yes, please specify the usage.
+  % Generative AI was used for short-form input assistance. % If yes, please specify the usage.
+  % Generative AI was used for generating programming code. % If yes, please specify the usage.
+  % Generative AI was used to generate new research ideas. % If yes, please specify the usage.
+  % Generative AI was used to generate visuals. % If yes, please specify the usage.
+  % Other (e.g. the development of a custom chatbot/genAI tool). % Please specify.
+}
+\includegenai{}
+
+\includepublications{publications}
+
+\makebackcoverXXIV
+
+\end{document}
+
