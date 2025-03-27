@@ -1,4 +1,6 @@
-ADS PhD LaTeX template
+ADS PhD LaTeX template adapted for the TCCM master thesis (2025).
+
+Original template:
 ======================
 
 *This template is the result of an ongoing group effort by a number of
