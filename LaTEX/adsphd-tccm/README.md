@@ -1,5 +1,5 @@
 ADS PhD LaTeX template adapted for the TCCM master thesis (2025).
-
+\- Mauro Gascón
 Original template:
 ======================
 
