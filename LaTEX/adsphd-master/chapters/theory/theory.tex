@@ -32,21 +32,21 @@ The Hartree-Fock equations are inherently non-linear because the Fock operator d
 The Hartree-Fock (HF) method is inherently limited by its neglect of the instantaneous correlation between the motions of electrons. In the HF approximation, each electron is treated as moving independently within a static, average field created by all other electrons. This mean-field approach fails to account for the fact that electrons, being negatively charged, will instantaneously repel each other, leading to a dynamic correlation in their movements as they try to avoid each other in space.\\
 This neglection leads to an overestimation of the electron-electron repulsion energy, and is responsible for its inability to accurately predict certain phenomena, such as London dispersion forces. The difference between the exact non-relativistic energy of the system and the energy obtained in the Hartree-Fock limit is defined as the correlation energy and is always negative due to the variational principle. Correlated methods aim to include the effects of the instantaneous interactions between electrons that are neglected in the mean-field approximation of HF theory. Several correlated methods used during this work are:
 
-\subsubsection{Møller-Plesset Perturbation Theory}
+\subsection{Møller-Plesset Perturbation Theory}
 Møller-Plesset (MP) perturbation theory offers a systematic way to improve upon the HF energy by treating the electron correlation as a perturbation to the Hartree-Fock Hamiltonian.The Fock operator is taken as the zeroth-order Hamiltonian, and the difference between the exact electron-electron repulsion and the Fock operator is considered the perturbation. The energy and wavefunction are then expanded as a series in terms of the perturbation strength. The first-order energy correction in MP theory is zero, so the first non-trivial correction to the HF energy appears at the second order, giving rise to the MP2 method. The MP2 energy correction for a closed-shell molecule is given by:
 \begin{equation} \label{eq:MP2}
     E_{MP2} = - \frac{1}{4} \sum_{ij}^{occ} \sum_{ab}^{virt} \frac{|\langle i j || a b \rangle|^2}{\epsilon_a + \epsilon_b - \epsilon_i - \epsilon_j}
 \end{equation}
 Where $i,j$ denote occupied molecular orbitals, $a,b$ denote virtual molecular orbitals, and $\epsilon$ are the corresponding orbital energies from the HF calculation. MP theory can be extended to higher orders (MP3, MP4, etc.) to achieve greater accuracy, although the computational cost increases significantly with each order.
 
-\subsubsection{Density Functional Theory}
+\subsection{Density Functional Theory}
 Density Functional Theory (DFT) provides an alternative approach to incorporating electron correlation by focusing on the electron density of the system rather than the wavefunction, reducing the degrees of freedom of the system from $3N-3$ to just $3$. The fundamental principle of DFT is that the ground state energy of a system is a unique functional of its electron density:
 \begin{equation}\label{eq:KSDFT}
     \left( -\frac{1}{2} \nabla^2 + V_{ext}(\mathbf{r}) + V_H(\mathbf{r}) + V_{XC}[\rho(\mathbf{r})] \right) \psi_i(\mathbf{r}) = \epsilon_i \psi_i(\mathbf{r})
 \end{equation}
 Where $V_ext$ respresents the external potential, $V_H(\mathbf{r}) = \int \frac{\rho(\mathbf{r}')}{|\mathbf{r} - \mathbf{r}'|} d\mathbf{r}'$ is the hartree potential, $V_{XC}$ is the Exchange-Correlation potential and $\rho(\mathbf{r})$ is the electron density. The exchange-correlation functional is the most challenging part of DFT, as it is not known exactly and must be approximated. The accuracy of DFT calculations depends heavily on the choice of exchange-correlation functional.
 
-\subsubsection{Configuration Interaction}
+\subsection{Configuration Interaction}
 Configuration Interaction (CI) methods improve upon HF by expressing the electronic wavefunction as a linear combination of the HF ground state determinant and excited state determinants:
 \begin{equation} \label{eq:CI}
      |\Psi_{CI} \rangle = c_0 |\Phi_0 \rangle + \sum_{ia} c_{ia} |\Phi_{ia} \rangle + \sum_{ijab} c_{ijab} |\Phi_{ijab} \rangle + \dots
@@ -95,7 +95,7 @@ Using the Baker-Campbell-Hausdorff (BCH) expansion, the exponential operators in
         CCSDT & $O(N^8)$ & $O(N^6)$ \\
         CC2 & $O(N^{5})$ & $O(N^4)$ \\
     \end{tabular}
-    \caption{Computational Scaling of quantum chemistry Methods.}
+    \caption{Computational scaling of quantum chemistry methods.}
     \label{tab:qc_scaling}
 \end{table}
 
