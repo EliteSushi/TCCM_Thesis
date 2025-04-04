@@ -68,7 +68,7 @@ where $\hat{T}$ is the cluster operator, which is the central component of CC th
 \begin{equation}
     \hat{T} = \hat{T}_1 + \hat{T}_2 + \hat{T}_3 + \dots + \hat{T}_N
 \end{equation}
-where $N$ is the total number of electrons in the system. Each term in this sum corresponds to a specific level of excitation:
+where $N$ is the total number of electrons in the system. Each term in this sum corresponds to a specific level of excitation and is expressed within the second quantization formalism:
 \begin{itemize}
     \item $\hat{T}_1 = \sum_{i}^{\text{occ}} \sum_{a}^{\text{virt}} t_i^a a_a^{\dagger} a_i$ represents single excitations.
     \item $\hat{T}_2 = \frac{1}{4} \sum_{i,j}^{\text{occ}} \sum_{a,b}^{\text{virt}} t_{ij}^{ab} a_a^{\dagger} a_b^{\dagger} a_j a_i$ represents double, \textit{coupled} excitations.
@@ -138,7 +138,7 @@ The form of the operator $\hat{R}$ is similar to the cluster operator and chosen
 Since the similarity trnasformed hamiltonian is non-hermitian, the left and right are different but correspond to the same eigenvalues. This means that the properties have `right' and `left' expectation values. \\
 The strength of the EOM-CC ansatz is the use of a closed shell reference to access open shell states, which are eigenfunctions of the $\hat{S}^2$ operator. The EOM-CC methods are also size-extensive and size-consistent. The computational cost of EOM-CC methods is similar to that of the corresponding ground-state CC methods.
 
-\section{Dyson orbitals}
+\section{Dyson Orbitals}
 
 Dyson orbitals are defined as the overlap between the wavefunction of an initial $N$-electron state ($|\Psi_0^N\rangle$) and the wavefunction of the final state with $N\pm1$ electrons ($|\Psi_f^{N\pm1}\rangle$).
 \begin{equation}
@@ -163,7 +163,89 @@ They can be used for the interpretation and prediction of photoelectron spectra 
 \end{equation}
 where where \textit{k} is the magnitude of the photoelectron wavevector, \textit{E} is the energy of the ionizing radiation, and \textit{c} is the speed of light, $\mu$ is the dipole operator, and $\Psi^{el}_k$ is the photoelectron wavefunction, and a strong orthonormality is assumed between the reference and continuum wavefunction.  
 
-\subsection{EOM-CC2 Dyson orbitals}
+\subsection{EOM-CC2 Dyson Orbitals}
+Computes O block of matrix elements of dyson orbitals using CC and EOM-EA wave functions:
+\[
+               \langle EA|a|EE \rangle = 
+        \langle 0|L^{EE}(a e^T)_{c}R^{EA} | 0 \rangle
+\]
+
+The storage convention assumed for the r2 IP amplitudes is:
+        \[ r2^{a}_{ij}{a^{\dagger} j i} --- r2(i|j|a) \]
+
+The storage convention assumed for the l2 IP amplitudes is
+           \[ l2^{a}_{ij}{i^{\dagger} j^{\dagger} a} --- l2(i|j|a)\]
+
+\subsubsection{EOM-EA-Dyson Equations}
+Right Dyson orbital, $ \phi^\mathrm{EA,R}_\mathrm{D} = \sum_i^\mathrm{occ} \gamma^\mathrm{EA,R}_i \phi_i + \sum_a^\mathrm{vir} \gamma^\mathrm{EA,R}_a \phi_a $:
+\noindent\begin{flalign}
+   \qquad  \gamma^\mathrm{EA,R}_{i} &= \langle EA | a^{\dagger}_i | CC \rangle =  \langle 0|L^{EA}(a^{\dagger} e^T)_{c} | 0 \rangle \notag &\\
+    &  = - \sum_c t_{ic} l_c - \frac{1}{2} \sum_{kcd} t_{ki}^{dc} l_{dc}^k \\
+     \gamma^\mathrm{EA,R}_{a}&= \langle EA | a^{\dagger}_a | CC \rangle \notag \\
+    & = l_a
+\end{flalign}
+
+Left Dyson orbital, $ \phi^\mathrm{EA,L}_\mathrm{D} = \sum_i^\mathrm{occ} \gamma^\mathrm{EA,L}_i \phi_i + \sum_a^\mathrm{vir} \gamma^\mathrm{EA,L}_a \phi_a$:
+\noindent\begin{flalign}
+    \qquad \gamma^\mathrm{EA,L}_{i} &= \langle CC | a_i | EA \rangle \notag & \\ 
+    & = - \sum_c \lambda_{ic} r_{c} - \frac{1}{2} \sum_{kcd} \lambda_{ik}^{cd} r_{k}^{dc} \\
+    \gamma^\mathrm{EA,L}_{a} &= \langle CC | a_a | EA \rangle \notag \\
+    & = r_a + \sum_{kc} \lambda_{kc} r_{ca}^k + \sum_k \gamma^\mathrm{EA,L}_k t_{ka} - \frac{1}{2} \sum_{klcd} \lambda_{lk}^{dc} t_{lk}^{da} r_{c}
+\end{flalign}
+
+\subsubsection{EOM-EA-EE-Dyson Equations}
+Right Dyson orbital, $ \phi^\mathrm{EA-EE,R}_\mathrm{D} = \sum_i^\mathrm{occ} \gamma^\mathrm{EA-EE,R}_i \phi_i + \sum_a^\mathrm{vir} \gamma^\mathrm{EA-EE,R}_a \phi_a $:
+
+\noindent\begin{flalign}
+    \qquad \gamma^\mathrm{EA-EE,R}_{i} &= \langle EA | a^{\dagger}_i | EE \rangle \notag & \\
+    & = r_0 \gamma^\mathrm{EA,R}_a - \sum_c r_{ic} l_c - \frac{1}{2} \sum_{lcd} r_{il}^{cd} l_{dc}^l - \sum_{lcd} l_{dc}^l t_{ic} r_{ld} \\
+    \gamma^\mathrm{EE-EA,R}_{a} &= \langle EA | a^{\dagger}_a | EE \rangle \notag &\\
+    & = r_0 l_a + \sum_{kc} l_{ca}^k r_{kc}
+\end{flalign}
+
+Left Dyson orbital, $ \phi^\mathrm{EE-EA,L}_\mathrm{D} = \sum_i^\mathrm{occ} \gamma^\mathrm{EE-EA,L}_i \phi_i + \sum_a^\mathrm{vir} \gamma^\mathrm{EE-EA,L}_a \phi_a$:
+\noindent\begin{flalign}
+    \qquad \gamma^\mathrm{EE-EA,L}_{i} &= \langle EE | a_i | EA \rangle \notag & \\
+    & = - \sum_c l_{ic}r_{c} - \frac{1}{2} \sum_{kcd} l_{ik}^{cd} r_{k}^{dc} \\ 
+    \gamma^\mathrm{EE-EA,L}_{a} &= \langle EE | a_a | EA \rangle \notag \\
+    & = \sum_{kc} l_{kc}r_{ca}^k + \sum_k \gamma^\mathrm{EE-EA,L}_k t_{ka} - \frac{1}{2} \sum_{klcd} l_{lk}^{dc} t_{lk}^{da} r_{c}
+\end{flalign}
+
+\subsubsection{EOM-IP-Dyson Equations}
+Right Dyson orbital, $ \phi^\mathrm{EE,R}_\mathrm{D} = \sum_i^\mathrm{occ} \gamma^\mathrm{IP,R}_i \phi_i + \sum_a^\mathrm{vir} \gamma^\mathrm{IP,R}_a \phi_a $:
+
+\noindent\begin{flalign}
+    \qquad     \gamma^\mathrm{IP,R}_{a} &= \langle CC | a^{\dagger}_a | IP \rangle \notag \\
+    &= \lambda_{ka}r_{k} + \frac{1}{2} \lambda_{lk}^{ca} r_{klc} \\
+    \gamma^\mathrm{IP,R}_{i} &= \langle CC | a^{\dagger}_i | IP \rangle \notag & \\
+    &= r_i + \sum_{kc} \lambda_{kc}r_{ik}^c - \sum_c \gamma^\mathrm{IP,R}_c t_{ic} - \frac{1}{2} \sum_{klcd} \lambda_{lk}^{dc} t_{li}^{dc} r_{k}
+\end{flalign}
+
+Left Dyson orbital, $ \phi^\mathrm{IP,L}_\mathrm{D} = \sum_i^\mathrm{occ} \gamma^\mathrm{IP,L}_i \phi_i + \sum_a^\mathrm{vir} \gamma^\mathrm{IP,L}_a \phi_a$:
+\noindent\begin{flalign}
+    \qquad     \gamma^\mathrm{IP,L}_{i} &= \langle IP | a_i | CC \rangle \notag \\
+    &= l_i \\
+    \gamma^\mathrm{IP,L}_{a} &= \langle IP | a_a | CC \rangle \notag & \\
+    &= \sum_k t_{ka} l_k + \frac{1}{2} \sum_{klc} t_{kl}^{ac} l_{kl}^c
+\end{flalign}
+
+\subsubsection{EOM-EE-IP-Dyson Equations}
+Right Dyson orbital, $ \phi^\mathrm{EE-IP,R}_\mathrm{D} = \sum_i^\mathrm{occ} \gamma^\mathrm{EE-IP,R}_i \phi_i + \sum_a^\mathrm{vir} \gamma^\mathrm{EE-IP,R}_a \phi_a $:
+
+\noindent\begin{flalign}
+    \qquad \gamma^\mathrm{EE-IP,R}_{i} &= \langle EE | a^{\dagger}_i | IP \rangle \notag  &\\
+    &= \sum_{kc} l_{kc}r_{ik}^c - \sum_c \gamma^{IP-EI}_c t_{ic} - \frac{1}{2} \sum_{klcd} l_{lk}^{dc} t_{li}^{dc} r_{k} \\
+    \gamma^\mathrm{EE-IP,R}_{a} &= \langle EE | a^{\dagger}_a | IP \rangle \notag \\
+    &= l_{ka}r_{k} + \frac{1}{2} l_{lk}^{ca} r_{klc}
+\end{flalign}
+
+Left Dyson orbital, $ \phi^\mathrm{IP-EE,L}_\mathrm{D} = \sum_i^\mathrm{occ} \gamma^\mathrm{IP-EE,L}_i \phi_i + \sum_a^\mathrm{vir} \gamma^\mathrm{IP-EE,L}_a \phi_a$:
+\noindent\begin{flalign}
+    \qquad \gamma^\mathrm{IP-EE,L}_{i} &= \langle IP | a_i | EE \rangle \notag & \\
+    &= r_0 l_i + \sum_{kc} l_{ik}^c r_{kc} \\
+    \gamma^\mathrm{IP-EE,L}_{a} &= \langle IP | a_a | EE \rangle \notag \\
+    &= r_0 \gamma^\mathrm{IP,L}_a + \sum_k r_{ka} l_k + \frac{1}{2} \sum_{klc} r_{kl}^{ac} l_{kl}^c + \sum_{klc} l_{kl}^c t_{ka} r_{cl}
+\end{flalign}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Keep the following \cleardoublepage at the end of this file, 
