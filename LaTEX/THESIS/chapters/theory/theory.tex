@@ -96,6 +96,7 @@ The hierarchy can be extended to include even higher levels of excitation,  with
         Method & Operation count & Memory \\
         \hline
         HF & $O(N^4)$ & $O(N^4)$ \\
+        DFT & $O(N^4)$ & $O(N^4)$ \\ 
         MP2 & $O(N^5)$ & $O(N^4)$ \\
         CCD/CCSD & $O(N^6)$ & $O(N^4)$ \\
         CCSDT & $O(N^8)$ & $O(N^6)$ \\
@@ -110,7 +111,7 @@ Second Approximate Coupled Cluster (CC2) belongs to the broader family of CCn ap
 
 In CC2, the equations for the single amplitudes, $t^a_i$, are the same as CC theory (Eq. \ref{eq:CCWavenfunc}) under the constraint that the doubles amplitudes, $t^{ab}_{ij}$, are calculated using the non-iterative expression for MP2 (Eq \ref{eq:MP2}). The resulting expression for the CC2 correlation energy is:
 \begin{equation}\label{CC2Energy}
-    E_{\mathrm{CC2}} = \sum_{ij}^{\mathrm{occ}} \sum_{ab}^{\mathrm{virt}} \frac{1}{4}\frac{|\langle i j || a b \rangle|^2}{\epsilon_a + \epsilon_b - \epsilon_i - \epsilon_j}  + \sum_{i}^{\mathrm{occ}} \sum_{a}^{\mathrm{virt}} \hat{F}_{ai} t^a_i 
+    E_{\mathrm{CC2}} = \frac{1}{4}\sum_{ij}^{\mathrm{occ}} \sum_{ab}^{\mathrm{virt}} \frac{|\langle i j || a b \rangle|^2}{\epsilon_a + \epsilon_b - \epsilon_i - \epsilon_j}  + \sum_{i}^{\mathrm{occ}} \sum_{a}^{\mathrm{virt}} \hat{F}_{ai} t^a_i 
 \end{equation}
 The perturbative treatment of the doubles amplitudes in CC2, reduces the computational cost compared to CCSD, Table \ref{tab:qc_scaling}. While this approximation can lead to a less accurate description of electron correlation, the inclusion of singles amplitudes allows for an approximate description of orbital relaxation, which often leads to higher quality wavefunction, and hence properties, compared to MP2.
 
@@ -211,16 +212,16 @@ The general expression can be reordered:
 \end{flalign}
 For virtual orbitals, $p=a$:
 \noindent\begin{flalign}
-    \gamma^\mathrm{EA,R}_{a} &= \langle 0|\hat{L}^{EA}(\hat{a}^{\dagger}_a e^{-{\hat{T}}} + \cancelto{0}{[e^{-{\hat{T}}},\hat{a}^{\dagger}_a]}) e^{\hat{T}} | 0 \rangle \notag &\\
+    \qquad \gamma^\mathrm{EA,R}_{a} &= \langle 0|\hat{L}^{EA}(\hat{a}^{\dagger}_a e^{-{\hat{T}}} + \cancelto{0}{[e^{-{\hat{T}}},\hat{a}^{\dagger}_a]}) e^{\hat{T}} | 0 \rangle \notag &\\
     & = \langle 0|\hat{L}^{EA}\hat{a}^{\dagger}_a\, \cancelto{1}{e^{-{\hat{T}}}e^{\hat{T}}} | 0 \rangle = \langle 0|\hat{L}^{EA}\hat{a}^{\dagger}_a | 0 \rangle \notag &\\
     & = \langle 0| l_a \hat{a} \hat{a}^\dagger | 0 \rangle \notag &\\
     & = l_a
 \end{flalign}
 For occupied orbitals, $p=i$:
-\begin{flalign}
-    \gamma^\mathrm{EA,R}_{i} &= \langle 0|\hat{L}^{EA}(\hat{a}^{\dagger}_i e^{-{\hat{T}}} + [e^{-{\hat{T}}},\hat{a}^{\dagger}_i]) e^{\hat{T}} | 0 \rangle \notag &\\
-    & = \langle 0 | \hat{L}^{EA}(\cancelto{0}{\hat{a}^{\dagger}_i e^{-{\hat{T}}} -\hat{a}^{\dagger}_ie^{-{\hat{T}}}} + \hat{a}^{\dagger}) e^{\hat{T}} | 0 \rangle \notag = \langle 0 | \hat{L}^{EA} \hat{a}^{\dagger}_i e^{\hat{T}} | 0 \rangle  &\\
-    & = \langle 0 | l_b t_i^b \, \hat{b} \hat{i}^{\dagger} \hat{b}^{\dagger}\hat{i}+ l_{bc}^j t_{ij}^{bc} \, \hat{b}\hat{c}\hat{j}^{\dagger}\hat{i}^{\dagger}\hat{b}^{\dagger}\hat{c}^{\dagger}\hat{i}\hat{j} | 0 \rangle  &\\ 
+\noindent\begin{flalign}
+    \qquad \gamma^\mathrm{EA,R}_{i} &= \langle 0|\hat{L}^{EA}(\hat{a}^{\dagger}_i e^{-{\hat{T}}} + [e^{-{\hat{T}}},\hat{a}^{\dagger}_i]) e^{\hat{T}} | 0 \rangle \notag &\\
+    & = \langle 0 | \hat{L}^{EA}(\cancelto{0}{\hat{a}^{\dagger}_i e^{-{\hat{T}}} -\hat{a}^{\dagger}_ie^{-{\hat{T}}}} + \hat{a}^{\dagger}) e^{\hat{T}} | 0 \rangle = \langle 0 | \hat{L}^{EA} \hat{a}^{\dagger}_i e^{\hat{T}} | 0 \rangle  \notag &\\
+    & = \langle 0 | l_b t_i^b \, \hat{b} \hat{i}^{\dagger} \hat{b}^{\dagger}\hat{i}+ l_{bc}^j t_{ij}^{bc} \, \hat{b}\hat{c}\hat{j}^{\dagger}\hat{i}^{\dagger}\hat{b}^{\dagger}\hat{c}^{\dagger}\hat{i}\hat{j} | 0 \rangle  \notag &\\ 
     &  = - \sum_c t_{ic} l_c - \frac{1}{2} \sum_{kcd} t_{ki}^{dc} l_{dc}^k
 \end{flalign}
 A similar approach can be applyed to the other Dyson equations to obtain the expressions.

@@ -1,15 +1,22 @@
 % !TeX root = ../../thesis.tex
 \chapter{Computational Methods}\label{ch:methods}
 
-\ldots
+All electronic structure calculations were performed using the developer's copy of the \textit{QChem} software \cite{QChem5}. In all computations the frozen-core
+approximation is used, only the valence orbitals are correlated, as well as the resolution of the identity (RI) approximation, auxiliary basis functions are used to approximate the Coulumb operator integrals, reducing its scaling to $N(O^3)$ \cite{hattig2000cc2}.
 
-All calculations were performed using the developer's copy of the \textit{QChem} software \cite{QChem5}.
-\instructionsappendices
+For the EOM-EA calculations, the reference wavefunction was obtained as the restricted Hartree-Fock (RHF) solution of the ground state of the neutral molecule. Unless explecitly mention, calculations were performed at using the aug-cc-pVDZ basis set \cite{dunning1989gaussian} further augmented by 3 s-shells on hydrogen atoms and 6 s- and 3 p-shells on all non-hydrogen atoms \cite{paran2024performance} to properly model the non-valence states. The coefficients of the extra functions were obtained by halving the most diffuse function of the original set.
+
+Photoionization and Photodetachment crossections were calculated using the \textit{ezDyson} package \cite{gozem2022ezspectra,gozem2015photoionization}.
+
+
+
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Keep the following \cleardoublepage at the end of this file, 
 % otherwise \includeonly includes empty pages.
 \cleardoublepage
+
 
 % vim: tw=70 nocindent expandtab foldmethod=marker foldmarker={{{}{,}{}}}
