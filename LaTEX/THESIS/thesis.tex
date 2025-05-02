@@ -121,6 +121,10 @@
 \usepackage{cancel}
 \usepackage{graphicx}
 \usepackage{siunitx}
+\usepackage{pdflscape}
+\usepackage{textcomp}
+\usepackage[version=4]{mhchem}
+\usepackage{caption}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -168,7 +172,7 @@
 \includechapter{methods}
 \includechapter{results}
 \includechapter{conclusion}
-\includechapter{manual} % Remove this chapter
+%\includechapter{manual} % Remove this chapter
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \appendix
@@ -184,7 +188,7 @@
 \bibliography{allpapers}
 % BibLatex (comment out lines above and uncomment biblatex lines in preamble)
 %\printbibliography[title=\bibname]
-\instructionsbibliography
+%\instructionsbibliography
 
 
 
@@ -199,10 +203,11 @@
   % Generative AI was used to generate new research ideas. % If yes, please specify the usage.
   % Generative AI was used to generate visuals. % If yes, please specify the usage.
   % Other (e.g. the development of a custom chatbot/genAI tool). % Please specify.
+  Generative AI was used for lenguage and coding assistance (ChatGPT, MicrosoftCopilot, LeChat). 
 }
 \includegenai{}
 
-\includepublications{publications}
+%\includepublications{publications}
 
 \makebackcoverXXIV
 

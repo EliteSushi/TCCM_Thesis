@@ -22,8 +22,8 @@ set yrange [-100:10]
 set arrow from 0,0 to 40,0 nohead lc rgb "gray" lw 4
 set key bottom right
 
-plot $data u 1:2 w l t 'Interaction E' lw 4, \
-     $data u 1:3 w l t 'VBA' lw 4, \
-     $data u 1:4 w l t 'DBA' lw 4
+plot $data u 1:2 w lp t 'Interaction E' lw 4, \
+     $data u 1:3 w lp t 'VBA' lw 4, \
+     $data u 1:4 w lp t 'DBA' lw 4
 
 unset output
