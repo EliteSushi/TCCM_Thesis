@@ -2,14 +2,14 @@ reset
 
 # Variables
 filename = 'Q0.dat'
-ncontour = 5
-space_width = 30
-offset = 75
-gawk_script = 'cont_temp.awk'
-set terminal cairolatex size 4.3,3.1
+ncontour = 8
+space_width = 20
+offset = 1
+set terminal cairolatex size 2.7 ,2.9
 set output 'Q0_E.tex'
 
 # Write gawk script to file
+gawk_script = 'cont_temp.awk'
 set print gawk_script
     print "#!/usr/bin/gawk -f"
     print "BEGIN { d = ARGV[2]; w = ARGV[3]; os = ARGV[4]; ro = ARGV[5]; ARGV[2]=\"\"; ARGV[3]=\"\"; ARGV[4]=\"\"; ARGV[5]=\"\" }"
@@ -26,7 +26,7 @@ set print gawk_script
     print "END {"
     print "  if(d==0) {"
     print "    for(j=1;j<=i;j++)"
-    print "      printf \"set label %d \\\"\\\\\\\\textcolor{white}{\\\\\\\\small %.0f}\\\" at %g, %g centre front rotate by %d\\n\", j, c[j], a[j], b[j], r[j]"
+    print "      printf \"set label %d \\\"\\\\\\\\textcolor{black}{\\\\\\\\footnotesize %.0f}\\\" at %g, %g centre front rotate by %d\\n\", j, c[j], a[j], b[j], r[j]"
     print "  }"
     print "}"
 unset print
@@ -45,7 +45,8 @@ unset table
 
 set dgrid3d 200,200 splines
 set contour base
-set cntrparam level incremental zmin, zstep, zmax
+#set cntrparam level incremental zmin, zstep, zmax
+set cntrparam levels discrete 50, 100, 200, 300, 400, 500
 unset surface
 set table 'cont.dat'
 splot 'test.dat'
@@ -56,15 +57,20 @@ unset dgrid3d
 reset
 set xrange [-180:180]
 set yrange [-180:180]
+unset colorbox
 unset key
-set palette rgbformulae 7,5,15
+
+
+set palette defined (0 '#00007F', 1 '#0000FF', 2 '#007FFF', 3 '#00FFFF', 4 '#7FFF7F', 5 '#FFFF00', 6 '#FF7F00', 7 '#FF0000')
 set size ratio -1
 set xlabel '$\Phi$'
-set ylabel '$\Psi$'
+set ylabel '$\Psi$' offset 2, 0
 set title 'Free Energy Surface (meV)'
+set lmargin 2.5
+set rmargin 0
 
 # Plot
 l '<'.sprintf('gawk -f %s cont.dat 0 %d %d 1', gawk_script, space_width, offset)
-p 'test.dat' w ima, '<'.sprintf('gawk -f %s cont.dat 1 %d %d 1', gawk_script, space_width, offset) w l lt -1 lw 1.5 linecolor rgb "white"
+p 'test.dat' w ima, '<'.sprintf('gawk -f %s cont.dat 1 %d %d 1', gawk_script, space_width, offset) w l lt -1 lw 3.5 linecolor rgb "black"
 
 unset output

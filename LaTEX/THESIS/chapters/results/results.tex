@@ -104,13 +104,11 @@ Molecule & Exp (aEA) & CCSD(T) +E\textsubscript{CBS} & No SCS & SCS \\
   9 & 1.81 & 1.55 & 1.97 & - \\
   10 & 1.74 & 1.51 & 1.92 & 1.45 \\
     \end{tabular}
-    \label{tab:quinones}
   \end{minipage}%
   \hfill
   \begin{minipage}[]{0.48\textwidth}
     \centering
     \input{chapters/results/image/Quinones.tex}
-    \label{fig:Quinones}
   \end{minipage}
   \refstepcounter{table}\label{tab:quinones}
   \refstepcounter{figure}\label{fig:Quinones}
@@ -131,20 +129,26 @@ SCS improves the result for valence state of CC2, whihc is in accordance with th
 
 \ldots
 \subsubsection{Q0}
-aa
-\begin{figure}[th!]
+a
+
+\begin{figure}[h!]
   \centering
-  \input{chapters/results/image/Q0_E.tex}
-  %figsize is set in image/test.gp 
-  \caption[Short caption for Table of Figures]{Energy surface for Q0.}
-  \label{fig:Q0_E}
-\end{figure}
-\begin{figure}[th!]
-  \centering
-  \input{chapters/results/image/Q0_d.tex}
-  %figsize is set in image/test.gp 
-  \caption[Short caption for Table of Figures]{Dipole surface for Q0.}
-  \label{fig:Q0_d}
+  \begin{minipage}[]{0.49\textwidth}
+    \centering
+    \small
+    \input{chapters/results/image/Q0_E.tex}
+  \end{minipage}%
+  \hfill
+  \begin{minipage}[]{0.47\textwidth}
+    \centering
+    \small
+    \input{chapters/results/image/Q0_d.tex}
+  \end{minipage}
+  \refstepcounter{figure}\label{fig:Q0_E}
+  \refstepcounter{figure}\label{ffig:Q0_d}
+  \caption*{\textbf{Figure~\thetable{}} and \textbf{Figure~\thefigure{}:} Comparison between reference and RI-CC2 data for quinones. The table also includes the experimental value (adiabatic EA instead of veritacl EA).}
+  \addcontentsline{lof}{figure}{\protect\numberline{\thefigure}figure valence anion state quinones}
+  \addcontentsline{lot}{table}{\protect\numberline{\thetable} table valence anion state quinones}
 \end{figure}
 
 \ldots
