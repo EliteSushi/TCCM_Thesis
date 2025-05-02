@@ -69,7 +69,7 @@ set palette defined ( 0 '#F7FCF5', 1 '#E5F5E0', 2 '#C7E9C0', 3 '#A1D99B', 4 '#74
 set size ratio -1
 
 set xlabel '$\Phi$'
-set title 'Dipole field (Debye)'
+set title 'Dipole Strength (Debye)'
 unset colorbox
 set rmargin 0
 set lmargin 0.1

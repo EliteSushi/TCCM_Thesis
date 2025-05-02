@@ -13,6 +13,6 @@ function abs(x) { return (x>=0?x:-x) }
 END {
   if(d==0) {
     for(j=1;j<=i;j++)
-      printf "set label %d \"\\\\textcolor{black}{\\\\footnotesize %.1f}\" at %g, %g centre front rotate by %d\n", j, c[j], a[j], b[j], r[j]
+      printf "set label %d \"\\\\textcolor{black}{\\\\footnotesize %.0f}\" at %g, %g centre front rotate by %d\n", j, c[j], a[j], b[j], r[j]
   }
 }

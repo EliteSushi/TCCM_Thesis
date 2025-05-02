@@ -4,7 +4,7 @@ reset
 filename = 'Q0.dat'
 ncontour = 8
 space_width = 20
-offset = 1
+offset = 50
 set terminal cairolatex size 2.7 ,2.9
 set output 'Q0_E.tex'
 
@@ -46,7 +46,7 @@ unset table
 set dgrid3d 200,200 splines
 set contour base
 #set cntrparam level incremental zmin, zstep, zmax
-set cntrparam levels discrete 50, 100, 200, 300, 400, 500
+set cntrparam levels discrete 50, 100, 200, 300,400, 500, 565
 unset surface
 set table 'cont.dat'
 splot 'test.dat'
@@ -61,11 +61,12 @@ unset colorbox
 unset key
 
 
-set palette defined (0 '#00007F', 1 '#0000FF', 2 '#007FFF', 3 '#00FFFF', 4 '#7FFF7F', 5 '#FFFF00', 6 '#FF7F00', 7 '#FF0000')
+#set palette defined (0 '#00007F', 1 '#0000FF', 2 '#007FFF', 3 '#00FFFF', 4 '#7FFF7F', 5 '#FFFF00', 6 '#FF7F00', 7 '#FF0000')
+set palette defined (0 '#0000FF', 1 '#6666FF', 2 '#3399FF', 3 '#00FFFF', 4 '#7FFF7F', 5 '#FFFF00', 6 '#FF7F00', 7 '#FF0000')
 set size ratio -1
 set xlabel '$\Phi$'
 set ylabel '$\Psi$' offset 2, 0
-set title 'Free Energy Surface (meV)'
+set title 'Conformational Energy (meV)'
 set lmargin 2.5
 set rmargin 0
 
