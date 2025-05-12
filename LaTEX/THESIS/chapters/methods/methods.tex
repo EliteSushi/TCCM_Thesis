@@ -1,10 +1,19 @@
 % !TeX root = ../../thesis.tex
 \chapter{Computational Methods}\label{ch:methods}
 
-All electronic structure calculations were performed using the developer's copy of the \textit{QChem} software \cite{QChem5}. In all computations the frozen-core
-approximation is used, only the valence orbitals are correlated, as well as the resolution of the identity (RI) approximation, auxiliary basis functions are used to approximate the Coulumb operator integrals, reducing its scaling to $N(O^3)$ \cite{hattig2000cc2}.
+All electronic structure calculations were performed using the developer's copy of the \textit{Q-Chem} software \cite{QChem5}. In all computations the frozen-core
+approximation is used, only the valence electrons are correlated, as well as the resolution of the identity (RI) approximation, auxiliary basis functions are used to approximate the two-electron integrals, reducing its scaling to $N(O^3)$ \cite{hattig2000cc2}.
 
-For the EOM-EA calculations, the reference wavefunction was obtained as the restricted Hartree-Fock (RHF) solution of the ground state of the neutral molecule. Unless explecitly mention, calculations were performed at using the aug-cc-pVDZ basis set \cite{dunning1989gaussian} further augmented by 3 s-shells on hydrogen atoms and 6 s- and 3 p-shells on all non-hydrogen atoms \cite{paran2024performance} to properly model the non-valence states. The coefficients of the extra functions were obtained by halving the most diffuse function of the original set.
+For the EOM-EA calculations, the reference wavefunction was obtained as the restricted Hartree-Fock (RHF) solution of the ground state of the neutral molecule. Unless explecitly mentioned, calculations were performed at using the aug-cc-pVDZ basis set \cite{dunning1989gaussian} further augmented by 3 s-shells on hydrogen atoms and 6 s- and 3 p-shells on all non-hydrogen atoms \cite{paran2024performance} to properly model the non-valence states. The coefficients of the extra functions were obtained by successively halving the most diffuse function of the original set.
+
+CC2 Dyson obitals for EOM variants described in section \ref{sec:theory_dyson} and appendix \ref{} were implemented as described, and will be released in an upcoming verion of \textit{Q-Chem}.
+
+All closed-shell quinone model geometries were optimized using the TPSS functional\cite{tao2003climbing} with Grimme's pair-wise dispersion corrections with Becke-Johnson damping (D3BJ)\cite{grimme2011effect}, and the minimally augmented\cite{zheng2011minimally} def2-TZVP basis sets\cite{weigend2005balanced} (ma-def2-TZVP), following the work in \cite{schulz2018systematic}. For the scan calculations, each singlepoint was optimized constraining its relevant angles by the method of Lagrange multipliers; dihedrals of the methoxy chains of Q0 and Q1,and the isoprene tail of Q1.
+In the case of quinone + aminoacid models, crystal structures were taken from the Protein Data Bank (PDB). Hydrogens were added using \textit{PyMOL}'s \cite{PyMOL} \texttt{add\_H}  functionality, and relaxed using the method above (fixing the rest of the heavy atoms).
+
+For the scans of quinone + molecule, each subsystem was independently optimized and and put together with any further refinement.
+
+For quinone stystems, only EOM-EA right Dyson orbitals were computed to speed up the calculations by avoiding the need to compute the lamda terms.
 
 Photoionization and Photodetachment crossections were calculated using the \textit{ezDyson} package \cite{gozem2022ezspectra,gozem2015photoionization}.
 

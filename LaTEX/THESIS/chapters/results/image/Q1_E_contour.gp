@@ -1,12 +1,12 @@
 reset
 
-#variables for the plot
-filename = 'Q0.dat' 
-ncontour = 6
-space_width = 30
-offset = 75
-set terminal cairolatex size 2.6, 2.475
-set output 'Q0_d.tex'
+# Variables
+filename = 'Q1.dat'
+ncontour = 8
+space_width = 20
+offset = 50
+set terminal cairolatex size 2.7 ,2.9
+set output 'Q1_E.tex'
 
 # Write gawk script to file
 gawk_script = 'cont_temp.awk'
@@ -26,60 +26,52 @@ set print gawk_script
     print "END {"
     print "  if(d==0) {"
     print "    for(j=1;j<=i;j++)"
-    print "      printf \"set label %d \\\"\\\\\\\\textcolor{black}{\\\\\\\\footnotesize %.1f}\\\" at %g, %g centre front rotate by %d\\n\", j, c[j], a[j], b[j], r[j]"
+    print "      printf \"set label %d \\\"\\\\\\\\textcolor{black}{\\\\\\\\footnotesize %.0f}\\\" at %g, %g centre front rotate by %d\\n\", j, c[j], a[j], b[j], r[j]"
     print "  }"
     print "}"
 unset print
 
-# Write the z(x,y) grid to a table
-set table 'test.dat'
-splot filename using 1:2:8
-unset table
-
-# Compute min and max from column 8
-stats filename using 8 name 'Z'
-
-# Define step size
-zmin = Z_min
-zmax = Z_max
+# Compute min and max from column
+stats filename using 4 name 'Z'
+Eh2meV = 27211.4
+zmin = 0
+zmax = (Z_max - Z_min)*Eh2meV
 zstep = (zmax - zmin) / ncontour
 
-# Generate contours from the same grid
-set dgrid3d 200,200 splines # denser grid and some smoothing
+# Write grid for contour
+set table 'test.dat'
+splot filename using 1:2:(($4 - Z_min)*Eh2meV)
+unset table
+
+set dgrid3d 200,200 splines
 set contour base
 #set cntrparam level incremental zmin, zstep, zmax
-set cntrparam levels discrete 0.5, 1.0, 1.5, 2, 2.5, 3, 3.15
+set cntrparam levels discrete 50, 100, 200, 300,400, 500, 565
 unset surface
 set table 'cont.dat'
-splot filename using 1:2:8
+splot 'test.dat'
 unset table
-unset dgrid3d  # avoid affecting later plots
+unset dgrid3d
 
-# plot — color map with contours
+# Final plot
 reset
-
 set xrange [-180:180]
 set yrange [-180:180]
-unset ytics
-unset xtics
+unset colorbox
 unset key
 
-# line styles
-set palette defined ( 0 '#F7FCF5', 1 '#E5F5E0', 2 '#C7E9C0', 3 '#A1D99B', 4 '#74C476', 5 '#90ee90', 6 '#7cfc00', 7 '#008000' ) 
 
+#set palette defined (0 '#00007F', 1 '#0000FF', 2 '#007FFF', 3 '#00FFFF', 4 '#7FFF7F', 5 '#FFFF00', 6 '#FF7F00', 7 '#FF0000')
+set palette defined (0 '#0000FF', 1 '#6666FF', 2 '#3399FF', 3 '#00FFFF', 4 '#7FFF7F', 5 '#FFFF00', 6 '#FF7F00', 7 '#FF0000')
 set size ratio -1
-
-#set xlabel '{\normalsize $\Phi$}'
-set title '{Dipole Strength (D)}'
-unset colorbox
+set xlabel '{\normalsize $\Phi$}'
+set ylabel '{\normalsize $\Psi$}' offset 2, 0
+set title 'Conformational Energy (meV)'
+set lmargin 2.5
 set rmargin 0
-set lmargin 0.8
-set tmargin 2.5
-set bmargin 0 
 
 # Plot
 l '<'.sprintf('gawk -f %s cont.dat 0 %d %d 1', gawk_script, space_width, offset)
 p 'test.dat' w ima, '<'.sprintf('gawk -f %s cont.dat 1 %d %d 1', gawk_script, space_width, offset) w l lt -1 lw 3.5 linecolor rgb "black"
 
 unset output
-

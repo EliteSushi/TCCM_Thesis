@@ -1,12 +1,12 @@
 reset
 
 #variables for the plot
-filename = 'Q0.dat' 
+filename = 'Q0_CC2_comp.dat' 
 ncontour = 6
-space_width = 30
-offset = 75
-set terminal cairolatex size 2.6, 2.475
-set output 'Q0_d.tex'
+space_width = 4
+offset = 8
+set terminal cairolatex size 2.6 ,2.8
+set output 'Q0_DBA.tex'
 
 # Write gawk script to file
 gawk_script = 'cont_temp.awk'
@@ -26,60 +26,60 @@ set print gawk_script
     print "END {"
     print "  if(d==0) {"
     print "    for(j=1;j<=i;j++)"
-    print "      printf \"set label %d \\\"\\\\\\\\textcolor{black}{\\\\\\\\footnotesize %.1f}\\\" at %g, %g centre front rotate by %d\\n\", j, c[j], a[j], b[j], r[j]"
+    print "      printf \"set label %d \\\"\\\\\\\\textcolor{black}{\\\\\\\\footnotesize %.0f}\\\" at %g, %g centre front rotate by %d\\n\", j, c[j], a[j], b[j], r[j]"
     print "  }"
     print "}"
 unset print
 
 # Write the z(x,y) grid to a table
 set table 'test.dat'
-splot filename using 1:2:8
+splot filename using 2:3:(-$7*1000)
 unset table
 
 # Compute min and max from column 8
-stats filename using 8 name 'Z'
+stats filename using (-$7*1000) name 'Z'
 
 # Define step size
 zmin = Z_min
 zmax = Z_max
 zstep = (zmax - zmin) / ncontour
 
-# Generate contours from the same grid
-set dgrid3d 200,200 splines # denser grid and some smoothing
+set dgrid3d 100,100 splines
 set contour base
-#set cntrparam level incremental zmin, zstep, zmax
-set cntrparam levels discrete 0.5, 1.0, 1.5, 2, 2.5, 3, 3.15
+set cntrparam levels discrete 0, 3, 6, 9, 12, 15.3
 unset surface
 set table 'cont.dat'
-splot filename using 1:2:8
+splot filename using 2:3:(-$7*1000)
 unset table
-unset dgrid3d  # avoid affecting later plots
+unset dgrid3d
 
-# plot — color map with contours
 reset
+
+# Set custom palette
+#-5 '#E0E0E0', 0 '#F0F0F0',
+set palette defined (-10 '#D3D3D3', -5 '#D3D3D3', 0 '#D3D3D3', 2 '#FF7F00', 4 '#FFFF00', 6 '#7FFF7F', 8 '#00FFFF', 10 '#3399FF', 12 '#6666FF', 14 '#0000FF')
+
+# Ensure color range includes both negative and positive sides
+set cbrange [-10:14]
 
 set xrange [-180:180]
 set yrange [-180:180]
-unset ytics
-unset xtics
 unset key
 
-# line styles
-set palette defined ( 0 '#F7FCF5', 1 '#E5F5E0', 2 '#C7E9C0', 3 '#A1D99B', 4 '#74C476', 5 '#90ee90', 6 '#7cfc00', 7 '#008000' ) 
+set size ratio 1
 
-set size ratio -1
-
-#set xlabel '{\normalsize $\Phi$}'
-set title '{Dipole Strength (D)}'
+set xlabel '{\normalsize $\Phi$}'
+set title '{DBA EA (meV)}'
 unset colorbox
+unset ytics
 set rmargin 0
-set lmargin 0.8
+set lmargin 0.1
 set tmargin 2.5
-set bmargin 0 
+set bmargin 2.5
 
 # Plot
 l '<'.sprintf('gawk -f %s cont.dat 0 %d %d 1', gawk_script, space_width, offset)
-p 'test.dat' w ima, '<'.sprintf('gawk -f %s cont.dat 1 %d %d 1', gawk_script, space_width, offset) w l lt -1 lw 3.5 linecolor rgb "black"
+p filename u 2:3:(-$7*1000) w ima, '<'.sprintf('gawk -f %s cont.dat 1 %d %d 1', gawk_script, space_width, offset) w l lt -1 lw 3.5 linecolor rgb "black"
 
 unset output
 

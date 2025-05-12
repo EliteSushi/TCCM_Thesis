@@ -102,7 +102,7 @@ The hierarchy can be extended to include even higher levels of excitation,  with
         CCSDT & $O(N^8)$ & $O(N^6)$ \\
         CC2 & $O(N^{5})$ & $O(N^4)$ \\
     \end{tabular}
-    \caption{Computational scaling of quantum chemistry methods.}
+    \caption[Computational Scaling of Methods]{Computational scaling of quantum chemistry methods.}
     \label{tab:qc_scaling}
 \end{table}
 
@@ -164,21 +164,11 @@ They can be used for the interpretation and prediction of photoelectron spectra 
 \end{equation}
 where where \textit{k} is the magnitude of the photoelectron wavevector, \textit{E} is the energy of the ionizing radiation, and \textit{c} is the speed of light, $\mu$ is the dipole operator, and $\Psi^{el}_k$ is the photoelectron wavefunction, and a strong orthonormality is assumed between the reference and continuum wavefunction.  
 
-\subsection{EOM-CC2 Dyson Orbital Equations}
-Computes O block of matrix elements of dyson orbitals using CC and EOM-EA wave functions:
-\[
-               \langle EA|a|EE \rangle = 
-        \langle 0|L^{EE}(a e^T)_{c}R^{EA} | 0 \rangle
-\]
-
-The storage convention assumed for the r2 IP amplitudes is:
-        \[ r2^{a}_{ij}{a^{\dagger} j i} --- r2(i|j|a) \]
-
-The storage convention assumed for the l2 IP amplitudes is
-           \[ l2^{a}_{ij}{i^{\dagger} j^{\dagger} a} --- l2(i|j|a)\]
+\subsection{EOM-CC2 Dyson Orbital Equations\label{sec:theory_dyson}}
+Justify that the expression doesnt change from CCSD (see TJ email).\\
 
 \subsubsection{EOM-EA-Dyson Equations}
-A derivation of the dyson equation in terms of the $t,\, r,\, l,\, \lambda$ amplitudes is presented.
+A derivation of the algebraic expression of Dyson orbitals in terms of the $t,\, r,\, l,\, \lambda$ amplitudes is presented.
 It is importnat to realize that the operators involved ($\hat{T},\hat{\Lambda},\hat{R},\hat{L}$) affect the occupation of the spin-orbitals, and thus only the combinations of terms which leave the refrence wavefunction, $| 0 \rangle$, unchanged survive. To find these combinations, commutators can be used to reorder the operators involved:
 
 In the case of the right EOM-EA-Dyson orbital amplitudes:

@@ -15,7 +15,7 @@
     & & \multicolumn{4}{c}{aug-cc-pVTZ} & pVDZ & pVQZ & pVDZ & pTDZ & & \\
     \multicolumn{2}{c}{Molecule} & 2s1p & 4s2p & 6s3p & 8s4p & 6s3p & 6s3p & 6s3p & 6s3p & KT & \textmu (D) \\
     \hline
-    Acetaldehyde & \ce{CH3CHO} & -156.7 & -27.8 & -3.2 & 0.8 & -4.6 & -3.2 & -4.6 & -3.1 & -0.428 & 3.29 \\
+    Acetaldehyde & \ce{CH3CHO} & -156.7 & -27.8 & -3.2 & 0.8 & -4.6 & -3.2 & -4.6 & -3.1 & -0.4 & 3.29 \\
     Acetone & \ce{(CH3)2CO} & -114.9 & -16.8 & 1.3 & 3.3 & -0.3 & 0.9 & -0.5 & 0.9 & -5.1 & 3.46 \\
     Acetonitrile & \ce{CH3CN} & -61.2 & 12.6 & 19.9 & 20.1 & 18.2 & 20.3 & 17.1 & 18.4 & 4.2 & 4.29 \\
     Benzaldehyde & \ce{C6H5CHO} & -97.1 & -2.1 & 8.9 & 9.6 & 7.4 & 9.1 & 3.4 & 4.6 & -4.9 & 3.77 \\
@@ -29,54 +29,16 @@
     Phenylisocyanide & \ce{C6H5NC} & -82.7 & 8.6 & 16.3 & 16.5 & 15.2 & 16.7 & 9.0 & 9.2 & -4.9 & 3.61 \\
     Pyridazine & \ce{C4H4N2} & -80.7 & 20.5 & 26.3 & 26.4 & 25.0 & 26.7 & 18.6 & 19.1 & 1.7 & 4.41 \\
     Vinylene carbonate & \ce{C3H2O3} & -82.5 & 20.9 & 27.2 & 27.4 & 26.4 & 27.7 & 25.1 & 25.5 & 10 & 5.05 \\
-    \cmidrule(lr){2-10} 
-    & MAE & 105.3 & 8.8 & 2.8 & 3.4 & 2.3 & 2.4 & 0.8 & ref. & & \\
+    \cmidrule(lr){2-11} 
+    & MAE & 105.3 & 8.8 & 2.8 & 3.4 & 2.3 & 2.4 & 0.8 & ref. & 12.0 & \\
 \end{tabular}
-\caption{EOM-EA binding energies of dipole-bound radical anions computed using different augmented Dunning basis sets and RI-CC2 and RI-CCSD for the the test set of moluces \cite{paran2024performance}. A positive value corresponds to a bound electron. Koopmans' theorem (KT), and dipole momment (\textmu), calculated at the HF level, and mean absolute error (MAE) are also given. The values are in meV and D respectively.}
+\caption[EOM-EA DBA basis set dependence.]{EOM-EA binding energies of dipole-bound radical anions computed using different augmented Dunning basis sets and RI-CC2 and RI-CCSD for the the test set of moluces \cite{paran2024performance}. A positive value corresponds to a bound electron. Koopmans' theorem (KT), and dipole momment (\textmu), calculated at the HF level, and mean absolute error (MAE) are also given. The values are in meV and D respectively.}
 \label{tab:basis}
 \end{table}
 \end{landscape}
 
 
 \subsection{Performance of EA-EOM-CC2 on Valence Bound Radical Anion States of Quinones}
-
-\iffalse
-\begin{table}[h!]
-  \centering
-  \begin{tabular}{
-    >{\centering\arraybackslash}m{1.1cm}
-    >{\centering\arraybackslash}m{0.6cm}
-    >{\centering\arraybackslash}m{1.1cm}
-    >{\centering\arraybackslash}m{0.6cm}
-    >{\centering\arraybackslash}m{0.5cm}
-  }
- & \multicolumn{2}{c}{ref. \cite{schulz2018systematic}} & \multicolumn{2}{c}{RI-CC2}  \\
- \cmidrule(lr){2-3} \cmidrule(lr){4-5}
-Molecule & Exp (aEA) & CCSD(T) +E\textsubscript{CBS} & No SCS & SCS \\
-\hline
-1 & 1.91 & 1.64 & 2.02 & 1.54 \\
-2 & 1.85 & 1.57 & 1.95 & - \\
-3 & 1.76 & 1.49 & 1.89 & 1.39 \\
-4 & 1.77 & 1.5 & 1.89 & 1.40 \\
-5 & 1.69 & 1.43 & 1.84 & 1.34 \\
-6 & 1.62 & 1.42 & 1.83 & 1.32 \\
-7 & 1.72 & 1.32 & 1.65 & 1.17 \\
-8 & 1.86 & 1.5 & 1.88 & 1.39 \\
-9 & 1.81 & 1.55 & 1.97 & - \\
-10 & 1.74 & 1.51 & 1.92 & 1.45 \\
-\end{tabular}
-\caption{Quinones.}
-\label{tab:quinones}
-\end{table}
-
-\begin{figure}[th!]
-  \centering
-  \input{chapters/results/image/Quinones.tex}
-  %figsize is set in image/test.gp 
-  \caption[Short caption for Table of Figures]{Favorable Interaction with water.}
-  \label{fig:Quinones}
-\end{figure}
-\fi
 
 \begin{figure}[h!]
   \centering
@@ -108,16 +70,21 @@ Molecule & Exp (aEA) & CCSD(T) +E\textsubscript{CBS} & No SCS & SCS \\
   \hfill
   \begin{minipage}[]{0.48\textwidth}
     \centering
+    \small
     \input{chapters/results/image/Quinones.tex}
   \end{minipage}
-  \refstepcounter{table}\label{tab:quinones}
-  \refstepcounter{figure}\label{fig:Quinones}
+  \refstepcounter{table}\label{tab:Quinones_fig}
+  \refstepcounter{figure}\label{fig:Quinones_tab}
   \caption*{\textbf{Table~\thetable{}} and \textbf{Figure~\thefigure{}:} Comparison between reference and RI-CC2 data for quinones. The table also includes the experimental value (adiabatic EA instead of veritacl EA).}
   \addcontentsline{lof}{figure}{\protect\numberline{\thefigure}figure valence anion state quinones}
   \addcontentsline{lot}{table}{\protect\numberline{\thetable} table valence anion state quinones}
 \end{figure}
 
 SCS improves the result for valence state of CC2, whihc is in accordance with the conclusions from \cite{paran2024performance}. Something to note is that when comparing the results with experiments, one can think that CC2 gets close than CCSD. This however, can be explained by the fact that the experiment measures the adiabatic electron binding energy, while the calculations are performed for the vertical EA. As the former energy 
+
+As the trend is recovered without SCS, albeit the larger (~0.2 eV) but consist error the subsequent calculations do not use this method, as SCS worsens the results for dipole bound anions. A strength of this approach is that both states can be calculated from the same Hamiltonian, and the results are consitent.
+
+Dipole bound states are worsen by SCS \cite{paran2024performance}. This is explaned by the fact that the DBS resides in a digguse state; the extra spin is far from the other electrons, meaning that the exchange interaction is much smaller than the Coulumb interaction.
 \ldots
 \subsection{Photoelectron Cross-section Calculations from EOM-CC2/CCSD}
 
@@ -129,20 +96,31 @@ SCS improves the result for valence state of CC2, whihc is in accordance with th
 
 \ldots
 \subsubsection{Q0}
-a
+aa
 
-\begin{figure}[h!]
+\begin{figure}[ht!]
   \centering
   \begin{minipage}[]{0.49\textwidth}
     \centering
     \small
     \input{chapters/results/image/Q0_E.tex}
   \end{minipage}%
-  \hfill
+  %\hfill
   \begin{minipage}[]{0.47\textwidth}
     \centering
     \small
     \input{chapters/results/image/Q0_d.tex}
+  \end{minipage}
+  %\vfill
+  \begin{minipage}[]{0.49\textwidth}
+    \centering
+    \small
+    \input{chapters/results/image/Q0_VBA.tex}
+  \end{minipage}%
+  \begin{minipage}[]{0.47\textwidth}
+    \centering
+    \small
+    \input{chapters/results/image/Q0_DBA.tex}
   \end{minipage}
   \label{fig:Q0_surf}
   \caption[Surfaces of Q0]{Surfaces of Q0. Left: Energy surface. Right: Dipole moment surface.}
@@ -152,6 +130,22 @@ a
 \subsubsection{Q1}
 
 \ldots
+\begin{figure}[hb!]
+  \centering
+  \begin{minipage}[]{0.49\textwidth}
+    \centering
+    \small
+    \input{chapters/results/image/Q1_E.tex}
+  \end{minipage}%
+  %\hfill
+  \begin{minipage}[]{0.47\textwidth}
+    \centering
+    \small
+    \input{chapters/results/image/Q1_d.tex}
+  \end{minipage}
+  \label{fig:Q1_surf}
+  \caption[Surfaces of Q1]{Surfaces of Q1. Left: Energy surface. Right: Dipole moment surface.}
+\end{figure}
 \subsection{A Simple Cluster Model}
 \ldots
 

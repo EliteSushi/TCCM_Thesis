@@ -9,8 +9,6 @@ $data << EOD
 8	1.88	1.39	1.5
 9	1.97	-	1.55
 10	1.92	1.45	1.51
-11   -   -  1.10
-12   -   -  1.65
 EOD
 
 set terminal cairolatex size 2.55,2.35
@@ -22,9 +20,10 @@ set xlabel 'Reference Energy (eV)'
 set ylabel 'Method Energy (eV)'
 set key bottom right
 
-plot $data using 4:4 with lines linecolor rgb 'gray' linewidth 6 title '', \
-     '' using 4:2:(sprintf("{\\\\color{blue}\\\\textbf{%d}}", $1)) with labels offset 0,0.2 notitle, \
-     '' using 4:3:(sprintf("{\\\\color{red}\\\\textbf{%d}}", $1))  with labels offset 0,-0.2 notitle, \
+plot $data using 4:4:(sprintf("{\\\\color{gray}\\\\textbf{%d}}", $1)) with labels offset 0,0 notitle, \
+     '' using 4:2:(sprintf("{\\\\color{blue}\\\\textbf{%d}}", $1)) with labels offset 0,0 notitle, \
+     '' using 4:3:(sprintf("{\\\\color{red}\\\\textbf{%d}}", $1))  with labels offset 0,0 notitle, \
+     x with p pt 0 linecolor rgb 'gray' linewidth 5 notitle, \
      NaN with lines linecolor rgb 'gray' linewidth 5 title 'Ref.', \
      NaN with lines linecolor rgb 'blue' linewidth 5 title 'No SCS', \
      NaN with lines linecolor rgb 'red'  linewidth 5 title 'SCS'

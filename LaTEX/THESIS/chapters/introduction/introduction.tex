@@ -1,107 +1,54 @@
 % !TeX root = ../../thesis.tex
 \chapter{Introduction}\label{ch:introduction}
 
+This chapter provides an overview of non-valence anions in general and particularly dipole bound anions. The current research that has viewd the presence of both dbas and biological systems is presented. it then presents the system of interest, biological quinoones, and their role in biological process. Ffinally the research goals are especified.
 
-% Some dummy code to make sure bibtex does not complain.
-\section{Electronic Processes in Biological Systems}
+\section{Nonvalence Anions}
+Anions are molecules with an excess electron. Anions generally require specific care in terms of their ab initio description because of the more diffuse nature of the valence
+orbitals \cite{simons2008molecular,simons2023molecular}.
+Nonvalence anions (NBS) \newglossaryentry{NBS}{name={NBS},description={Non-Valence Anion}} represent a class of molecular anions where the extra electron occupies a diffuse orbital that is spatially decoupled from the usual valence orbitals of the molecule.\cite{jordan2003theory}. These have been studied extensively by spectroscopic means in the gas phase in the last years, they have weaken a lot of interest \cite{kang2024reaction}.
+Solvated electrons could be considered a nonvalence statre, although still a debated topic, the main theory and observations point to the electron residing in a cavity of 2.5 \r{A} \cite{herbert2017hydrated}.
 
-Electrons are at the heart of all biochemical processes. From the generation of energy to the synthesis of biomolecules, the movement and distribution of electrons govern the reactivity and function of biological systems. Many key biological reactions are, at their core, charge transfer processes—redox reactions where electrons are transferred from one molecule to another. These reactions are often catalyzed by enzymes, which provide the appropriate environment to facilitate electron movement, stabilize intermediates, and control reaction kinetics with remarkable specificity and efficiency.
+\subsection{Dipole Bound Anions}
+When it comes to the theoretical study of DB anions, twochallenges are faced. First, one must use atomic orbital basisfunctions that are sufficiently diffuse to describe the spatialextent of the DB orbital, usually this means using custom basis sets \cite{skurski2000choose}.
+Although the electron boundwithin the DB orbital resides to a large extent far away from theprecursor's valence electrons, it still has a significantly largedispersion-like interaction with the latter electrons to contributesubstantially to the EBE. That is, the DB orbital is quitepolarizable, so it would be expected to have a substantial van derWaals (i.e., dispersion) interaction with other nearby electrondensities\cite{gutowski1996contribution}
+Apart from the esoteric nature of their studies as theoretical objects and in carefuly prepared experiments, dipole bound anions are of great interest due to their presence in various fields, including astrchemistry \cite{fortenberry2015interstellar}, and radiation biology\cite{narayanan2023secondary,sedmidubska2024interaction}. The main interest for them is when the parent molecule also supports a valence anion state. In this case, the DBA can act as a doorway state electrons for the more stable VBA.
 
-One of the most prominent examples of biological electron transfer is the respiratory chain in mitochondria. In this complex pathway, electrons derived from metabolic substrates are transferred through a series of protein complexes and mobile carriers, such as cytochromes and quinones, ultimately reducing molecular oxygen to water. In the process, a proton gradient is generated across the inner mitochondrial membrane, driving ATP synthesis via chemiosmotic coupling. Quinones, in particular, play a central role as redox-active cofactors that shuttle electrons and protons, and their ability to stabilize semiquinone and anionic states is essential to their function.
+When solvent molecules are considered, becaptured by nearby solvent molecules which have undergonereorientation to form a solvation cage around the electron, or (c)be captured by nearby solvent molecules whose instantaneousdipole orientations happen to be favorable to forming a DB state.The latter two cases arise is so-called charge-transfer-to-solvent(CTTS) electronic transitions \cite{bradforth2002excited,chen2000precursors}.
 
-Another striking example is oxygenic photosynthesis, carried out by plants, algae, and cyanobacteria. Light energy is captured by pigment-protein complexes and used to drive electron transfer through the photosynthetic electron transport chain. This process begins with the photoexcitation of chlorophyll in photosystem II and ultimately leads to the reduction of NADP\textsuperscript{+} to NADPH, with the concomitant generation of oxygen from water. The light-induced charge separation and subsequent electron transfer involve multiple cofactors, including chlorophylls, pheophytins, plastoquinones, and iron-sulfur clusters.
+\section{Dipole Bound Anions in Biology}
+The bast majority of research on dipole bound anions has been conducted in gas phase. Related to biological research, the most relevant work has been done on the interaction of dipole bound anions with DNA. The main focus of these studies has been on the radiation damage to DNA \cite{narayanan2023secondary} and the role of dipole bound anions as radiosensitizers \cite{sedmidubska2024interaction}. \\
+Although their existance is debated\cite{anusiewicz2020fate}.
+However, little work has been done to assess their role in natural pathways. It is possible that they could provide an elegant way to regulate long-range electron transfer. Due to their strong dependence on to the surroundings, they could provide.Uracil water \cite{clarke2025role}.
+This has been limited by the expensive methods needed to study these states, only allowing to study small systems.\\
+\subsection{Experimental Studies overview}
+\subsection{overlap with biochemical systems}
+Interactions of electrons with bare and hydrated biomolecules: From nucleic acid bases to DNA segments \cite{gu2012interactions}.
 
-A third biological process involving complex electron dynamics is nitrogen fixation, carried out by nitrogenase enzymes in certain bacteria and archaea. Nitrogenase catalyzes the reduction of atmospheric nitrogen (N\textsubscript{2}) to ammonia (NH\textsubscript{3}), a reaction that requires the delivery of multiple electrons and protons. The enzyme contains a unique metallocluster cofactor (the FeMo-cofactor) that acts as a redox-active site for electron accumulation and N\textsubscript{2} activation. The electron flow is tightly regulated and coupled to ATP hydrolysis, and the mechanistic details of electron transfer and substrate binding remain areas of active research.
+\section{Biological quinones}
+The origin of the name “quinone” itself is interesting. It comes from quinic acid, as quinone was first obtained in the oxidation reaction of this acid, which at its time is obtained from the bark of cinchona and the word ending -one comes from the ketone group (ketone)\cite{chen2024low,rusell1873quinone}. 
+The role of ubiquinones in biological processes cannot be overestimated...\cite{ernster1995biochemical}.
+Quinones are a class of molecules that are ubiquitous in biological systems. Quinones act as electron carriers between different enzymes, facilitating the transfer of electrons and protons in redox reactions. It is generally accepted
+that the isoprenoid side chain of the coenzyme takes part in intermolecular interactions. The mitochondrial Complex I has
+an L-shaped structure. Electrons produced by NADH oxidation are
+transported along the hydrophilic arm through a series of Fe-S
+clusters. The second arm, embedded in the mitochondrial inner
+membrane, provides an amphipathic environment composed of
+charged and hydrophobic ends. The ubiquinone chamber stretches
+through the boundary between the two arms, and recently
+reported free energy profiles unveiled the interplay between the
+interactions of the ubiquinone head and tail. Electron transfer
+takes place as the CoQ 0 head approaches the closest lying cluster,
+labelled N2, while diffusion of the isoprenoid tail along the mitochondrial inner membrane carries the electrons to the subsequent
+stages of aerobic cell respiration. The CoQ 0 head can form hydrogen
+bonds with water molecules (micro-hydration) and nearby amino
+acid residues in the hydrophilic arm, while the tail is responsible for hydrophobic interactions in the membrane, although with some degree of hydration.
 
-These examples illustrate the importance of electrons not just as abstract entities in chemical equations but as physical particles whose location, energy, and interactions must be understood to grasp biological function. Moreover, the existence of short-lived or weakly bound electronic states—such as nonvalence anions—can influence the dynamics of charge transfer processes, radical formation, and enzymatic activity. Understanding these transient electronic states requires experimental and computational tools capable of resolving both structure and electronic behavior on ultrafast timescales.
+Coenzyme Q (ubiquinone) is one of the most common quinones found in nature, and its structure allows for the stabilization of both valence and dipole-bound anionic states. This unique property makes quinones an interesting subject for studying the potential existence and role of nonvalence anions in biological systems.
 
-\subsection{Experimental Approaches for Characterizing Electron Transfer}
+The dipole bound anion in 2-3-dimethoxy-para-benzoquinone (CoQ0), has been observed experimentaly \cite{ameixa2023parent,west2014anion,pshenichnyuk2020ionizing, bull2015anion}. for CoQ1 it is still seen but much weaker, and for CoQ2 it is not. 
 
-Studying such intricate electron-driven processes in biological systems is a challenging task that requires the integration of various experimental techniques. Traditionally, much of our understanding of enzymatic structure and function has come from structural biology. Techniques such as X-ray crystallography, nuclear magnetic resonance (NMR) spectroscopy, and cryo-electron microscopy (cryo-EM) allow researchers to determine the three-dimensional structures of proteins and complexes at atomic resolution. These structures are often deposited in public databases such as the Protein Data Bank (PDB), which provide critical starting points for further analysis.
-
-Beyond static structures, insights into reaction mechanisms and kinetics are obtained through various spectroscopic methods. Ultraviolet-visible (UV-Vis) and infrared (IR) spectroscopy monitor changes in chromophores or functional groups during a reaction, while electron paramagnetic resonance (EPR) and Mössbauer spectroscopy provide information about unpaired electrons and metal centers. Time-resolved spectroscopy, including pump-probe and transient absorption techniques, captures short-lived intermediates in electron transfer processes, revealing their lifetimes and dynamics.
-
-Mass spectrometry has also become a powerful tool in the analysis of biomolecular reactions. It can be used to identify reaction products, post-translational modifications, or radical intermediates with high sensitivity. However, while these experimental approaches provide indispensable data, they often capture only fragments of the complete picture. For example, spectroscopy may detect the presence of a transient intermediate without resolving its precise structure or the detailed path of electron movement between donor and acceptor. Similarly, crystallographic data can sometimes miss critical information—such as the position of hydrogen atoms, associated water networks, or dynamic conformational states—that is essential for understanding electron transfer.
-
-\subsection{Modeling myBiological Electron Dynamics}
-
-Given the limitations of experimental techniques in capturing the full complexity of electron transfer in biology, computational modeling has become an indispensable tool. Starting from experimentally resolved structures from the PDB, researchers apply various theoretical methods to simulate and predict biological behavior across multiple scales.
-
-At the macroscopic level, coarse-grained models and network-based approaches can describe signaling pathways, metabolic fluxes, or cellular dynamics. On the molecular scale, molecular dynamics (MD) simulations are widely used to explore the conformational flexibility of proteins and nucleic acids over time. MD simulations model atoms as classical particles interacting via empirical force fields, allowing the exploration of structural fluctuations, binding events, and diffusion processes. Such simulations provide valuable insight into the dynamic context within which electron transfer occurs.
-
-Recent advances in machine learning have had a profound impact on structural biology. Tools like AlphaFold have dramatically improved our ability to predict protein structures directly from amino acid sequences. Although these models rely on statistical learning methods rather than directly solving physical equations, they generate highly accurate structures that serve as vital starting points for further investigations into electronic properties.
-
-To directly study electron transfer and electron dynamics, quantum mechanical (QM) methods are required. Approaches such as Hartree–Fock theory, density functional theory (DFT), and post-Hartree–Fock methods (e.g., coupled-cluster theory) solve or approximate solutions to the Schrödinger equation, treating electrons explicitly. These techniques reveal detailed information about chemical bonding, charge distribution, and reaction energetics. Despite their high accuracy, the computational cost of QM methods restricts their use to relatively small regions of a larger biological system, such as an enzyme active site or a cofactor.
-
-Hybrid methods, notably quantum mechanics/molecular mechanics (QM/MM) simulations, provide a balance between accuracy and computational feasibility. In these methods, the region of primary interest—where electron transfer occurs—is treated using QM, while the surrounding environment is modeled using classical force fields. This allows a more realistic description of enzymatic reactions, electron transfer events, and proton-coupled mechanisms.
-
-For elusive phenomena like nonvalence anionic states, even more sophisticated methods may be required. Such states, often weakly bound and highly sensitive to the surrounding electrostatic environment, may need advanced techniques that can capture long-range electron correlation and diffuse orbital characteristics. Methods such as equation-of-motion coupled-cluster theory (EOM-CC), Green's function approaches, and electron scattering calculations are sometimes employed to provide accurate descriptions of these transient states. Although these approaches come with significant computational cost, they are essential for uncovering the subtle electronic behavior that underpins key biological functions.
-
-In summary, the integration of multiple modeling techniques—from coarse-grained methods to high-accuracy quantum approaches—enables a multiscale understanding of electron dynamics in biology. This holistic computational framework is crucial for elucidating the mechanisms of electron transfer and the roles played by nonvalence anions in biological systems, ultimately contributing to the broader understanding of enzymatic activity and energy conversion in living organisms.
-
-Molecular anions are species in which a molecule possesses an extra electron, resulting in a negative charge. These systems are pervasive both in the gas phase and in biological environments. In many cases, molecular anions exhibit unusual stability, often persisting on timescales long enough to be isolated or characterized spectroscopically. Nonetheless, they are frequently transient intermediates, acting as precursors or doorway states that lead to further chemical transformations. Their behavior is intricately connected to factors such as molecular geometry, the environment (e.g., solvation or crystal lattice effects), and the energetic characteristics of the extra electron.
-
-\section{Molecular Anions and Their Role in Chemical Processes}
-
-The existence and behavior of molecular anions have been subjects of intense research because they encapsulate the interaction of excess electrons with molecular frameworks. In the gas phase, where perturbations from the environment are minimized, detailed studies have revealed long-lived anionic states that provide insight into intrinsic electron binding energies and the relaxation pathways following electron attachment. In contrast, within biological systems, the local environment, including solvent molecules and protein matrices, plays a significant role in stabilizing or destabilizing these excess electrons. This stabilization can lead to altered reactivities and modified pathways for both electron capture and subsequent chemical reactions.
-
-\subsection{Nonvalence Anions: Diffuse Electronic States and Electron Capture}
-
-Nonvalence anions represent a class of molecular anions where the extra electron occupies a diffuse orbital that is spatially decoupled from the usual valence orbitals of the molecule. This field, which emerged prominently among quantum chemists in the 1970s, has significantly advanced our understanding of electron localization in weak binding regimes.
-
-\subsubsection{Characteristics and Formation}
-
-In nonvalence anions, the additional electron is loosely attached, often residing in a highly diffuse orbital that extends well beyond the molecular skeleton. This leads to unique electronic states that differ markedly from those derived from traditional valence shell configurations. Because of the weak binding, nonvalence anions are extremely sensitive to external electric fields and the dielectric properties of their surroundings. 
-
-\subsubsection{Role as Doorway States}
-
-One of the most exciting aspects of nonvalence anions is their role as doorway states for electron capture processes. In many reactions, particularly those involving biological macromolecules, these states can serve as transient intermediates that facilitate the capture and eventual stabilization of electrons. An exemplar of this behavior is the solvated electron in water, where a nearly free electron is stabilized by a network of polar molecules. The interplay between nonvalence and valence electronic states in these systems can significantly influence reaction pathways and energy transfer processes.
-
-\subsection{Dipole Anions: Formation, Stability, and Experimental Debate}
-
-Dipole-bound anions are a subset of molecular anions that rely on the permanent dipole moment of a molecule for electron stabilization. When a molecule exhibits a sufficiently large dipole moment—typically exceeding a critical threshold that depends on the molecular structure and polarizability—the electrostatic potential can capture an excess electron in a diffuse orbital\cite{jordan2003theory}.
-
-\subsubsection{Critical Dipole Moment and Formation Criteria}
-
-The formation of a dipole-bound anion depends critically on the magnitude of the molecular dipole moment. Theoretical models predict that once the dipole moment surpasses a certain critical value (generally in the range of 2.5 to 2.8 Debye), the electron is capable of being bound in a diffuse orbital. Experimental investigations in the gas phase have confirmed the formation of dipole-bound states for a variety of molecules, revealing subtle dependencies on molecular geometry and polarizability.
-
-\subsubsection{Stability and Relevance in Different Phases}
-
-Despite their apparent stability in isolated gas-phase experiments, dipole-bound anions are often very short-lived species. Their transient nature arises due to the weak binding energy of the extra electron, making these states highly susceptible to perturbations such as collisions or solvation effects. While extensive studies have been conducted in the gas phase, the existence and stability of dipole-bound anions in solvated or biological environments remain topics of ongoing debate. In polar solvents, the competition between solvation stabilization and charge delocalization leads to complex behavior, and the experimental evidence for dipole-bound states in such systems is not always consistent.
-
-\subsection{Conclusion}
-
-In summary, molecular anions—encompassing both nonvalence and dipole-bound varieties—serve as key intermediates and transient states in a range of chemical and biological processes. Their unique electronic structures and sensitivities to their environments not only challenge our understanding of electron-molecule interactions but also provide critical insights into the mechanisms underlying electron capture and transfer. Continuing research in this field is essential for advancing our knowledge of fundamental chemical processes, with implications spanning from atmospheric chemistry to biological electron transfer and beyond.
-
-
-
-\section{Electrons in Biology}
-\ldots
-Explain reactions in biology, charge transfer reaction... Electrons are essential. Most reactions are conducted by enzymes... Some importnat pathways as respiratory chain (mention quinones), photosinthesis, nitrogenase...
-\subsection{How do We Get Knowledge About these systems?}
-How do we study enzymes... Protein crystalography, NMR etc... Structures are stored in the PDB... Can study by kinetics reactions by spectroscopy, mass spectroscopy... But experimental methods cannot ptovide the complete picture by themselves\dots
-
-\subsection{How do we model biology}
-Starting from the structures from the PDB, meny methods have been developed MD, AI (AlphaFold), QM... Each method seerves to provide a different view of the problem (kynetics, structure, thermodynamics...). Each method treats a different scale at different costs and accuracies... To model electron and electron dynamics we need high accuracy and costly methods...
-
-\section{Molecular Anions}
-Explain what is a molecular anion, how they exist in gas phase and in biology. They long lived times. They are usually transient species in time leading to other products.
-\ldots
-\subsection{Nonvalence Anions}
-A field developed by quantum chemists from the 70s, the electron resides in a diffuse orbital. They are low energy lying stes that are very interesting when convined with a valence anion stat. They can act as doorway state to electron capture... Types of nonvalence anions. Examples of importnat systems as the solvated electron in water.
-\ldots
-\subsection{Dipole Anions}
-\ldots
-Explain dipole bond anions. Critical dipole moments, again explain they are shortlived species. They have been studied in the gas phase extensively and there is debate on their existance in solvated systems.
-\section{Do Non-valence Anions Play a Critical Role in Biology?}
-Extensive wotk related to radiation damaga to the DNA as well as investigation on radiosesitizers... However little has been done in trying to asses their role in natural pathways. They could provide an elegant way to regulate long range electron transfer.
-A reason for its little investigation is the high cost of the needed methods to study them (CCSD, CASSCF...), and the little overlap between the research fields of the fields involved... This work aims to bridge this gap... 
-\ldots
-\subsection{Biological Quinones}
-Quinones are a class of molecules that are everywhere in biology... they are essential to electron transfer pathways such as the respitatory chain and photosinthesis., They act as electron carriers between different enzimes... Coenzyme Q is one of the most common quinone... It presents a very interesting structure to study the role of nonvalence anions as it suports both a valence anion and dipole anion... It is possible that these states are not useful as they are very widespread but we want to asses the feasibility of their existance... 
-\ldots
-
-\section{Remove from here on}
+\section{Research Goals}
 
 % Some dummy code show how to include images.
 \begin{figure}[th!]

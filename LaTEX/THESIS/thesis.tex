@@ -1,16 +1,4 @@
-%\documentclass[showinstructions,faculty=firw,department=cws,phddegree=cws,helveticaneue]{adsphd}
 \documentclass[showinstructions,doctoralschool=sci,faculty=dc,department=che,phddegree=tccm]{adsphd}
-%\documentclass[showinstructions,faculty=firw,department=cws,phddegree=cws,doctoralschool=ads]{adsphd}
-%\documentclass[showinstructions,showlabels,coverfontpercent=100,faculty=firw,department=cws,phddegree=cws]{adsphd}
-%\documentclass[croppedpdf,showinstructions,faculty=firw,department=cws,phddegree=cws]{adsphd}
-%\documentclass[online,faculty=firw,department=cws,phddegree=cws]{adsphd}
-%\documentclass[print,bleed,cropmarks,faculty=firw,department=cws,phddegree=cws]{adsphd} % include bleed for the print service
-%\documentclass[print,faculty=firw,department=cws,phddegree=cws]{adsphd}
-%\documentclass[final,faculty=firw,department=cws,phddegree=cws]{adsphd}
-%\documentclass[showinstructions,faculty=firw,department=cws,phddegree=cws,epub]{adsphd}
-%\documentclass[showinstructions,faculty=firw,department=cws,phddegree=cws,joint]{adsphd}
-
-
 % !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 % !!                                                               !!
 % !!  WARNING: do not remove the following lines between           !!
@@ -19,17 +7,17 @@
 % !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 %%% COVER: Settings %%%
-\title{A very cool Title:}
-\subtitle{An even cooler subtitle}
+\title{Computational Exploration of Non-Valence Anions from Biological Quinones}
+\subtitle{A Second Order Approximate Coupled Clouster Study}
 
 \author{Mauro}{Gascón Navas}
 
+\supervisor{Robin Moorby}{}
 \supervisor{Prof.~Dr.~Thomas Jagau}{}
-\supervisor{Prof.~dr.~ir.~S.~Leader}{}
-\president{Prof.~dr.~ir.~The~Chairman}{}
-\jurymember{Prof.~dr.~ir.~The~One}{}
-\jurymember{Prof.~dr.~ir.~The~Other}{}
-\externaljurymember{Prof.~dr.~External~Jurymember}{Far Away}
+\president{}{}
+\jurymember{Prof. Jeremy N. Harvey}{}
+\jurymember{Dr. Mariana Telles do Casal}{}
+\externaljurymember{}{}
 
 % Your research group within the department
 % e.g. DTAI, MICAS
@@ -102,15 +90,17 @@
 
 
 % BibLaTeX
-%\usepackage[utf8]{inputenc}
-%\usepackage{csquotes}
-%\usepackage[
-  %hyperref=auto,
-  %mincrossrefs=999,
-  %backend=biber,
-  %style=authoryear-icomp
-%]{biblatex}
-%\addbibresource{allpapers.bib}
+\usepackage[utf8]{inputenc}
+\usepackage{csquotes}
+\usepackage[
+  sorting=none,
+  hyperref=auto,
+  mincrossrefs=999,
+  maxbibnames=999,
+  backend=biber,
+  style=numeric,
+]{biblatex}
+\addbibresource{allpapers.bib}
 
 % Fonts
 \usepackage{textcomp} % nice greek alphabet
@@ -129,7 +119,6 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{document}
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \makefrontcoverXXIV
@@ -154,7 +143,7 @@
 %    \includenomenclature{nomenclaturechapter}
 % 2. automatic generation via the nomencl package
 %    \nomenclature[cB]{$c_B(\vec{x})$}{Characteristic function of $B$}
-\myprintnomenclature
+%\myprintnomenclature
 
 \tableofcontents
 \listoffigures
@@ -165,7 +154,7 @@
 \mainmatter % to get \pagenumbering{arabic}
 
 % Show instructions on a separate page
-\instructionschapters\cleardoublepage
+%\instructionschapters\cleardoublepage
 
 \includechapter{introduction}
 \includechapter{theory}
@@ -184,11 +173,11 @@
 
 \includebibliography
 % BibTex
-\bibliographystyle{acm}
-\bibliography{allpapers}
+%\bibliographystyle{acm}
+%\bibliography{allpapers}
 % BibLatex (comment out lines above and uncomment biblatex lines in preamble)
-%\printbibliography[title=\bibname]
-%\instructionsbibliography
+\printbibliography[title=\bibname]
+\instructionsbibliography
 
 
 

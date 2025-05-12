@@ -1,12 +1,12 @@
 reset
 
 #variables for the plot
-filename = 'Q0.dat' 
+filename = 'Q1.dat' 
 ncontour = 6
 space_width = 30
 offset = 75
-set terminal cairolatex size 2.6, 2.475
-set output 'Q0_d.tex'
+set terminal cairolatex size 2.8 ,2.9
+set output 'Q1_d.tex'
 
 # Write gawk script to file
 gawk_script = 'cont_temp.awk'
@@ -48,7 +48,7 @@ zstep = (zmax - zmin) / ncontour
 set dgrid3d 200,200 splines # denser grid and some smoothing
 set contour base
 #set cntrparam level incremental zmin, zstep, zmax
-set cntrparam levels discrete 0.5, 1.0, 1.5, 2, 2.5, 3, 3.15
+set cntrparam levels discrete 0.5, 1.0, 1.5, 2, 2.5, 3, 3.3
 unset surface
 set table 'cont.dat'
 splot filename using 1:2:8
@@ -61,7 +61,6 @@ reset
 set xrange [-180:180]
 set yrange [-180:180]
 unset ytics
-unset xtics
 unset key
 
 # line styles
@@ -69,13 +68,11 @@ set palette defined ( 0 '#F7FCF5', 1 '#E5F5E0', 2 '#C7E9C0', 3 '#A1D99B', 4 '#74
 
 set size ratio -1
 
-#set xlabel '{\normalsize $\Phi$}'
+set xlabel '{\normalsize $\Phi$}'
 set title '{Dipole Strength (D)}'
 unset colorbox
 set rmargin 0
-set lmargin 0.8
-set tmargin 2.5
-set bmargin 0 
+set lmargin 0.1
 
 # Plot
 l '<'.sprintf('gawk -f %s cont.dat 0 %d %d 1', gawk_script, space_width, offset)

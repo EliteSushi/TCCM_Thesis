@@ -5,7 +5,7 @@ filename = 'Q0.dat'
 ncontour = 8
 space_width = 20
 offset = 50
-set terminal cairolatex size 2.7 ,2.9
+set terminal cairolatex size 2.6 ,2.45
 set output 'Q0_E.tex'
 
 # Write gawk script to file
@@ -43,7 +43,7 @@ set table 'test.dat'
 splot filename using 1:2:(($4 - Z_min)*Eh2meV)
 unset table
 
-set dgrid3d 200,200 splines
+set dgrid3d 120,120 splines
 set contour base
 #set cntrparam level incremental zmin, zstep, zmax
 set cntrparam levels discrete 50, 100, 200, 300,400, 500, 565
@@ -57,18 +57,22 @@ unset dgrid3d
 reset
 set xrange [-180:180]
 set yrange [-180:180]
+unset xtics
 unset colorbox
 unset key
 
 
 #set palette defined (0 '#00007F', 1 '#0000FF', 2 '#007FFF', 3 '#00FFFF', 4 '#7FFF7F', 5 '#FFFF00', 6 '#FF7F00', 7 '#FF0000')
 set palette defined (0 '#0000FF', 1 '#6666FF', 2 '#3399FF', 3 '#00FFFF', 4 '#7FFF7F', 5 '#FFFF00', 6 '#FF7F00', 7 '#FF0000')
-set size ratio -1
-set xlabel '$\Phi$'
-set ylabel '$\Psi$' offset 2, 0
+set size ratio 1
+set xlabel '{\normalsize $\Phi$}'
+set ylabel '{\normalsize $\Psi$}' offset 2, 0
 set title 'Conformational Energy (meV)'
-set lmargin 2.5
 set rmargin 0
+set lmargin 3.5
+set tmargin 2.5
+set bmargin 0 
+
 
 # Plot
 l '<'.sprintf('gawk -f %s cont.dat 0 %d %d 1', gawk_script, space_width, offset)
