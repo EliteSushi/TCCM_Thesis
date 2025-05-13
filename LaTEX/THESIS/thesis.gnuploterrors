@@ -1,9 +1,0 @@
-
-set terminal latex rotate
-             ^
-"./thesis-gnuplottex-fig1.gnuplot" line 1: warning: unknown or ambiguous terminal type; type 'set terminal' for a list
-
-set terminal latex rotate
-                   ^
-"./thesis-gnuplottex-fig1.gnuplot" line 1: unexpected or unrecognized token: rotate
-
