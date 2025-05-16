@@ -42,3 +42,4 @@ Makefile
 *.blg
 *.tgz
 VERSION
+*gnuploterrors

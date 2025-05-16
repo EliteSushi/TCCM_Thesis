@@ -66,7 +66,7 @@
 %%% COVER: End settings %%%
 
 % for the nomenclature (comment out if you do not use the nomencl package
-\usepackage{nomencl}   % For nomenclature
+\iffalse \usepackage{nomencl}   % For nomenclature
 \renewcommand{\nomname}{List of Symbols}
 \newcommand{\myprintnomenclature}{%
   \cleardoublepage%
@@ -74,7 +74,7 @@
   \chaptermark{\nomname}
   \addcontentsline{toc}{chapter}{\nomname} %% comment to exclude from TOC
 }
-\makenomenclature%
+\makenomenclature \fi
 
 % for the list of abbreviations (comment out if you do not use the glossaries package
 \usepackage{glossaries} % For list of abbreviations
