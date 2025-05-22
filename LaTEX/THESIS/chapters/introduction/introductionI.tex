@@ -1,106 +1,127 @@
 % !TeX root = ../../thesis.tex
 \chapter{Introduction}\label{ch:introduction}
 
-This chapter provides an overview of non-valence anions in general and particularly dipole bound anions. The current research that has viewd the presence of both dbas and biological systems is presented. it then presents the system of interest, biological quinoones, and their role in biological process. Ffinally the research goals are especified.
+This chapter aims to provide an overview of non-valence anions, with a specific emphasis on dipole-bound anions (DBAs). The relevance of these anions in biological systems is explored, followed by an introduction to the system of interest, namely biological quinones, and their critical role in biological processes. Finally, the research objectives are outlined.
 
-\section{Nonvalence Anions}
-Anions are molecules with an excess electron. Anions generally require specific care in terms of their ab initio description because of the more diffuse nature of the valence
-orbitals \cite{simons2008molecular,simons2023molecular}. The first conception of the NBS was given in 1947 by Fermi and Teller, who predicted that an excess electron could be held by a non-rotating dipole field of a neutral core if its dipole moment exceeds 1.625 D \cite{fermi1947capture}.
-Nonvalence Bound States (NBS) \newglossaryentry{nbs}{name={NBS},description={Nonvalence Bound State}} represent a class of molecular anions where the extra electron occupies a diffuse orbital that is spatially decoupled from the usual valence orbitals of the molecule.\cite{jordan2003theory}. The nature of electron-binding
-force in NBS has been an intensively studied subject in both experimental and theoretical manners. A NBS is often classified into dipole-bound state (DBS)\newglossaryentry{NBS}{name={DBS},description={Dipole-Bound State}}, quadrupole-bound state (QBS), or correlation-bound state (CBS), depending on the long range intereaction mainly responisble for the binding of the excess electron \cite{abdoul1998electrons}.
-These have been studied extensively by spectroscopic means in the gas phase in the last years, they have weaken a lot of interest \cite{kang2024reaction}.
-Solvated electrons could be considered a nonvalence state the main theory and observations point to the electron residing in a cavity of 2.5 \r{A} \cite{herbert2017hydrated}.
+\section{Non-Valence Anions}
+An anion is an atom or a molecule containing one or more excess electrons.The binding of an excess electron to a neutral molecule can be understood as a competition between the attractive potential of the excess electron to the nuclei and the repulsive forces from the neutral molecule's electrons. Unlike valence electrons in neutral species, these "extra" electrons do not experience a -1/r Coulombic attraction at large distances and instead interact through weaker charge-multipole potentials, which are weaker than the covalent bonds that hold the molecule together \cite{simons2008molecular, herbert2015quantum}.
 
-\subsection{Dipole Bound Anions}
-When it comes to the theoretical study of DB anions, twochallenges are faced. First, one must use atomic orbital basisfunctions that are sufficiently diffuse to describe the spatialextent of the DB orbital, usually this means using custom basis sets \cite{skurski2000choose}.
-Although the electron boundwithin the DB orbital resides to a large extent far away from theprecursor's valence electrons, it still has a significantly largedispersion-like interaction with the latter electrons to contributesubstantially to the EBE. That is, the DB orbital is quitepolarizable, so it would be expected to have a substantial van derWaals (i.e., dispersion) interaction with other nearby electrondensities\cite{gutowski1996contribution}
-Apart from the esoteric nature of their studies as theoretical objects and in carefuly prepared experiments, dipole bound anions are of great interest due to their presence in various fields, including astrchemistry \cite{fortenberry2015interstellar}, and radiation biology\cite{narayanan2023secondary,sedmidubska2024interaction}. The main interest for them is when the parent molecule also supports a valence anion state. In this case, the DBA can act as a doorway state electrons for the more stable VBA.
+The binding energy of the excess electron is often significantly lower than the ionization energy of the neutral molecule. This makes the molecule undergo changes, ranging from a geometry relaxation, to chemical reaction with the surrounding species.
+In discussing molecular anions, the concept of electron affinity (EA) is fundamental. On one hand, the adiabatic electron affinity (AEA) quantifies the energy difference between the parent molecule and its corresponding anion, with both species in their electronic ground states and lowest rovibrational levels. On the other hand, the vertical electron affinity (VEA), is defined at the neutral equilibrium geometry, and is specially relevant for the dynamics of the electron capturing process. A molecule possessing a positive EA is considered electronically stable, as it necessitates an input of energy to remove an electron from the anionic state \cite{simons2008molecular}.
 
-When solvent molecules are considered, becaptured by nearby solvent molecules which have undergonereorientation to form a solvation cage around the electron, or (c)be captured by nearby solvent molecules whose instantaneousdipole orientations happen to be favorable to forming a DB state.The latter two cases arise is so-called charge-transfer-to-solvent(CTTS) electronic transitions \cite{bradforth2002excited,chen2000precursors}.
+Molecular anions can be classified into two distinct categories: valence anions, where the excess electron occupies a compact orbital similar to the other valence molecular orbitals, and non-valence anions (NVA) \newglossaryentry{nva}{name={NVA},description={Non Valence Anion}}, where the excess electron occupies a diffuse orbital spatially separated from the molecule. Non-valence anions are further categorized based on the predominant long-range interaction responsible for electron binding: dipole-bound states (DBS), quadrupole-bound states (QBS), and correlation-bound states (CBS). Note that they do not have a rigurous definition, and a NVA is usually stabilized by range of interactions \cite{simons2008molecular,herbert2015quantum,abdoul1998electrons,simons2023molecular,jordan2003theory}. In Figure \ref{fig:AnionTypes}, examples of diffrent types of anions are shown.
 
-\subsection{Approaches to study Non-Valence Anions}
-In recent years, significant progress has been made in both experimental and theoretical approaches aimed at elucidating the structure and dynamics of non-valence bound states (NBS) of anions. Experimentally, the development of high-resolution photodetachment and photoelectron spectroscopies—particularly when combined with cryogenically cooled ion traps and velocity-map imaging—has allowed the detailed characterization of the rovibrational structure of NBS. These methods have proven especially powerful in resolving sharp Feshbach resonances associated with metastable NBS levels and in distinguishing vibrational autodetachment channels via mode-specific analysis (“Reaction dynamics of the nonvalence bound states of the anions”).
-
-In addition to frequency-domain methods, the advent of time-resolved pump-probe photoelectron spectroscopy has enabled direct access to the ultrafast dynamics of electron detachment and transfer processes in NBS. Femtosecond and picosecond time resolution has made it possible to monitor, in real time, the evolution of the excess electron, including its transition from non-valence to valence orbitals and its coupling to specific nuclear motions. Notably, electron transfer from dipole-bound to valence-bound states has been observed to occur on sub-picosecond timescales in nucleobase-containing clusters, revealing the role of NBS as transient intermediates in electron-driven processes (“Reaction dynamics of the nonvalence bound states of the anions”). Picosecond-resolved measurements have further enabled quantification of autodetachment lifetimes in a mode-specific manner, as shown in the phenoxide and 4-cyanophenoxide systems, where significant variations in autodetachment rates were linked to vibrational symmetry and dipole/quadrupole interactions.
-
-Theoretical investigations have complemented and guided these experimental efforts. High-level quantum chemical methods, including equation-of-motion coupled-cluster (EOM-CC) \cite{jordan2003theory,paran2024performance} and density functional theory (DFT) \cite{thiam2023accurately}, are employed to model the diffuse nature of nonvalence orbitals and the role of electron correlation (“Molecular Anions Perspective”).
-
-Quantitative modeling of autodetachment processes has been framed within Fermi's golden rule, where the detachment rate depends critically on the derivative of the electron-binding potential with respect to nuclear displacement. For DBS, the relevant coordinate dependence of the dipole moment correlates with infrared activity, offering a predictive framework for mode-specific detachment behavior. In QBS, the situation is more complex, involving gradients of the quadrupole tensor, and resulting in distinct angular dependencies of the electron detachment dynamics. In systems with high polarizability, induced dipoles and their interplay with static dipoles can lead to significant modifications in the effective binding potential. This effect has been proposed to explain unusually slow autodetachment rates in para-halogen-substituted phenoxide anions, where the cancellation between static and induced dipole derivatives suppresses vibrational autodetachment rates (“Reaction dynamics of the nonvalence bound states of the anions”).
-
-Collectively, the integration of high-resolution spectroscopy with advanced theoretical models has enabled a nuanced understanding of the binding and dynamic behavior of NBS. These approaches provide not only precise spectroscopic fingerprints of non-valence bound anions but also deep insights into the quantum mechanical couplings underlying their formation and decay, establishing NBS as pivotal intermediates in electron-driven chemical processes.
-
-\section{Non Valence Anions in Biology}
-The bast majority of research on dipole bound anions has been conducted in gas phase. Related to biological research, the most relevant work has been done on the interaction of dipole bound anions with DNA. The main focus of these studies has been on the radiation damage to DNA \cite{narayanan2023secondary} and the role of dipole bound anions as radiosensitizers \cite{sedmidubska2024interaction}. \\
-The existance of NBS in condensed matter is still debated. For instance, A QM study of the effects of hydration on the DB state of a model polar species showed that the excess electron migrates into an orbital localized on the outer surface of the water solvent cage \cite{anusiewicz2020fate}. However, it has been experimentaly shown that a DBS is not destroyed by the presence of an alkyl chain \cite{castellani2019stability}. Another study found that a DBS mediated doorway mechanism exists in both microsolvated and bulk-solvated uracil-DEG systems \cite{narayanan2024electron} Ths leads to the questions of can the NBS survive in the bulk? In an apolar solvent, the density of molecules is too large and the excluded volume will not allow a DBS to exist. In polar solvents, the solvent itself can provide a dipolar stabilisation as is the case for charge-transfer-to-solvent (CTTS) states,\cite{bradforth2002excited,chen2000precursors} which may be viewed as a DBS. However, much of biology exists as softmatter, for which the molecular density can be much lower. For example, proteins contain large vacant pockets, which
-could accommodate a DBS that may have small molecular
-fragments poking into it.
-
-Little work has been done to assess their role in natural pathways. It is possible that they could provide an elegant way to regulate long-range electron transfer. Due to their strong dependence on to the surroundings, they could provide.Uracil water \cite{clarke2025role}.
-This has been limited by the expensive methods needed to study these states, only allowing to study small systems.\\
-\subsection{overlap with biochemical systems}
-Interactions of electrons with bare and hydrated biomolecules: From nucleic acid bases to DNA segments \cite{gu2012interactions}. 
-It has been sugested that the dipole bound anions could be importnat in the cases of flavines \cite{matthews2018observation}
-
-\section{Biological quinones}
-To trace this history from its source we must go back to 1785, when an apothecary of the name of Hofmann obtained the calcium salt of an acid called quinic acid from Cinchona bark. This acid is now known to be of common occurrence in plants ; it exists in the bilberry and in coffee, in holly, ivy, oak, elm, and ash leaves, and probably many other leaves. Liebig also prepared the calcium salt, and was the first to give a complete analysis... he proposed in place of it the name quinone, by which it is still known
-The origin of the name “quinone” itself is interesting. It comes from quinic acid, as quinone was first obtained in the oxidation reaction of this acid, which at its time is obtained from the bark of cinchona and the word ending -one comes from the ketone group (ketone)\cite{chen2024low,rusell1873quinone}. 
-The role of ubiquinones in biological processes cannot be overestimated...\cite{ernster1995biochemical}.
-
-\subsection{Role of Quinones}
-Quinones are a class of molecules that are ubiquitous in biological systems. Quinones act as electron carriers between different enzymes, facilitating the transfer of electrons and protons in redox reactions. 
-
-\subsection{Structural aspects of ubiquinone}
-
-It is generally accepted
-that the isoprenoid side chain of the coenzyme takes part in intermolecular interactions. The mitochondrial Complex I has
-an L-shaped structure. Electrons produced by NADH oxidation are
-transported along the hydrophilic arm through a series of Fe-S
-clusters. The second arm, embedded in the mitochondrial inner
-membrane, provides an amphipathic environment composed of
-charged and hydrophobic ends. The ubiquinone chamber stretches
-through the boundary between the two arms, and recently
-reported free energy profiles unveiled the interplay between the
-interactions of the ubiquinone head and tail. Electron transfer
-takes place as the CoQ 0 head approaches the closest lying cluster,
-labelled N2, while diffusion of the isoprenoid tail along the mitochondrial inner membrane carries the electrons to the subsequent
-stages of aerobic cell respiration. The CoQ 0 head can form hydrogen
-bonds with water molecules (micro-hydration) and nearby amino
-acid residues in the hydrophilic arm, while the tail is responsible for hydrophobic interactions in the membrane, although with some degree of hydration.
-
-Coenzyme Q (ubiquinone) is one of the most common quinones found in nature, and its structure allows for the stabilization of both valence and dipole-bound anionic states. This unique property makes quinones an interesting subject for studying the potential existence and role of nonvalence anions in biological systems.
-
-The dipole bound anion in 2-3-dimethoxy-para-benzoquinone (CoQ0), has been observed experimentaly \cite{ameixa2023parent,west2014anion,pshenichnyuk2020ionizing, bull2015anion}. for CoQ1 it is still seen but much weaker, and for CoQ2 it is not. 
-
-\section{Research Goals}
-
-% Some dummy code show how to include images.
-\begin{figure}[th!]
+\begin{figure}[h]
   \centering
-  \medskip
-  \includegraphics[width=.9\textwidth]{sine}
-  \caption[Short caption for Table of Figures]{Illustration of how to
-  include a figure (long text, should not go to Table of Figures).}
-  \label{fig:sine}
+  \begin{minipage}[b]{0.27\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{chapters/introduction/image/vbaDNA.png}
+    \small\emph{Valence anion}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[b]{0.30\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{chapters/introduction/image/dbaDNA.png}
+    \small\emph{Dipole-bound anion}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[b]{0.27\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{chapters/introduction/image/hf3.png}
+    \small\emph{(HF)\textsubscript{3} solvated electron}
+  \end{minipage}
+  \caption[Valence and Non-Valence Anions]{Valence and Non-Valence Anions, a) and b) are reproduced from \cite{dutta2015electron}, c) from \cite{jordan2003theory}.}
+  \label{fig:AnionTypes}
 \end{figure}
 
-%Add list of symbols and abbreiations here:
-% Some dummy code to get at least 1 entry in the nomenclature.
-%\nomenclature{$\Theta$}{A nice symbol}
-Introducing some symbol: $\Theta$.
+\subsection{Dipole-Bound Anions}
+From the types of non-valence anions, dipole-bound anions (DBAs) are the most common and well-studied. The initial theoretical framework for non-valence bound states was proposed in 1947 by Fermi and Teller, who demonstrated that a dipole could bind an excess electron if the dipole moment surpasses 1.625 D \cite{fermi1947capture}. Further investigations refined the concept applying to "real" molecules, leading to a critical dipole moment of around 2.5 D\cite{jordan2003theory}. 
 
-% Some dummy code to get at least 1 entry in the list of
-% abbreviations.
-\newglossaryentry{md}{name={MD},description={molecular dynamics}}
-Introducing an acronym: \gls{md}.
+Their "weak" forces that support the binding of the excess electron are responsible for the diffusive nature of the associated orbitals, often extending several \r{A} from the neutral molecule, as well as their relative low energy, usually lower than 0.1 eV. This characteristic renders them particularly susceptible to external perturbations, such as solvent interactions or external electric fields, which can significantly influence their stability and reactivity \cite{simons2008molecular,herbert2015quantum,jordan2003theory}.
 
-\begin{figure}[th!]
+Given that DBAs are bound with an energy in the range of the thermal energy ($k_bT\,\sim\,23$ meV), they may appear to be a theoretical curiosity with limited prectical relavance, whose fate is to undergo a rapid autodetachment. However, some systemscan undergo an nonadiabatic transition to a stable valence anion state\cite{herbert2015quantum,jordan2003theory}. In this sense, the DBSs act as "Doorway" states for electron capture and transfer processes\cite{sommerfeld2002coupling,jordan2003theory,kang2024reaction}. This behaviour has made DBA to spawn interest in diverse fields from astrochemistry \cite{fortenberry2015interstellar} to radiation biology \cite{narayanan2023secondary,sedmidubska2024interaction}.
+
+\subsection{Approaches to Study Non-Valence Anions}
+Significant advancements have been achieved in experimental and theoretical methodologies for elucidating the structure and dynamics of NVas. Experimentally, Dipole-bound anions are characterized using a combination of spectroscopic and mass spectrometric techniques designed to probe their weakly bound electronic states\cite{simons2008molecular}. In photodetachment and photoelectron spectroscopies, a beam of anions is generated—often using a laser vaporization or electrospray source—and then intersected with a photon beam. The energy of the ejected electrons reveals information about the electron binding energy and electronic structure. Time-resolved photoelectron spectroscopy (TRPES) extends this approach by using ultrafast laser pulses to investigate the dynamics of electron attachment and detachment on femtosecond timescales, revealing transient states and relaxation pathways\cite{clarke2024dynamics}. DBS can also be accessed by Rydberg electrontransfer spectroscopy, which has been used to probe their role in electron transfer dynamics\cite{bradforth2002excited}. Time-of-flight mass spectrometry is often coupled with these techniques to identify and isolate the correct anionic species. 
+
+The theoretical investigation of DBAs presents two primary challenges. The first problem is related to the large spatial extent of the DB orbital, atomic orbital basis sets must be sufficiently diffuse to accurately describe, necessitating the use of custom basis sets \cite{skurski2000choose}. The second problem is related to the electron correlation, although the electron in the DB orbital resides predominantly far from the precursor's valence electrons, the DB orbital is considerably polarizable due to its diffuse nature and it exhibits significant dispersion-like interactions with the other valence electrons, contributing substantially to its binding energy. \cite{simons2008molecular,simons2023molecular,gutowski1996contribution}.\\
+
+Regarding the computational methods to employ, standard density functional theory (DFT) approaches can fail due to their inadequate treatment of the highly diffuse electron density and can suffer from spin contamination in open-shell systems and require a careful selection of the exchange-correlation functional \cite{thiam2023accurately}. Alternatively, multiconfigurational methods like complete active space self-consistent field (CASSCF) can address the multiconfigurational nature of these systems, but require considerable expertise in selecting an appropriate active space that balances accuracy and computational feasibility. Currently, equation-of-motion coupled-cluster (EOM-CC) methods, represent the standard for DBA modeling as they adequately capture both electron correlation effects and open-shell character. However, the high computational cost of EOM-CC approaches significantly limits their applicability to larger molecular systems.\cite{herbert2015quantum,jordan2003theory}. To solve this, some approximate methods have been devoloped, such as the second order approximate CC \cite{christiansen1995second}- which used in this work, or the domain-based pair natural implementation (DLPNO) method \cite{haldar2020multilayer}.
+
+\subsection{Non-Valence Anions In Condensed Matter}
+
+Several studies have shown that the presence of individual molecules nteracting with a molecule suporting an NVAs, can further stabilize the state by strengthening the total dipole moment, or by combining the individual moments, to form a "cabity", where the electron resides. The excess electron is stabilized by the collective interaction with multiple solvent molecules, rather than binding to any individual molecule, and it is known as a solvated electron.\cite{jordan2003theory,herbert2015quantum,jalbout2001dipole,clarke2025role}. The binding energy of such solvated electrons can increase dramatically with cluster size; while a water dimer anion (H\textsubscript{2}O)\textsubscript{2}\textsuperscript{-} exhibits a very weak vertical detachment energy (VDE) of only 0.045 eV, water cluster anions (H\textsubscript{2}O)\textsubscript{n}\textsuperscript{-} with approximately 80--100 molecules can achieve VDEs exceeding 2.0 eV. A weakly bound non-valence state transforms into a strongly bound electronic species with significantly altered properties\cite{herbert2015quantum}. In bulk, the hydrated electron is bound at 2.2 eV\cite{jordan2003theory,herbert2017hydrated}. The structure of the state was subject of much debate in the literature\cite{herbert2017hydrated,jordan2003theory}, but it is now generally accpted that the excess electron resides in a cavity of approximately 2.5 \r{A} in size \cite{herbert2017hydrated}. 
+
+In solution, the existance of the a hydrated DBA is still a matter of debate\cite{anusiewicz2020fate,castellani2019stability}. The survival of NBS in condensed matter remains a subject of debate. Computational studies suggest that hydration influences the localization of the excess electron, often displacing it onto the solvent cage's surface \cite{anusiewicz2020fate}. Conversely, experimental evidence indicates that alkyl chains do not disrupt DBS stability \cite{castellani2019stability}, and DBS-mediated mechanisms have been observed in solvated uracil systems \cite{narayanan2024electron}. The viability of NBS in bulk systems depends on the molecular density and polarity of the medium. While solvents may hinder DBS existence due to excluded volume effects, also stabilize DBS through Van der Waals interactions\cite{bradforth2002excited,chen2000precursors}. Distinct scenarios can be considered in the interaction between a DBA suporting molecule and solvent; be localized in the NVA orbital, be captured by the solvent to cage, or interact with solvent molecules whose instantaneous dipole orientations stabilize the DB state. The latter two phenomena are linked to charge-transfer-to-solvent (CTTS) electronic transitions and is observed experimentaly \cite{simons2023molecular,bradforth2002excited,chen2000precursors}.
+
+\subsection{Non-Valence Anions in Biological Systems}
+Expand this section explaining more about the DNA and radiosenitizers. End with some sentences about the experimants w quinones.
+Research on DBAs has predominantly focused on gas-phase systems. In biological contexts, DBAs have been studied for their interactions with DNA, particularly in radiation damage and radiosensitization \cite{gu2012interactions,narayanan2023secondary,sedmidubska2024interaction}. 
+
+Studies on electron interactions with biomolecules, both in bare and hydrated states, have highlighted the significance of DBAs in biological systems. The role of NVAs in natural biological pathways outside genetic damage remains largely unexplored. Their sensitivity to environmental factors suggests potential applications in regulating long-range electron transfer processes. It has been suggested that in proteins, vacant pockets could be capable of accommodating non-valence states \cite{castellani2019stability}.\\
+\textbf{expand this section with electron transfer in proteins and more discussion?}
+Most studies related to the biological importance of these NVAs are doen related to DNA, in this study, we aim to focus other biological trgets, which could use an interplay between NVAs and valence bound electrons. A compound that is ubiquitous in nature and which structure is interesting to be subject to study is ubiquinone.
+
+\iffalse DBAs have been used as the explanaiton for the presence of methil functional groups electron of flavins \cite{matthews2018observation}; they would disrupt that state, making the \fi
+
+\section{Biological Quinones}
+Quinones, first isolated from the bark of the cinchona tree in the 18th century \cite{rusell1873quinone}, are a class of organic compounds a fully conjugated cyclic dione structure derived from aromatic compounds by conversion of an even number of number of of C-H groups into carbonyl (ketone) C=O groups \cite{IUPACQ050152025}. Quinones are known for their redox properties and play crucial roles in various biological processes, including electron transport in cellular respiration and photosynthesis \cite{ernster1995biochemical,chen2024low}.
+
+This work is focused on ubiquinone -\textit{ubi} from being ubiquitous in nature-, also known as coenzime Q\textsubscript{10} (CoQ\textsubscript{10}), is a lipid-soluble molecule that exists as a quinone or quinol, then named ubiquinol. It plays a role in aerobic respiration in the electron transport chain (ETC) as an electron carrier, accepting 2 electrons at complexes I and II and donating them in complex III \cite{ernster1995biochemical}. CoQ\textsubscript{10}.
+
+\begin{figure}[h]
+  \centering
+  \begin{tikzpicture}[x=1pt,y=1pt]
+    \node at (140,0) {\includegraphics[width=0.45\textwidth]{chapters/introduction/image/uQ_6i0d.png}};
+    \node at (215,40) {\includegraphics[width=0.25\textwidth]{chapters/introduction/image/Ubiquinone–ubiquinol_conversion.svg.png}};
+    \node at (0,0) {\includegraphics[width=0.45\textwidth]{chapters/introduction/image/Mitochondrial_electron_transport_chain—Etc4.svg.png}};
+    %\node[anchor=west] at (80,-225) {\fontsize{4.5}{4}\selectfont\color{darkgray}Ref: Wikimedia Commons};
+    %\node[anchor=west] at (238,-285) {\fontsize{4.5}{4}\selectfont\color{darkgray}PDB: 6i0d};
+  \end{tikzpicture}
+  \caption[Role of ubiquinone]{Role of ubiquinone. I will fix later}
+  \label{fig:QuinoneTypes}
+\end{figure}
+
+\subsection{Structural Aspects of Ubiquinone}
+Ubiquinone is composed of a benzoquinone ring and a long isoprenoid side chain, which varies in length depending on the organism. The number of isprenoids units, is the \textit{n} in the Q\textsubscript{n} scheme. The benzoquinone moiety is responsible for its redox properties, while the isoprenoid tail enhances its lipid solubility, allowing it to integrate into biological membranes \cite{ernster1995biochemical}. Regarding the benzoquinone moiety, it consists of 2,3-dimethoxy-6-methyl-p-benzoquinone \cite{ernster1995biochemical}.
+
+\begin{figure}[h]
+  \centering
+  \begin{tikzpicture}[anchor=south west, x=1cm, y=1cm]
+    \node (img1) at (0,0) {\includegraphics[width=0.4\textwidth]{chapters/introduction/image/uQ_6i0d.png}};
+    \node (img2) at (0.33\textwidth,0) {\includegraphics[width=0.4\textwidth]{chapters/introduction/image/Q1.png}};
+    \node (img3) at (0.66\textwidth,0) {\includegraphics[width=0.4\textwidth]{chapters/introduction/image/Q0189.png}};
+    \node[align=center, text=darkgray] at ([yshift=-0.8cm, xshift=-1.2cm]img1.south) {\footnotesize Q10, Cluster Model};
+    \node[align=center, text=darkgray] at ([yshift=-0.8cm]img2.south) {\footnotesize Q1};
+    \node[align=center, text=darkgray] at ([yshift=-0.8cm]img3.south) {\footnotesize Q0};
+  \end{tikzpicture}
+  \caption[Quinone structures]{Quinones used in this work. From left to right: (a) Q\textsubscript{0}, (b) Q\textsubscript{1}, (c) Q\textsubscript{10} in the enzyme PDB bla bla.}
+  \label{fig:QuinoneTypes}
+\end{figure}
+
+As said, the quinone moiety is resposible for its electron binding propierties; it supports two anion states, a valnce anion and a dipole bound anion. The balence anion can be understood as the equivalent state to the parent molecule, p-benzoquinone, with the excess electron located in a \textpi \textsuperscript{*} orbital, the electron withdrawing ketone groups contribute to stabilize this state, which is bound in the range of 1.7 eV\cite{chen2024low}. The dipole-bound anion, on the other hand, results mainly from the two methoxy chains, whose configuration mainly control the dipole of the molecule \cite{ameixa2023parent}. The interplay between these groups, specially in the case of Q\textsubscript{0} - without any isoprenoid molecule, makes a very interesting system to study theoretically; it is a fairly rigid molecule, except for the dihedral angles between the methoxy groups and the benzoquinone ring, which can be used to control the dipole moment of the molecule. This makes the study of a failry  complicated electronic structure in terms of two coordinates.
+
+When the ispreinoid tail is considered, it has been shown that it further stabilizes the valnece anion \cite{pshenichnyuk2020ionizing}. Regarding its effects to the dipole state, one can imagine the effect to have a moderate effect, it will slightly modify the dipole moment of the system, but structuraly it will be quite far from the orbital occupied by the excess electron.
+
+There have been extensive studies on the electron binding propierties of the ubiquinone family, both experimentally \cite{ameixa2023parent,west2014anion,pshenichnyuk2020ionizing,bull2015anion} and theoretically \cite{ameixa2023parent,pshenichnyuk2020ionizing,haldar2020multilayer, nonella1998quantum, gamiz2017terminal}. However, these studies have been centered in understanding the valence anion of the quinone and no comprehensive study of its dipole bound state has been perfoemed; the VBA is the final acceptor of the electron and the existance of the DBA in condensed phase is dubious.
+However, experimental studies have observed dipole-bound anions in the gas phase in ubiquinones Q\textsubscript{0} and Q\textsubscript{1}\cite{ameixa2023parent} with an EA of $\mathrm{\sim}$60 meV. Although, its signal is reduced as more isoprenoid units, interpreted as the an effect of the isprenoid tail being flxible and resulting in a steric hinderance of the state \cite{ameixa2023parent,pshenichnyuk2020ionizing}, one could imagine that in a protein moiety, the geometry of the tail would be fixed far from a potential DB orbital, which could even be further stabilized by residues pointing in the cavity.
+
+\section{Research Objectives}
+The main objective of this work is to study the dipole-bound anion of ubiquinone. The specific objectives are:
+\begin{itemize}
+  \item Benchmark the effectiveness of the CC2 method to model quinones electron attachemnt.
+  \item To investigate the dipole-bound anion of ubiquinone as function of its methoxy groups, and the effect of the isoprenoid tail.
+  \item To study the effect of the protein environment on the dipole-bound anion of ubiquinone, treated as a cluster model using small molecules.
+\end{itemize}
+
+\iffalse \begin{figure}[th!]
   \centering
   \input{chapters/introduction/image/test.tex}
   %figsize is set in image/test.gp 
   \caption[Short caption for Table of Figures]{Illustration of how to
   include a figure (long text, should not go to Table of Figures).}
   \label{fig:test}
-\end{figure}
+\end{figure} \fi
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Keep the following \cleardoublepage at the end of this file, 
