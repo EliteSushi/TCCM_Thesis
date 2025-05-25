@@ -50,7 +50,7 @@ set contour base
 #set cntrparam level incremental zmin, zstep, zmax
 set cntrparam levels discrete 1.7, 1.6, 1.5, 1.4, 1.3, 1.2
 unset surface
-set table 'cont.dat'
+set table 'cont_VB.dat'
 splot filename using 2:3:(-$6)
 unset table
 unset dgrid3d  # avoid affecting later plots
@@ -75,8 +75,8 @@ set tmargin 2.5
 set bmargin 2.5
 
 # Plot
-l '<'.sprintf('gawk -f %s cont.dat 0 %d %d 1', gawk_script, space_width, offset)
-p filename u 2:3:(-$6) w ima, '<'.sprintf('gawk -f %s cont.dat 1 %d %d 1', gawk_script, space_width, offset) w l lt -1 lw 3.5 linecolor rgb "black"
+l '<'.sprintf('gawk -f %s cont_VB.dat 0 %d %d 1', gawk_script, space_width, offset)
+p filename u 2:3:(-$6) w ima, '<'.sprintf('gawk -f %s cont_VB.dat 1 %d %d 1', gawk_script, space_width, offset) w l lt -1 lw 3.5 linecolor rgb "black"
 
 unset output
 

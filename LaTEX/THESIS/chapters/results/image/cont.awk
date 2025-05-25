@@ -1,5 +1,5 @@
 #!/usr/bin/gawk -f
-BEGIN { d = ARGV[2]; w = ARGV[3]; os = ARGV[4]; ro = ARGV[5]; ARGV[2]=""; ARGV[3]=""; ARGV[4]=""; ARGV[5]="" }
+BEGIN { d = ARGV[2]; w = ARGV[3]; os = ARGV[4]; ro = ARGV[5]; dec = ARGV[6]; ARGV[2]=""; ARGV[3]=""; ARGV[4]=""; ARGV[5]=""; ARGV[6]="" }
 function abs(x) { return (x>=0?x:-x) }
 {
   if($0~/# Contour/ || $0 ~ /^$/) nr=0;
@@ -13,6 +13,6 @@ function abs(x) { return (x>=0?x:-x) }
 END {
   if(d==0) {
     for(j=1;j<=i;j++)
-      printf "set label %d \"\\\\textcolor{black}{\\\\footnotesize %.1f}\" at %g, %g centre front rotate by %d\n", j, c[j], a[j], b[j], r[j]
+      printf "set label %d \"\\\\textcolor{black}{\\\\footnotesize %.*f}\" at %g, %g centre front rotate by %d\n", j, dec, c[j], a[j], b[j], r[j]
   }
 }
