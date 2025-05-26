@@ -2,9 +2,11 @@
 \chapter{Results and Discussion}
 
 \section{Performance of EOM-CC2 Related Methods}
-\ldots
+This section examines the performance of the EA-EOM-CC2 method for calculating electron affinities. Previous work has shown that EA-EOM-CC2 performs adequately for dipole-bound states (DBSs), whilst tending to overestimate vertical electron affinities (VEAs) for valence-bound states (VBSs) \cite{paran2024performance}. The following analysis focuses on three aspects: the basis set dependence for DBSs, the method's performance for VBSs using a test set of quinones, and the efficacy of CC2 in generating Dyson orbitals through comparison of photodetachment cross-sections calculated with EOM-CC2, EOM-CCSD and Koopmans' theorem.
+
 \subsection{Basis Set Dependence of EA-EOM-CC2 in Dipole Bound Anions}
-\ldots
+
+The basis set dependence of EA-EOM-CC2 for dipole-bound radical anions is analysed using a test set of molecules \cite{paran2024performance}. The results are summarized in Table~\ref{tab:basis}. The table shows the binding energies of dipole-bound radical anions computed with different augmented Dunning basis sets, RI-CC2 and RI-CCSD methods, and Koopmans' theorem (KT). The mean absolute error (MAE) is also provided.
 \begin{landscape}
 \begin{table}[pb!]
   \centering
@@ -32,7 +34,7 @@
     \cmidrule(lr){2-11} 
     & MAE & 105.3 & 8.8 & 2.8 & 3.4 & 2.3 & 2.4 & 0.8 & ref. & 12.0 & \\
 \end{tabular}
-\caption[EOM-EA DBA basis set dependence.]{EOM-EA binding energies of dipole-bound radical anions computed using different augmented Dunning basis sets and RI-CC2 and RI-CCSD for the the test set of moluces \cite{paran2024performance}. A positive value corresponds to a bound electron. Koopmans' theorem (KT), and dipole momment (\textmu), calculated at the HF level, and mean absolute error (MAE) are also given. The values are in meV and D respectively.}
+\caption[EOM-EA DBA basis set dependence.]{EOM-EA binding energies of dipole-bound radical anions computed using different augmented Dunning basis sets and RI-CC2 and RI-CCSD for the test set of volumes \cite{paran2024performance}. A positive value corresponds to a bound electron. Koopman' theorem (KT), and dipole moment (\textmu), calculated at the HF level, and mean absolute error (MAE) are also given. The values are in meV and D respectively.}
 \label{tab:basis}
 \end{table}
 \end{landscape}
@@ -75,19 +77,20 @@
   \end{minipage}
   \refstepcounter{table}\label{tab:Quinones_fig}
   \refstepcounter{figure}\label{fig:Quinones_tab}
-  \caption*{\textbf{Table~\thetable{}} and \textbf{Figure~\thefigure{}:} Comparison between reference and RI-CC2 data for quinones. The table also includes the experimental value (adiabatic EA instead of veritacl EA).}
+  \caption*{\textbf{Table~\thetable{}} and \textbf{Figure~\thefigure{}:} Comparison between reference and RI-CC2 data for quinones. The table also includes the experimental value (adiabatic EA instead of vertical EA).}
   \addcontentsline{lof}{figure}{\protect\numberline{\thefigure}figure valence anion state quinones}
   \addcontentsline{lot}{table}{\protect\numberline{\thetable} table valence anion state quinones}
 \end{figure}
 
-SCS improves the result for valence state of CC2, whihc is in accordance with the conclusions from \cite{paran2024performance}. Something to note is that when comparing the results with experiments, one can think that CC2 gets close than CCSD. This however, can be explained by the fact that the experiment measures the adiabatic electron binding energy, while the calculations are performed for the vertical EA. As the former energy 
+SCS improves the result for valence state of CC2, which is in accordance with the conclusions from \cite{paran2024performance}. Something to note is that when comparing the results with experiments, one can think that CC2 gets closer than CCSD. This however, can be explained by the fact that the experiment measures the adiabatic electron binding energy, while the calculations are performed for the vertical EA. As the former energy 
 
-As the trend is recovered without SCS, albeit the larger (~0.2 eV) but consist error the subsequent calculations do not use this method, as SCS worsens the results for dipole bound anions. A strength of this approach is that both states can be calculated from the same Hamiltonian, and the results are consitent.
+As the trend is recovered without SCS, albeit the larger (~0.2 eV) but consist error the subsequent calculations do not use this method, as SCS worsens the results for dipole bound anions. A strength of this approach is that both states can be calculated from the same Hamiltonian, and the results are consistent.
 
-Dipole bound states are worsen by SCS \cite{paran2024performance}. This is explaned by the fact that the DBS resides in a digguse state; the extra spin is far from the other electrons, meaning that the exchange interaction is much smaller than the Coulumb interaction.
+Dipole bound states are worsened by SCS \cite{paran2024performance}. This is explained by the fact that the DBS resides in a disguise state; the extra spin is far from the other electrons, meaning that the exchange interaction is much smaller than the Coulomb interaction.
 \ldots
 \subsection{Photoelectron Cross-section Calculations from EOM-CC2/CCSD}
 
+The ADC method has been used to calculate the photoelectron cross-sections of dipole-bound anions \cite{ruberti2014total}. 
 \ldots
 \section{Study on the Anion States of Ubiquinone}
 
@@ -96,7 +99,7 @@ Dipole bound states are worsen by SCS \cite{paran2024performance}. This is expla
 
 \ldots
 \subsubsection{Q0}
-aa
+aas
 \begin{figure}[ht!]
   \centering
   \small
@@ -142,6 +145,15 @@ aa
   \input{chapters/results/image/Q1_maps.tex}
   \label{fig:Q1_maps}
   \caption[Surfaces of Q1]{From left to right and top to bottom: Energy surface (DFT TPSS), dipole moment surface (DFT TPSS), vertical binding energy surface (EA-EOM-CC2), and dipole bound anion (EA-EOM-CC2) surface of Q1. White points in VBS and DBS surfaces were not sampled, gray points indicate predicted unbound states.}
+\end{figure}
+aaa
+\begin{figure}[th!]
+    \centering
+    \small
+    \input{chapters/results/image/DvsDBS.tex}
+    %figsize is set in image/test.gp 
+    \caption[Short caption for Table of Figures]{Favorable Interaction with water.}
+    \label{fig:D_vsDBS}
 \end{figure}
 \iffalse\begin{figure}[ht!]
   \centering
@@ -194,10 +206,21 @@ aa
 \ldots
 \begin{figure}[th!]
     \centering
-    \input{chapters/results/image/H2O_fav.tex}
+    \small
+    \input{chapters/results/image/scan_H.tex}
     %figsize is set in image/test.gp 
     \caption[Short caption for Table of Figures]{Favorable Interaction with water.}
-    \label{fig:H2O_fav}
+    \label{fig:scan_H}
+\end{figure}
+adiabatic
+
+\begin{figure}[th!]
+    \centering
+    \small
+    \input{chapters/results/image/scan_X.tex}
+    %figsize is set in image/test.gp 
+    \caption[Short caption for Table of Figures]{Favorable Interaction with water.}
+    \label{fig:scan_X}
 \end{figure}
 
 \subsection{Effect of Nearby Amionacids}

@@ -33,6 +33,7 @@ splot filename using 1:2:8
 unset table
 unset dgrid3d  # avoid affecting later plots
 
+
 # plot — color map with contours
 reset
 

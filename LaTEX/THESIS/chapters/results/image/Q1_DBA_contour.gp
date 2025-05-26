@@ -35,7 +35,7 @@ set dgrid3d 100,100 splines
 set contour base
 set cntrparam levels discrete 1, 3, 6, 9, 12, 15.3
 unset surface
-set table 'cont.dat'
+set table 'cont_D_Q1.dat'
 splot filename using 2:3:(-$7*1000)
 unset table
 unset dgrid3d
@@ -69,8 +69,8 @@ set tmargin 2.5
 set bmargin 2.5
 
 # Plot
-l '<'.sprintf('gawk -f %s cont.dat 0 %d %d 1', gawk_script, space_width, offset)
-p filename u 2:3:(-$7*1000) w ima, '<'.sprintf('gawk -f %s cont.dat 1 %d %d 1', gawk_script, space_width, offset) w l lt -1 lw 3.5 linecolor rgb "black"
+l '<'.sprintf('gawk -f %s cont_D_Q1.dat 0 %d %d 1', gawk_script, space_width, offset)
+p filename u 2:3:(-$7*1000) w ima, '<'.sprintf('gawk -f %s cont_D_Q1.dat 1 %d %d 1', gawk_script, space_width, offset) w l lt -1 lw 3.5 linecolor rgb "black"
 
 unset output
 
