@@ -2,20 +2,35 @@
 \chapter{Results and Discussion}
 
 \section{Performance of EOM-CC2 Related Methods}
-This section examines the performance of the EA-EOM-CC2 method for calculating electron affinities. Previous work has shown that EA-EOM-CC2 performs adequately for dipole-bound states (DBSs), whilst tending to overestimate vertical electron affinities (VEAs) for valence-bound states (VBSs) \cite{paran2024performance}. The following analysis focuses on three aspects: the basis set dependence for DBSs, the method's performance for VBSs using a test set of quinones, and the efficacy of CC2 in generating Dyson orbitals through comparison of photodetachment cross-sections calculated with EOM-CC2, EOM-CCSD and Koopmans' theorem.
+\iffalse This section examines the performance of the EA-EOM-CC2 method for calculating electron affinities. Previous work has shown that EA-EOM-CC2 performs adequately for dipole-bound states (DBSs), whilst tending to overestimate vertical electron affinities (VEAs) for valence-bound states (VBSs) \cite{paran2024performance}. The following analysis focuses on three aspects: the basis set dependence for DBSs, the method's performance for VBSs using a test set of quinones, and the efficacy of CC2 in generating Dyson orbitals through comparison of photodetachment cross-sections calculated with EOM-CC2, EOM-CCSD and Koopmans' theorem.\fi
 
 \subsection{Basis Set Dependence of EA-EOM-CC2 in Dipole Bound Anions}
 
-The basis set dependence of EA-EOM-CC2 for dipole-bound radical anions is analysed using a test set of molecules \cite{paran2024performance}. The results are summarized in Table~\ref{tab:basis}. The table shows the binding energies of dipole-bound radical anions computed with different augmented Dunning basis sets, RI-CC2 and RI-CCSD methods, and Koopmans' theorem (KT). The mean absolute error (MAE) is also provided.
+The basis set dependence of EA-EOM-CC2 for dipole-bound radical anions was evaluated using a test set of 14 DBS of organic taking as reference EA-EOM-CCSD \cite{paran2024performance}. The results as summarised in Table \ref{tab:basis}. The binding energies ranging from less than 1 meV for acetone to approximately 26 meV for nitrobenzene. The table also show how the binding energy does not correlate strongly with the magnitude of the dipole moment for different species. For instance, phenylisocyanide, which has a slightly lower dipole moment than benzaldehyde, exhibits an electron affinity nearly twice as large.
+
+The basis set cardinality was varied from DZ to QZ for EA-EOM-CC2 and from DZ to TZ for CCSD, while keeping additional diffuse functions fixed at 6s3p for heavy atoms and 3s for hydrogens, referred to as (6s3p). For the EA-EOM-CC2 method, the influence of diffuse functions was further explored by fixing the cardinality to TZ and incrementally increasing the number of diffuse functions from 2s1p for heavy atoms and 1s for hydrogens, referred to as (2s1p), to 8s4p for heavy atoms and 4s for hydrogens, referred to as (8s4p). The coefficients of the diffuse functions are detailed in the methods' section \ref{sec:methods:basis}. For comparison, the dipole strength, calculated at the HF level, and Koopmans' theorem (KT), which estimates the binding energy using the energy of the lowest unoccupied molecular orbital, are also included.
+
+Starting with the simplest approximation, KT predicts that all anions with an EOM-EA-CCSD binding energy below 10 meV become unbound. However, even for more strongly bound cases, Koopmans' theorem significantly underestimates the binding energy, capturing only 20\% of the binding energy for nitrobenzene, for example.
+
+No DBS is predicted when only the 2s1p diffuse function are added. At the 6s3p level the DBS energy is converged with respect to the extra diffuse functions added to the basis set, deviating by less than 1 meV from the value obtained with the 8s4p diffuse function. The errors are more pronounced for smaller molecules, such as acetaldehyde and acetone. This could be attributed to the inability of functions centred on a few atoms to adequately cover the spatial extent of the DBS orbital. This reasoning may also explain why the DBS of acetaldehyde is only predicted by RI-EA-EOM-CC2/aug-cc-pVTZ+8s4p, as it employs the most diffuse functions.
+
+The binding energy increases with higher cardinality, as expected, due to the increased flexibility of the basis set. However, this effect is less significant than the addition of diffuse functions. For instance, the difference between RI-EA-EOM-CCSD/aug-cc-pVDZ+6s3p and RI-EA-EOM-CCSD/aug-cc-pVTZ+6s3p is less than 1 meV for most cases. Smaller molecules with lower-energy DBSs tend to be more challenging; for example, a TZ basis is required to predict the DBS of acetone. In general, and especially for larger systems, the inclusion of diffuse functions is more critical than the cardinality of the basis set for dipole-bound anions.
+
+CC2/aug-cc-pVTZ+6s3p consistently overestimates the binding energies across all molecules when compared to CCSD/aug-cc-pVTZ+6s3p. The mean absolute error (MAE) is 2 meV, with deviations reaching up to 10 meV for nitrobenzene. For this reason, using a smaller cardinality results in a cancellation of errors for CC2.
+The aug-cc-pVDZ+6s3p basis set, when employed with CC2, yields the lowest MAE of 2.3 meV compared to the reference RI-EA-EOM-CCSD/aug-cc-pVTZ+6s3p results.
+
 \begin{landscape}
-\begin{table}[pb!]
+\begin{table}[p]
   \centering
   \small
+  \caption[EOM-EA DBA basis set dependence.]{ Electron affinity of dipole-bound radical anions computed using different augmented Dunning basis sets and EOM-EA RI-CC2 and RI-CCSD \cite{paran2024performance}. Koopman' theorem (KT), and dipole moment, \textmu, calculated at the HF/aug-cc-pVTZ+6s3p level, and mean absolute error (MAE) are also given. The values are in meV and Debye respectively.}
+\label{tab:basis}
   \begin{tabular}{cccccccccccc}
+    \toprule
     & & \multicolumn{6}{c}{RI-CC2} & \multicolumn{2}{c}{RI-CCSD} & & \\
     \cmidrule(lr){3-8} \cmidrule(lr){9-10} 
-    & & \multicolumn{4}{c}{aug-cc-pVTZ} & pVDZ & pVQZ & pVDZ & pTDZ & & \\
-    \multicolumn{2}{c}{Molecule} & 2s1p & 4s2p & 6s3p & 8s4p & 6s3p & 6s3p & 6s3p & 6s3p & KT & \textmu (D) \\
+    & & \multicolumn{4}{c}{aug-cc-pVTZ} & pVDZ & pVQZ & pVDZ & pVDZ & & \\
+    \multicolumn{2}{c}{Molecule} & 2s1p & 4s2p & 6s3p & 8s4p & 6s3p & 6s3p & 6s3p & 6s3p & KT & \textmu \\
     \hline
     Acetaldehyde & \ce{CH3CHO} & -156.7 & -27.8 & -3.2 & 0.8 & -4.6 & -3.2 & -4.6 & -3.1 & -0.4 & 3.29 \\
     Acetone & \ce{(CH3)2CO} & -114.9 & -16.8 & 1.3 & 3.3 & -0.3 & 0.9 & -0.5 & 0.9 & -5.1 & 3.46 \\
@@ -25,215 +40,239 @@ The basis set dependence of EA-EOM-CC2 for dipole-bound radical anions is analys
     DMSO & \ce{(CH3)2SO} & -84.5 & 4.0 & 15.4 & 16.1 & 14.8 & 15.5 & 14.7 & 14.9 & 2.1 & 4.63 \\
     Formamide & \ce{CH3NO} & -92.2 & 1.1 & 16.2 & 17.2 & 15.1 & 17.0 & 15.1 & 15.9 & 3.4 & 4.28 \\
     Methylisocyanide & \ce{CH3NC} & -95.1 & -0.5 & 10.0 & 10.5 & 9.5 & 10.1 & 8.8 & 9.0 & -1.8 & 3.59 \\
-    Nitrobenzene & \ce{C6H5NO2} & -63.6 & 30.6 & 34.8 & 34.8 & 32.5 & - & 25.0 & 25.9 & 5.4 & 5.15 \\
+    Nitrobenzene & \ce{C6H5NO2} & -63.6 & 30.6 & 34.8 & 34.8 & 32.5 & -- & 25.0 & 25.9 & 5.4 & 5.15 \\
     Nitromethane & \ce{CH3NO2} & -82.9 & 5.7 & 14.2 & 14.7 & 13.0 & 14.7 & 12.9 & 13.7 & 3.5 & 4.10 \\
-    Nitrosobenzene & \ce{C6H5NO} & -125.0 & 1.0 & 11.4 & - & 9.9 & - & 5.1 & 6.0 & -4.1 & 3.73 \\
+    Nitrosobenzene & \ce{C6H5NO} & -125.0 & 1.0 & 11.4 & -- & 9.9 & -- & 5.1 & 6.0 & -4.1 & 3.73 \\
     Phenylisocyanide & \ce{C6H5NC} & -82.7 & 8.6 & 16.3 & 16.5 & 15.2 & 16.7 & 9.0 & 9.2 & -4.9 & 3.61 \\
     Pyridazine & \ce{C4H4N2} & -80.7 & 20.5 & 26.3 & 26.4 & 25.0 & 26.7 & 18.6 & 19.1 & 1.7 & 4.41 \\
     Vinylene carbonate & \ce{C3H2O3} & -82.5 & 20.9 & 27.2 & 27.4 & 26.4 & 27.7 & 25.1 & 25.5 & 10 & 5.05 \\
     \cmidrule(lr){2-11} 
-    & MAE & 105.3 & 8.8 & 2.8 & 3.4 & 2.3 & 2.4 & 0.8 & ref. & 12.0 & \\
+    & MAE & 105.3 & 8.8 & 2.8 & 3.4 & 2.3 & 2.4 & 0.8 & Ref. & 12.0 & \\
+    \bottomrule
 \end{tabular}
-\caption[EOM-EA DBA basis set dependence.]{EOM-EA binding energies of dipole-bound radical anions computed using different augmented Dunning basis sets and RI-CC2 and RI-CCSD for the test set of volumes \cite{paran2024performance}. A positive value corresponds to a bound electron. Koopman' theorem (KT), and dipole moment (\textmu), calculated at the HF level, and mean absolute error (MAE) are also given. The values are in meV and D respectively.}
-\label{tab:basis}
 \end{table}
 \end{landscape}
 
-
 \subsection{Performance of EA-EOM-CC2 on Valence Bound Radical Anion States of Quinones}
+
+\begin{table}[h!]
+  \centering
+  \small
+  \caption[EA-EOM-CC2 benchmark for quinone VBS.]{EA-EOM-CC2 benchmark for quinone VBS. Reference values from literature\cite{schulz2018systematic} include experimental (adiabatic) electron affinities and CCSD(T) calculations using aug-cc-pVDZ basis set with LPNO-CCSD extrapolation to higher cardinal numbers. The RI-CC2 calculations employed three basis sets: aug-cc-pVTZ+6s3p (abbreviated as VTZ+) built as described in section \ref{sec:methods:basis}, standard aug-cc-pVTZ (VTZ), and aug-cc-pVDZ (VDZ).}
+  \label{tab:Quinones}
+  \begin{tabular*}{\textwidth}{cccccccc}
+  \toprule
+   & & \multicolumn{2}{c}{Ref. \cite{schulz2018systematic}} & \multicolumn{4}{c}{RI-CC2}  \\
+   \cmidrule(lr){3-4} \cmidrule(lr){5-8}
+   & & & CCSD(T) & SCS & \multicolumn{3}{c}{No SCS} \\
+  \cmidrule(lr){6-8}
+  Molecule & \# & Exp. & +E\textsubscript{CBS} & VTZ+ & VTZ+ & VTZ & VDZ  \\
+  \midrule
+  Benzoq. & 1  & 1.91 & 1.64 & 1.54 & 2.02 & 2.02 & 1.81 \\
+  Methylbenzoq. & 2  & 1.85 & 1.57 &  --  & 1.95 & 1.95 & 1.74 \\
+  2,5-Dimethylbenzoq. & 3  & 1.76 & 1.49 & 1.39 & 1.89 & 1.89 & 1.68 \\
+  2,6-Dimethylbenzoq. & 4  & 1.77 & 1.50 & 1.40 & 1.89 & 1.89 & 1.68 \\
+  Trimethylbenzoq. & 5  & 1.69 & 1.43 & 1.34 & 1.84 & 1.84 & 1.63 \\
+  Duroq. & 6  & 1.62 & 1.42 & 1.32 & 1.83 & 1.83 & 1.62 \\
+  2,6-Dimethoxybenzoq. & 7  & 1.72 & 1.32 & 1.17 & 1.65 & 1.65 & 1.43 \\
+  Ubiq. (Q\textsubscript{0}) & 8  & 1.86 & 1.50 & 1.39 & 1.88 & 1.88 & 1.66 \\
+  Naphthoq. & 9  & 1.81 & 1.55 &  --  & 1.97 & 1.97 & 1.76 \\
+  2-Methylnapthoq. & 10 & 1.74 & 1.51 & 1.45 & 1.92 & 1.91 & 1.71 \\
+  \bottomrule
+  \end{tabular*}
+\end{table}
+
 
 \begin{figure}[h!]
   \centering
-  \begin{minipage}[t]{0.48\textwidth}
-    \centering
-    \begin{tabular}{
-      >{\centering\arraybackslash}m{0.7cm}
-      >{\centering\arraybackslash}m{0.6cm}
-      >{\centering\arraybackslash}m{1.1cm}
-      >{\centering\arraybackslash}m{0.6cm}
-      >{\centering\arraybackslash}m{0.5cm}
-    }
-   & \multicolumn{2}{c}{Ref. \cite{schulz2018systematic}} & \multicolumn{2}{c}{RI-CC2}  \\
-   \cmidrule(lr){2-3} \cmidrule(lr){4-5}
-  Mol. & Exp (aEA) & CCSD(T) +E\textsubscript{CBS} & No SCS & SCS \\
-  \hline
-  1 & 1.91 & 1.64 & 2.02 & 1.54 \\
-  2 & 1.85 & 1.57 & 1.95 & - \\
-  3 & 1.76 & 1.49 & 1.89 & 1.39 \\
-  4 & 1.77 & 1.5 & 1.89 & 1.40 \\
-  5 & 1.69 & 1.43 & 1.84 & 1.34 \\
-  6 & 1.62 & 1.42 & 1.83 & 1.32 \\
-  7 & 1.72 & 1.32 & 1.65 & 1.17 \\
-  8 & 1.86 & 1.5 & 1.88 & 1.39 \\
-  9 & 1.81 & 1.55 & 1.97 & - \\
-  10 & 1.74 & 1.51 & 1.92 & 1.45 \\
-    \end{tabular}
-  \end{minipage}%
-  \hfill
-  \begin{minipage}[]{0.48\textwidth}
-    \centering
-    \small
-    \input{chapters/results/image/Quinones.tex}
-  \end{minipage}
-  \refstepcounter{table}\label{tab:Quinones_fig}
-  \refstepcounter{figure}\label{fig:Quinones_tab}
-  \caption*{\textbf{Table~\thetable{}} and \textbf{Figure~\thefigure{}:} Comparison between reference and RI-CC2 data for quinones. The table also includes the experimental value (adiabatic EA instead of vertical EA).}
-  \addcontentsline{lof}{figure}{\protect\numberline{\thefigure}figure valence anion state quinones}
-  \addcontentsline{lot}{table}{\protect\numberline{\thetable} table valence anion state quinones}
+  \small
+  \input{chapters/results/image/Quinones.tex}
+  \caption{Graphical comparison of RI-CC2 data for quinones.}
+  \label{fig:Quinones}
 \end{figure}
+  
+The performance of EA-EOM-CC2 in calculating the VBS of quinones is benchmarked using a previously established test set of 10 quinones \cite{schulz2018systematic}. The results are summarised in Table \ref{tab:Quinones} and Figure \ref{fig:Quinones}. The table includes experimental adiabatic electron affinities and theoretical CCSD(T)+E\textsubscript{CBS} reference values.
 
-SCS improves the result for valence state of CC2, which is in accordance with the conclusions from \cite{paran2024performance}. Something to note is that when comparing the results with experiments, one can think that CC2 gets closer than CCSD. This however, can be explained by the fact that the experiment measures the adiabatic electron binding energy, while the calculations are performed for the vertical EA. As the former energy 
+Previous studies have demonstrated that CC2 typically performs poorly for VBSs; however, the implementation of spin-component scaling (SCS) corrections markedly enhances the accuracy of CC2 for these states \cite{paran2024performance}. The RI-CC2 results presented here include calculations both with and without SCS corrections, utilising two different basis sets: VTZ (aug-cc-pVTZ) and VDZ (aug-cc-pVDZ).
 
-As the trend is recovered without SCS, albeit the larger (~0.2 eV) but consist error the subsequent calculations do not use this method, as SCS worsens the results for dipole bound anions. A strength of this approach is that both states can be calculated from the same Hamiltonian, and the results are consistent.
+The incorporation of SCS improves the accuracy of CC2 for valence-bound states, corroborating the findings of Ref. \citenum{paran2024performance}. In general unscaled EA-EOM-RI-CC2 overbinds the electron, and the inclusion of SCS results in a slight underbinding. When comparing the results to experimental data, CC2 might appear to provide better agreement than CCSD. This apparent discrepancy arises because the experimental measurements represent adiabatic electron affinities, whilst the calculations determine vertical electron affinities. 
 
-Dipole bound states are worsened by SCS \cite{paran2024performance}. This is explained by the fact that the DBS resides in a disguise state; the extra spin is far from the other electrons, meaning that the exchange interaction is much smaller than the Coulomb interaction.
-\ldots
+ As with the case of DBSs, a smaller cardinality leads to a cancellation of errors in the CC2 binding energies, resulting in apparently more exact results (though arising from more inaccurate calculations). Regarding the inclusion of diffuse functions necessary for modelling DBSs, these have no impact on the VBS energy, indicating that such functions do not contribute to the description of the VBS. 
+
+ It is noteworthy, however, that in all cases, the CC2 method reproduces the correct trend, as illustrated in Figure \ref{fig:Quinones}. The error introduced remains remarkably consistent across different molecules. Subsequent calculations omit SCS, as both DBS and VBS states can be obtained from the same Hamiltonian; one can expect a systematic overbinding of $\mathrm{\sim}$0.2 eV ensuring consistency in the results.
+
+It is also important to note that DBS predictions are known to deteriorate significantly when SCS is applied \cite{paran2024performance}. This is explained by the nature of the DBS; the additional electron is situated far from the core electrons, resulting in a substantially weaker exchange interaction compared to the Coulomb interaction. This characteristic diminishes the effectiveness of SCS for such systems.
+
 \subsection{Photoelectron Cross-section Calculations from EOM-CC2/CCSD}
 
-The ADC method has been used to calculate the photoelectron cross-sections of dipole-bound anions \cite{ruberti2014total}. 
-\ldots
-\section{Study on the Anion States of Ubiquinone}
+As a part of this work, Dyson orbitals between EOM-CC2 states has been implemented within the \texttt{ccman2} module of the \textit{Q-Chem} software package. To evaluate their quality, one must extend beyond mere visual assessment.
 
-\ldots
-\subsection{Energy and Dipole Surfaces of CoQ}
+Photodetachment cross-sections for 24 valence bound and dipole bound states were calculated using the \textit{ezDyson} package \cite{gozem2022ezspectra,gozem2015photoionization}. These calculations employ orbitals from three different sources: EOM-CC2 Dyson orbitals, EOM-CCSD Dyson orbitals and the dominant Hartree-Fock orbital. The complete results can be found in appendix \ref{ch:appendix:crosssection}. Figure \ref{fig:ezDyson} shows two representative examples: the valence bound state of azulene and the dipole bound state of nitromethane.
 
-\ldots
-\subsubsection{Q0}
-aas
-\begin{figure}[ht!]
-  \centering
-  \small
-  \input{chapters/results/image/Q0_maps.tex}
-  \label{fig:Q0_maps}
-  \caption[Surfaces of Q0]{Surfaces of Q0. From left to right and top to bottom: Energy surface (CC2), dipole moment surface (DFT TPSS), vertical binding energy surface (EA-EOM-CC2), and dipole bound anion surface (EA-EOM-CC2) of Q0. Gray points the DBS surface indicate predicted unbound states.}
-\end{figure}
-\iffalse \begin{figure}[ht!]
-  \centering
-  \begin{minipage}[]{0.49\textwidth}
-    \centering
-    \small
-    \input{chapters/results/image/Q0_E.tex}
-  \end{minipage}%
-  %\hfill
-  \begin{minipage}[]{0.47\textwidth}
-    \centering
-    \small
-    \input{chapters/results/image/Q0_d.tex}
-  \end{minipage}
-  %\vfill
-  \begin{minipage}[]{0.49\textwidth}
-    \centering
-    \small
-    \input{chapters/results/image/Q0_VBA.tex}
-  \end{minipage}%
-  \begin{minipage}[]{0.47\textwidth}
-    \centering
-    \small
-    \input{chapters/results/image/Q0_DBA.tex}
-  \end{minipage}
-  \label{fig:Q0_surf}
-  \caption[Surfaces of Q0]{Surfaces of Q0. Left: Energy surface. Right: Dipole moment surface.}
-\end{figure} \fi
+The results demonstrate  that EOM-CC2 successfully captures the essential features of the cross-section, appearing nearly identical in the case of nitromethane's dipole-bound state and showing only minor deviations for azulene. In contrast, using HF orbitals as approximations for Dyson orbitals fails to reproduce the shape obtained with EOM-CCSD. Although a single HF orbital typically dominates the Dyson orbital composition \cite{diaz2019dyson}, the contributions from additional electronic configurations introduced by the correlation prove to be significant.
 
-\ldots
-\subsubsection{Q1}
-
-\ldots
-\begin{figure}[ht!]
-  \centering
-  \small
-  \input{chapters/results/image/Q1_maps.tex}
-  \label{fig:Q1_maps}
-  \caption[Surfaces of Q1]{From left to right and top to bottom: Energy surface (DFT TPSS), dipole moment surface (DFT TPSS), vertical binding energy surface (EA-EOM-CC2), and dipole bound anion (EA-EOM-CC2) surface of Q1. White points in VBS and DBS surfaces were not sampled, gray points indicate predicted unbound states.}
-\end{figure}
-aaa
 \begin{figure}[th!]
     \centering
     \small
-    \input{chapters/results/image/DvsDBS.tex}
+    \input{chapters/results/image/ezDyson.tex}
     %figsize is set in image/test.gp 
-    \caption[Short caption for Table of Figures]{Favorable Interaction with water.}
+    \caption[Photoedetachment Crossections.]{ Photoedetachment cross-sections of azulene (VBS) and nitromethane (DBS). The cross-sections were calculated using Dyson orbitals from EOM-CC2, EOM-CCSD and the highest populated HF orbital. The corresponding EA-EOM-CC2 Dyson orbitals are also shown as insets.}
+    \label{fig:ezDyson}
+\end{figure}
+
+\section{Study on the Anion States of Ubiquinone}
+
+Having benchmarked the performance of the methods has been assessed, the focus shifts to the anion states of ubiquinone (CoQ). The results presented here are based on the calculations performed with RI-EA-EOM-CC/aug-cc-pVDZ+6s3p.
+
+\subsection{Energy and Dipole Surfaces of CoQ}
+
+\subsubsection{Surfaces of Q0}
+
+The conformational landscape of the simplest ubiquinone, Q\textsubscript{0}, was investigated by varying the dihedral angles of the methoxy chains relative to the quinone plane in steps of 20\degree, as shown in Figure \ref{fig:Q0_dyson}. These dihedral angles represent the most significant degrees of freedom in the system, as the remainder of the molecule is relatively rigid. This approach enables the construction of potential energy surfaces (PES), dipole strength surfaces, and anionic (VBS and DBS) surfaces, as depicted in Figure \ref{fig:Q0_maps}. Owing to the C\textsubscript{2} symmetry present when the methoxy chains are coplanar, only half of the surface points require sampling.
+
+\begin{figure}[hb!]
+  \centering
+  \small
+  \input{chapters/results/image/Q0_maps.tex} 
+  \caption[Surfaces of Q0]{Surfaces of Q0. From left to right and top to bottom: potential energy surface (CC2), dipole moment surface (DFT TPSS), vertical binding energy surface (EA-EOM-CC2), and dipole bound anion surface (EA-EOM-CC2) of Q0. Gray points the DBS surface indicate predicted unbound states.\label{fig:Q0_maps}}
+\end{figure}
+
+The conformational energy surface of the neutral molecule reveals five minima, corresponding to configurations where the methoxy groups are oriented away from each other. The global minimum occurs at (180,180), where both chains are coplanar with the quinone and directed oppositely. Four additional minima are found at $\mathrm{(\pm140,\mp20)}$ and $\mathrm{(\pm20,\mp140)}$, each approximately 10 meV above the global minimum. The presence of a methyl group at position 5 slightly perturbs the symmetry between the methoxy chains, but its influence on the energy landscape is minimal due to its spatial separation. The energy barriers separating these wells range from 65 to 100 meV, suggesting that interconversion between conformers is feasible at ambient temperature. A pronounced steric repulsion is observed near (0,0), where both methoxy chains are coplanar and oriented towards each other, resulting in an energy penalty of approximately 580 meV.
+
+The dipole strength surface largely reflects the vector sum of the individual methoxy group dipoles. When both chains are aligned in the same direction, the dipole strength is maximised, and vice versa. The lowest dipole moment, below 0.5 Debye, is found near (180,180). Local maxima in dipole strength are observed at (0,0) with a strength of 2.5 D, and $\mathrm{(\pm160,\mp80)}$ ($\mu=3.2$~D), $\mathrm{(\pm60,\mp160)}$ ($\mu=3.4$~D), and $\mathrm{(\pm80,\pm180)}$ ($\mu=3.2$~D), with the latter two coinciding with conformational minima at $\mathrm{(\pm140,\mp20)}$.
+
+The valence-bound state (VBS) surface can be rationalised by considering the electron-withdrawing effect of out-of-plane methoxy groups and the electron-donating effect of in-plane conjugation. The VBS minimum is observed at four points where both chains are approximately $\pm120\degree$ out of plane, with a vertical electron affinity (VAE) of 1.77~eV. Notably, when either chain is coplanar ($\pm0\degree$), the VAE increases by about 0.2~eV. The global minimum occurs at (0,0), where both chains are in-plane, with a VAE of 1.26~eV. The pronounced dependence of the electron affinity on methoxy conformation has been proposed as a mechanism to control the electron transfer processes in quinone redox enzymes\cite{schulz2018systematic,nonella1998quantum,taguchi2013tuning,taguchi2013conformational,deAlmeida2014effect}.\label{sec:Q0_maps}
+
+The dipole-bound state (DBS) surface, as anticipated, closely follows the dipole strength surface. It is important to note that in regions where the DBS is unbound, the EA-EOM-CC2 values are not physically meaningful and would approach the continuum in the basis set limit. Three distinct regions are apparent, mirroring those of the dipole strength surface. The region at $\mathrm{(\pm60,\pm180)}$ ($\mu=3.1$~D) is the smallest and most weakly bound, with only five points exhibiting binding energies up to 2 meV. Region B in Figure \ref{fig:Q0_maps}, centred at $\mathrm{(\pm140,\mp20)}$ ($\mu=3.2$~D), is more extensive and reaches a maximum binding energy of 6.2 meV. Region A, at (0,0), is the most strongly bound, with a maximum of 15.8 meV, despite its lower dipole strength. This may be attributed to the orientation of the dipole moment: in region B, the dipole points above the quinone, and the DBS electron density  interacts repulsively with the \textpi system, whereas in region A, the dipole is directed away from the quinone plane. In Figure \ref{fig:Q0_dyson}, these cases are shown. 
+
+Surprisingly, CC2 predicts DBSs in region A supported by dipole moments as small as 1.6D, which is significantly lower than the commonly cited threshold of 2.5D and falls within the range of the ideal dipole DBS \cite{jordan2003theory}. This result suggests that, in addition to the excess electron density being spatially separated from the valence electrons, further stabilisation arises from dispersion interactions with the $\pi$ system. Effects similar to this have been experimentally observed in indolide anions\cite{yuan2023observation}. Nevertheless, the high conformational energy of region A makes its population unlikely.
+
+\begin{figure}[h]
+  \centering
+  \begin{minipage}[b]{0.30\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{chapters/results/image/dihedrals.png}
+    \small\emph{Methoxy dihedrals}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[b]{0.30\textwidth}
+    \centering
+      \includegraphics[width=0.8\textwidth]{chapters/results/image/Q0_181.png}
+      \small\emph{Region A \\ $(0,0)~\mu=2.5~D$ E=15.8~meV}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[b]{0.30\textwidth}
+    \centering
+      \includegraphics[width=\textwidth]{chapters/results/image/Q0_52.png}
+      \small\emph{Region B $(\pm140,\mp20)~\mu=3.2~D$, $E=6.2~meV$}
+  \end{minipage}
+  \caption[Dyson orbitals of Q0]{Dyson orbitals of Q0 calculated with RI-EA-EOM-CC/aug-cc-pVDZ+6s3p. The left panel explicitly shows the methoxy dihedral coordinates. The middle panel shows the Dyson orbital of the strongest bound DBS from region B. The right panel shows the Dyson orbital strongest bound DBS from region A. The isosurface is set to 0.005 e/Bohr\textsuperscript{3} and the dipole moment vector is shown as a green arrow with origin at the centre of mass.}
+  \label{fig:Q0_dyson}
+\end{figure}
+
+
+\subsubsection{Surfaces of Q1}
+
+The isoprene tail introduces additional degrees of freedom, resulting in a more complex conformational landscape. To investigate its effect, the analogous surfaces for Q\textsubscript{1} were constructed by fixing the bend and dihedral angles of the isoprene unit relative to the quinone plane to the crystal structure of the quinone in the active site of bacterial complex I (PDB: 6I0D) \cite{gutierrez2020key}, as presented in Figure \ref{fig:Q1_dyson}. The results are shown in Figure \ref{fig:Q1_maps}. In this case, we remove the plane of symmetry of the molecule, and all points of the surface have to be sampled. The PES and dipole surfaces were calculated using TPSS functional (DFT). Due to the computational cost, only the points with a dipole strength above 1.6 Debye were sampled.
+
+ \begin{figure}[ht!]
+  \centering
+  \small
+  \input{chapters/results/image/Q1_maps.tex}
+  \caption[Surfaces of Q1]{From left to right and top to bottom: Energy surface (DFT TPSS), dipole moment surface (DFT TPSS), vertical binding energy surface (EA-EOM-CC2), and dipole bound anion (EA-EOM-CC2) surface of Q1. White points in VBS and DBS surfaces were not sampled, gray points indicate predicted unbound states.\label{fig:Q1_maps}}
+\end{figure}
+
+Concerning the conformational potential energy surface (PES), the fixed position of the isoprene tail, distant from the quinone moiety, prevents interaction with the methoxy chains. This renders the scenario largely analogous to that of Q\textsubscript{0}. Steric hindrances would be anticipated with longer tails or alternative configurations. However, the realism of this particular system is questionable, as crystallographic data \cite{taguchi2013conformational} indicate that the isoprene tail does not penetrate the quinone moiety's pocket. Within a protein, the orientation of the methoxy chains is dictated by the local environment, with specific configurations favoured by interactions with first-shell amino acids.
+
+The interpretation of the dipole strength surface is also similar to that of Q\textsubscript{0}, with the addition of a fixed dipole originating from the isoprene group, which is oriented approximately out of the plane. This has the effect of dividing region B from Figure \ref{fig:Q0_maps} into two distinct regions for Q\textsubscript{1}, designated B and C. In region B, the local dipole of the isoprene aligns with the methoxy dipoles, resulting in a maximum dipole strength of 3.3 Debye at (160,-80). Conversely, in region C, destructive interference occurs between the local dipoles, leading to a maximum dipole strength of 2.9 Debye at (-60,160). Region A is only slightly affected, retaining a maximum dipole strength of 2.6 D at (0,0).
+
+The VBS surface of Q\textsubscript{1} is more challenging to interpret due to the omitted data points. Nevertheless, the overall picture appears to remain consistent, as the qualitative effect of the rotation of the chains (acting as electron donor or acceptor) is unchanged. The range of vertical electron affinity (VEA) varies surprisingly little, with a global minimum of 1.26 eV at (0,0) and a maximum of 1.76 eV at (-120,120). It had been previously proposed that, contrary to its established spectator role, the isoprene tail might contribute to the stabilisation of the excess electron \cite{pshenichnyuk2020ionizing}. However, the results presented herein suggest that the isoprene tail does not significantly affect the VBS of Q\textsubscript{1}, at least in the conformation employed in this study.
+
+Regarding the DBS surface, the impact of the isoprene tail is more pronounced. In region B, where the local dipole of the isoprene tail aligns with the methoxy dipoles, the region expands to encompass a larger area and exhibits a maximum binding energy of 9.1 meV at (80,-160). In region C, the local dipoles interfere destructively, resulting in a smaller area with a maximum binding energy of 5.0 meV at (-80,140). Region A shows a minor difference, with a maximum binding energy of 12.2 meV at (20,-20). In Figure \ref{fig:Q1_dyson}, the Dyson orbitals of the structures are shown. The variations in electron binding energy in regions B and C can be attributed to changes in the dipole moment strength. The alteration in region A, however, is likely related to a decrease in the favourable interactions between the DBS and the rest of the electronic density, as the dipole moment remains largely unchanged. Finally, it is again noteworthy the prediction of structures with dipole moments below 2.5 D, which are predicted to be bound by EA-EOM-CC2; with dihedrals of (20,20) and dipole of 1.81 D, the binding energy is 2.2 meV.
+
+\begin{figure}[h]
+  \centering
+    \begin{minipage}[b]{0.30\textwidth}
+    \centering
+      \includegraphics[width=1.2\textwidth]{chapters/results/image/Q1_249.png}
+      \small\emph{Region A \\$(0,0)~\mu=2.6~D$ E=12.2~meV}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[b]{0.30\textwidth}
+    \centering
+      \includegraphics[width=\textwidth]{chapters/results/image/Q1_199.png}
+      \small\emph{Region B \\$(160,-80)~\mu=3.3~D$, $E=9.1~meV$}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[b]{0.30\textwidth}
+    \centering
+    \includegraphics[width=0.9\textwidth]{chapters/results/image/Q1_112.png}
+    \small\emph{Region C \\$(-60,160)~\mu=2.9~D$, $E=5.0~meV$}
+  \end{minipage}
+  \caption[Dyson orbitals of Q1]{Dyson orbitals of Q0 calculated with RI-EA-EOM-CC/aug-cc-pVDZ+6s3p. The left panel shows the Dyson orbital of the strongest bound DBS from region A. The middle panel shows the Dyson orbital of the strongest bound DBS from region B. The right panel shows the Dyson orbital strongest bound DBS from region A. The isosurface is set to 0.005 e/Bohr\textsuperscript{3} and the dipole moment vector is shown as a green arrow with origin at the centre of mass.}
+  \label{fig:Q1_dyson}
+\end{figure}
+
+An important consideration for dipole-bound states (DBS) is the extent of correlation between their binding energy and the strength of the dipole moment that supports them. The DBS maps for Q\textsubscript{0}, Figure \ref{fig:Q0_maps}, and Q\textsubscript{1}, Figure \ref{fig:Q1_maps}, are clearly demarcated into distinct regions. Figure \ref{fig:D_vsDBS} presents a scatter plot illustrating all bound points for both Q\textsubscript{0} and Q\textsubscript{1}. This plot demonstrates that the different regions identified in the maps correspond to separate populations in the scatter data. A correlation between dipole strength and binding energy is observed in all regions, though the degree of this correlation varies. For instance, region A, which accommodates the strongest dipoles, exhibits a nearly linear relationship between these two parameters for both quinones. This behaviour can be attributed to its conceptual similarity to an ideal dipole. When comparing region A in Q\textsubscript{0} and Q\textsubscript{1}, the slope for Q\textsubscript{0} is steeper than that for Q\textsubscript{1}, indicating that variations in the chemical environment affect the interplay between the dipole moment and the binding strength.
+
+Concerning the populations in regions B and C, the relationship between the dipole moment and binding energy is considerably less pronounced. This is likely because the DBS occupies a spatial region closer to the other electrons, specifically the \textpi\ system. In this system, alterations in dipole strength arise from changes in its orientation. Consequently, the displacement of the DBS that accompanies the strengthening of the dipole might result in a less favourable interaction with the remaining electronic density.
+In general, the electron binding energy is only loosely correlated with the magnitude of the dipole moment that supports it. However, for analogous systems, such as region A, these two quantities become more significantly interconnected.
+
+\begin{figure}[th!]
+    \centering
+    \small
+    \input{chapters/results/image/DvsDBS.tex} 
+    \caption[Q\textsubscript{0} and Q\textsubscript{1} DBS populations]{Q\textsubscript{0} and Q\textsubscript{1} DBS populations assigned to the DBS surfaces from Figures \ref{fig:Q0_maps} and \ref{fig:Q1_maps}.}
     \label{fig:D_vsDBS}
 \end{figure}
-\iffalse\begin{figure}[ht!]
-  \centering
-  \begin{minipage}[]{0.49\textwidth}
-    \centering
-    \footnotesize
-    \input{chapters/results/image/Q1_E.tex}
-  \end{minipage}%
-  %\hfill
-  \begin{minipage}[]{0.47\textwidth}
-    \centering
-    \small
-    \input{chapters/results/image/Q1_d.tex}
-  \end{minipage}
-  %\vfill
-  \begin{minipage}[]{0.49\textwidth}
-    \centering
-    \small
-    \input{chapters/results/image/Q1_VBA.tex}
-  \end{minipage}%
-  \begin{minipage}[]{0.47\textwidth}
-    \centering
-    \small
-    \input{chapters/results/image/Q1_DBA.tex}
-  \end{minipage}
-  \label{fig:Q1_surf}
-  \caption[Surfaces of Q1]{Surfaces of Q1. Left: Energy surface. Right: Dipole moment surface.}
-\end{figure}\fi
 
-\iffalse\begin{figure}[hb!]
-  \centering
-  \begin{minipage}[]{0.49\textwidth}
-    \centering
-    \small
-    \input{chapters/results/image/Q1_E.tex}
-  \end{minipage}%
-  %\hfill
-  \begin{minipage}[]{0.47\textwidth}
-    \centering
-    \small
-    \input{chapters/results/image/Q1_d.tex}
-  \end{minipage}
-  \label{fig:Q1_surf}
-  \caption[Surfaces of Q1]{Surfaces of Q1. Left: Energy surface. Right: Dipole moment surface.}
-\end{figure}
-\subsection{A Simple Cluster Model}\fi
-\ldots
+\subsection{Interaction with small molecules}
 
-\subsection{Interaction with Water}
-\ldots
+Subsequent to the characterisation of the isolated quinones, the focus shifts to the interaction of their anionic states with small molecules. Recognising that chemical processes in nature do not occur in a vacuum and that environmental interactions are crucial, this work investigates these effects by considering small molecular clusters. Figure \ref{fig:scan_X} detail the interactions between Q\textsubscript{0}, region B, with a dipole of 3.4 Debye, and selected molecules: methane, ammonia (1.47 D), water (1.85 D), and hydrogen fluoride (1.82 D). For these model systems, the dipole of the solvent molecule was oriented to interact either constructively or destructively with the quinone's dipole. In the case of methane, which has no dipole moment, it is shown in both cases for comparison. The intermolecular distance was systematically varied from 30 down to 4 \r{A}. The consequent effects on the VBS and DBS energies, are presented. It is important to note that none of these molecules support an anionic state on their own. The DBS of a representative Q\textsubscript{0} + water system for each of the two orientations is shown in Figure \ref{fig:Q1_dyson}.
+
 \begin{figure}[th!]
     \centering
     \small
     \input{chapters/results/image/scan_H.tex}
-    %figsize is set in image/test.gp 
-    \caption[Short caption for Table of Figures]{Favorable Interaction with water.}
-    \label{fig:scan_H}
-\end{figure}
-adiabatic
-
-\begin{figure}[th!]
-    \centering
-    \small
     \input{chapters/results/image/scan_X.tex}
     %figsize is set in image/test.gp 
-    \caption[Short caption for Table of Figures]{Favorable Interaction with water.}
+    \caption[Q\textsubscript{0} interaction with small molecules]{Q\textsubscript{0} interaction with small molecules. From top to bottom: DBS with opposing dipoles, VBS with opposing dipoles, DBS with aligned dipoles, and VBS with aligned dipoles.}
     \label{fig:scan_X}
 \end{figure}
 
-\subsection{Effect of Nearby Amionacids}
-\ldots
+Considering the DBS, when the solvent and quinone dipoles are opposed, polar molecules induce a wide well with a minimum at around 8 \r{A}. The electron binding energy of the DBS reaches 60 meV with both water and HF, and 37 meV with ammonia. This represents a more than tenfold increase compared to the 5.4 meV binding energy of the isolated quinone. Stabilisation by methane is considerably weaker, as it arises solely from dispersion forces. The similarity between the water and HF interaction curves is noteworthy; they overlap almost perfectly across most of the separation range. This congruence is attributed to their comparable dipole moments (1.85 D for water; 1.82 D for HF). At large separations, the specific electronic structures of these solvent molecules are less influential, and the DBS primarily experiences the effect of their dipole moments. The interaction with ammonia is weaker due to its smaller dipole moment of 1.47 D. This scenario is characteristic of a solvated electron within a 'cavity' \cite{jordan2003theory,herbert2019structure}. At an intermolecular distance of approximately 4 \r{A}, the interaction becomes repulsive for all molecules studied due to steric interactions, causing the DBS to become unbound due to steric hindrance.
 
-\subsubsection{Serine}
-\ldots
-\subsubsection{Threonine}
-\ldots
-\subsubsection{Apsaragine}
-\ldots
-\subsubsection{Isoleucine}
-\ldots
+Conversely, with parallel dipole orientations, polar molecules exhibit repulsion at large distances. This is attributable to the negative end of the solvent dipole destabilising the DBS. At shorter ranges, however, the local dipoles combine constructively, thereby stabilising the binding energy. For water, which possesses the largest dipole moment, the DBS attains an electron binding energy of 80 meV, with the total system dipole moment being 6.1 Debye. Such configurations have recently been observed in photoelectron spectroscopy experiments \cite{clarke2025role} and are thought to play an important role in the transfer of a VBS to a solvated electron.
+
+\begin{figure}[h]
+  \centering
+    \begin{minipage}[b]{0.3\textwidth}
+    \centering
+      \includegraphics[width=0.9\textwidth]{chapters/results/image/Q0_H2O_H.png}
+      %\small\emph{Region A \\$(0,0)~\mu=2.6~D$ E=12.2~meV}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[b]{0.3\textwidth}
+    \centering
+    \includegraphics[width=1\textwidth]{chapters/results/image/Q0_H2O_O.png}
+    %\small\emph{Region C \\$(-60,160)~\mu=2.9~D$, $E=5.0~meV$}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[b]{0.3\textwidth}
+    \centering
+    \includegraphics[width=0.9\textwidth]{chapters/results/image/Q0_H2O_VBS.png}
+    %\small\emph{Region C \\$(-60,160)~\mu=2.9~D$, $E=5.0~meV$}
+  \end{minipage}
+  \caption[Dyson orbitals of Q0+water]{Dyson orbitals of Q0 + water. Left, system where the dipoles are pointing in opposed directions at an intermolecular distance of 8 \r{A}. Middle: dipoles aligned at an intermolecular distance of 4 \r{A}. Right: VBS of Q0 and a water molecule at 4 \r{A}. The isosurface is set to 0.01 e/Bohr\textsuperscript{3}.}
+  \label{fig:Q1_dyson}
+\end{figure}
+
+The interaction also significantly affects the VBS. When the dipoles are opposed, \textit{i.e.}, the positive end of the solvent dipole is oriented towards the excess electronic charge of the quinone, the VBS is strongly stabilised at short intermolecular distances. With water, the VBS achieves a VEA of 2.5 eV, an increase of over 0.8 eV compared to the isolated quinone. A similar effect is observed for HF, yielding a VEA of 2.5 eV, while the stabilisation is less pronounced for ammonia and methane. A comparison of the influence of surrounding molecules on the VBS with that of methoxy chain rotation, as discussed in section \ref{sec:Q0_maps}, reveals that intermolecular interactions can be considerably more influential. The protein environment has probably a larger effect on the CoQ EA than the orientation adopted by the methoxy chains.
+
+If the dipoles are aligned, the negative end of the solvent dipole interacts with the VBS and is destabilised. A similar and unfavourable trend is observed for the three polar molecules. At an intermolecular distance of 4 \r{A}, the VEA decreases to approximately 1.4 eV. The destabilisation arises from the negative end of the solvent dipole repelling the excess electron density of the quinone.
+aa
+%\subsection{Effect of Nearby Amionacids}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Keep the following \cleardoublepage at the end of this file, 

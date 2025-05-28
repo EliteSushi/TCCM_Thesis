@@ -9,7 +9,7 @@ set multiplot layout 1,2 margins 0.1,0.98,0.15,0.98 spacing 0.02,0
 set xlabel 'Dipole Strength (Debye)'
 set ylabel 'DBS Binding Energy (meV)'
 set pointsize 0.8
-set xrange [1.5:4]
+set xrange [1.5:3.7]
 set yrange [0:15]
 set key at graph 0.8, graph 0.85 center
 set label "Q0" at graph 0.1, graph 0.92 center
