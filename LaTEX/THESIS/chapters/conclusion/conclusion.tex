@@ -1,9 +1,31 @@
 % !TeX root = ../../thesis.tex
-\chapter{This is conclusion}\label{ch:conclusion}
+\chapter{Conclusion and Outlook}\label{ch:conclusion}
+This thesis presents a theoretical investigation of anionic states of ubiquinone, which supports both a dipole-bound state and valence-bound states, primarily through equation-of-motion coupled-cluster (EOM-CC) techniques. The principal objectives included benchmarking EOM-CC2-based approaches, assessing basis set considerations for DBSs, implementating of Dyson orbitals for EOM-CC2, and applying these methods to ubiquinone (CoQ) analogues, Q\textsubscript{0} and Q\textsubscript{1}.
 
-\ldots
+Scrutiny of basis set dependence for EA-EOM-CC2 revealed that, although larger cardinality sets (e.g.\ aug-cc-pVTZ) are often beneficial, the inclusion sufficiently diffuse functions is critical for describing the spatial extension of DBS orbitals. In general CC2 tends to overbind these states when compared to CCSD.
 
-\instructionsconclusions
+For VBSs, EA-EOM-CC2 was benchmarked against known quinones, showing that spin-component scaling (SCS) notably improves accuracy relative to uncorrected CC2. EA-EOM-CC2-SCS tends to slightly underbind the VBS states. However, unscaled CC2 has a consistent error and is able to recover the trends. The diffuse functions integral to DBSs had minimal impact on VBS energies, as they are much more localized in space.
+
+A methodological advance was the implementation of EOM-CC2 Dyson orbitals. Their quality was assessed by comparing them to EOM-CCSD Dyson orbitals and HF orbitals in the calculation of photodetachment cross-sections. Validating EOM-CC2 Dyson orbitals as a resource-efficient alternative to EOM-CCSD.
+
+Investigations of Q\textsubscript{0} revealed the interplay between methoxy chain conformations and the resulting potential energy, dipole moment, VBS, and DBS surfaces. Five minima were detected on the neutral PES, with methoxy group orientations dictating the dipole moment and hence affecting DBS energies.
+
+Extending to Q\textsubscript{1}, the attached isoprene tail altered the overall molecular dipole to create changes in DBS binding, with constructive dipolar alignment enhancing DBS stability and destructive alignment reducing it. The VBS of Q\textsubscript{1} was not particularly sensitive to the isoprene tail's presence.  Different modes of DBS stabilization where observed, depending on their interaction with the rest of that electronic density. Within each mode, or region, the DBS binding strength seems to be correlated strongly with dipole magnitude.
+
+Preliminary explorations of interactions between Q\textsubscript{0} and small molecules (methane, ammonia, water, HF) underscored the sensitivity of both VBSs and DBSs to the local environment. This outcome emphasises the importance of considering environmental effects, which is essential to model states in condensed-phase or biological settings.
+
+Overall, this thesis advances the understanding of non-valence anionic states and the computational techniques applied to them. The benchmarking of EA-EOM-CC2 furnishes guidelines for those seeking cost-effective yet reliable estimates of electron affinities, DBSs, and VBSs, while confirming the utility of EOM-CC2 Dyson orbitals in photodetachment studies. The exploration of ubiquinone anion states underscores how molecular conformation and local electrostatic factors govern the stability and character of both VBSs and DBSs. The observation of DBSs supported by smaller dipole moments challenges common assumptions, highlighting the relevance of dispersion-type interactions in NVSs.
+
+From a pedagogical perspective, this work comprehensively spans multiple facets of theoretical chemistry and computational modelling. Starting from the bottom with a derivation of an algebraic expression for EOM-CC2 Dyson orbitals, progresses to their implementation in commercial quantum-chemistry software, and culminates in their application to a sizeable \textit{(bio)}chemical challenge: the anionic states of ubiquinone.
+
+Despite these contributions, several directions for further work remain:
+\begin{itemize}
+    \item \textbf{Advanced Solvation Models:} Though small-molecule interactions were considered, explicit solvation or hybrid QM/MM simulations could quantitatively characterise environmental influence on VBS and DBS formation in solution or protein settings. Other techniques that could be utilised is electrostatic embedding.
+    \item \textbf{Dynamic Effects:} For larger systems that include more solvating molecules, introducing molecular dynamics simulations to account for structural fluctuations would offer insights into anion state energies and interconversions under realistic conditions.
+    \item \textbf{Relating to Experimental Observables:} Future efforts could concentrate on predicting and interpreting experimental data, such as electron transmission, photoelectron angular distributions, or connecting VBS/DBS energies to redox properties in electrochemical or biochemical contexts. Specificaly, one could compute the nonadiabatic couplings between a potential electron donor state and the VBS and
+\end{itemize}
+    
+In summary, this thesis offers a thorough computational analysis of non-valence anions, supplies methodological insights, and delivers a closer characterisation of ubiquinone anion states. These outcomes pave the way for further studies of the complex physics and chemistry associated with such species in larger or more intricate biological frameworks.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

@@ -7,7 +7,7 @@ set output 'Q0_maps.tex'
 gawk_script = 'cont.awk'
 
 # Multiplot layout setup
-set multiplot layout 2,2 margins 0.07,0.98,0.05,0.95 spacing 0.04,0.04
+set multiplot layout 2,2 margins 0.07,0.98,0.08,0.98 spacing 0.04,0.04
 
 #  Energy PES plot
     filename = 'Q0.dat'
