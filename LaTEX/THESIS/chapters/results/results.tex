@@ -22,7 +22,6 @@ The aug-cc-pVDZ+6s3p basis set, when employed with CC2, yields the lowest MAE of
 \begin{landscape}
 \begin{table}[p]
   \centering
-  \small
   \caption[EOM-EA DBA basis set dependence.]{ Electron affinity of dipole-bound radical anions computed using different augmented Dunning basis sets and EOM-EA RI-CC2 and RI-CCSD \cite{paran2024performance}. Koopman' theorem (KT), and dipole moment, \textmu, calculated at the HF/aug-cc-pVTZ+6s3p level, and mean absolute error (MAE) are also given. The values are in meV and Debye respectively.}
 \label{tab:basis}
   \begin{tabular}{cccccccccccc}
@@ -57,7 +56,6 @@ The aug-cc-pVDZ+6s3p basis set, when employed with CC2, yields the lowest MAE of
 
 \begin{table}[h!]
   \centering
-  \small
   \caption[EA-EOM-CC2 benchmark for quinone VBS.]{EA-EOM-CC2 benchmark for quinone VBS. Reference values from literature\cite{schulz2018systematic} include experimental (adiabatic) electron affinities and CCSD(T) calculations using aug-cc-pVDZ basis set with LPNO-CCSD extrapolation to higher cardinal numbers. The RI-CC2 calculations employed three basis sets: aug-cc-pVTZ+6s3p (abbreviated as VTZ+) built as described in section \ref{sec:methods:basis}, standard aug-cc-pVTZ (VTZ), and aug-cc-pVDZ (VDZ).}
   \label{tab:Quinones}
   \begin{tabular*}{\textwidth}{cccccccc}
@@ -103,7 +101,7 @@ The incorporation of SCS improves the accuracy of CC2 for valence-bound states, 
 
 It is also important to note that DBS predictions are known to deteriorate significantly when SCS is applied \cite{paran2024performance}. This is explained by the nature of the DBS; the additional electron is situated far from the core electrons, resulting in a substantially weaker exchange interaction compared to the Coulomb interaction. This characteristic diminishes the effectiveness of SCS for such systems.
 
-\subsection{Photoelectron Cross-section Calculations from EOM-CC2/CCSD}
+\subsection{Photoelectron Cross-section from EOM-CC2/CCSD}
 
 As a part of this work, Dyson orbitals between EOM-CC2 states has been implemented within the \texttt{ccman2} module of the \textit{Q-Chem} software package. To evaluate their quality, one must extend beyond mere visual assessment.
 
@@ -233,8 +231,9 @@ Subsequent to the characterisation of the isolated quinones, the focus shifts to
 \begin{figure}[th!]
     \centering
     \small
-    \input{chapters/results/image/scan_H.tex}
-    \input{chapters/results/image/scan_X.tex}
+    \input{chapters/results/image/scan_all.tex}
+    %\input{chapters/results/image/scan_H.tex}
+    %\input{chapters/results/image/scan_X.tex}
     %figsize is set in image/test.gp 
     \caption[Q\textsubscript{0} interaction with small molecules]{Q\textsubscript{0} interaction with small molecules. From top to bottom: DBS with opposing dipoles, VBS with opposing dipoles, DBS with aligned dipoles, and VBS with aligned dipoles.}
     \label{fig:scan_X}
@@ -264,13 +263,12 @@ Conversely, with parallel dipole orientations, polar molecules exhibit repulsion
     %\small\emph{Region C \\$(-60,160)~\mu=2.9~D$, $E=5.0~meV$}
   \end{minipage}
   \caption[Dyson orbitals of Q0+water]{Dyson orbitals of Q0 + water. Left, system where the dipoles are pointing in opposed directions at an intermolecular distance of 8 \r{A}. Middle: dipoles aligned at an intermolecular distance of 4 \r{A}. Right: VBS of Q0 and a water molecule at 4 \r{A}. The isosurface is set to 0.01 e/Bohr\textsuperscript{3}.}
-  \label{fig:Q1_dyson}
+  \label{fig:Q0_H2O_dyson}
 \end{figure}
 
 The interaction also significantly affects the VBS. When the dipoles are opposed, \textit{i.e.}, the positive end of the solvent dipole is oriented towards the excess electronic charge of the quinone, the VBS is strongly stabilised at short intermolecular distances. With water, the VBS achieves a VEA of 2.5 eV, an increase of over 0.8 eV compared to the isolated quinone. A similar effect is observed for HF, yielding a VEA of 2.5 eV, while the stabilisation is less pronounced for ammonia and methane. A comparison of the influence of surrounding molecules on the VBS with that of methoxy chain rotation, as discussed in section \ref{sec:Q0_maps}, reveals that intermolecular interactions can be considerably more influential. The protein environment has probably a larger effect on the CoQ EA than the orientation adopted by the methoxy chains.
 
 If the dipoles are aligned, the negative end of the solvent dipole interacts with the VBS and is destabilised. A similar and unfavourable trend is observed for the three polar molecules. At an intermolecular distance of 4 \r{A}, the VEA decreases to approximately 1.4 eV. The destabilisation arises from the negative end of the solvent dipole repelling the excess electron density of the quinone.
-aa
 %\subsection{Effect of Nearby Amionacids}
 
 

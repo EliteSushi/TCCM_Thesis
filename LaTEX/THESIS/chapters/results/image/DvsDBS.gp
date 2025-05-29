@@ -1,9 +1,9 @@
 reset
-set terminal cairolatex size 4.85,2.43 
+set terminal cairolatex size 16cm,8cm color 
 set output 'DvsDBS.tex'
 
 # Multiplot layout setup
-set multiplot layout 1,2 margins 0.1,0.98,0.15,0.98 spacing 0.02,0
+set multiplot layout 1,2 margins 0.06,1,0.1,0.98 spacing 0.02,0
 
 # First plot
 set xlabel 'Dipole Strength (Debye)'

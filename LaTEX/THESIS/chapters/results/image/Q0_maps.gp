@@ -1,13 +1,13 @@
 system 'gnuplot Q0_d_conotour.gp'
 system 'gnuplot Q0_VBA_contour.gp'
 reset
-set terminal cairolatex size 4.85,4.85 
+set terminal cairolatex size 16cm,16cm color 
 set output 'Q0_maps.tex'
 
 gawk_script = 'cont.awk'
 
 # Multiplot layout setup
-set multiplot layout 2,2 margins 0.07,0.98,0.08,0.98 spacing 0.04,0.04
+set multiplot layout 2,2 margins 0.06,1,0.06,0.98 spacing 0.04,0.04
 
 #  Energy PES plot
     filename = 'Q0.dat'

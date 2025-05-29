@@ -11,7 +11,7 @@ $data << EOD
   10   1.51  1.45  1.92  1.91  1.71 
 EOD
 
-set terminal cairolatex size 4.55,1.85
+set terminal cairolatex size 16cm,6cm color
 set output 'Quinones.tex'
 set xrange [1.3:1.65]
 set yrange [1.1:2.1]

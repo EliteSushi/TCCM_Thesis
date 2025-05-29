@@ -1,209 +1,262 @@
-\documentclass[showinstructions,doctoralschool=sci,faculty=dc,department=che,phddegree=tccm]{adsphd}
-% !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-% !!                                                               !!
-% !!  WARNING: do not remove the following lines between           !!
-% !!  "%%% COVER: Settings %%%" and "%%% COVER: End settings %%%"  !!
-% !!                                                               !!
-% !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+% ----------- Cover Master Thesis Faculty of Sciences ---------------
+% This document should be compiled with pdflatex.  If you want to use
+% latex to compile to dvi/ps, you have to convert the images to (e)ps
+%                           -- December 2012
+% -------------------------------------------------------------------
+\RequirePackage{fix-cm}
+\documentclass[12pt,a4paper,oneside]{book}
 
-%%% COVER: Settings %%%
-\title{Computational Exploration of Non-Valence Anions from Biological Quinones}
-\subtitle{A Second Order Approximate Coupled Clouster Study}
-
-\author{Mauro}{Gasc{\'o}n Navas}
-
-\supervisor{Robin Moorby}{}
-\supervisor{Prof.~Dr.~Thomas Jagau}{}
-%\president{}{}
-%\jurymember{Prof. Jeremy N. Harvey}{}
-%\jurymember{Dr. Mariana Telles do Casal}{}
-%\externaljurymember{}{}
-
-% Your research group within the department
-% e.g. DTAI, MICAS
-\researchgroup{Theoretical Chemistry of Unbound Electrons}
-\website{https://chem.kuleuven.be/en/research/qcpc/tue/} % Leave empty to hide
-%\email{first.last@cs.kuleuven.be} % Leave empty to hide
-
-\address{Celestijnenlaan 200A box 2402}
-% \addresscity{B-3001 Leuven} % This is the default value. Note
-                              % that 'B-3001 Heverlee' is _incorrect_!!
-                              % https://www.kuleuven.be/english/language-guide
-
-%%%%%%%%%%%% For joint PhDs only %%%%%%%%%%%%%%%%%%%%%%
-% Add 'joint' to the options to the adsphd class.
-% Change "PARTNER_LOGO.eps" in image folder!
-\facultypartner{Faculty Partner}
-\departmentpartner{Department Partner}
-\addresspartner{Address Partner}
-\addresscitypartner{City Partner}
-\emailpartner{} % Leave empty to hide
-\websitepartner{} % Leave empty to hide
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\date{June 2025}
-\copyyear{2025}
-\copyaddress{Leuven}
-%\udc{XXX.XX}             % UDC, deposit number and ISBN are no longer necessary.
-%\depot{XXXX/XXXX/XX}     % Leave out the initial D/ (it is added
-%\isbn{XXX-XX-XXXX-XXX-X} % automatically)
+% ------------------------- Load packages ---------------------------
+% You can eventually add these while you load other packages
+% in case you want to integrate the titlepage with the rest of your thesis
+% -------------------------------------------------------------------
+\usepackage{graphicx,xcolor,textpos}
 
 
-% Set spine width:
-\setlength{\adsphdspinewidth}{9mm}
-% This is not directly used by the printing service, they calculate this
-% themselves because it depends on the number of pages, paper types, etc.
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{helvet}
+\usepackage{sectsty}
+\usepackage{helvet}                       % one could turn off this one
+\usepackage{etoolbox}
+%\usepackage[scaled=0.92]{helvet}
+%\usepackage[scaled=1]{newtxsf}
+%\usepackage[helvet]{sfmath}               % one could turn off this one
+%\usepackage{cmbright}
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage{booktabs}
+\usepackage[backend=biber, style=chem-acs, sorting=none]{biblatex}
+\let\cite=\supercite
+\addbibresource{allpapers.bib}
+%\usepackage[numbers,sort&compress]{natbib}
+\usepackage{siunitx}
+\usepackage{subcaption}
+\usepackage{svg}
+\usepackage[T1]{fontenc}
+\usepackage{setspace}
+%\usepackage[nottoc,numbib]{tocbibind}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
 
-%% Set bleeds
-%\setlength{\defaultlbleed}{0mm}
-%\setlength{\defaultrbleed}{5mm}
-%\setlength{\defaulttbleed}{0mm}
-%\setlength{\defaultbbleed}{0mm}
+\usepackage{longtable} % For tables that span multiple pages
+\usepackage{array}     % For advanced column formatting (like p{})
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\usepackage{pdflscape} % For landscape pages
 
-% Set custom cover page
-% \setcustomcoverpage{mycoverpage.tex} % mycoverpage.tex is the default
+\usepackage[font={small,rm}]{caption} % to make the captions' font smaller
 
-%%% COVER: End settings %%%
+\usepackage[colorlinks=true, linkcolor=blueaff, citecolor=blueaff, urlcolor=blueaff]{hyperref}
 
-% for the nomenclature (comment out if you do not use the nomencl package
-\iffalse \usepackage{nomencl}   % For nomenclature
-\renewcommand{\nomname}{List of Symbols}
-\newcommand{\myprintnomenclature}{%
-  \cleardoublepage%
-  \printnomenclature%
-  \chaptermark{\nomname}
-  \addcontentsline{toc}{chapter}{\nomname} %% comment to exclude from TOC
-}
-\makenomenclature \fi
+\usepackage{csquotes} % for quotes
 
-% for the list of abbreviations (comment out if you do not use the glossaries package
-\usepackage{glossaries} % For list of abbreviations
-\newcommand{\glossname}{List of Abbreviations}
-\newcommand{\myprintglossary}{%
-  \renewcommand{\glossaryname}{\glossname}
-  \cleardoublepage%
-  \printglossary[title=\glossname]
-  \chaptermark{\glossname}
-  \addcontentsline{toc}{chapter}{\glossname} %% comment to exclude from TOC
-}
-\makeglossaries%
+\usepackage[nohyperlinks]{acronym} % for acronyms
 
-
-% BibLaTeX
-%\usepackage[utf8]{inputenc}
-%\usepackage{csquotes}
-%\usepackage[
-  %hyperref=auto,
-  %mincrossrefs=999,
-  %backend=biber,
-  %style=
-%  sorting=none,
-%  maxbibnames=999,
-%  style=numeric,
-%]{biblatex}
-%\addbibresource{allpapers.bib}
-
-% Fonts
 \usepackage{textcomp} % nice greek alphabet
 \usepackage{pifont}   % Dingbats
 \usepackage{booktabs}
-\usepackage{amssymb,amsthm}
-\usepackage{amsmath}
+\usepackage{amsthm}
 \usepackage{cancel}
 \usepackage{graphicx}
-\usepackage{siunitx}
 \usepackage{pdflscape}
 \usepackage{textcomp}
 \usepackage[version=4]{mhchem}
 \usepackage{caption}
 \usepackage{textgreek}
-%\usepackage{hyperref}
-\usepackage[superscript]{cite}
+\usepackage[]{acronym}
+%\usepackage[superscript]{cite}
+\DeclareCiteCommand{\citenum} % \citenum in biblatex
+  {}
+  {\printfield{labelnumber}}
+  {}
+  {}
 \usepackage{tikz}
 \usepackage{gensymb}
+\AtBeginEnvironment{tabular}{\rmfamily}
+\AtBeginEnvironment{tabular*}{\rmfamily}
+\AtBeginEnvironment{figure}{\rmfamily}
+\AtBeginEnvironment{table}{\rmfamily}
+\AtBeginEnvironment{picture}{\rmfamily}
+\AtBeginEnvironment{minipage}{\rmfamily}
+\renewcommand*{\bibfont}{\rmfamily}
+\renewcommand{\theequation}{\rmfamily\arabic{equation}}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ------------------------ Page settings -----------------------------
+% If you change these, the cover layout will also change.  In that
+% case you have to adjust the latter manually.
+% --------------------------------------------------------------------
+
+\topmargin -10mm
+\textwidth 160truemm
+\textheight 240truemm
+\oddsidemargin 0mm
+\evensidemargin 0mm
+
+% ---------------------- textpos settings ----------------------------
+% Some additional settings for the cover
+% --------------------------------------------------------------------
+
+\definecolor{green}{RGB}{172,196,0}
+\definecolor{bluetitle}{RGB}{29,141,176}
+\definecolor{blueaff}{RGB}{0,0,128}
+\definecolor{blueline}{RGB}{82,189,236}
+\setlength{\TPHorizModule}{1mm}
+\setlength{\TPVertModule}{1mm}
 
 \begin{document}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\makefrontcoverXXIV
+% ----------------------- Cover --------------------------------------
+% Please fill in:
+% - The title and subtitle (if applicable)
+%         to include a formula in the title or subtitle
+%         use  \form{$...$}
+% - Your name
+% - Your (co)supervisor, mentor (if applicable)
+% - Your master
+% - The academic year
+% --------------------------------------------------------------------
+\thispagestyle{empty}
+\newcommand{\form}[1]{\scalebox{1.087}{\boldmath{#1}}}
+\sffamily % one could change this one to 'rmfamily'
+%
+\begin{textblock}{191}(-24,-11)
+\colorbox{bluetitle}{\hspace{139mm}\ \parbox[c][18truemm]{52mm}{\textcolor{white}{FACULTY OF SCIENCE}}}
+\end{textblock}
+%
+\begin{textblock}{70}(-18,-19)
+\textblockcolour{}
+\includegraphics*[height=19.8truemm]{LogoKULeuven}
+\end{textblock}
+%
+\begin{textblock}{160}(-6,63)
+\textblockcolour{}
+\vspace{-\parskip}
+\flushleft
+\fontsize{35}{37}\selectfont \textcolor{bluetitle}{Computational Exploration of Non-Valence Anions from Biological Quinones}\\[1.5mm]
+%\fontsize{20}{22}\selectfont Dynamics and Reactivity
+\end{textblock}
+%
+\begin{textblock}{160}(8,153)
+\textblockcolour{}
+\vspace{-\parskip}
+\flushright
+\fontsize{14}{16}\selectfont \textbf{Mauro GASC{\'O}N}
+\end{textblock}
+%
+\begin{textblock}{70}(-6,191)
+\textblockcolour{}
+\vspace{-\parskip}
+\flushleft
+Supervisor: Prof. T. C. Jagau\\[-2pt]
+\textcolor{blueaff}{KU Leuven}\\[5pt]
+Mentor: Robin Moorby\\[-2pt]
+\textcolor{blueaff}{KU Leuven}\\
+\end{textblock}
+%
+\begin{textblock}{160}(8,191)
+\textblockcolour{}
+\vspace{-\parskip}
+\flushright
+Thesis presented in\\[4.5pt]
+fulfillment of the requirements\\[4.5pt]
+for the degree of Master of Science\\[4.5pt]
+in Theoretical Chemistry and Computational Modelling\\
+\end{textblock}
+%
+\begin{textblock}{160}(8,232)
+\textblockcolour{}
+\vspace{-\parskip}
+\flushright
+Academic year 2024-2025
+\end{textblock}
+%
+\begin{textblock}{191}(-24,248)
+{\color{blueline}\rule{550pt}{5.5pt}}
+\end{textblock}
+%
 
-\maketitle
+% In case you want to integrate the TeX-file for the titlepage
+% with the rest of your thesis, you cab continue below
+% ------------------------- First pages ---------------------------
+% For table of contents, acknowlegments, ...
+% -----------------------------------------------------------------
+\setcounter{page}{0}
+\pagenumbering{roman}
+\onehalfspacing
+UwU
 
-\frontmatter % to get \pagenumbering{roman}
-
-\includepopabstractnl{acknowledgements}
-\includeabstract{abstract}
-\includeabstractnl{abstractnl}
-
-% To create a list of abbreviations, there are 2 options
-% 1. manual creation of list of abbreviations and inclusion as a chapter
-%    \includeabbreviations{abbreviations}
-% 2. automatic generation via the glossary package
-%    \glossary{name=MD,description=molecular dynamics}
-%\myprintglossary
-
-% To create a list of symbols, there are 2 options
-% 1. include a manually created nomenclature as a chapter
-%    \includenomenclature{nomenclaturechapter}
-% 2. automatic generation via the nomencl package
-%    \nomenclature[cB]{$c_B(\vec{x})$}{Characteristic function of $B$}
-%\myprintnomenclature
-
+\include{copyright}
+\rmfamily
+\include{chapters/acknowledgements/acknowledgements}
+\include{chapters/abstract/abstract}
+\include{chapters/abstractnl/abstractnl}
+\include{chapters/abbreviations/abbreviations}
+\sffamily
 \tableofcontents
-\listoffigures
-\listoftables
+\rmfamily
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+% -------------------------- Proper text --------------------------
+% Introduction, chapters, ...
+% -----------------------------------------------------------------
+\setcounter{page}{0}
+\pagenumbering{arabic}
 
-\mainmatter % to get \pagenumbering{arabic}
+%include{chapters/abbreviations/abbreviations}
+\include{chapters/introduction/introduction}
+\include{chapters/theory/theory}
+\include{chapters/methods/methods}
+\include{chapters/results/results}
+\include{chapters/conclusion/conclusion}
 
-% Show instructions on a separate page
-%\instructionschapters\cleardoublepage
+\printbibliography
 
-\includechapter{introduction}
-\includechapter{theory}
-\includechapter{methods}
-\includechapter{results}
-\includechapter{conclusion}
-%\includechapter{manual} % Remove this chapter
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\bibliographystyle{naturemag}
+%\phantomsection
+%\addcontentsline{toc}{chapter}{Bibliography}
+%\bibliography{allpapers.bib}\fi
+
 
 \appendix
-
-\includeappendix{myappendix}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\backmatter
-
-\includebibliography
-% BibTex
-\bibliographystyle{unsrt}
-\bibliography{allpapers}
-% BibLatex (comment out lines above and uncomment biblatex lines in preamble)
-%\printbibliography[title=\bibname]
-%\instructionsbibliography
+\include{chapters/appendix/appendix}
 
 
 
-% Uncomment the appropriate sentences in and expand the text where needed to make it more specific and add topics if they are not covered by any of the indicated topics.
-\useOfGenAI{%
-  % I did not use generative AI assistance tools during the research/writing process of my thesis, except for mere language assistance. % The use of GenAI tools for language assistance does not need to be further specified. (The part 'except for mere language assistance' can be left out if not applicable)
-  % I did use the generative AI assistance tools ... % specify which e.g. MS Copilot/ ChatGPT/ResearchRabbit/... Please indicate in which way(s) you were using it and replace Generative AI with the specific AI tool(s) that was/were used:
-  % Generative AI was used as a search engine to learn about a particular topic. % If yes, please specify the usage.
-  % Generative AI was used for carrying out a literature review. % If yes, please specify the usage.
-  % Generative AI was used for short-form input assistance. % If yes, please specify the usage.
-  % Generative AI was used for generating programming code. % If yes, please specify the usage.
-  % Generative AI was used to generate new research ideas. % If yes, please specify the usage.
-  % Generative AI was used to generate visuals. % If yes, please specify the usage.
-  % Other (e.g. the development of a custom chatbot/genAI tool). % Please specify.
-  Generative AI was used for lenguage and coding assistance (ChatGPT, MicrosoftCopilot, LeChat). 
-}
-%\includegenai{}
 
-%\includepublications{publications}
-
-\makebackcoverXXIV
-
+\newpage
+% ----------------------- Back cover ------------------------------
+% Please fill in:
+% - Department
+% - Department's address
+% - Telephone number and fax number
+% -----------------------------------------------------------------
+\thispagestyle{empty}
+\sffamily
+%
+\begin{textblock}{191}(113,-11)
+{\color{blueline}\rule{160pt}{5.5pt}}
+\end{textblock}
+%
+\begin{textblock}{191}(168,-11)
+{\color{blueline}\rule{5.5pt}{59pt}}
+\end{textblock}
+%
+\begin{textblock}{183}(-24,-11)
+\textblockcolour{}
+\flushright
+\fontsize{7}{7.5}\selectfont
+\textbf{Quantum Chemistry and Physical Chemistry}\\
+Celestijnenlaan 200F bus 2404\\
+3001 LEUVEN, BELGI\"{E}\\
+tel. + 32 16 37 21 98\\
+jeremy.harvey@kuleuven.be\\
+www.kuleuven.be\\
+\end{textblock}
+%
+\begin{textblock}{191}(154,-7)
+\textblockcolour{}
+\includegraphics*[height=16.5truemm]{sedes}
+\end{textblock}
+%
+\begin{textblock}{191}(-20,235)
+{\color{bluetitle}\rule{544pt}{55pt}}
+\end{textblock}
 \end{document}

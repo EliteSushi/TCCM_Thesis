@@ -1,13 +1,13 @@
 system 'gnuplot Q1_d_conotour.gp'
 system 'gnuplot Q1_VBA_contour.gp'
 reset
-set terminal cairolatex size 4.85,4.85
+set terminal cairolatex size 16cm,16cm color
 set output 'Q1_maps.tex'
 
 gawk_script = 'cont.awk'
 
 # Multiplot layout setup
-set multiplot layout 2,2 margins 0.07,0.98,0.08,0.98 spacing 0.04,0.04
+set multiplot layout 2,2 margins 0.06,1,0.06,0.98 spacing 0.04,0.04
 
 #  Energy PES plot
     filename = 'Q1.dat'
@@ -113,7 +113,7 @@ set multiplot layout 2,2 margins 0.07,0.98,0.08,0.98 spacing 0.04,0.04
     l '<'.sprintf('gawk -f %s cont_VB.dat 0 %d %d 1 1', gawk_script, space_width, offset)
     p filename using 2:3:(-$6) w image, \
     '<'.sprintf('gawk -f %s cont_VB.dat 1 %d %d 1 1', gawk_script, space_width, offset) w l lt -1 lw 3.5 lc rgb "black", \
-    'Q1_VB_inv.dat' using 2:3:7 w p pt 5 ps 1.4 lc rgb "white"
+    'Q1_VB_inv.dat' using 2:3:7 w p pt 5 ps 1.8 lc rgb "white"
 
 # 4 DBS Plot
     filename = 'Q1_EOM_grid.dat'
@@ -152,7 +152,7 @@ set multiplot layout 2,2 margins 0.07,0.98,0.08,0.98 spacing 0.04,0.04
     l '<'.sprintf('gawk -f %s cont_DB.dat 0 %d %d 1 0', gawk_script, space_width, offset)
     p filename using 2:3:(-$7*1000) w image, \
     '<'.sprintf('gawk -f %s cont_DB.dat 1 %d %d 1 0', gawk_script, space_width, offset) w l lt -1 lw 3.5 lc rgb "black", \
-     'Q1_VB_inv.dat' using 2:3:7 w p pt 5 ps 1.4 lc rgb "white"
+     'Q1_VB_inv.dat' using 2:3:7 w p pt 5 ps 1.8 lc rgb "white"
 
 unset multiplot
 unset output
