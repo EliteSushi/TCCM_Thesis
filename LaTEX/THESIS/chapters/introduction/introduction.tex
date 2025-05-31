@@ -3,38 +3,38 @@
 \iffalse This chapter presents an overview of non-valence anions, focusing on dipole-bound anions. The significance of these anions in biological systems is explored, followed by an introduction to biological quinones and their crucial role in biological processes. Finally, the research objectives are outlined.\fi
 
 \section{Non-Valence Anions}
-An anion is an atom or molecule possessing a negative charge\cite{simons2008molecular,simons2023molecular,simons2011theoretical,herbert2015quantum}. The binding of electrons to a molecule is a balance between the attractive potential between the electron and the nuclei, and the repulsive forces between the electrons. Because the equilibrium of charge is broken towards the negative side, the binding energy of the excess electron is typically significantly smaller in magnitude than the ionisation energy of the neutral molecule. Moreover, the properties of the anion can be very different from those of the neutral species, with differences ranging from the structure to the chemical reactivity. In discussions of molecular anions, the concept of electron affinity (EA) is key. The adiabatic electron affinity (AEA) quantifies the energy difference between a molecule and its corresponding anion, both in their structural ground state and lowest rovibrational levels. The vertical electron affinity (VEA), defined at the neutral equilibrium geometry, is particularly relevant for electron capture dynamics. A molecule with a positive EA is considered electronically stable, requiring energy input to remove an electron from the anionic state \cite{simons2008molecular}.
+An anion is an atom or molecule possessing a negative charge\cite{simons2008molecular,simons2023molecular,simons2011theoretical,herbert2015quantum}. The binding of electrons to a molecule is a balance between the attractive potential between the electron and the nuclei, and the repulsive forces between the electrons. Because the equilibrium of charge is broken towards the negative side, the binding energy of the excess electron is typically significantly smaller in magnitude than the ionisation energy of the neutral molecule. Moreover, the properties of the anion can be very different from those of the neutral species, with differences ranging from the molecular structure to the chemical reactivity. This makes their consideration essential when studying chemical processes such as electrochemistry, catalysis, polymerization, charge transfer, ... In discussions of molecular anions, the concept of electron affinity (EA) is key. The adiabatic electron affinity (AEA) quantifies the energy difference between a molecule and its corresponding anion, both in their structural ground state and lowest vibrational levels. The vertical electron affinity (VEA), defined at the neutral equilibrium geometry, is particularly relevant for electron capture dynamics. A molecule with a positive EA is considered electronically stable, requiring energy input to remove an electron from the anionic state \cite{simons2008molecular}.
 
 Molecular anions are classified into valence bound states (VBS), where the excess electron occupies a compact orbital similar to valence molecular orbitals, and non-valence states (NVS), where the excess electron occupies a diffuse orbital spatially separated from the molecule. Unlike valence electrons, these ``extra'' electrons do not experience a -1/r Coulombic attraction at long distances. Instead, they interact through charge-multipole potentials, which are weaker than the covalent bonds holding the molecule together\cite{simons2008molecular,herbert2015quantum}.
 
 Non-valence anions can be categorised into dipole-bound states (DBS)\cite{fermi1947capture,desfranccois1996abdoul,gutowski1996contribution,jordan2003theory,qian2019probing}, quadrupole-bound states (QBS)\cite{jordan1979binding,desfranccois2004long,sommerfeld2014excess}, and correlation-bound states (CBS)\cite{sommerfeld2010correlation,voora2013existence,voora2014nonvalence,voora2017theoretical}.
-In DBSs, the excess electron is stabilised by the interaction with the molecule's significant dipole moment. QBSs, on the other hand, arise from electrostatic interactions involving a large quadrupole moment in molecules with no dipole moment. Unlike DBSs, no definitive critical quadrupole moment has been established for the formation of quadrupole-bound states\cite{sommerfeld2014excess}. Lastly, CBSs are stabilised not by electrostatic forces but by dispersion interactions. It is worth noting that many DBSs and QBSs remain unbound if electron correlation effects are ignored, which blurs the distinction between these types of non-valence anions\cite{voora2017theoretical}. Examples of different anion types are shown in Figure \ref{fig:AnionTypes}.
+In DBSs, the excess electron is stabilised by the interaction with the molecule's significant dipole moment. It is generally accepted that the required dipole strength to support a DBS is 2.5 Debye \cite{jordan2003theory}. QBSs, on the other hand, arise from electrostatic interactions involving a large quadrupole moment in molecules with no dipole moment. Unlike DBSs, no definitive critical quadrupole moment has been established for the formation of quadrupole-bound states\cite{sommerfeld2014excess}. Lastly, CBSs are stabilised not by electrostatic forces but by dispersion interactions. It is worth noting that many DBSs and QBSs remain unbound if electron correlation effects are ignored, which blurs the distinction between these types of non-valence anions\cite{voora2017theoretical}. Examples of different anion types are shown in Figure \ref{fig:AnionTypes}.
 
 \begin{figure}[h]
   \centering
   \begin{minipage}[b]{0.27\textwidth}
     \centering
     \includegraphics[width=\textwidth]{chapters/introduction/image/MeNO2_VBS.png}
-    \small\emph{Valence anion}
+    \small\emph{MeNO\textsubscript{2} Valence anion}
   \end{minipage}
   \hfill
   \begin{minipage}[b]{0.30\textwidth}
     \centering
     \includegraphics[width=\textwidth]{chapters/introduction/image/MeNO2_DBS.png}
-    \small\emph{Dipole-bound anion}
+    \small\emph{MeNO\textsubscript{2} Dipole-bound anion}
   \end{minipage}
   \hfill
-  \begin{minipage}[b]{0.27\textwidth}
+  \begin{minipage}[b]{0.3\textwidth}
     \centering
-    \includegraphics[width=\textwidth]{chapters/introduction/image/hf3.png}
+    \includegraphics[width=1.1\textwidth]{chapters/introduction/image/hf3.png}
     \small\emph{(HF)\textsubscript{3} solvated electron}
   \end{minipage}
-  \caption[Valence and Non-Valence Anions]{Dyson orbital for diferent types of anions: a) Valence bound state of nitromethane anion, b) dipole bound state of nitromethane, c) solvated electron by a HF trimer.}
+  \caption[Valence and Non-Valence Anions]{Dyson orbital for diferent types of anions computed using EA-EOM-CC2: a) Valence bound state of nitromethane anion, b) dipole bound state of nitromethane, c) solvated electron by a HF trimer. The isosurfaces are set to 0.005 a.u.}
   \label{fig:AnionTypes}
 \end{figure}
 
 \subsection{Dipole-Bound Anions}
-Of the different non-valence anions, DBSs are the most common and well-studied. They were first proposed in 1947, when it was demonstrated that an ideal dipole could bind an excess electron if the dipole moment exceeds 1.6 D \cite{fermi1947capture}. Regarding `real' molecules, it is now generally accepted that a dipole moment of approximately 2.5 D is required to bind an extra electron, although having a dipole moment above this threshold does not guarantee the formation of a dipole-bound anion. \cite{jordan2003theory}.
+Of the different non-valence anions, DBSs are the most common and well-studied. They were first proposed in 1947, when it was demonstrated that an ideal dipole could bind an excess electron if the dipole moment exceeds 1.6 D \cite{fermi1947capture}. Further studies regarding `real' molecules, set the now generally accepted critical dipole moment of 2.5 D to bind an extra electron, although having a dipole moment above this threshold does not guarantee the formation of a dipole-bound anion. \cite{jordan2003theory}.
 
 The weak forces that bind the excess electron are responsible for the diffuse nature of the state, with the electronic density often extending several \r{A}ngstr{\"o}ms away from the nuclei, and their relatively low binding energy, usually below 0.1 eV. This makes them susceptible to external perturbations, such as solvent interactions or electric fields, which can significantly influence their stability and reactivity \cite{schiedt1998anion,jalbout2001dipole,gutowski2002solvated,jordan2003theory,eustis2007photoelectron,simons2008molecular,herbert2015quantum,clarke2025role}
 
