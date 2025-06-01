@@ -29,12 +29,12 @@
 \pgfplotsset{compat=1.18}
 \def\Put(#1,#2)#3{\leavevmode\makebox(0,0){\put(#1,#2){#3}}}
 
-\title{Exploring biologically relevant non-valence anions with the CC2 method}
+\title{Enon-valence anions of biological molecules}
 \subtitle{TCCM}
 %\author{Mauro Gascón Navas}
-\author{Mauro Gascón Navas \\ Promotor: Prof. Thomas Jagau \\ Supervisor: Robin Moorby}
+\author{Mauro Gascón \\ HPC User Day}
 %\institute{Prof. Thomas Jagau}
-\date{February 24, 2025}
+\date{June 2, 2025}
 \renewcommand\fbox{\fcolorbox{blue}{white}}
 
 \begin{document}
@@ -42,72 +42,144 @@
 % title frame
 \begin{frame}[plain,noframenumbering]
 	\titlepage
-	\Put(150,-535){\includegraphics[width=0.6\textwidth]{Figs/uQ.png}}
+	\Put(155,-530){\includegraphics[width=0.6\textwidth]{Figs/cover_VBA.png}}
+	%\Put(150,-535){\includegraphics[width=0.6\textwidth]{Figs/uQ.png}}
 \end{frame}
 
-\begin{frame}{\huge Outline}\large
-	\vspace{5pt}
-	\centering
-	\begin{itemize}
-		\item \textbf{Background}
-		\item Non-Valence anions
-		\item Equation-of-Motion CC
-		\item Ubiquinone
-		\item \textbf{Results}
-		\item Dipole Surface
-		\item A Simple Cluster Model
-		\item \textbf{Future steps} 
-	\end{itemize}
+% --- New Slide: What is an anion? ---
+
+\begin{frame}{\huge What is an anion?}\large
+    \vspace{5pt}
+    \textbf{An anion} is a negatively charged ion, formed when an atom or molecule gains one or more electrons. \\
+	They are fundamental in chemistry, biology, and materials science and play key roles in almost all chemical processes, including:
+        \begin{itemize}
+            \item Acid-base chemistry
+            \item Redox reactions
+            \item Biological processes 
+            \item Environmental and atmospheric chemistry
+        \end{itemize}
+	\begin{flushleft}
+	One can distinguish between valence and non-valence anions.
+	\end{flushleft}
+    \centering
+	\begin{tikzpicture}[scale=1]
+		% Neutral molecule
+		\node (neutral) at (0,0) {\includegraphics[width=0.25\textwidth]{Figs/azulene_str.png}};
+		\node at (0,1.4) {\small Neutral azulene};
+
+		% Electron arrow
+		\draw[->, thick, black] (1.8,0) -- (3.2,0) node[midway, above, xshift=0.2cm] {};
+		% Electron symbol
+		\node[blue] at (2.5,0.4) {\large $+~e^-$};
+
+		% Anion molecule
+		\node (anion) at (5,0) {\includegraphics[width=0.25\textwidth]{Figs/azulene.png}};
+		\node[blue] at (6,1) {\large $-$};
+		\node at (5,1.4) {\small Azulene anion};
+	\end{tikzpicture}
 \end{frame}
 
-\begin{frame}{\huge Non-Valence anions}\large
-	In non-valence anions (NVAs) the excess electron resides in a diffuse orbital stabilized by long-range interactions
-	\vspace{5pt}
-	\begin{itemize} 
-		\item Relevant for electron scattering and transfer processes and can act as a doorway for a valence state
-		\item Require huge basis sets and accurate correlation treatment
-	\end{itemize}
-	\vspace{5pt}
+% --- Modified Slide: Valence anions ---
+
+\begin{frame}{\huge Valence anions}\large
+    \vspace{5pt}
+    \begin{itemize}
+        \item In \textbf{valence anions}, the extra electron occupies a valence orbital (localized on the molecule).
+        \item These are the most common type of anions (e.g., Cl$^-$, NO$_2^-$).
+    \end{itemize}
+    \vspace{20pt}
+    \centering
+    \includegraphics[width=0.3\textwidth]{Figs/MeNO2_VBS.png}\\
+	\vspace{3pt}
+	\small Valence-bound anion of nitromethane
+\end{frame}
+
+% --- New Slide: Nonvalence anions: importance and challenges ---
+
+\begin{frame}{\huge Nonvalence anions: importance and challenges}\large
+    \vspace{5pt}
+    \begin{itemize}
+        \item \textbf{Nonvalence anions} (NVAs): the excess electron is bound by long-range forces (e.g., dipole, quadrupole)
+        \item The `extra' electron density is located far from the molecule.
+        \item Found in atmospheric, interstellar, and biological environments.
+        \item \textbf{Challenges:}
+        \begin{itemize}
+            \item Extremely diffuse electron clouds
+            \item Sensitive to correlation and environmental effects
+        \end{itemize}
+    \end{itemize}
+    \vspace{5pt}
 	\begin{columns}
 		\begin{column}{0.27\textwidth}
 			\centering
-			\includegraphics[width=\textwidth]{Figs/vbaDNA.png}
-			G valence anion
+			\includegraphics[width=0.8\textwidth]{Figs/MeNO2_VBS.png}\\
+			\vspace{3pt}
+			\small Valence-bound anion of nitromethane
 		\end{column}
 		\begin{column}{0.3\textwidth}
 			\centering
-			\includegraphics[width=\textwidth]{Figs/dbaDNA.png}
-			G dipole anion
+			\includegraphics[width=0.8\textwidth]{Figs/MeNO2_DBS.png}\\
+			\vspace{3pt}
+    		\small Dipole-bound anion of nitromethane
 		\end{column}
 		\begin{column}{0.27\textwidth}
 			\centering
-			\includegraphics[width=\textwidth]{Figs/hf3.png}
+			\includegraphics[width=\textwidth]{Figs/hf3.png}\\
 			(HF)\textsubscript{3} solvated electron
 		\end{column}	
 	\end{columns}
-	\vspace{5pt}
-	\tiny Dutta, A. Int. J. of Quant. Chem., 2015\\
-	Gutowski, M., Phy. Rev. Let., 2002
+\end{frame}
+
+% --- New Slide: How do we treat electronic structure theoretically? ---
+
+\begin{frame}{\huge Theoretical treatment of electronic structure}\large
+    \vspace{5pt}
+    \begin{itemize}
+        \item Quantum chemistry describes molecules by solving the Schrödinger equation for electrons and nuclei.
+        \item Approximations are needed for all but the smallest systems.
+        \item \textbf{Key concepts:}
+        \begin{itemize}
+            \item Molecular orbitals
+            \item Electron correlation
+            \item Basis sets
+        \end{itemize}
+    \end{itemize}
+    \vspace{5pt}
+    \centering
+    \begin{tikzpicture}[scale=0.9]
+        % Draw molecule
+        \draw[thick] (0,0) -- (1,0);
+        \draw[thick] (1,0) -- (1.5,0.87);
+        \draw[thick] (1,0) -- (1.5,-0.87);
+        \filldraw[blue] (0,0) circle (0.1);
+        \filldraw[red] (1,0) circle (0.1);
+        \filldraw[gray] (1.5,0.87) circle (0.1);
+        \filldraw[gray] (1.5,-0.87) circle (0.1);
+        % Draw orbitals
+        \draw[thick, dashed, blue] (0,0) ellipse (0.25 and 0.15);
+        \draw[thick, dashed, red] (1,0) ellipse (0.3 and 0.18);
+        % Electron cloud
+        \draw[thick, dotted, purple] (1.2,0.4) ellipse (0.5 and 0.25);
+        % Labels
+        \node at (0,-0.3) {Nucleus};
+        \node at (1.7,1.1) {H};
+        \node at (1.7,-1.1) {H};
+        \node at (1.2,0.3) {Molecular orbital};
+    \end{tikzpicture}
 \end{frame}
 
 \begin{frame}{\huge EOM-EA}\large
-	Equation-of-motion electron-attachment coupled-cluster (EOM-EA-CC) methods are particularly well suited to study NVAs
+	Equation-of-motion electron-attachment coupled-cluster (EOM-EA-CC) methods are particularly well suited to study non-valence anions
 	\vspace{5pt}
 	\begin{itemize}
-		\item The description is based on the wavefunction of the parent neutral molecule
-		\item The computational cost and memory requirements limit the EOM-EA-CCSD applications to small molecules
+		\item The description is based on the wave function of the parent neutral molecule
+		%\item The computational cost and memory requirements limit the EOM-EA-CCSD applications to small molecules
 	\end{itemize}
-	\begin{columns}
-		\begin{column}{0.4\textwidth}
-			\vspace{5pt}
-			\includegraphics[width=\textwidth]{Figs/EAdiag.pdf}
-		\end{column}
-
-		\begin{column}{0.60\textwidth}
-			\vspace{25pt} \centering
+	\centering
+	\vspace{5pt} 
 			\[ \hat{R}_{\mathrm{EA}} = \sum_{a} r^a a_a^\dagger + \frac{1}{2} \sum_{ab} \sum_{i} r_{i}^{ab} a_a^\dagger a_i a_b^\dagger + \dots \]
-		\end{column}	
-	\end{columns}
+	%\vspace{5pt}
+	\includegraphics[width=\textwidth]{Figs/EOM_EA.pdf}
 \end{frame}
 
 \begin{frame}{\huge CC2}\large
