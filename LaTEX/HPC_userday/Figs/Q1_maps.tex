@@ -1,0 +1,392 @@
+% GNUPLOT: LaTeX picture with Postscript
+\begingroup
+  \makeatletter
+  \providecommand\color[2][]{%
+    \GenericError{(gnuplot) \space\space\space\@spaces}{%
+      Package color not loaded in conjunction with
+      terminal option `colourtext'%
+    }{See the gnuplot documentation for explanation.%
+    }{Either use 'blacktext' in gnuplot or load the package
+      color.sty in LaTeX.}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\includegraphics[2][]{%
+    \GenericError{(gnuplot) \space\space\space\@spaces}{%
+      Package graphicx or graphics not loaded%
+    }{See the gnuplot documentation for explanation.%
+    }{The gnuplot epslatex terminal needs graphicx.sty or graphics.sty.}%
+    \renewcommand\includegraphics[2][]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \@ifundefined{ifGPcolor}{%
+    \newif\ifGPcolor
+    \GPcolortrue
+  }{}%
+  \@ifundefined{ifGPblacktext}{%
+    \newif\ifGPblacktext
+    \GPblacktexttrue
+  }{}%
+  % define a \g@addto@macro without @ in the name:
+  \let\gplgaddtomacro\g@addto@macro
+  % define empty templates for all commands taking text:
+  \gdef\gplbacktext{}%
+  \gdef\gplfronttext{}%
+  \makeatother
+  \ifGPblacktext
+    % no textcolor at all
+    \def\colorrgb#1{}%
+    \def\colorgray#1{}%
+  \else
+    % gray or color?
+    \ifGPcolor
+      \def\colorrgb#1{\color[rgb]{#1}}%
+      \def\colorgray#1{\color[gray]{#1}}%
+      \expandafter\def\csname LTw\endcsname{\color{white}}%
+      \expandafter\def\csname LTb\endcsname{\color{black}}%
+      \expandafter\def\csname LTa\endcsname{\color{black}}%
+      \expandafter\def\csname LT0\endcsname{\color[rgb]{1,0,0}}%
+      \expandafter\def\csname LT1\endcsname{\color[rgb]{0,1,0}}%
+      \expandafter\def\csname LT2\endcsname{\color[rgb]{0,0,1}}%
+      \expandafter\def\csname LT3\endcsname{\color[rgb]{1,0,1}}%
+      \expandafter\def\csname LT4\endcsname{\color[rgb]{0,1,1}}%
+      \expandafter\def\csname LT5\endcsname{\color[rgb]{1,1,0}}%
+      \expandafter\def\csname LT6\endcsname{\color[rgb]{0,0,0}}%
+      \expandafter\def\csname LT7\endcsname{\color[rgb]{1,0.3,0}}%
+      \expandafter\def\csname LT8\endcsname{\color[rgb]{0.5,0.5,0.5}}%
+    \else
+      % gray
+      \def\colorrgb#1{\color{black}}%
+      \def\colorgray#1{\color[gray]{#1}}%
+      \expandafter\def\csname LTw\endcsname{\color{white}}%
+      \expandafter\def\csname LTb\endcsname{\color{black}}%
+      \expandafter\def\csname LTa\endcsname{\color{black}}%
+      \expandafter\def\csname LT0\endcsname{\color{black}}%
+      \expandafter\def\csname LT1\endcsname{\color{black}}%
+      \expandafter\def\csname LT2\endcsname{\color{black}}%
+      \expandafter\def\csname LT3\endcsname{\color{black}}%
+      \expandafter\def\csname LT4\endcsname{\color{black}}%
+      \expandafter\def\csname LT5\endcsname{\color{black}}%
+      \expandafter\def\csname LT6\endcsname{\color{black}}%
+      \expandafter\def\csname LT7\endcsname{\color{black}}%
+      \expandafter\def\csname LT8\endcsname{\color{black}}%
+    \fi
+  \fi
+    \setlength{\unitlength}{0.0500bp}%
+    \ifx\gptboxheight\undefined%
+      \newlength{\gptboxheight}%
+      \newlength{\gptboxwidth}%
+      \newsavebox{\gptboxtext}%
+    \fi%
+    \setlength{\fboxrule}{0.5pt}%
+    \setlength{\fboxsep}{1pt}%
+    \definecolor{tbcol}{rgb}{1,1,1}%
+\begin{picture}(9060.00,9060.00)%
+    \gplgaddtomacro\gplbacktext{%
+    }%
+    \gplgaddtomacro\gplfronttext{%
+      \csname LTb\endcsname%%
+      \put(444,5102){\makebox(0,0)[r]{\strut{}$-160$}}%
+      \csname LTb\endcsname%%
+      \put(444,5544){\makebox(0,0)[r]{\strut{}$-120$}}%
+      \csname LTb\endcsname%%
+      \put(444,5986){\makebox(0,0)[r]{\strut{}$-80$}}%
+      \csname LTb\endcsname%%
+      \put(444,6428){\makebox(0,0)[r]{\strut{}$-40$}}%
+      \csname LTb\endcsname%%
+      \put(444,6870){\makebox(0,0)[r]{\strut{}$0$}}%
+      \csname LTb\endcsname%%
+      \put(444,7312){\makebox(0,0)[r]{\strut{}$40$}}%
+      \csname LTb\endcsname%%
+      \put(444,7754){\makebox(0,0)[r]{\strut{}$80$}}%
+      \csname LTb\endcsname%%
+      \put(444,8196){\makebox(0,0)[r]{\strut{}$120$}}%
+      \csname LTb\endcsname%%
+      \put(444,8638){\makebox(0,0)[r]{\strut{}$160$}}%
+      \csname LTb\endcsname%%
+      \put(542,4705){\makebox(0,0){\strut{}}}%
+      \csname LTb\endcsname%%
+      \put(1205,4705){\makebox(0,0){\strut{}}}%
+      \csname LTb\endcsname%%
+      \put(1868,4705){\makebox(0,0){\strut{}}}%
+      \csname LTb\endcsname%%
+      \put(2531,4705){\makebox(0,0){\strut{}}}%
+      \csname LTb\endcsname%%
+      \put(3194,4705){\makebox(0,0){\strut{}}}%
+      \csname LTb\endcsname%%
+      \put(3857,4705){\makebox(0,0){\strut{}}}%
+      \csname LTb\endcsname%%
+      \put(4520,4705){\makebox(0,0){\strut{}}}%
+      \csname LTb\endcsname%%
+      \put(87,6870){\rotatebox{-270.00}{\makebox(0,0){\normalsize $\Psi$}}}%
+      \csname LTb\endcsname%%
+      \put(2113,7102){\rotatebox{-63.00}{\makebox(0,0){\strut{}\textcolor{black}{\footnotesize 500}}}}%
+      \csname LTb\endcsname%%
+      \put(2915,6983){\rotatebox{130.00}{\makebox(0,0){\strut{}\textcolor{black}{\footnotesize 400}}}}%
+      \csname LTb\endcsname%%
+      \put(2231,6653){\rotatebox{-46.00}{\makebox(0,0){\strut{}\textcolor{black}{\footnotesize 400}}}}%
+      \csname LTb\endcsname%%
+      \put(2188,7689){\rotatebox{157.00}{\makebox(0,0){\strut{}\textcolor{black}{\footnotesize 300}}}}%
+      \csname LTb\endcsname%%
+      \put(2380,6303){\rotatebox{-39.00}{\makebox(0,0){\strut{}\textcolor{black}{\footnotesize 300}}}}%
+      \csname LTb\endcsname%%
+      \put(3405,6786){\rotatebox{115.00}{\makebox(0,0){\strut{}\textcolor{black}{\footnotesize 200}}}}%
+      \csname LTb\endcsname%%
+      \put(1478,7995){\rotatebox{-140.00}{\makebox(0,0){\strut{}\textcolor{black}{\footnotesize 200}}}}%
+      \csname LTb\endcsname%%
+      \put(2538,6018){\rotatebox{-24.00}{\makebox(0,0){\strut{}\textcolor{black}{\footnotesize 200}}}}%
+      \csname LTb\endcsname%%
+      \put(1478,6433){\rotatebox{39.00}{\makebox(0,0){\strut{}\textcolor{black}{\footnotesize 100}}}}%
+      \csname LTb\endcsname%%
+      \put(1413,8491){\rotatebox{44.00}{\makebox(0,0){\strut{}\textcolor{black}{\footnotesize 100}}}}%
+      \csname LTb\endcsname%%
+      \put(3183,8324){\rotatebox{62.00}{\makebox(0,0){\strut{}\textcolor{black}{\footnotesize 100}}}}%
+      \csname LTb\endcsname%%
+      \put(3548,6887){\rotatebox{-73.00}{\makebox(0,0){\strut{}\textcolor{black}{\footnotesize 100}}}}%
+      \csname LTb\endcsname%%
+      \put(1210,5686){\rotatebox{-33.00}{\makebox(0,0){\strut{}\textcolor{black}{\footnotesize 100}}}}%
+      \csname LTb\endcsname%%
+      \put(3335,5349){\rotatebox{-44.00}{\makebox(0,0){\strut{}\textcolor{black}{\footnotesize 100}}}}%
+      \csname LTb\endcsname%%
+      \put(672,7288){\rotatebox{-104.00}{\makebox(0,0){\strut{}\textcolor{black}{\footnotesize 50}}}}%
+      \csname LTb\endcsname%%
+      \put(2373,8524){\rotatebox{158.00}{\makebox(0,0){\strut{}\textcolor{black}{\footnotesize 50}}}}%
+      \csname LTb\endcsname%%
+      \put(1943,5082){\rotatebox{-72.00}{\makebox(0,0){\strut{}\textcolor{black}{\footnotesize 50}}}}%
+      \csname LTb\endcsname%%
+      \put(3784,7192){\rotatebox{-139.00}{\makebox(0,0){\strut{}\textcolor{black}{\footnotesize 50}}}}%
+      \csname LTb\endcsname%%
+      \put(2531,8982){\makebox(0,0){\strut{}Conformational Energy (meV)}}%
+    }%
+    \gplgaddtomacro\gplbacktext{%
+    }%
+    \gplgaddtomacro\gplfronttext{%
+      \csname LTb\endcsname%%
+      \put(4874,5102){\makebox(0,0)[r]{\strut{}}}%
+      \csname LTb\endcsname%%
+      \put(4874,5544){\makebox(0,0)[r]{\strut{}}}%
+      \csname LTb\endcsname%%
+      \put(4874,5986){\makebox(0,0)[r]{\strut{}}}%
+      \csname LTb\endcsname%%
+      \put(4874,6428){\makebox(0,0)[r]{\strut{}}}%
+      \csname LTb\endcsname%%
+      \put(4874,6870){\makebox(0,0)[r]{\strut{}}}%
+      \csname LTb\endcsname%%
+      \put(4874,7312){\makebox(0,0)[r]{\strut{}}}%
+      \csname LTb\endcsname%%
+      \put(4874,7754){\makebox(0,0)[r]{\strut{}}}%
+      \csname LTb\endcsname%%
+      \put(4874,8196){\makebox(0,0)[r]{\strut{}}}%
+      \csname LTb\endcsname%%
+      \put(4874,8638){\makebox(0,0)[r]{\strut{}}}%
+      \csname LTb\endcsname%%
+      \put(4971,4705){\makebox(0,0){\strut{}}}%
+      \csname LTb\endcsname%%
+      \put(5634,4705){\makebox(0,0){\strut{}}}%
+      \csname LTb\endcsname%%
+      \put(6297,4705){\makebox(0,0){\strut{}}}%
+      \csname LTb\endcsname%%
+      \put(6960,4705){\makebox(0,0){\strut{}}}%
+      \csname LTb\endcsname%%
+      \put(7623,4705){\makebox(0,0){\strut{}}}%
+      \csname LTb\endcsname%%
+      \put(8286,4705){\makebox(0,0){\strut{}}}%
+      \csname LTb\endcsname%%
+      \put(8949,4705){\makebox(0,0){\strut{}}}%
+      \csname LTb\endcsname%%
+      \put(7506,5401){\rotatebox{43.00}{\makebox(0,0){\strut{}\textcolor{black}{\footnotesize 3.0}}}}%
+      \csname LTb\endcsname%%
+      \put(7270,6734){\rotatebox{129.00}{\makebox(0,0){\strut{}\textcolor{black}{\footnotesize 2.5}}}}%
+      \csname LTb\endcsname%%
+      \put(5716,8379){\rotatebox{-72.00}{\makebox(0,0){\strut{}\textcolor{black}{\footnotesize 2.5}}}}%
+      \csname LTb\endcsname%%
+      \put(7070,8647){\makebox(0,0){\strut{}\textcolor{black}{\footnotesize 2.5}}}%
+      \csname LTb\endcsname%%
+      \put(5931,5095){\rotatebox{40.00}{\makebox(0,0){\strut{}\textcolor{black}{\footnotesize 2.5}}}}%
+      \csname LTb\endcsname%%
+      \put(7310,5624){\rotatebox{42.00}{\makebox(0,0){\strut{}\textcolor{black}{\footnotesize 2.5}}}}%
+      \csname LTb\endcsname%%
+      \put(8629,6165){\rotatebox{-22.00}{\makebox(0,0){\strut{}\textcolor{black}{\footnotesize 2.5}}}}%
+      \csname LTb\endcsname%%
+      \put(5495,8659){\rotatebox{-108.00}{\makebox(0,0){\strut{}\textcolor{black}{\footnotesize 2.0}}}}%
+      \csname LTb\endcsname%%
+      \put(5991,7781){\rotatebox{-4.00}{\makebox(0,0){\strut{}\textcolor{black}{\footnotesize 2.0}}}}%
+      \csname LTb\endcsname%%
+      \put(7330,8374){\rotatebox{-5.00}{\makebox(0,0){\strut{}\textcolor{black}{\footnotesize 2.0}}}}%
+      \csname LTb\endcsname%%
+      \put(6710,5463){\rotatebox{24.00}{\makebox(0,0){\strut{}\textcolor{black}{\footnotesize 2.0}}}}%
+      \csname LTb\endcsname%%
+      \put(6910,6454){\rotatebox{145.00}{\makebox(0,0){\strut{}\textcolor{black}{\footnotesize 2.0}}}}%
+      \csname LTb\endcsname%%
+      \put(6690,7364){\rotatebox{-23.00}{\makebox(0,0){\strut{}\textcolor{black}{\footnotesize 2.0}}}}%
+      \csname LTb\endcsname%%
+      \put(7870,6584){\rotatebox{-19.00}{\makebox(0,0){\strut{}\textcolor{black}{\footnotesize 2.0}}}}%
+      \csname LTb\endcsname%%
+      \put(5256,6900){\rotatebox{50.00}{\makebox(0,0){\strut{}\textcolor{black}{\footnotesize 1.5}}}}%
+      \csname LTb\endcsname%%
+      \put(6371,6661){\rotatebox{-50.00}{\makebox(0,0){\strut{}\textcolor{black}{\footnotesize 1.5}}}}%
+      \csname LTb\endcsname%%
+      \put(6451,5645){\rotatebox{-173.00}{\makebox(0,0){\strut{}\textcolor{black}{\footnotesize 1.5}}}}%
+      \csname LTb\endcsname%%
+      \put(7992,8199){\rotatebox{-155.00}{\makebox(0,0){\strut{}\textcolor{black}{\footnotesize 1.5}}}}%
+      \csname LTb\endcsname%%
+      \put(6890,7579){\rotatebox{-36.00}{\makebox(0,0){\strut{}\textcolor{black}{\footnotesize 1.5}}}}%
+      \csname LTb\endcsname%%
+      \put(8170,6973){\rotatebox{16.00}{\makebox(0,0){\strut{}\textcolor{black}{\footnotesize 1.5}}}}%
+      \csname LTb\endcsname%%
+      \put(5123,5301){\rotatebox{75.00}{\makebox(0,0){\strut{}\textcolor{black}{\footnotesize 1.0}}}}%
+      \csname LTb\endcsname%%
+      \put(5611,6723){\rotatebox{14.00}{\makebox(0,0){\strut{}\textcolor{black}{\footnotesize 1.0}}}}%
+      \csname LTb\endcsname%%
+      \put(6071,5814){\rotatebox{-156.00}{\makebox(0,0){\strut{}\textcolor{black}{\footnotesize 1.0}}}}%
+      \csname LTb\endcsname%%
+      \put(7910,7941){\rotatebox{-158.00}{\makebox(0,0){\strut{}\textcolor{black}{\footnotesize 1.0}}}}%
+      \csname LTb\endcsname%%
+      \put(8190,7240){\rotatebox{11.00}{\makebox(0,0){\strut{}\textcolor{black}{\footnotesize 1.0}}}}%
+      \csname LTb\endcsname%%
+      \put(5955,6280){\rotatebox{116.00}{\makebox(0,0){\strut{}\textcolor{black}{\footnotesize 0.5}}}}%
+      \csname LTb\endcsname%%
+      \put(6960,8982){\makebox(0,0){Dipole Strength (Debye)}}%
+    }%
+    \gplgaddtomacro\gplbacktext{%
+    }%
+    \gplgaddtomacro\gplfronttext{%
+      \csname LTb\endcsname%%
+      \put(444,763){\makebox(0,0)[r]{\strut{}$-160$}}%
+      \csname LTb\endcsname%%
+      \put(444,1205){\makebox(0,0)[r]{\strut{}$-120$}}%
+      \csname LTb\endcsname%%
+      \put(444,1647){\makebox(0,0)[r]{\strut{}$-80$}}%
+      \csname LTb\endcsname%%
+      \put(444,2089){\makebox(0,0)[r]{\strut{}$-40$}}%
+      \csname LTb\endcsname%%
+      \put(444,2531){\makebox(0,0)[r]{\strut{}$0$}}%
+      \csname LTb\endcsname%%
+      \put(444,2973){\makebox(0,0)[r]{\strut{}$40$}}%
+      \csname LTb\endcsname%%
+      \put(444,3415){\makebox(0,0)[r]{\strut{}$80$}}%
+      \csname LTb\endcsname%%
+      \put(444,3857){\makebox(0,0)[r]{\strut{}$120$}}%
+      \csname LTb\endcsname%%
+      \put(444,4298){\makebox(0,0)[r]{\strut{}$160$}}%
+      \csname LTb\endcsname%%
+      \put(542,366){\makebox(0,0){\strut{}$-180$}}%
+      \csname LTb\endcsname%%
+      \put(1205,366){\makebox(0,0){\strut{}$-120$}}%
+      \csname LTb\endcsname%%
+      \put(1868,366){\makebox(0,0){\strut{}$-60$}}%
+      \csname LTb\endcsname%%
+      \put(2531,366){\makebox(0,0){\strut{}$0$}}%
+      \csname LTb\endcsname%%
+      \put(3194,366){\makebox(0,0){\strut{}$60$}}%
+      \csname LTb\endcsname%%
+      \put(3857,366){\makebox(0,0){\strut{}$120$}}%
+      \csname LTb\endcsname%%
+      \put(4519,366){\makebox(0,0){\strut{}$180$}}%
+      \csname LTb\endcsname%%
+      \put(87,2531){\rotatebox{-270.00}{\makebox(0,0){\normalsize $\Psi$}}}%
+      \csname LTb\endcsname%%
+      \put(2531,102){\makebox(0,0){\normalsize $\Phi$}}%
+      \csname LTb\endcsname%%
+      \put(2395,2832){\rotatebox{148.00}{\makebox(0,0){\strut{}\textcolor{black}{\footnotesize 1.3}}}}%
+      \csname LTb\endcsname%%
+      \put(2149,2365){\rotatebox{-45.00}{\makebox(0,0){\strut{}\textcolor{black}{\footnotesize 1.4}}}}%
+      \csname LTb\endcsname%%
+      \put(2948,2832){\rotatebox{143.00}{\makebox(0,0){\strut{}\textcolor{black}{\footnotesize 1.5}}}}%
+      \csname LTb\endcsname%%
+      \put(2483,1868){\rotatebox{-45.00}{\makebox(0,0){\strut{}\textcolor{black}{\footnotesize 1.5}}}}%
+      \csname LTb\endcsname%%
+      \put(1998,3555){\rotatebox{45.00}{\makebox(0,0){\strut{}\textcolor{black}{\footnotesize 1.6}}}}%
+      \csname LTb\endcsname%%
+      \put(3475,1967){\rotatebox{48.00}{\makebox(0,0){\strut{}\textcolor{black}{\footnotesize 1.6}}}}%
+      \csname LTb\endcsname%%
+      \put(1068,3555){\rotatebox{-34.00}{\makebox(0,0){\strut{}\textcolor{black}{\footnotesize 1.7}}}}%
+      \csname LTb\endcsname%%
+      \put(1770,1185){\rotatebox{112.00}{\makebox(0,0){\strut{}\textcolor{black}{\footnotesize 1.7}}}}%
+      \csname LTb\endcsname%%
+      \put(3676,4284){\rotatebox{-135.00}{\makebox(0,0){\strut{}\textcolor{black}{\footnotesize 1.7}}}}%
+      \csname LTb\endcsname%%
+      \put(3555,844){\rotatebox{-25.00}{\makebox(0,0){\strut{}\textcolor{black}{\footnotesize 1.7}}}}%
+      \csname LTb\endcsname%%
+      \put(2531,4643){\makebox(0,0){VBA EA (eV)}}%
+    }%
+    \gplgaddtomacro\gplbacktext{%
+    }%
+    \gplgaddtomacro\gplfronttext{%
+      \csname LTb\endcsname%%
+      \put(4874,763){\makebox(0,0)[r]{\strut{}}}%
+      \csname LTb\endcsname%%
+      \put(4874,1205){\makebox(0,0)[r]{\strut{}}}%
+      \csname LTb\endcsname%%
+      \put(4874,1647){\makebox(0,0)[r]{\strut{}}}%
+      \csname LTb\endcsname%%
+      \put(4874,2089){\makebox(0,0)[r]{\strut{}}}%
+      \csname LTb\endcsname%%
+      \put(4874,2531){\makebox(0,0)[r]{\strut{}}}%
+      \csname LTb\endcsname%%
+      \put(4874,2973){\makebox(0,0)[r]{\strut{}}}%
+      \csname LTb\endcsname%%
+      \put(4874,3415){\makebox(0,0)[r]{\strut{}}}%
+      \csname LTb\endcsname%%
+      \put(4874,3857){\makebox(0,0)[r]{\strut{}}}%
+      \csname LTb\endcsname%%
+      \put(4874,4298){\makebox(0,0)[r]{\strut{}}}%
+      \csname LTb\endcsname%%
+      \put(4971,366){\makebox(0,0){\strut{}$-180$}}%
+      \csname LTb\endcsname%%
+      \put(5634,366){\makebox(0,0){\strut{}$-120$}}%
+      \csname LTb\endcsname%%
+      \put(6297,366){\makebox(0,0){\strut{}$-60$}}%
+      \csname LTb\endcsname%%
+      \put(6960,366){\makebox(0,0){\strut{}$0$}}%
+      \csname LTb\endcsname%%
+      \put(7623,366){\makebox(0,0){\strut{}$60$}}%
+      \csname LTb\endcsname%%
+      \put(8286,366){\makebox(0,0){\strut{}$120$}}%
+      \csname LTb\endcsname%%
+      \put(8949,366){\makebox(0,0){\strut{}$180$}}%
+      \csname LTb\endcsname%%
+      \put(6960,102){\makebox(0,0){\normalsize $\Phi$}}%
+      \csname LTb\endcsname%%
+      \put(7277,2109){\rotatebox{-34.00}{\makebox(0,0){\strut{}\textcolor{black}{\footnotesize 9}}}}%
+      \csname LTb\endcsname%%
+      \put(7744,767){\rotatebox{-22.00}{\makebox(0,0){\strut{}\textcolor{black}{\footnotesize 9}}}}%
+      \csname LTb\endcsname%%
+      \put(7422,1270){\rotatebox{69.00}{\makebox(0,0){\strut{}\textcolor{black}{\footnotesize 6}}}}%
+      \csname LTb\endcsname%%
+      \put(7244,2551){\rotatebox{-38.00}{\makebox(0,0){\strut{}\textcolor{black}{\footnotesize 6}}}}%
+      \csname LTb\endcsname%%
+      \put(8145,663){\rotatebox{-151.00}{\makebox(0,0){\strut{}\textcolor{black}{\footnotesize 6}}}}%
+      \csname LTb\endcsname%%
+      \put(6351,3836){\rotatebox{39.00}{\makebox(0,0){\strut{}\textcolor{black}{\footnotesize 3}}}}%
+      \csname LTb\endcsname%%
+      \put(7342,1522){\rotatebox{70.00}{\makebox(0,0){\strut{}\textcolor{black}{\footnotesize 3}}}}%
+      \csname LTb\endcsname%%
+      \put(7262,2655){\rotatebox{-39.00}{\makebox(0,0){\strut{}\textcolor{black}{\footnotesize 3}}}}%
+      \csname LTb\endcsname%%
+      \put(8427,705){\rotatebox{-131.00}{\makebox(0,0){\strut{}\textcolor{black}{\footnotesize 3}}}}%
+      \csname LTb\endcsname%%
+      \put(8048,4399){\rotatebox{24.00}{\makebox(0,0){\strut{}\textcolor{black}{\footnotesize 3}}}}%
+      \csname LTb\endcsname%%
+      \put(6743,4238){\rotatebox{91.00}{\makebox(0,0){\strut{}\textcolor{black}{\footnotesize 1}}}}%
+      \csname LTb\endcsname%%
+      \put(8186,4365){\rotatebox{28.00}{\makebox(0,0){\strut{}\textcolor{black}{\footnotesize 1}}}}%
+      \csname LTb\endcsname%%
+      \put(7017,1908){\rotatebox{128.00}{\makebox(0,0){\strut{}\textcolor{black}{\footnotesize 1}}}}%
+      \csname LTb\endcsname%%
+      \put(7362,2671){\rotatebox{-34.00}{\makebox(0,0){\strut{}\textcolor{black}{\footnotesize 1}}}}%
+      \csname LTb\endcsname%%
+      \put(8566,743){\rotatebox{-116.00}{\makebox(0,0){\strut{}\textcolor{black}{\footnotesize 1}}}}%
+      \csname LTb\endcsname%%
+      \put(5568,3127){\makebox(0,0){\strut{}\textcolor{black}{\normalsize \textbf{C}}}}%
+      \csname LTb\endcsname%%
+      \put(8352,2411){\makebox(0,0){\strut{}\textcolor{black}{\normalsize \textbf{B}}}}%
+      \csname LTb\endcsname%%
+      \put(6483,2133){\makebox(0,0){\strut{}\textcolor{black}{\normalsize \textbf{A}}}}%
+      \csname LTb\endcsname%%
+      \put(6960,4643){\makebox(0,0){DBA EA (meV)}}%
+    }%
+    \gplbacktext
+    \put(0,0){\includegraphics[width={453.00bp},height={453.00bp}]{chapters/results/image/Q1_maps}}%
+    \gplfronttext
+  \end{picture}%
+\endgroup
