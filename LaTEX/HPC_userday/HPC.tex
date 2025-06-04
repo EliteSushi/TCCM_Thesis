@@ -59,8 +59,8 @@
             \item Environmental and atmospheric chemistry
         \end{itemize}
 	\begin{flushleft}
-	One can distinguish between valence and non-valence anions.
 	\end{flushleft}
+	\vspace{-0.8cm}
     \centering
 	\begin{tikzpicture}[scale=1]
 		% Neutral molecule
@@ -76,14 +76,16 @@
 		\node (anion) at (5,0) {\includegraphics[width=0.25\textwidth]{Figs/azulene.png}};
 		\node[blue] at (6,1) {\large $-$};
 		\node at (5,1.4) {\small Azulene anion};
-	\end{tikzpicture}
+	\end{tikzpicture}\\
+	\vspace{-0.5cm}
+	One can distinguish between valence and non-valence anions.
 \end{frame}
 
 % --- Modified Slide: Valence anions ---
 
 \begin{frame}{\huge Valence anions}\large
     \vspace{5pt}
-    In \textbf{valence anions}, the extra electron occupies a valence orbital (localized on the molecule).
+    The extra electron occupies a valence orbital (localised on the molecule).
     These are the most common type of anions (e.g., Cl$^-$, NO$_2^-$).
     \vfill
     \centering
@@ -92,11 +94,9 @@
 	\small Valence-bound anion of nitromethane
 \end{frame}
 
-% --- New Slide: Nonvalence anions: importance and challenges ---
-
-\begin{frame}{\huge Nonvalence anions}\large
+\begin{frame}{\huge Non-valence anions}\large
     \vspace{5pt}
-	\textbf{Nonvalence anions} (NVAs): the excess electron is bound by long-range forces (e.g., dipole, quadrupole). The `extra' electron density is located far from the molecule.\\
+	The excess electron is bound by long-range forces (e.g., dipole, quadrupole). The `extra' electron density is located far from the molecule.\\
 	Found in atmospheric, interstellar, and biological environments; they act as `doorway' states for electron attachment. 
     \begin{itemize} 
 
@@ -127,8 +127,6 @@
 	\end{columns}
 \end{frame}
 
-
-
 \begin{frame}{\huge EOM-EA}\large
 	Equation-of-motion electron-attachment coupled-cluster (EOM-EA-CC) methods are particularly well suited to study non-valence anions
 	\vspace{5pt}
@@ -143,12 +141,12 @@
 \end{frame}
 
 \begin{frame}{\huge Biological Quinones: Ubiquinone (CoQ)}\large
-	Quinones are essential electron carriers in biological mechanisms
+	Quinones are essential electron carriers in biological processes
 		\vspace{5pt}
 		\begin{itemize}
 		%	\item Ubiquinone (coenzyme Q or CoQ) is a component of electron transport chains in bacterial photosynthesis and aerobic respiration.
-		\item CoQ: component of electron transport chains in bacterial photosynthesis and aerobic respiration	
-		\item It is capable of both a valence and dipole bound anion states
+		\item Component of electron transport chains in bacterial photosynthesis and aerobic respiration	
+		\item Capable of both valence and dipole bound anion states
 		\end{itemize}
 		\begin{columns}[b]
 			\begin{column}[b]{0.5\textwidth}
@@ -172,7 +170,7 @@
 		\end{columns}
 \end{frame}
 
-\begin{frame}{\huge Quinone models}\large
+\begin{frame}{\huge Quinone structure}\large
 	Each part of the molecule plays a distinct function:
 	\begin{itemize}
 		\item Quinone head involved in the electron transfer
@@ -190,16 +188,16 @@
 \end{frame}
 
 \begin{frame}{\huge Potential Energy Surface}\large
-	We can construct Surfaces from the methoxy rotations ($\Psi$ and $\Phi$) of the Q0 model.
+	We can construct surfaces from the methoxy rotations ($\Psi$ and $\Phi$) of the Q0 model.
 	\begin{columns}
-		\begin{column}[c]{0.6\textwidth}
+		\begin{column}[c]{0.5\textwidth}
 			\centering
 			\include{Figs/Q0_E.tex}
 			\vspace{10pt}
 		\end{column}
-		\begin{column}[c]{0.4\textwidth}
+		\begin{column}[c]{0.5\textwidth}
 			\centering
-			\includegraphics[width=0.9\textwidth]{Figs/dihedrals.png}
+			\includegraphics[width=1\textwidth]{Figs/dihedrals.png}
 			\vspace{20pt}
 		\end{column}
 	\end{columns}
@@ -241,7 +239,7 @@
 \end{frame}
 
 \begin{frame}{\huge A simple cluster model}\large
-	A proper interaction with small molecules\\ deeply stabilizes the DBA.
+	A directed interaction with small molecules\\ strongly stabilises the DBA.
 	\vspace{10pt}
 	\Put(100,3){\includegraphics[width=0.3\textwidth]{Figs/Q0_H2O_H.png}}
 	\include{Figs/scan_X.tex}
@@ -378,6 +376,17 @@
 		\multicolumn{3}{l}{\small $^*\,O(N^3)$ with RI approximation.}
 		\end{tabular}
 	\end{table}
+\end{frame}
+
+\begin{frame}{\huge Quantum chemical methods}\large
+	The time independent Schrödinger equation is approximatelly solved to describe the electronic structure of molecules:
+	\begin{equation*}
+		\hat{H} \Psi = E \Psi
+	\end{equation*}
+	We construct the wavefunction $\Psi$ as a combination of molecular orbitals (MOs):
+	\begin{equation*}
+		\Psi = \sum_{i} c_i \phi_i
+	\end{equation*}
 \end{frame}
 \fi
 
