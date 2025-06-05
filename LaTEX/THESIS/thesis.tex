@@ -57,6 +57,7 @@
 \usepackage{caption}
 \usepackage{textgreek}
 \usepackage{chemformula}
+\usepackage{pdfpages}
 \usepackage[]{acronym}
 %\usepackage[superscript]{cite}
 \DeclareCiteCommand{\citenum} % \citenum in biblatex
@@ -218,8 +219,18 @@ Academic year 2024-2025
 
 \appendix
 \include{chapters/appendix/appendix}
-
-
+\includepdf[pages=1, addtotoc={1,chapter,1,Gen AI Statement,genai.statement}, pagecommand={
+\thispagestyle{empty}
+    \begin{textblock}{100}(-15,25)
+        Copilot, ChatGPT 4, DeepSeek, LeChat
+    \end{textblock}
+    \begin{textblock}{1}(0,60)
+        X
+    \end{textblock}
+    \begin{textblock}{1}(0,140)
+        X
+    \end{textblock}
+}]{GenAI_MA-Chemie.pdf}
 
 
 \newpage
