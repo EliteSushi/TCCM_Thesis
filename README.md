@@ -15,11 +15,10 @@ Welcome to the repository for my MSc TCCM thesis! This repository contains all t
 - ### [TCCM_thesis.pdf](./TCCM_thesis.pdf)  
     The final PDF version of the MSc thesis.
 
----
-
 <div align="center">
     <img src="./LaTEX/THESIS/Q1_cover.png" width="60%">
 </div>
+
 ---
 
 ## Abstract
