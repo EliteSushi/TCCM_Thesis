@@ -19,5 +19,6 @@
 # Built Visual Studio Code Extensions
 *.vsix
 
-# Other (Excel Files)
+# Other
 *.xlsx 
+*.pptx
