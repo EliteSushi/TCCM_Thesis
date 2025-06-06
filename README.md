@@ -6,13 +6,13 @@ Welcome to the repository for my MSc TCCM thesis! This repository contains all t
 
 ## Repository Structure
 
-- **`[LaTEX](./LaTEX/README.md)/`**  
+- ** [LaTEX](./LaTEX/README.md) **  
     Contains the LaTeX source files for the thesis and related presentations.
 
-- **`[SI](./SI/README.md)/`**  
+- ** [SI](./SI/README.md) **  
     Supporting information, including sample calculations, scripts, figures, and molecular structures.
 
-- **`[TCCM_thesis.pdf](./TCCM_thesis.pdf)`**  
+- ** [TCCM_thesis.pdf](./TCCM_thesis.pdf) **  
     The final PDF version of the MSc thesis.
 
 ---
