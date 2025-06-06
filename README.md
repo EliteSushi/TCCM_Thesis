@@ -6,10 +6,10 @@ Welcome to the repository for my MSc TCCM thesis! This repository contains all t
 
 ## Repository Structure
 
-- **`[LaTEX](LaTEX)/`**  
+- **`[LaTEX](LaTEX./README.md)/`**  
     Contains the LaTeX source files for the thesis and related presentations.
 
-- **`[SI](SI)/`**  
+- **`[SI](SI./README.md)/`**  
     Supporting information, including sample calculations, scripts, figures, and molecular structures.
 
 - **`[TCCM_thesis.pdf](TCCM_thesis.pdf)`**  
@@ -28,8 +28,7 @@ CoQ analogues, Q0(2,3-dimethoxy-5-methyl-p-benzoquinone) and Q1 (Q0 with one iso
 ---
 
 ## Promotor
-
-[Webpage](https://chem.kuleuven.be/en/research/qcpc/tue/)
+[Prof. Thomas C. Jagau](https://chem.kuleuven.be/en/research/qcpc/tue/)
 
 ---
 
