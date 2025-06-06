@@ -1,0 +1,2584 @@
+                  Welcome to Q-Chem
+     A Quantum Leap Into The Future Of Chemistry
+
+
+ Q-Chem 6.2 (devel), Q-Chem, Inc., Pleasanton, CA (2024)
+
+ E. Epifanovsky,  A. T. B. Gilbert,  Xintian Feng,  Joonho Lee,  Yuezhi Mao,  
+ N. Mardirossian,  P. Pokhilko,  A. White,  M. Wormit,  M. P. Coons,  
+ A. L. Dempwolff,  Zhengting Gan,  D. Hait,  P. R. Horn,  L. D. Jacobson,  
+ I. Kaliman,  J. Kussmann,  A. W. Lange,  Ka Un Lao,  D. S. Levine,  Jie Liu,  
+ S. C. McKenzie,  A. F. Morrison,  K. D. Nanda,  F. Plasser,  D. R. Rehn,  
+ M. L. Vidal,  Zhi-Qiang You,  Ying Zhu,  Huseyin Aksu,  B. Alam,  
+ B. Albrecht,  A. Aldossary,  E. Alguire,  J. H. Andersen,  
+ J. E. Arias-Martinez,  V. Athavale,  D. Barton,  K. Begam,  A. Behn,  
+ N. Bellonzi,  Y. A. Bernard,  E. J. Berquist,  H. Burton,  A. Carreras,  
+ K. Carter-Fenk,  Mathew Chow,  Romit Chakraborty,  Chandrima Chakravarty,  
+ Junhan Chen,  A. D. Chien,  K. D. Closser,  V. Cofer-Shabica,  L. Cunha,  
+ S. Dasgupta,  Jia Deng,  Joseph Dickinson,  M. de Wergifosse,  
+ M. Diedenhofen,  Hainam Do,  Wenjie Dou,  S. Ehlert,  Po-Tung Fang,  
+ S. Fatehi,  Qingguo Feng,  Jonathan Fetherolf,  T. Friedhoff,  
+ Thomas Froitzheim,  Sarai Folkestad,  B. Ganoe,  J. Gayvert,  Qinghui Ge,  
+ G. Gidofalvi,  M. Gimferrer,  M. Goldey,  Montgomery Gray,  J. Gomes,  
+ C. Gonzalez-Espinoza,  S. Gulania,  A. Gunina,  J. A. Gyamfi,  
+ M. W. D. Hanson-Heine,  P. H. P. Harbach,  A. W. Hauser,  M. F. Herbst,  
+ M. Hernandez Vera,  M. Hodecker,  Z. C. Holden,  S. Houck,  Xunkun Huang,  
+ Kerwin Hui,  B. C. Huynh,  K. Ikeda,  M. Ivanov,  Nayanthara K. Jayadev,  
+ Hyunjun Ji,  Zuxin Jin,  Hanjie Jiang,  Subrata Jana,  B. Kaduk,  
+ S. Kaehler,  R. Kang,  K. Khistyaev,  Jaehoon Kim,  Yongbin Kim,  
+ P. Klunzinger,  Z. Koczor-Benda,  Joong Hoon Koh,  D. Kosenkov,  
+ Saikiran Kotaru,  L. Koulias,  T. Kowalczyk,  C. M. Krauter,  K. Kue,  
+ A. Kunitsa,  T. Kus,  A. Landau,  K. V. Lawler,  D. Lefrancois,  S. Lehtola,  
+ Rain Li,  Shaozhi Li,  Tao E. Li,  Yi-Pei Li,  Jiashu Liang,  M. Liebenthal,  
+ Hung-Hsuan Lin,  You-Sheng Lin,  Fenglai Liu,  Kuan-Yu Liu,  Xiao Liu,  
+ M. Loipersberger,  A. Luenser,  C. Malbon,  Aniket Mandal,  Manisha,  
+ A. Manjanath,  P. Manohar,  E. Mansoor,  S. F. Manzer,  Shan-Ping Mao,  
+ A. V. Marenich,  T. Markovich,  S. Mason,  F. Matz,  S. A. Maurer,  
+ Samuel May,  Alexandra McIsaac,  P. F. McLaughlin,  M. F. S. J. Menger,  
+ J.-M. Mewes,  S. A. Mewes,  P. Morgante,  Mohammad Mostafanejad,  
+ Madhubani Mukherjee,  J. W. Mullinax,  Quyen Nguyen,  Avik Kumar Ojha,  
+ K. J. Oosterbaan,  Eno Paenurk,  Xiaoliang Pan,  G. Paran,  V. Parravicini,  
+ Alexander C. Paul,  Suranjan K. Paul,  F. Pavosevic,  Zheng Pei,  S. Prager,  
+ E. I. Proynov,  E. Ramos,  B. Rana,  A. E. Rask,  A. Rettig,  R. M. Richard,  
+ F. Rob,  E. Rossomme,  T. Scheele,  M. Scheurer,  M. Schneider,  
+ P. E. Schneider,  Tim K. Schramm,  N. Sergueev,  S. M. Sharada,  
+ Hengyuan Shen,  W. Skomorowski,  D. W. Small,  C. J. Stein,  
+ Alistair J. Sterling,  Yingli Su,  Yu-Chuan Su,  E. J. Sundstrom,  
+ J. Talbot,  Zhen Tao,  J. Thirman,  Hung-Yi Tsai,  T. Tsuchimochi,  
+ N. M. Tubman,  C. Utku,  S. P. Veccham,  O. Vydrov,  Rahel Weiss,  
+ J. Wenzel,  Jonathan Wong,  J. Witte,  H. Wu,  Yanze Wu,  A. Yamada,  
+ Chou-Hsun Yang,  Kun Yao,  S. Yeganeh,  S. R. Yost,  Qi Yu,  A. Zech,  
+ F. Zeller,  Chongxiao Zhao,  Igor Ying Zhang,  Xing Zhang,  Yu Zhang,  
+ D. Zuev,  A. Aspuru-Guzik,  A. T. Bell,  N. A. Besley,  K. B. Bravaya,  
+ B. R. Brooks,  D. Casanova,  Jeng-Da Chai,  Hsing-Ta Chen,  S. Coriani,  
+ C. J. Cramer,  A. E. DePrince, III,  R. A. DiStasio Jr.,  A. Dreuw,  
+ B. D. Dunietz,  T. R. Furlani,  W. A. Goddard III,  S. Grimme,  
+ S. Hammes-Schiffer,  T. Head-Gordon,  W. J. Hehre,  Chao-Ping Hsu,  
+ T.-C. Jagau,  Yousung Jung,  A. Klamt,  Jing Kong,  D. S. Lambrecht,  
+ Xiangyuan Li,  WanZhen Liang,  N. J. Mayhall,  C. W. McCurdy,  J. B. Neaton,  
+ T. Neudecker,  C. Ochsenfeld,  J. A. Parkhill,  R. Peverati,  
+ V. A. Rassolov,  Haisheng Ren,  Yihan Shao,  L. V. Slipchenko,  
+ R. P. Steele,  J. E. Subotnik,  A. J. W. Thom,  A. Tkatchenko,  
+ D. G. Truhlar,  T. Van Voorhis,  Fan Wang,  T. A. Wesolowski,  K. B. Whaley,  
+ H. L. Woodcock III,  P. M. Zimmerman,  S. Faraji,  P. M. W. Gill,  
+ M. Head-Gordon,  J. M. Herbert,  A. I. Krylov
+
+ Contributors to earlier versions of Q-Chem not listed above: 
+ R. D. Adamson,  B. Austin,  R. Baer,  J. Baker,  G. J. O. Beran,  
+ K. Brandhorst,  S. T. Brown,  E. F. C. Byrd,  Arup K. Chakraborty,  
+ G. K. L. Chan,  Chun-Min Chang,  Yunqing Chen,  C.-L. Cheng,  
+ Siu Hung Chien,  D. M. Chipman,  D. L. Crittenden,  H. Dachsel,  
+ R. J. Doerksen,  A. D. Dutoi,  R. G. Edgar,  J. Fosso-Tande,  
+ L. Fusti-Molnar,  D. Ghosh,  A. Ghysels,  A. Golubeva-Zadorozhnaya,  
+ J. Gonthier,  M. S. Gordon,  S. R. Gwaltney,  G. Hawkins,  J. E. Herr,  
+ A. Heyden,  S. Hirata,  E. G. Hohenstein,  G. Kedziora,  F. J. Keil,  
+ C. Kelley,  Jihan Kim,  R. A. King,  R. Z. Khaliullin,  P. P. Korambath,  
+ W. Kurlancheek,  A. Laurent,  A. M. Lee,  M. S. Lee,  S. V. Levchenko,  
+ Ching Yeh Lin,  D. Liotard,  E. Livshits,  R. C. Lochan,  I. Lotan,  
+ L. A. Martinez-Martinez,  P. E. Maslen,  N. Nair,  D. P. O'Neill,  
+ D. Neuhauser,  E. Neuscamman,  C. M. Oana,  R. Olivares-Amaya,  R. Olson,  
+ T. M. Perrine,  B. Peters,  P. A. Pieniazek,  A. Prociuk,  Y. M. Rhee,  
+ J. Ritchie,  M. A. Rohrdanz,  E. Rosta,  N. J. Russ,  H. F. Schaefer III,  
+ M. W. Schmidt,  N. E. Schultz,  S. Sharma,  N. Shenvi,  C. D. Sherrill,  
+ A. C. Simmonett,  A. Sodt,  T. Stein,  D. Stuck,  K. S. Thanthiriwatte,  
+ V. Vanovschi,  L. Vogt,  Tao Wang,  A. Warshel,  M. A. Watson,  
+ C. F. Williams,  Q. Wu,  X. Xu,  Jun Yang,  W. Zhang,  Yan Zhao
+
+   Please cite Q-Chem as follows:
+  "Software for the frontiers of quantum chemistry:
+   An overview of developments in the Q-Chem 5 package"
+   J. Chem. Phys. 155, 084801 (2021)
+   https://doi.org/10.1063/5.0055522 (open access)
+
+ Q-Chem 6.2.1 for Intel X86 EM64T Linux
+
+ Parts of Q-Chem use Armadillo 9.900.5 (Nocturnal Misbehaviour).
+ http://arma.sourceforge.net/
+
+ Q-Chem begins on Tue May 27 14:40:06 2025  
+
+ Host: node21
+0
+
+     Scratch files written to /temp0/mauro/qchem3685930//
+ Processing $rem in /home/mauro/qchem-dyson-EA-NoL//config/preferences:
+ Processing $rem in /home/mauro/.qchemrc:
+
+ Checking the input file for inconsistencies... 	...done.
+
+--------------------------------------------------------------
+User input:
+--------------------------------------------------------------
+$molecule
+0 1
+H     2.0000     0.0000    0.0000
+F     2.9200     0.0000    0.0000
+H    -1.0000     1.7321    0.0000
+F    -1.4600     2.5261    0.0000
+H    -1.0000    -1.7321    0.0000
+F    -1.4600    -2.5261    0.0000
+$end
+
+$rem
+   CCMAN2                       1   
+   MEM_TOTAL                    80000
+   CC_MEMORY                    75000
+   MEM_STATIC                   2000
+   SYM_IGNORE			TRUE
+   CC_BACKEND                   XM  
+   METHOD                       cc2 
+   BASIS                        gen 
+   PURECART                     11  
+   AUX_BASIS                    rimp2-aug-cc-pVDZ
+   N_FROZEN_CORE                fc  
+   EA_STATES                    [2] 
+   SCF_CONVERGENCE              10  
+   MAX_SCF_CYCLES               200 
+   CC_CONVERGENCE               8   
+   EOM_DAVIDSON_CONVERGENCE     8   
+   !CC_TRANS_PROP               TRUE
+   CC_DO_DYSON                  TRUE
+   CC_EOM_PROP                  TRUE
+   PRINT_ORBITALS               TRUE
+$end
+
+$basis
+H     0
+S   4   1.00
+      1.301000D+01           1.968500D-02
+      1.962000D+00           1.379770D-01
+      4.446000D-01           4.781480D-01
+      1.220000D-01           5.012400D-01
+S   1   1.00
+      1.220000D-01           1.000000D+00
+S   1   1.00
+      0.0297400              1.0000000
+S   1   1.00
+      0.01487              1.0000000
+S   1   1.00
+      0.007435              1.0000000
+S   1   1.00
+      0.0037175              1.0000000
+P   1   1.00
+      7.270000D-01           1.0000000
+P   1   1.00
+      0.1410000              1.0000000
+****
+F     0
+S   9   1.00
+      1.471000D+04           7.210000D-04
+      2.207000D+03           5.553000D-03
+      5.028000D+02           2.826700D-02
+      1.426000D+02           1.064440D-01
+      4.647000D+01           2.868140D-01
+      1.670000D+01           4.486410D-01
+      6.356000D+00           2.647610D-01
+      1.316000D+00           1.533300D-02
+      3.897000D-01          -2.332000D-03
+S   9   1.00
+      1.471000D+04          -1.650000D-04
+      2.207000D+03          -1.308000D-03
+      5.028000D+02          -6.495000D-03
+      1.426000D+02          -2.669100D-02
+      4.647000D+01          -7.369000D-02
+      1.670000D+01          -1.707760D-01
+      6.356000D+00          -1.123270D-01
+      1.316000D+00           5.628140D-01
+      3.897000D-01           5.687780D-01
+S   1   1.00
+      3.897000D-01           1.000000D+00
+S   1   1.00
+      0.0986300              1.0000000
+S   1   1.00
+      0.4931500              1.0000000
+S   1   1.00
+      0.2465750              1.0000000
+S   1   1.00
+      0.1232875              1.0000000
+S   1   1.00
+      0.0616438              1.0000000
+S   1   1.00
+      0.0308219              1.0000000
+S   1   1.00
+      0.0154109              1.0000000
+P   4   1.00
+      2.267000D+01           4.487800D-02
+      4.977000D+00           2.357180D-01
+      1.347000D+00           5.085210D-01
+      3.471000D-01           4.581200D-01
+P   1   1.00
+      3.471000D-01           1.000000D+00
+P   1   1.00
+      0.0850200              1.0000000
+P   1   1.00
+      0.042510               1.0000000
+P   1   1.00
+      0.021255               1.0000000
+P   1   1.00
+      0.0106275              1.0000000
+D   1   1.00
+      1.640000D+00           1.0000000
+D   1   1.00
+      0.4640000              1.0000000
+****
+$end
+--------------------------------------------------------------
+ ----------------------------------------------------------------
+             Standard Nuclear Orientation (Angstroms)
+    I     Atom           X                Y                Z
+ ----------------------------------------------------------------
+    1      H       2.0000000000     0.0000000000     0.0000000000
+    2      F       2.9200000000     0.0000000000     0.0000000000
+    3      H      -1.0000000000     1.7321000000     0.0000000000
+    4      F      -1.4600000000     2.5261000000     0.0000000000
+    5      H      -1.0000000000    -1.7321000000     0.0000000000
+    6      F      -1.4600000000    -2.5261000000     0.0000000000
+ ----------------------------------------------------------------
+ Nuclear Repulsion Energy =          48.12398007 hartrees
+ There are       15 alpha and       15 beta electrons
+ Requested basis set is non-standard
+ There are 78 shells and 150 basis functions
+ Total memory of 80000 MB is distributed as follows: 
+   MEM_STATIC is set to 2000 MB
+   QALLOC/CCMAN JOB total memory use is  78000 MB
+ Warning: actual memory use might exceed 80000 MB
+
+ Total QAlloc Memory Limit  80000 MB
+ Mega-Array Size      1956 MB
+ MEM_STATIC part      2000 MB
+
+
+                       Distance Matrix (Angstroms)
+             H (  1)   F (  2)   H (  3)   F (  4)   H (  5)
+   F (  2)  0.920000
+   H (  3)  3.464126  4.285624
+   F (  4)  4.284015  5.056242  0.917625
+   H (  5)  3.464126  4.285624  3.464200  4.282974
+   F (  6)  4.284015  5.056242  4.282974  5.052200  0.917625
+
+ Requested basis set is rimp2-aug-cc-pVDZ
+ There are 93 shells and 285 basis functions
+ A cutoff of  1.0D-14 yielded   3060 shell pairs
+ There are     11172 function pairs (     12012 Cartesian)
+ Smallest overlap matrix eigenvalue = 1.62E-06
+
+ Scale SEOQF with 1.000000e-02/1.000000e-01/1.000000e-01
+
+ Standard Electronic Orientation quadrupole field applied
+ Nucleus-field energy     =     0.0000000091 hartrees
+ ================ Generating on-the-fly SAD Guess ================
+ Attempting to make child job directory: /temp0/mauro/qchem3685930//Frg1/
+ Attempting to make child job directory: /temp0/mauro/qchem3685930//Frg2/
+ Creating input file /temp0/mauro/qchem3685930/Frg1.input
+ using default PutDataFrgm: nothing
+ calling putenv with: QCSCRATCH=/temp0/mauro/qchem3685930/ 
+ Spawning Job For Fragment 0
+ Done Job For Fragment 0
+ calling putenv with: QCSCRATCH=/temp0/mauro 
+ calling putenv with: QCTHREADS=16 
+ Creating input file /temp0/mauro/qchem3685930/Frg2.input
+ using default PutDataFrgm: nothing
+ calling putenv with: QCSCRATCH=/temp0/mauro/qchem3685930/ 
+ Spawning Job For Fragment 1
+ Done Job For Fragment 1
+ calling putenv with: QCSCRATCH=/temp0/mauro 
+ calling putenv with: QCTHREADS=16 
+ Time for running child jobs:  CPU 0.00 s  wall 12.76 s
+ ============= Method Specific SAD Guess Constructed =============
+ Guess from on-the-fly superposition of atomic densities
+ Warning: Energy on first SCF cycle will be non-variational
+
+ -----------------------------------------------------------------------
+  General SCF calculation program by
+  Eric Jon Sundstrom, Paul Horn, Yuezhi Mao, Dmitri Zuev, Alec White,
+  David Stuck, Shaama M.S., Shane Yost, Joonho Lee, David Small,
+  Daniel Levine, Susi Lehtola, Hugh Burton, Evgeny Epifanovsky,
+  Bang C. Huynh
+ -----------------------------------------------------------------------
+ Hartree-Fock
+ using 16 threads for integral computing
+ -------------------------------------------------------
+ OpenMP Integral computing Module                
+ Release: version 1.0, May 2013, Q-Chem Inc. Pittsburgh 
+ -------------------------------------------------------
+ A restricted SCF calculation will be
+ performed using DIIS
+ SCF converges when DIIS error is below 1.0e-10
+ ---------------------------------------
+  Cycle       Energy         DIIS error
+ ---------------------------------------
+    1    -299.5928994165      2.81e-02  
+    2    -300.0158496146      6.09e-03  
+    3    -300.0773210414      3.44e-03  
+    4    -300.0961372576      3.41e-04  
+    5    -300.0964616799      9.97e-05  
+    6    -300.0965092332      2.21e-05  
+    7    -300.0965126447      3.06e-06  
+    8    -300.0965127148      7.02e-07  
+    9    -300.0965127159      1.77e-07  
+   10    -300.0965127160      1.62e-08  
+   11    -300.0965127160      1.08e-09  
+   12    -300.0965127160      1.54e-10  
+   13    -300.0965127160      3.64e-11  Convergence criterion met
+ ---------------------------------------
+ SCF time:   CPU 41.62s  wall 20.00s 
+ SCF   energy =  -300.09651272
+ Total energy =  -300.09651272
+
+
+ ------------------------------------------------------------------------------
+
+   CCMAN2: suite of methods based on coupled cluster
+           and equation of motion theories.
+
+   Components:
+   * libvmm-1.3-trunk
+     by Evgeny Epifanovsky, Ilya Kaliman.
+   * libtensor-2.5-trunk
+     by Evgeny Epifanovsky, Michael Wormit, Dmitry Zuev, Sam Manzer, 
+        Ilya Kaliman.
+   * libcc-2.5-trunk
+     by Evgeny Epifanovsky, Arik Landau, Tomasz Kus, Kirill Khistyaev, 
+        Dmitry Zuev, Prashant Manohar, Xintian Feng, Anna Krylov, 
+        Matthew Goldey, Alec White, Thomas Jagau, Kaushik Nanda, 
+        Anastasia Gunina, Alexander Kunitsa, Joonho Lee.
+
+   CCMAN original authors:
+   Anna I. Krylov, C. David Sherrill, Steven R. Gwaltney,
+   Edward F. C. Byrd (2000)
+   Sergey V. Levchenko, Lyudmila V. Slipchenko, Tao Wang,
+   Ana-Maria C. Cristian (2003)
+   Piotr A. Pieniazek, C. Melania Oana, Evgeny Epifanovsky (2007)
+   Prashant Manohar (2009)
+
+ ------------------------------------------------------------------------------
+
+
+ Calculation will run on 16 cores using libxm for tensor contractions
+
+ ------------------------------------------------------------------------------
+Libxm Tensor Library
+Copyright (c) 2014-2018 Ilya Kaliman
+https://github.com/ilyak/libxm
+Reference: https://dx.doi.org/10.1002/jcc.24713
+ ------------------------------------------------------------------------------
+
+
+ Alpha MOs, Restricted
+ -- Occupied --                  
+-26.330 -26.330 -26.330  -1.626  -1.626  -1.625  -0.789  -0.789
+  1 A     2 A     3 A     4 A     5 A     6 A     7 A     8 A                  
+ -0.788  -0.669  -0.669  -0.669  -0.669  -0.668  -0.668
+  9 A    10 A    11 A    12 A    13 A    14 A    15 A                          
+ -- Virtual --                   
+ -0.007   0.006   0.007   0.007   0.015   0.023   0.023   0.025
+ 16 A    17 A    18 A    19 A    20 A    21 A    22 A    23 A                  
+  0.025   0.025   0.027   0.027   0.030   0.037   0.038   0.038
+ 24 A    25 A    26 A    27 A    28 A    29 A    30 A    31 A                  
+  0.054   0.055   0.055   0.059   0.065   0.065   0.069   0.080
+ 32 A    33 A    34 A    35 A    36 A    37 A    38 A    39 A                  
+  0.080   0.093   0.093   0.094   0.098   0.109   0.109   0.122
+ 40 A    41 A    42 A    43 A    44 A    45 A    46 A    47 A                  
+  0.122   0.133   0.150   0.150   0.162   0.188   0.188   0.194
+ 48 A    49 A    50 A    51 A    52 A    53 A    54 A    55 A                  
+  0.205   0.205   0.213   0.219   0.219   0.239   0.261   0.261
+ 56 A    57 A    58 A    59 A    60 A    61 A    62 A    63 A                  
+  0.298   0.332   0.336   0.337   0.398   0.398   0.419   0.419
+ 64 A    65 A    66 A    67 A    68 A    69 A    70 A    71 A                  
+  0.467   0.468   0.474   0.480   0.480   0.481   0.483   0.483
+ 72 A    73 A    74 A    75 A    76 A    77 A    78 A    79 A                  
+  0.520   0.520   0.537   0.537   0.543   0.621   0.840   0.840
+ 80 A    81 A    82 A    83 A    84 A    85 A    86 A    87 A                  
+  0.874   0.883   0.883   1.027   1.054   1.054   1.330   1.330
+ 88 A    89 A    90 A    91 A    92 A    93 A    94 A    95 A                  
+  1.330   1.331   1.331   1.335   1.388   1.453   1.453   1.453
+ 96 A    97 A    98 A    99 A   100 A   101 A   102 A   103 A                  
+  1.453   1.560   1.676   1.691   1.691   1.710   1.729   1.729
+104 A   105 A   106 A   107 A   108 A   109 A   110 A   111 A                  
+  1.829   1.830   1.830   1.834   1.852   1.852   2.147   2.148
+112 A   113 A   114 A   115 A   116 A   117 A   118 A   119 A                  
+  2.148   2.151   2.160   2.161   2.453   2.617   2.620   3.165
+120 A   121 A   122 A   123 A   124 A   125 A   126 A   127 A                  
+  3.165   3.187   3.406   3.436   3.439   4.835   4.835   4.835
+128 A   129 A   130 A   131 A   132 A   133 A   134 A   135 A                  
+  4.836   4.836   4.838   4.896   4.929   4.929   4.931   4.932
+136 A   137 A   138 A   139 A   140 A   141 A   142 A   143 A                  
+  4.983   5.166   5.174   5.176  11.281  11.281  11.328
+144 A   145 A   146 A   147 A   148 A   149 A   150 A                          
+
+ Beta MOs, Restricted
+ -- Occupied --                  
+-26.330 -26.330 -26.330  -1.626  -1.626  -1.625  -0.789  -0.789
+  1 A     2 A     3 A     4 A     5 A     6 A     7 A     8 A                  
+ -0.788  -0.669  -0.669  -0.669  -0.669  -0.668  -0.668
+  9 A    10 A    11 A    12 A    13 A    14 A    15 A                          
+ -- Virtual --                   
+ -0.007   0.006   0.007   0.007   0.015   0.023   0.023   0.025
+ 16 A    17 A    18 A    19 A    20 A    21 A    22 A    23 A                  
+  0.025   0.025   0.027   0.027   0.030   0.037   0.038   0.038
+ 24 A    25 A    26 A    27 A    28 A    29 A    30 A    31 A                  
+  0.054   0.055   0.055   0.059   0.065   0.065   0.069   0.080
+ 32 A    33 A    34 A    35 A    36 A    37 A    38 A    39 A                  
+  0.080   0.093   0.093   0.094   0.098   0.109   0.109   0.122
+ 40 A    41 A    42 A    43 A    44 A    45 A    46 A    47 A                  
+  0.122   0.133   0.150   0.150   0.162   0.188   0.188   0.194
+ 48 A    49 A    50 A    51 A    52 A    53 A    54 A    55 A                  
+  0.205   0.205   0.213   0.219   0.219   0.239   0.261   0.261
+ 56 A    57 A    58 A    59 A    60 A    61 A    62 A    63 A                  
+  0.298   0.332   0.336   0.337   0.398   0.398   0.419   0.419
+ 64 A    65 A    66 A    67 A    68 A    69 A    70 A    71 A                  
+  0.467   0.468   0.474   0.480   0.480   0.481   0.483   0.483
+ 72 A    73 A    74 A    75 A    76 A    77 A    78 A    79 A                  
+  0.520   0.520   0.537   0.537   0.543   0.621   0.840   0.840
+ 80 A    81 A    82 A    83 A    84 A    85 A    86 A    87 A                  
+  0.874   0.883   0.883   1.027   1.054   1.054   1.330   1.330
+ 88 A    89 A    90 A    91 A    92 A    93 A    94 A    95 A                  
+  1.330   1.331   1.331   1.335   1.388   1.453   1.453   1.453
+ 96 A    97 A    98 A    99 A   100 A   101 A   102 A   103 A                  
+  1.453   1.560   1.676   1.691   1.691   1.710   1.729   1.729
+104 A   105 A   106 A   107 A   108 A   109 A   110 A   111 A                  
+  1.829   1.830   1.830   1.834   1.852   1.852   2.147   2.148
+112 A   113 A   114 A   115 A   116 A   117 A   118 A   119 A                  
+  2.148   2.151   2.160   2.161   2.453   2.617   2.620   3.165
+120 A   121 A   122 A   123 A   124 A   125 A   126 A   127 A                  
+  3.165   3.187   3.406   3.436   3.439   4.835   4.835   4.835
+128 A   129 A   130 A   131 A   132 A   133 A   134 A   135 A                  
+  4.836   4.836   4.838   4.896   4.929   4.929   4.931   4.932
+136 A   137 A   138 A   139 A   140 A   141 A   142 A   143 A                  
+  4.983   5.166   5.174   5.176  11.281  11.281  11.328
+144 A   145 A   146 A   147 A   148 A   149 A   150 A                          
+
+ Occupation and symmetry of molecular orbitals
+
+ Point group: C1 (1 irreducible representation).
+
+                           A     All 
+ -------------------------------------
+ All molecular orbitals:
+  - Alpha                  150   150 
+  - Beta                   150   150 
+ -------------------------------------
+ Alpha orbitals:
+  - Frozen occupied        3     3   
+  - Active occupied        12    12  
+  - Active virtual         135   135 
+  - Frozen virtual         0     0   
+ -------------------------------------
+ Beta orbitals:
+  - Frozen occupied        3     3   
+  - Active occupied        12    12  
+  - Active virtual         135   135 
+  - Frozen virtual         0     0   
+ -------------------------------------
+
+ Import integrals:   CPU 0.00 s  wall 0.00 s
+
+ Import integrals:   CPU 7.55 s  wall 4.86 s
+
+
+ MP2  CPU 1.21 s  wall 1.23 s
+Running a double precision version
+           RI-CC2 T amplitudes will be solved using DIIS.
+
+           Start     Size      MaxIter   EConv     TConv     
+           3         7         100       1.00e-08  1.00e-07  
+ ------------------------------------------------------------------------------
+           Energy (a.u.)   Ediff      Tdiff       Comment
+ ------------------------------------------------------------------------------
+        -300.7672943529                           
+     1  -300.7665807353   7.14e-04   6.87e-01     
+     2  -300.7733975725   6.82e-03   4.16e-02     
+     3  -300.7738555975   4.58e-04   2.20e-02     
+     4  -300.7748191997   9.64e-04   6.51e-03     Switched to DIIS steps.
+     5  -300.7751818913   3.63e-04   5.88e-03     
+     6  -300.7751825153   6.24e-07   5.39e-04     
+     7  -300.7751817308   7.85e-07   2.56e-04     
+     8  -300.7751824149   6.84e-07   3.88e-05     
+     9  -300.7751824789   6.40e-08   1.32e-05     
+    10  -300.7751824655   1.34e-08   2.84e-06     
+    11  -300.7751824551   1.05e-08   1.12e-06     
+    12  -300.7751824558   7.35e-10   2.47e-07     
+    13  -300.7751824562   3.77e-10   6.81e-08     
+ ------------------------------------------------------------------------------
+        -300.7751824562                           CC2 T converged.
+
+End of double precision
+ SCF energy                 = -300.09651272
+ MP2 energy                 = -300.76729435
+ CC2 correlation energy    =   -0.67866974
+ CC2 total energy          = -300.77518246
+
+ CC2  T1^2 = 0.0105  T2^2 = 0.1546  Leading amplitudes:
+
+ Amplitude    Orbitals with energies
+ -0.0172       15 (A) A                  ->    72 (A) A                   
+              -0.6684                          0.4672                     
+ -0.0172       15 (A) B                  ->    72 (A) B                   
+              -0.6684                          0.4672                     
+  0.0161       13 (A) A                  ->    54 (A) A                   
+              -0.6686                          0.1876                     
+  0.0161       13 (A) B                  ->    54 (A) B                   
+              -0.6686                          0.1876                     
+
+ Amplitude    Orbitals with energies
+ -0.0256       14 (A) A      14 (A) B    ->    112 (A) A     112 (A) B    
+              -0.6684       -0.6684            1.8294        1.8294       
+  0.0256       14 (A) A      14 (A) B    ->    112 (A) B     112 (A) A    
+              -0.6684       -0.6684            1.8294        1.8294       
+  0.0256       14 (A) B      14 (A) A    ->    112 (A) A     112 (A) B    
+              -0.6684       -0.6684            1.8294        1.8294       
+ -0.0256       14 (A) B      14 (A) A    ->    112 (A) B     112 (A) A    
+              -0.6684       -0.6684            1.8294        1.8294       
+
+ Computing CC2 intermediates for later calculations in double precision
+ Finished.
+
+
+ CC2  CPU 70.18 s  wall 34.33 s
+        Solving for EOMEA-CC2/MP2 A transitions.
+
+Running a double precision version
+      RI-EOMEA-CC2/MP2 right amplitudes will be solved using Davidson.
+        Amplitudes will be solved using standard  algorithm.
+     Hard-coded thresholds: 
+     LinDepThresh=1.00e-15  NormThresh=1.00e-06  ReorthogonThresh=1.00e-02
+
+      Roots     MaxVec    MaxIter   Precond   Conv      Shift    
+      2         120       60        1         1.00e-08  0.00e+00  
+ ------------------------------------------------------------------------------
+      Iter ConvRoots NVecs ResNorm^2 Current eigenvalues (eV)
+ ------------------------------------------------------------------------------
+      0    0      2     1.81e-02   -0.0780   0.1964   
+      1    0      4     1.01e-02   -0.2862   0.1617   
+      2    0      6     7.98e-05   -0.4387   0.1504   
+      3    0      8     4.31e-06   -0.4433   0.1498   
+      4    0      10    5.64e-08   -0.4433   0.1498   
+      5    2      12    1.62e-09   -0.4433*  0.1498*  
+
+     Davidson procedure converged
+
+ EOMEA transition 1/A
+ Total energy = -300.79147235 a.u.  Excitation energy = -0.4433 eV.
+ R1^2 = 0.9911  R2^2 = 0.0089  Res^2 = 2.77e-09
+ Conv-d = yes
+
+ Amplitude    Transitions between orbitals
+  0.9784       infty       ->    16 (A) B                   
+  0.1451       infty       ->    17 (A) B                   
+ -0.0761       infty       ->    25 (A) B                   
+  0.0601       infty       ->    28 (A) B                   
+
+              Summary of significant orbitals:
+
+               Number  Type             Irrep      Energy
+               16      Vir  Beta       16 (A)     -0.0068
+               17      Vir  Beta       17 (A)      0.0063
+               25      Vir  Beta       25 (A)      0.0250
+               28      Vir  Beta       28 (A)      0.0296
+
+
+ EOMEA transition 2/A
+ Total energy = -300.76967582 a.u.  Excitation energy = 0.1498 eV.
+ R1^2 = 0.9995  R2^2 = 0.0005  Res^2 = 4.70e-10
+ Conv-d = yes
+
+ Amplitude    Transitions between orbitals
+ -0.9864       infty       ->    17 (A) B                   
+  0.1537       infty       ->    16 (A) B                   
+  0.0438       infty       ->    25 (A) B                   
+ -0.0242       infty       ->    28 (A) B                   
+
+              Summary of significant orbitals:
+
+               Number  Type             Irrep      Energy
+               16      Vir  Beta       16 (A)     -0.0068
+               17      Vir  Beta       17 (A)      0.0063
+               25      Vir  Beta       25 (A)      0.0250
+               28      Vir  Beta       28 (A)      0.0296
+
+
+Running a double precision version
+      RI-EOMEA-CC2/MP2 left amplitudes will be solved using Davidson.
+        Amplitudes will be solved using MOM  algorithm.
+     Hard-coded thresholds: 
+     LinDepThresh=1.00e-15  NormThresh=1.00e-06  ReorthogonThresh=1.00e-02
+
+      Roots     MaxVec    MaxIter   Precond   Conv      Shift    
+      2         120       60        1         1.00e-08  0.00e+00  
+ ------------------------------------------------------------------------------
+      Iter ConvRoots NVecs ResNorm^2 Current eigenvalues (eV)
+ ------------------------------------------------------------------------------
+      0    0      2     1.40e-03   -0.4433   0.1498   
+      1    0      4     7.67e-04   -0.4433   0.1498   
+      2    0      6     4.47e-06   -0.4433   0.1498   
+      3    0      8     5.76e-07   -0.4433   0.1498   
+      4    1      10    1.20e-08   -0.4433   0.1498*  
+      5    2      11    1.08e-09   -0.4433*  0.1498*  
+
+     Davidson procedure converged
+
+ Excited state properties for  EOMEA-CC2 transition 1/A
+ Dipole moment (a.u.): 0.008210 (X -0.008210, Y 0.000000, Z 0.000000)
+ R-squared (a.u.): 959.961202 (XX 467.420817, YY 466.502216, ZZ 26.038169)
+ Gauge origin (a.u.): (0.000000, 0.000000, 0.000000)
+ Angular momentum (a.u.) against gauge origin: 
+ (X 0.000000i, Y 0.000000i, Z 0.000000i)
+ Traces of the OPDMs: Tr(AA) 15.000000, Tr(BB) 16.000000
+
+ Excited state properties for  EOMEA-CC2 transition 2/A
+ Dipole moment (a.u.): 0.013532 (X 0.013532, Y 0.000000, Z 0.000000)
+ R-squared (a.u.): 1399.564014 (XX 608.335822, YY 607.497337, ZZ 183.730855)
+ Gauge origin (a.u.): (0.000000, 0.000000, 0.000000)
+ Angular momentum (a.u.) against gauge origin: 
+ (X 0.000000i, Y 0.000000i, Z 0.000000i)
+ Traces of the OPDMs: Tr(AA) 15.000000, Tr(BB) 16.000000
+
+
+ EOMEA-CC2  CPU 196.04 s  wall 52.82 s
+
+ Start computing the transition properties
+
+ ------------------------------------------------------------------------------
+ State A: eomea_cc2/b: 1/A
+ State B: cc2: 0/A
+
+       ***    Dyson orbital calculation   *** 
+
+ EOM-EA-CC2 state  1/A -- Reference  transition
+ Energy difference = -0.4433 eV.
+
+ Left Dyson orbital norm is 0.9957
+
+Left beta Dyson orbital in the MO basis (canonical Q-Chem's ordering):
+0  1.7424e-15  
+1  -7.5871e-15 
+2  2.0074e-15  
+3  -1.2863e-03 
+4  1.2408e-11  
+5  9.1808e-04  
+6  -8.6521e-03 
+7  2.8318e-12  
+8  2.8332e-03  
+9  -1.5475e-07 
+10 4.4543e-16  
+11 6.5775e-15  
+12 -8.1040e-16 
+13 -2.8379e-16 
+14 -2.9727e-15 
+15 9.8297e-01  
+16 1.4536e-01  
+17 4.9970e-11  
+18 -2.8947e-04 
+19 -6.3548e-15 
+20 -9.6671e-11 
+21 2.2049e-04  
+22 1.1490e-08  
+23 1.1964e-03  
+24 -7.5678e-02 
+25 6.1290e-15  
+26 1.1453e-15  
+27 6.0183e-02  
+28 2.7782e-12  
+29 -1.7147e-05 
+30 -1.3637e-10 
+31 3.0947e-11  
+32 9.8332e-05  
+33 1.3312e-14  
+34 -5.8132e-03 
+35 -4.4460e-10 
+36 -1.2415e-05 
+37 4.3408e-02  
+38 4.4089e-14  
+39 -3.2174e-15 
+40 1.5361e-04  
+41 3.6067e-10  
+42 2.0426e-02  
+43 -2.3387e-13 
+44 5.1128e-05  
+45 -7.9717e-11 
+46 3.7129e-11  
+47 -1.9813e-05 
+48 -5.8286e-04 
+49 -2.0936e-11 
+50 -1.0630e-05 
+51 1.6141e-14  
+52 2.2224e-14  
+53 -3.0295e-14 
+54 -1.5492e-02 
+55 4.9310e-05  
+56 4.3965e-11  
+57 1.5780e-13  
+58 1.0449e-04  
+59 1.2101e-11  
+60 1.7771e-02  
+61 1.5256e-10  
+62 -2.0236e-05 
+63 -2.7492e-03 
+64 2.1030e-15  
+65 -2.3955e-05 
+66 1.6227e-11  
+67 -3.3651e-05 
+68 1.3181e-11  
+69 -3.3703e-15 
+70 4.6190e-15  
+71 6.8722e-11  
+72 -1.4552e-02 
+73 2.5268e-13  
+74 7.2560e-14  
+75 4.5063e-16  
+76 3.1730e-03  
+77 2.9587e-05  
+78 5.2905e-12  
+79 -8.1824e-06 
+80 2.9992e-10  
+81 4.3476e-11  
+82 7.3390e-06  
+83 -1.7181e-12 
+84 6.2642e-03  
+85 -7.1314e-11 
+86 2.3175e-07  
+87 4.8827e-03  
+88 -2.4695e-05 
+89 4.7772e-10  
+90 -4.4986e-04 
+91 -3.5787e-06 
+92 3.9421e-11  
+93 -5.2456e-16 
+94 5.0442e-16  
+95 4.0099e-16  
+96 -8.7271e-14 
+97 1.4228e-06  
+98 4.9322e-05  
+99 4.6959e-16  
+100-1.1072e-06 
+1012.5773e-12  
+102-4.3853e-16 
+103-1.0176e-15 
+104-1.4376e-13 
+105-2.8926e-03 
+106-2.7410e-11 
+107-2.8372e-06 
+1081.2496e-03  
+109-3.0241e-06 
+110-3.6282e-07 
+1116.5973e-15  
+1122.2676e-15  
+1131.2720e-14  
+114-1.3405e-13 
+1156.2677e-13  
+116-2.6359e-07 
+1173.3778e-16  
+1181.0960e-15  
+1194.6727e-17  
+120-1.5998e-14 
+121-2.1846e-13 
+122-1.2201e-06 
+1231.4801e-03  
+124-9.4694e-06 
+1258.5594e-13  
+126-2.5969e-05 
+1271.3342e-10  
+1281.2566e-03  
+129-5.7111e-04 
+1303.1909e-05  
+1319.1487e-12  
+132-5.6234e-16 
+1331.3955e-15  
+134-1.5624e-16 
+1357.8939e-15  
+136-3.0454e-07 
+1374.8722e-06  
+138-4.1349e-16 
+139-1.7969e-16 
+140-7.6203e-16 
+1414.2282e-08  
+142-1.7156e-14 
+143-3.7459e-16 
+144-2.3020e-05 
+1453.6745e-06  
+1465.8008e-14  
+1475.0832e-11  
+1482.1076e-06  
+1493.1095e-04  
+
+Decomposition over AOs for the left beta Dyson orbital:
+-3.14513176e-02
+4.77989299e-02
+-1.24029168e+00
+-1.42518642e-01
+-6.65102942e-02
+-3.61843978e-02
+1.62272501e-02
+-8.40188033e-14
+-5.75152930e-17
+1.21160836e-01
+-4.11001247e-12
+2.21466519e-16
+1.36684116e-03
+7.31263934e-02
+-1.04422013e-01
+6.98160637e-01
+7.10746257e-02
+9.70809427e-02
+-5.96613587e-01
+-3.52448583e-01
+1.17446847e+00
+1.27132533e-01
+-1.20890377e-01
+-7.18155319e-14
+-3.17902929e-16
+2.30911389e-03
+4.32458008e-13
+-1.00075327e-16
+7.59544378e-03
+9.38738805e-12
+1.11668915e-15
+-1.07657128e-01
+-2.79011280e-11
+-4.62023685e-15
+-2.00021203e-01
+6.07950791e-11
+7.35941207e-15
+8.17992613e-02
+-1.25109846e-11
+-5.60011472e-15
+6.99419331e-14
+1.52392101e-17
+-2.19815397e-04
+6.97329448e-18
+3.70452816e-04
+-4.84958161e-13
+4.96213615e-19
+7.20982684e-04
+4.14148379e-18
+-1.16436290e-03
+-3.04547231e-02
+4.90095143e-02
+-1.24174599e+00
+-1.45893209e-01
+-6.56770045e-02
+-3.61606524e-02
+-8.10764924e-03
+1.39940031e-02
+-3.06727961e-17
+-6.06810468e-02
+1.04746483e-01
+5.17309694e-16
+1.35803499e-03
+7.28635250e-02
+-1.04252544e-01
+6.96656664e-01
+7.09051978e-02
+9.67408225e-02
+-5.96437727e-01
+-3.51921195e-01
+1.17659921e+00
+1.30062632e-01
+6.01653204e-02
+-1.03847723e-01
+-3.32473995e-16
+-1.22479950e-03
+2.11553324e-03
+1.10148375e-16
+-4.07678447e-03
+7.02873678e-03
+-2.39011304e-15
+5.40732456e-02
+-9.33752408e-02
+5.08455456e-15
+1.00277470e-01
+-1.73090829e-01
+-5.81771115e-15
+-4.08430765e-02
+7.05094689e-02
+3.50366819e-15
+-3.32485031e-04
+-5.54778678e-18
+-2.27254459e-04
+5.25590878e-18
+-1.90562932e-04
+1.01293920e-03
+2.54031976e-17
+7.22896190e-04
+-2.01556977e-17
+5.80485070e-04
+-3.04547231e-02
+4.90095145e-02
+-1.24174599e+00
+-1.45893201e-01
+-6.56770042e-02
+-3.61606529e-02
+-8.10764924e-03
+-1.39940031e-02
+-2.85710005e-17
+-6.06810468e-02
+-1.04746483e-01
+5.48083428e-16
+1.35803498e-03
+7.28635250e-02
+-1.04252547e-01
+6.96656674e-01
+7.09051988e-02
+9.67408249e-02
+-5.96437735e-01
+-3.51921199e-01
+1.17659921e+00
+1.30062624e-01
+6.01653204e-02
+1.03847723e-01
+-2.37433099e-16
+-1.22479951e-03
+-2.11553325e-03
+-1.02498611e-16
+-4.07678453e-03
+-7.02873688e-03
+-3.81430855e-16
+5.40732458e-02
+9.33752410e-02
+-6.66875646e-17
+1.00277470e-01
+1.73090828e-01
+1.09192471e-15
+-4.08430767e-02
+-7.05094694e-02
+6.78699349e-16
+3.32485032e-04
+1.72525431e-17
+-2.27254459e-04
+-1.84715640e-17
+-1.90562932e-04
+-1.01293920e-03
+-3.38400666e-17
+7.22896191e-04
+5.48863235e-18
+5.80485071e-04
+   *****
+
+ Right Dyson orbital norm is 0.9957
+
+Right beta Dyson orbital in the MO basis (canonical Q-Chem's ordering):
+0  1.7424e-15  
+1  -7.5871e-15 
+2  2.0074e-15  
+3  -1.2863e-03 
+4  1.2408e-11  
+5  9.1808e-04  
+6  -8.6521e-03 
+7  2.8318e-12  
+8  2.8332e-03  
+9  -1.5475e-07 
+10 4.4543e-16  
+11 6.5775e-15  
+12 -8.1040e-16 
+13 -2.8379e-16 
+14 -2.9727e-15 
+15 9.8297e-01  
+16 1.4536e-01  
+17 4.9970e-11  
+18 -2.8947e-04 
+19 -6.3548e-15 
+20 -9.6671e-11 
+21 2.2049e-04  
+22 1.1490e-08  
+23 1.1964e-03  
+24 -7.5678e-02 
+25 6.1290e-15  
+26 1.1453e-15  
+27 6.0183e-02  
+28 2.7782e-12  
+29 -1.7147e-05 
+30 -1.3637e-10 
+31 3.0947e-11  
+32 9.8332e-05  
+33 1.3312e-14  
+34 -5.8132e-03 
+35 -4.4460e-10 
+36 -1.2415e-05 
+37 4.3408e-02  
+38 4.4089e-14  
+39 -3.2174e-15 
+40 1.5361e-04  
+41 3.6067e-10  
+42 2.0426e-02  
+43 -2.3387e-13 
+44 5.1128e-05  
+45 -7.9717e-11 
+46 3.7129e-11  
+47 -1.9813e-05 
+48 -5.8286e-04 
+49 -2.0936e-11 
+50 -1.0630e-05 
+51 1.6141e-14  
+52 2.2224e-14  
+53 -3.0295e-14 
+54 -1.5492e-02 
+55 4.9310e-05  
+56 4.3965e-11  
+57 1.5780e-13  
+58 1.0449e-04  
+59 1.2101e-11  
+60 1.7771e-02  
+61 1.5256e-10  
+62 -2.0236e-05 
+63 -2.7492e-03 
+64 2.1030e-15  
+65 -2.3955e-05 
+66 1.6227e-11  
+67 -3.3651e-05 
+68 1.3181e-11  
+69 -3.3703e-15 
+70 4.6190e-15  
+71 6.8722e-11  
+72 -1.4552e-02 
+73 2.5268e-13  
+74 7.2560e-14  
+75 4.5063e-16  
+76 3.1730e-03  
+77 2.9587e-05  
+78 5.2905e-12  
+79 -8.1824e-06 
+80 2.9992e-10  
+81 4.3476e-11  
+82 7.3390e-06  
+83 -1.7181e-12 
+84 6.2642e-03  
+85 -7.1314e-11 
+86 2.3175e-07  
+87 4.8827e-03  
+88 -2.4695e-05 
+89 4.7772e-10  
+90 -4.4986e-04 
+91 -3.5787e-06 
+92 3.9421e-11  
+93 -5.2456e-16 
+94 5.0442e-16  
+95 4.0099e-16  
+96 -8.7271e-14 
+97 1.4228e-06  
+98 4.9322e-05  
+99 4.6959e-16  
+100-1.1072e-06 
+1012.5773e-12  
+102-4.3853e-16 
+103-1.0176e-15 
+104-1.4376e-13 
+105-2.8926e-03 
+106-2.7410e-11 
+107-2.8372e-06 
+1081.2496e-03  
+109-3.0241e-06 
+110-3.6282e-07 
+1116.5973e-15  
+1122.2676e-15  
+1131.2720e-14  
+114-1.3405e-13 
+1156.2677e-13  
+116-2.6359e-07 
+1173.3778e-16  
+1181.0960e-15  
+1194.6727e-17  
+120-1.5998e-14 
+121-2.1846e-13 
+122-1.2201e-06 
+1231.4801e-03  
+124-9.4694e-06 
+1258.5594e-13  
+126-2.5969e-05 
+1271.3342e-10  
+1281.2566e-03  
+129-5.7111e-04 
+1303.1909e-05  
+1319.1487e-12  
+132-5.6234e-16 
+1331.3955e-15  
+134-1.5624e-16 
+1357.8939e-15  
+136-3.0454e-07 
+1374.8722e-06  
+138-4.1349e-16 
+139-1.7969e-16 
+140-7.6203e-16 
+1414.2282e-08  
+142-1.7156e-14 
+143-3.7459e-16 
+144-2.3020e-05 
+1453.6745e-06  
+1465.8008e-14  
+1475.0832e-11  
+1482.1076e-06  
+1493.1095e-04  
+
+Decomposition over AOs for the right beta Dyson orbital:
+-3.14513176e-02
+4.77989299e-02
+-1.24029168e+00
+-1.42518642e-01
+-6.65102942e-02
+-3.61843978e-02
+1.62272501e-02
+-8.40188033e-14
+-5.75152930e-17
+1.21160836e-01
+-4.11001247e-12
+2.21466519e-16
+1.36684116e-03
+7.31263934e-02
+-1.04422013e-01
+6.98160637e-01
+7.10746257e-02
+9.70809427e-02
+-5.96613587e-01
+-3.52448583e-01
+1.17446847e+00
+1.27132533e-01
+-1.20890377e-01
+-7.18155319e-14
+-3.17902929e-16
+2.30911389e-03
+4.32458008e-13
+-1.00075327e-16
+7.59544378e-03
+9.38738805e-12
+1.11668915e-15
+-1.07657128e-01
+-2.79011280e-11
+-4.62023685e-15
+-2.00021203e-01
+6.07950791e-11
+7.35941207e-15
+8.17992613e-02
+-1.25109846e-11
+-5.60011472e-15
+6.99419331e-14
+1.52392101e-17
+-2.19815397e-04
+6.97329448e-18
+3.70452816e-04
+-4.84958161e-13
+4.96213615e-19
+7.20982684e-04
+4.14148379e-18
+-1.16436290e-03
+-3.04547231e-02
+4.90095143e-02
+-1.24174599e+00
+-1.45893209e-01
+-6.56770045e-02
+-3.61606524e-02
+-8.10764924e-03
+1.39940031e-02
+-3.06727961e-17
+-6.06810468e-02
+1.04746483e-01
+5.17309694e-16
+1.35803499e-03
+7.28635250e-02
+-1.04252544e-01
+6.96656664e-01
+7.09051978e-02
+9.67408225e-02
+-5.96437727e-01
+-3.51921195e-01
+1.17659921e+00
+1.30062632e-01
+6.01653204e-02
+-1.03847723e-01
+-3.32473995e-16
+-1.22479950e-03
+2.11553324e-03
+1.10148375e-16
+-4.07678447e-03
+7.02873678e-03
+-2.39011304e-15
+5.40732456e-02
+-9.33752408e-02
+5.08455456e-15
+1.00277470e-01
+-1.73090829e-01
+-5.81771115e-15
+-4.08430765e-02
+7.05094689e-02
+3.50366819e-15
+-3.32485031e-04
+-5.54778678e-18
+-2.27254459e-04
+5.25590878e-18
+-1.90562932e-04
+1.01293920e-03
+2.54031976e-17
+7.22896190e-04
+-2.01556977e-17
+5.80485070e-04
+-3.04547231e-02
+4.90095145e-02
+-1.24174599e+00
+-1.45893201e-01
+-6.56770042e-02
+-3.61606529e-02
+-8.10764924e-03
+-1.39940031e-02
+-2.85710005e-17
+-6.06810468e-02
+-1.04746483e-01
+5.48083428e-16
+1.35803498e-03
+7.28635250e-02
+-1.04252547e-01
+6.96656674e-01
+7.09051988e-02
+9.67408249e-02
+-5.96437735e-01
+-3.51921199e-01
+1.17659921e+00
+1.30062624e-01
+6.01653204e-02
+1.03847723e-01
+-2.37433099e-16
+-1.22479951e-03
+-2.11553325e-03
+-1.02498611e-16
+-4.07678453e-03
+-7.02873688e-03
+-3.81430855e-16
+5.40732458e-02
+9.33752410e-02
+-6.66875646e-17
+1.00277470e-01
+1.73090828e-01
+1.09192471e-15
+-4.08430767e-02
+-7.05094694e-02
+6.78699349e-16
+3.32485032e-04
+1.72525431e-17
+-2.27254459e-04
+-1.84715640e-17
+-1.90562932e-04
+-1.01293920e-03
+-3.38400666e-17
+7.22896191e-04
+5.48863235e-18
+5.80485071e-04
+   *****
+
+     End transition
+
+ ------------------------------------------------------------------------------
+ State A: eomea_cc2/b: 2/A
+ State B: cc2: 0/A
+
+       ***    Dyson orbital calculation   *** 
+
+ EOM-EA-CC2 state  2/A -- Reference  transition
+ Energy difference = 0.1498 eV.
+
+ Left Dyson orbital norm is 0.9998
+
+Left beta Dyson orbital in the MO basis (canonical Q-Chem's ordering):
+0  -1.5753e-15 
+1  1.5627e-15  
+2  -9.7101e-16 
+3  4.7260e-04  
+4  -4.5212e-12 
+5  -3.3490e-04 
+6  2.2637e-03  
+7  -8.2380e-13 
+8  -7.3972e-04 
+9  8.2678e-07  
+10 -2.5121e-15 
+11 -4.5390e-14 
+12 6.9625e-16  
+13 1.9355e-15  
+14 -2.0849e-14 
+15 1.5422e-01  
+16 -9.8660e-01 
+17 -1.7288e-10 
+18 9.5024e-04  
+19 2.4097e-15  
+20 6.0428e-11  
+21 -1.6101e-04 
+22 -6.6135e-09 
+23 -6.7654e-04 
+24 4.3613e-02  
+25 1.6948e-15  
+26 4.0539e-15  
+27 -2.4302e-02 
+28 -1.2844e-12 
+29 1.0336e-05  
+30 6.9203e-11  
+31 -3.0265e-11 
+32 -5.7316e-05 
+33 -7.5455e-15 
+34 5.1218e-03  
+35 1.5003e-10  
+36 1.1190e-05  
+37 -1.5498e-02 
+38 -1.1886e-14 
+39 -2.9033e-15 
+40 -3.2982e-05 
+41 -7.4039e-11 
+42 -4.8522e-03 
+43 -5.8467e-15 
+44 -3.0123e-05 
+45 4.2902e-11  
+46 -2.2202e-11 
+47 7.7445e-06  
+48 -2.1297e-03 
+49 5.4321e-12  
+50 5.2084e-06  
+51 -6.3596e-15 
+52 1.8605e-15  
+53 6.4084e-15  
+54 4.3250e-03  
+55 -1.6801e-05 
+56 -1.5885e-11 
+57 -1.2774e-13 
+58 -3.0546e-05 
+59 -2.8617e-12 
+60 -3.5924e-03 
+61 -3.1703e-11 
+62 1.0948e-06  
+63 1.6282e-03  
+64 -6.9118e-15 
+65 6.1626e-06  
+66 -1.5995e-12 
+67 9.8088e-06  
+68 -7.1227e-12 
+69 1.3542e-15  
+70 3.6022e-16  
+71 -1.5100e-11 
+72 3.2014e-03  
+73 -6.6007e-14 
+74 -1.0111e-15 
+75 4.6052e-15  
+76 -4.2816e-04 
+77 -1.1343e-05 
+78 -8.1625e-13 
+79 2.6386e-06  
+80 -7.8222e-11 
+81 -9.7651e-12 
+82 -2.3427e-06 
+83 3.8733e-13  
+84 -1.8003e-03 
+85 3.6636e-11  
+86 -1.1539e-06 
+87 -1.0043e-03 
+88 3.6562e-06  
+89 -1.0477e-10 
+90 -9.4727e-05 
+91 3.3156e-06  
+92 -8.2894e-12 
+93 1.1447e-15  
+94 -2.4063e-15 
+95 8.5216e-16  
+96 1.2916e-14  
+97 7.8301e-08  
+98 5.0034e-06  
+99 -2.0864e-15 
+1005.1473e-07  
+1014.0838e-13  
+102-8.9876e-16 
+1037.3182e-16  
+1043.5323e-14  
+1056.8383e-04  
+1069.0908e-12  
+1071.2703e-06  
+108-1.8215e-04 
+1098.0175e-08  
+1109.5939e-09  
+1118.1607e-15  
+112-1.6156e-15 
+113-1.4563e-14 
+1142.1672e-14  
+115-4.4404e-14 
+1162.5521e-08  
+117-2.3254e-15 
+118-3.8391e-15 
+1198.8711e-16  
+1202.4928e-15  
+1217.2461e-14  
+1222.9282e-07  
+123-4.1529e-04 
+1242.5582e-06  
+1251.5658e-14  
+1265.7338e-06  
+127-3.0579e-11 
+128-2.6282e-04 
+1291.0533e-04  
+130-5.3092e-06 
+131-1.9080e-12 
+132-6.4742e-16 
+1331.3953e-15  
+1347.1545e-16  
+1352.9903e-15  
+1364.5435e-08  
+137-7.2943e-07 
+138-3.1515e-15 
+1391.6777e-15  
+1401.5395e-15  
+141-1.2021e-08 
+1422.1549e-14  
+1432.5316e-15  
+1441.3146e-05  
+145-2.2555e-06 
+1466.4078e-14  
+147-1.2004e-11 
+148-5.2228e-07 
+149-6.6442e-05 
+
+Decomposition over AOs for the left beta Dyson orbital:
+7.13355969e-03
+-4.07555285e-02
+2.22164957e-01
+3.73322610e-01
+1.75297601e+00
+-1.22577034e+00
+-3.73115776e-03
+3.96840858e-14
+1.15552476e-17
+-4.29619098e-02
+-7.88629905e-12
+1.29515530e-16
+-1.33777960e-03
+-1.58211196e-02
+-2.46705818e-01
+2.31234492e+00
+1.01566650e-01
+3.61469046e-01
+-1.60972381e+00
+-1.39088758e+00
+1.00082084e+00
+-1.74283604e+00
+3.16865890e-02
+1.43261791e-12
+-4.12651856e-17
+-1.28312797e-03
+-9.30526773e-12
+1.30987820e-16
+-1.93396429e-02
+1.38527451e-10
+-1.01703405e-15
+6.24575755e-02
+-6.49209781e-10
+2.15530597e-15
+-6.81249094e-02
+1.90232153e-09
+-2.79925455e-15
+3.13937989e-01
+-9.46016303e-10
+2.22954055e-15
+2.20751284e-14
+-3.16648254e-18
+2.29902067e-05
+-8.35730980e-18
+-6.71855150e-05
+-1.63685203e-13
+-4.23750775e-19
+-1.18970649e-04
+2.37728487e-17
+2.71055149e-04
+6.87212305e-03
+-4.11657523e-02
+2.20259775e-01
+3.75248500e-01
+1.75398496e+00
+-1.22978460e+00
+1.86023033e-03
+-3.21097780e-03
+-4.80706285e-18
+2.15045217e-02
+-3.71414697e-02
+4.12808958e-17
+-1.33566916e-03
+-1.57269956e-02
+-2.46998823e-01
+2.31499677e+00
+1.01724637e-01
+3.61908238e-01
+-1.61130701e+00
+-1.39240182e+00
+1.00330390e+00
+-1.74600543e+00
+-1.57749199e-02
+2.72195253e-02
+5.94898902e-17
+6.58332377e-04
+-1.13133199e-03
+3.43564820e-17
+9.75331090e-03
+-1.68283366e-02
+1.80534323e-16
+-3.12052970e-02
+5.39488845e-02
+-1.15018715e-15
+3.41218572e-02
+-5.91460928e-02
+2.04689678e-15
+-1.57334216e-01
+2.71752876e-01
+-9.29311431e-16
+6.11454392e-05
+-3.24647695e-20
+2.48602924e-05
+-5.66636278e-19
+3.49030682e-05
+-2.32874902e-04
+-2.16565490e-18
+-1.17348778e-04
+3.45585875e-18
+-1.32488313e-04
+6.87212308e-03
+-4.11657510e-02
+2.20259765e-01
+3.75248684e-01
+1.75398494e+00
+-1.22978460e+00
+1.86023033e-03
+3.21097779e-03
+-2.43275490e-18
+2.15045215e-02
+3.71414693e-02
+-2.24572173e-17
+-1.33566920e-03
+-1.57269958e-02
+-2.46998830e-01
+2.31499680e+00
+1.01724640e-01
+3.61908246e-01
+-1.61130704e+00
+-1.39240183e+00
+1.00330392e+00
+-1.74600559e+00
+-1.57749199e-02
+-2.72195253e-02
+-1.56948857e-18
+6.58332368e-04
+1.13133195e-03
+7.52189507e-17
+9.75331011e-03
+1.68283355e-02
+-9.04260863e-17
+-3.12052944e-02
+-5.39488812e-02
+-4.56917211e-16
+3.41218488e-02
+5.91460823e-02
+1.45420839e-15
+-1.57334222e-01
+-2.71752888e-01
+-1.59150690e-15
+-6.11454378e-05
+-3.09035661e-19
+2.48602915e-05
+5.07680473e-18
+3.49030675e-05
+2.32874891e-04
+-1.25721763e-17
+-1.17348771e-04
+5.88900505e-18
+-1.32488307e-04
+   *****
+
+ Right Dyson orbital norm is 0.9998
+
+Right beta Dyson orbital in the MO basis (canonical Q-Chem's ordering):
+0  -1.5753e-15 
+1  1.5627e-15  
+2  -9.7101e-16 
+3  4.7260e-04  
+4  -4.5212e-12 
+5  -3.3490e-04 
+6  2.2637e-03  
+7  -8.2380e-13 
+8  -7.3972e-04 
+9  8.2678e-07  
+10 -2.5121e-15 
+11 -4.5390e-14 
+12 6.9625e-16  
+13 1.9355e-15  
+14 -2.0849e-14 
+15 1.5422e-01  
+16 -9.8660e-01 
+17 -1.7288e-10 
+18 9.5024e-04  
+19 2.4097e-15  
+20 6.0428e-11  
+21 -1.6101e-04 
+22 -6.6135e-09 
+23 -6.7654e-04 
+24 4.3613e-02  
+25 1.6948e-15  
+26 4.0539e-15  
+27 -2.4302e-02 
+28 -1.2844e-12 
+29 1.0336e-05  
+30 6.9203e-11  
+31 -3.0265e-11 
+32 -5.7316e-05 
+33 -7.5455e-15 
+34 5.1218e-03  
+35 1.5003e-10  
+36 1.1190e-05  
+37 -1.5498e-02 
+38 -1.1886e-14 
+39 -2.9033e-15 
+40 -3.2982e-05 
+41 -7.4039e-11 
+42 -4.8522e-03 
+43 -5.8467e-15 
+44 -3.0123e-05 
+45 4.2902e-11  
+46 -2.2202e-11 
+47 7.7445e-06  
+48 -2.1297e-03 
+49 5.4321e-12  
+50 5.2084e-06  
+51 -6.3596e-15 
+52 1.8605e-15  
+53 6.4084e-15  
+54 4.3250e-03  
+55 -1.6801e-05 
+56 -1.5885e-11 
+57 -1.2774e-13 
+58 -3.0546e-05 
+59 -2.8617e-12 
+60 -3.5924e-03 
+61 -3.1703e-11 
+62 1.0948e-06  
+63 1.6282e-03  
+64 -6.9118e-15 
+65 6.1626e-06  
+66 -1.5995e-12 
+67 9.8088e-06  
+68 -7.1227e-12 
+69 1.3542e-15  
+70 3.6022e-16  
+71 -1.5100e-11 
+72 3.2014e-03  
+73 -6.6007e-14 
+74 -1.0111e-15 
+75 4.6052e-15  
+76 -4.2816e-04 
+77 -1.1343e-05 
+78 -8.1625e-13 
+79 2.6386e-06  
+80 -7.8222e-11 
+81 -9.7651e-12 
+82 -2.3427e-06 
+83 3.8733e-13  
+84 -1.8003e-03 
+85 3.6636e-11  
+86 -1.1539e-06 
+87 -1.0043e-03 
+88 3.6562e-06  
+89 -1.0477e-10 
+90 -9.4727e-05 
+91 3.3156e-06  
+92 -8.2894e-12 
+93 1.1447e-15  
+94 -2.4063e-15 
+95 8.5216e-16  
+96 1.2916e-14  
+97 7.8301e-08  
+98 5.0034e-06  
+99 -2.0864e-15 
+1005.1473e-07  
+1014.0838e-13  
+102-8.9876e-16 
+1037.3182e-16  
+1043.5323e-14  
+1056.8383e-04  
+1069.0908e-12  
+1071.2703e-06  
+108-1.8215e-04 
+1098.0175e-08  
+1109.5939e-09  
+1118.1607e-15  
+112-1.6156e-15 
+113-1.4563e-14 
+1142.1672e-14  
+115-4.4404e-14 
+1162.5521e-08  
+117-2.3254e-15 
+118-3.8391e-15 
+1198.8711e-16  
+1202.4928e-15  
+1217.2461e-14  
+1222.9282e-07  
+123-4.1529e-04 
+1242.5582e-06  
+1251.5658e-14  
+1265.7338e-06  
+127-3.0579e-11 
+128-2.6282e-04 
+1291.0533e-04  
+130-5.3092e-06 
+131-1.9080e-12 
+132-6.4742e-16 
+1331.3953e-15  
+1347.1545e-16  
+1352.9903e-15  
+1364.5435e-08  
+137-7.2943e-07 
+138-3.1515e-15 
+1391.6777e-15  
+1401.5395e-15  
+141-1.2021e-08 
+1422.1549e-14  
+1432.5316e-15  
+1441.3146e-05  
+145-2.2555e-06 
+1466.4078e-14  
+147-1.2004e-11 
+148-5.2228e-07 
+149-6.6442e-05 
+
+Decomposition over AOs for the right beta Dyson orbital:
+7.13355969e-03
+-4.07555285e-02
+2.22164957e-01
+3.73322610e-01
+1.75297601e+00
+-1.22577034e+00
+-3.73115776e-03
+3.96840858e-14
+1.15552476e-17
+-4.29619098e-02
+-7.88629905e-12
+1.29515530e-16
+-1.33777960e-03
+-1.58211196e-02
+-2.46705818e-01
+2.31234492e+00
+1.01566650e-01
+3.61469046e-01
+-1.60972381e+00
+-1.39088758e+00
+1.00082084e+00
+-1.74283604e+00
+3.16865890e-02
+1.43261791e-12
+-4.12651856e-17
+-1.28312797e-03
+-9.30526773e-12
+1.30987820e-16
+-1.93396429e-02
+1.38527451e-10
+-1.01703405e-15
+6.24575755e-02
+-6.49209781e-10
+2.15530597e-15
+-6.81249094e-02
+1.90232153e-09
+-2.79925455e-15
+3.13937989e-01
+-9.46016303e-10
+2.22954055e-15
+2.20751284e-14
+-3.16648254e-18
+2.29902067e-05
+-8.35730980e-18
+-6.71855150e-05
+-1.63685203e-13
+-4.23750775e-19
+-1.18970649e-04
+2.37728487e-17
+2.71055149e-04
+6.87212305e-03
+-4.11657523e-02
+2.20259775e-01
+3.75248500e-01
+1.75398496e+00
+-1.22978460e+00
+1.86023033e-03
+-3.21097780e-03
+-4.80706285e-18
+2.15045217e-02
+-3.71414697e-02
+4.12808958e-17
+-1.33566916e-03
+-1.57269956e-02
+-2.46998823e-01
+2.31499677e+00
+1.01724637e-01
+3.61908238e-01
+-1.61130701e+00
+-1.39240182e+00
+1.00330390e+00
+-1.74600543e+00
+-1.57749199e-02
+2.72195253e-02
+5.94898902e-17
+6.58332377e-04
+-1.13133199e-03
+3.43564820e-17
+9.75331090e-03
+-1.68283366e-02
+1.80534323e-16
+-3.12052970e-02
+5.39488845e-02
+-1.15018715e-15
+3.41218572e-02
+-5.91460928e-02
+2.04689678e-15
+-1.57334216e-01
+2.71752876e-01
+-9.29311431e-16
+6.11454392e-05
+-3.24647695e-20
+2.48602924e-05
+-5.66636278e-19
+3.49030682e-05
+-2.32874902e-04
+-2.16565490e-18
+-1.17348778e-04
+3.45585875e-18
+-1.32488313e-04
+6.87212308e-03
+-4.11657510e-02
+2.20259765e-01
+3.75248684e-01
+1.75398494e+00
+-1.22978460e+00
+1.86023033e-03
+3.21097779e-03
+-2.43275490e-18
+2.15045215e-02
+3.71414693e-02
+-2.24572173e-17
+-1.33566920e-03
+-1.57269958e-02
+-2.46998830e-01
+2.31499680e+00
+1.01724640e-01
+3.61908246e-01
+-1.61130704e+00
+-1.39240183e+00
+1.00330392e+00
+-1.74600559e+00
+-1.57749199e-02
+-2.72195253e-02
+-1.56948857e-18
+6.58332368e-04
+1.13133195e-03
+7.52189507e-17
+9.75331011e-03
+1.68283355e-02
+-9.04260863e-17
+-3.12052944e-02
+-5.39488812e-02
+-4.56917211e-16
+3.41218488e-02
+5.91460823e-02
+1.45420839e-15
+-1.57334222e-01
+-2.71752888e-01
+-1.59150690e-15
+-6.11454378e-05
+-3.09035661e-19
+2.48602915e-05
+5.07680473e-18
+3.49030675e-05
+2.32874891e-04
+-1.25721763e-17
+-1.17348771e-04
+5.88900505e-18
+-1.32488307e-04
+   *****
+
+     End transition
+
+
+ All requested transition properties have been computed
+
+
+ Transition Properties  CPU 2.53 s  wall 0.76 s
+ Total ccman2 time:   CPU 371.00 s  wall 125.35 s
+
+
+ --------------------------------------------------------------
+
+                    Orbital Energies (a.u.)
+ --------------------------------------------------------------
+
+ Alpha MOs
+ -- Occupied --
+-26.3305 -26.3304 -26.3304  -1.6264  -1.6263  -1.6255  -0.7895  -0.7887
+ -0.7879  -0.6688  -0.6687  -0.6687  -0.6686  -0.6684  -0.6684
+ -- Virtual --
+ -0.0068   0.0063   0.0070   0.0070   0.0154   0.0231   0.0231   0.0250
+  0.0250   0.0250   0.0273   0.0273   0.0296   0.0373   0.0376   0.0376
+  0.0545   0.0545   0.0547   0.0586   0.0646   0.0647   0.0688   0.0800
+  0.0800   0.0934   0.0934   0.0943   0.0979   0.1093   0.1093   0.1221
+  0.1221   0.1326   0.1500   0.1501   0.1615   0.1876   0.1876   0.1936
+  0.2049   0.2051   0.2129   0.2193   0.2194   0.2392   0.2610   0.2610
+  0.2978   0.3322   0.3363   0.3366   0.3982   0.3983   0.4192   0.4194
+  0.4672   0.4678   0.4742   0.4802   0.4803   0.4808   0.4834   0.4834
+  0.5201   0.5202   0.5368   0.5369   0.5429   0.6210   0.8401   0.8401
+  0.8744   0.8831   0.8834   1.0269   1.0539   1.0544   1.3299   1.3301
+  1.3302   1.3313   1.3314   1.3349   1.3885   1.4526   1.4526   1.4528
+  1.4531   1.5596   1.6759   1.6909   1.6910   1.7098   1.7285   1.7285
+  1.8294   1.8295   1.8297   1.8343   1.8521   1.8521   2.1465   2.1479
+  2.1480   2.1510   2.1602   2.1611   2.4525   2.6175   2.6195   3.1653
+  3.1655   3.1867   3.4065   3.4360   3.4390   4.8349   4.8350   4.8352
+  4.8357   4.8358   4.8375   4.8957   4.9286   4.9287   4.9313   4.9315
+  4.9830   5.1664   5.1740   5.1756  11.2806  11.2808  11.3276
+ --------------------------------------------------------------
+
+
+                        RESTRICTED (RHF) MOLECULAR ORBITAL COEFFICIENTS
+                         1         2         3         4         5         6
+ eigenvalues:        -26.330   -26.330   -26.330    -1.626    -1.626    -1.625
+   1  H 1   s        0.00061   0.00000   0.00005   0.00113  -0.00000  -0.35559
+   2  H 1   s        0.00232   0.00000   0.00063  -0.01480   0.00000   0.21574
+   3  H 1   s       -0.00188  -0.00000  -0.00138   0.01044  -0.00000  -0.07833
+   4  H 1   s        0.00103   0.00000   0.00106  -0.10516   0.00000  -0.06403
+   5  H 1   s       -0.00061  -0.00000  -0.00023   0.01100   0.00000   0.03205
+   6  H 1   s        0.00014   0.00000   0.00006  -0.00363  -0.00000  -0.00953
+   7  H 1   px      -0.00012  -0.00000  -0.00001   0.00040  -0.00000  -0.04985
+   8  H 1   py       0.00000   0.00000  -0.00000  -0.00000  -0.00014  -0.00000
+   9  H 1   pz      -0.00000  -0.00000  -0.00000  -0.00000   0.00000   0.00000
+  10  H 1   px       0.00103   0.00000   0.00028  -0.00563   0.00000  -0.00286
+  11  H 1   py       0.00000  -0.00006   0.00000   0.00000   0.00137  -0.00000
+  12  H 1   pz       0.00000   0.00000  -0.00000   0.00000  -0.00000  -0.00000
+  13  F 1   s        1.00355  -0.00000  -0.00255  -0.00007  -0.00000   0.00824
+  14  F 1   s        0.01232  -0.00000  -0.00003   0.00497  -0.00000  -0.92429
+  15  F 1   s        0.08054   0.00000   0.00023  -0.00765  -0.00000  -0.47189
+  16  F 1   s       -0.04199  -0.00000  -0.00072   0.00037   0.00000   1.53243
+  17  F 1   s       -0.06425  -0.00000  -0.00002   0.00324   0.00000   0.16189
+  18  F 1   s       -0.04280  -0.00000  -0.00047   0.00891   0.00000   0.73185
+  19  F 1   s        0.04454   0.00000   0.00021   0.00635  -0.00000  -1.55326
+  20  F 1   s        0.01006  -0.00000  -0.00000   0.00541  -0.00000  -0.48747
+  21  F 1   s       -0.00075   0.00000   0.00126  -0.01420   0.00000   0.21785
+  22  F 1   s        0.00018  -0.00000  -0.00083   0.08834  -0.00000  -0.01072
+  23  F 1   px      -0.00141  -0.00000  -0.00001  -0.00030   0.00000   0.09217
+  24  F 1   py       0.00000  -0.00000   0.00000   0.00000   0.00003  -0.00000
+  25  F 1   pz      -0.00000  -0.00000   0.00000  -0.00000   0.00000   0.00000
+  26  F 1   px       0.00140   0.00000   0.00006  -0.00102   0.00000  -0.06740
+  27  F 1   py      -0.00000   0.00001  -0.00000  -0.00000  -0.00009   0.00000
+  28  F 1   pz       0.00000   0.00000  -0.00000  -0.00000  -0.00000  -0.00000
+  29  F 1   px       0.00076   0.00000   0.00028  -0.00506   0.00000   0.02109
+  30  F 1   py       0.00000   0.00005  -0.00000  -0.00000  -0.00231   0.00000
+  31  F 1   pz      -0.00000  -0.00000   0.00000   0.00000   0.00000   0.00000
+  32  F 1   px      -0.00049  -0.00000  -0.00032   0.00481  -0.00000  -0.01501
+  33  F 1   py      -0.00000  -0.00008   0.00000   0.00000   0.00354  -0.00000
+  34  F 1   pz       0.00000   0.00000  -0.00000  -0.00000  -0.00000  -0.00000
+  35  F 1   px      -0.00003  -0.00000  -0.00000  -0.00788   0.00000  -0.01573
+  36  F 1   py       0.00000   0.00005  -0.00000  -0.00000  -0.00494   0.00000
+  37  F 1   pz      -0.00000  -0.00000   0.00000   0.00000   0.00000   0.00000
+  38  F 1   px       0.00005   0.00000   0.00009  -0.00644   0.00000   0.00379
+  39  F 1   py      -0.00000  -0.00003   0.00000   0.00000   0.00133  -0.00000
+  40  F 1   pz       0.00000   0.00000  -0.00000  -0.00000  -0.00000  -0.00000
+  41  F 1   d 1     -0.00000   0.00001  -0.00000  -0.00000  -0.00008   0.00000
+  42  F 1   d 2     -0.00000   0.00000  -0.00000   0.00000   0.00000  -0.00000
+  43  F 1   d 3      0.00001   0.00000   0.00000  -0.00003   0.00000   0.00443
+  44  F 1   d 4      0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+  45  F 1   d 5     -0.00003   0.00000   0.00000   0.00004  -0.00000  -0.00767
+  46  F 1   d 1      0.00000  -0.00002   0.00000   0.00000   0.00031  -0.00000
+  47  F 1   d 2      0.00000  -0.00000   0.00000  -0.00000  -0.00000   0.00000
+  48  F 1   d 3      0.00007   0.00000   0.00000   0.00006  -0.00000  -0.01078
+  49  F 1   d 4     -0.00000  -0.00000  -0.00000  -0.00000   0.00000  -0.00000
+  50  F 1   d 5     -0.00012  -0.00000  -0.00000  -0.00008   0.00000   0.01867
+  51  H 2   s       -0.00004  -0.00045  -0.00040   0.25302   0.25384   0.00196
+  52  H 2   s       -0.00046  -0.00198  -0.00134  -0.15976  -0.14611   0.00863
+  53  H 2   s        0.00098   0.00203   0.00064   0.05972   0.05009  -0.00612
+  54  H 2   s       -0.00074  -0.00129  -0.00022  -0.00657   0.09830   0.07364
+  55  H 2   s        0.00017   0.00055   0.00031  -0.01702  -0.02814  -0.00795
+  56  H 2   s       -0.00004  -0.00013  -0.00007   0.00485   0.00853   0.00263
+  57  H 2   px      -0.00000  -0.00004  -0.00004  -0.01775  -0.01780   0.00003
+  58  H 2   py       0.00000   0.00008   0.00007   0.03077   0.03059   0.00014
+  59  H 2   pz       0.00000  -0.00000   0.00000   0.00000  -0.00000   0.00000
+  60  H 2   px       0.00014   0.00041   0.00032  -0.00035  -0.00200  -0.00279
+  61  H 2   py      -0.00016  -0.00077  -0.00050  -0.00076   0.00481   0.00292
+  62  H 2   pz      -0.00000  -0.00000  -0.00000  -0.00000   0.00000  -0.00000
+  63  F 2   s       -0.00181  -0.70962  -0.70961  -0.00585  -0.00583  -0.00002
+  64  F 2   s       -0.00003  -0.00872  -0.00872   0.65331   0.65340   0.00364
+  65  F 2   s       -0.00045  -0.05721  -0.05678   0.32634   0.33638   0.00884
+  66  F 2   s        0.00065   0.03014   0.02932  -1.07440  -1.08303  -0.01187
+  67  F 2   s        0.00024   0.04554   0.04537  -0.11161  -0.11564  -0.00345
+  68  F 2   s        0.00048   0.03057   0.03001  -0.50961  -0.52239  -0.01173
+  69  F 2   s       -0.00030  -0.03168  -0.03136   1.09217   1.09413   0.00736
+  70  F 2   s       -0.00003  -0.00713  -0.00711   0.34447   0.34173  -0.00002
+  71  F 2   s       -0.00089  -0.00011   0.00115  -0.15952  -0.14683   0.00773
+  72  F 2   s        0.00058   0.00031  -0.00052   0.05079  -0.03705  -0.06140
+  73  F 2   px      -0.00000  -0.00051  -0.00050   0.03287   0.03300   0.00023
+  74  F 2   py       0.00001   0.00087   0.00086  -0.05677  -0.05693  -0.00044
+  75  F 2   pz      -0.00000   0.00000   0.00000  -0.00000  -0.00000   0.00000
+  76  F 2   px       0.00002   0.00052   0.00047  -0.02386  -0.02463  -0.00056
+  77  F 2   py      -0.00005  -0.00088  -0.00083   0.04127   0.04242   0.00109
+  78  F 2   pz      -0.00000  -0.00000   0.00000   0.00000   0.00000   0.00000
+  79  F 2   px       0.00007   0.00036   0.00018   0.00961   0.00514  -0.00027
+  80  F 2   py      -0.00019  -0.00058  -0.00036  -0.01429  -0.01119   0.00368
+  81  F 2   pz       0.00000   0.00000  -0.00000   0.00000  -0.00000  -0.00000
+  82  F 2   px      -0.00007  -0.00029  -0.00006  -0.00793  -0.00254  -0.00057
+  83  F 2   py       0.00022   0.00042   0.00018   0.01016   0.00791  -0.00395
+  84  F 2   pz      -0.00000  -0.00000   0.00000  -0.00000   0.00000   0.00000
+  85  F 2   px      -0.00003   0.00001  -0.00003  -0.00148  -0.00973   0.00019
+  86  F 2   py      -0.00002   0.00003   0.00000   0.00747   0.01186   0.00660
+  87  F 2   pz      -0.00000   0.00000  -0.00000   0.00000  -0.00000  -0.00000
+  88  F 2   px       0.00005   0.00003   0.00001   0.00235   0.00031  -0.00304
+  89  F 2   py      -0.00004  -0.00007   0.00002  -0.00538   0.00080   0.00338
+  90  F 2   pz       0.00000  -0.00000   0.00000  -0.00000  -0.00000   0.00000
+  91  F 2   d 1     -0.00000  -0.00001  -0.00002  -0.00473  -0.00477   0.00000
+  92  F 2   d 2      0.00000   0.00000  -0.00000  -0.00000   0.00000  -0.00000
+  93  F 2   d 3     -0.00000  -0.00001  -0.00001  -0.00316  -0.00316  -0.00001
+  94  F 2   d 4     -0.00000  -0.00000  -0.00000   0.00000   0.00000  -0.00000
+  95  F 2   d 5      0.00000  -0.00001  -0.00001  -0.00276  -0.00268  -0.00006
+  96  F 2   d 1      0.00000  -0.00008  -0.00007   0.01149   0.01167  -0.00003
+  97  F 2   d 2      0.00000  -0.00000   0.00000   0.00000  -0.00000  -0.00000
+  98  F 2   d 3     -0.00000  -0.00005  -0.00005   0.00771   0.00770   0.00004
+  99  F 2   d 4      0.00000  -0.00000   0.00000  -0.00000  -0.00000   0.00000
+ 100  F 2   d 5     -0.00001  -0.00004  -0.00005   0.00677   0.00651   0.00023
+ 101  H 3   s       -0.00004   0.00045  -0.00040   0.25302  -0.25384   0.00196
+ 102  H 3   s       -0.00046   0.00198  -0.00134  -0.15976   0.14611   0.00863
+ 103  H 3   s        0.00098  -0.00203   0.00064   0.05972  -0.05009  -0.00612
+ 104  H 3   s       -0.00074   0.00129  -0.00022  -0.00657  -0.09830   0.07364
+ 105  H 3   s        0.00017  -0.00055   0.00031  -0.01702   0.02814  -0.00795
+ 106  H 3   s       -0.00004   0.00013  -0.00007   0.00485  -0.00853   0.00263
+ 107  H 3   px      -0.00000   0.00004  -0.00004  -0.01775   0.01780   0.00003
+ 108  H 3   py      -0.00000   0.00008  -0.00007  -0.03077   0.03059  -0.00014
+ 109  H 3   pz      -0.00000   0.00000   0.00000  -0.00000  -0.00000  -0.00000
+ 110  H 3   px       0.00014  -0.00041   0.00032  -0.00035   0.00200  -0.00279
+ 111  H 3   py       0.00016  -0.00077   0.00050   0.00076   0.00481  -0.00292
+ 112  H 3   pz      -0.00000   0.00000  -0.00000   0.00000   0.00000   0.00000
+ 113  F 3   s       -0.00181   0.70962  -0.70962  -0.00585   0.00583  -0.00002
+ 114  F 3   s       -0.00003   0.00872  -0.00872   0.65331  -0.65340   0.00364
+ 115  F 3   s       -0.00045   0.05721  -0.05678   0.32634  -0.33638   0.00884
+ 116  F 3   s        0.00065  -0.03014   0.02932  -1.07440   1.08303  -0.01187
+ 117  F 3   s        0.00024  -0.04554   0.04537  -0.11161   0.11564  -0.00345
+ 118  F 3   s        0.00048  -0.03057   0.03001  -0.50961   0.52239  -0.01173
+ 119  F 3   s       -0.00030   0.03168  -0.03136   1.09217  -1.09413   0.00736
+ 120  F 3   s       -0.00003   0.00713  -0.00711   0.34447  -0.34173  -0.00002
+ 121  F 3   s       -0.00089   0.00011   0.00115  -0.15952   0.14683   0.00773
+ 122  F 3   s        0.00058  -0.00031  -0.00052   0.05079   0.03705  -0.06140
+ 123  F 3   px      -0.00000   0.00051  -0.00050   0.03287  -0.03300   0.00023
+ 124  F 3   py      -0.00001   0.00087  -0.00086   0.05677  -0.05693   0.00044
+ 125  F 3   pz       0.00000  -0.00000   0.00000  -0.00000   0.00000   0.00000
+ 126  F 3   px       0.00002  -0.00052   0.00047  -0.02386   0.02463  -0.00056
+ 127  F 3   py       0.00005  -0.00088   0.00083  -0.04127   0.04242  -0.00109
+ 128  F 3   pz       0.00000  -0.00000  -0.00000   0.00000   0.00000   0.00000
+ 129  F 3   px       0.00007  -0.00036   0.00018   0.00961  -0.00514  -0.00027
+ 130  F 3   py       0.00019  -0.00058   0.00036   0.01429  -0.01119  -0.00368
+ 131  F 3   pz       0.00000   0.00000   0.00000  -0.00000  -0.00000  -0.00000
+ 132  F 3   px      -0.00007   0.00029  -0.00006  -0.00793   0.00254  -0.00057
+ 133  F 3   py      -0.00022   0.00042  -0.00018  -0.01016   0.00791   0.00395
+ 134  F 3   pz      -0.00000  -0.00000  -0.00000   0.00000   0.00000   0.00000
+ 135  F 3   px      -0.00003  -0.00001  -0.00003  -0.00148   0.00973   0.00019
+ 136  F 3   py       0.00002   0.00003  -0.00000  -0.00747   0.01186  -0.00660
+ 137  F 3   pz       0.00000   0.00000   0.00000  -0.00000  -0.00000  -0.00000
+ 138  F 3   px       0.00005  -0.00003   0.00001   0.00235  -0.00031  -0.00304
+ 139  F 3   py       0.00004  -0.00007  -0.00002   0.00538   0.00080  -0.00338
+ 140  F 3   pz      -0.00000  -0.00000  -0.00000   0.00000   0.00000   0.00000
+ 141  F 3   d 1      0.00000  -0.00001   0.00002   0.00473  -0.00477  -0.00000
+ 142  F 3   d 2      0.00000   0.00000   0.00000  -0.00000   0.00000  -0.00000
+ 143  F 3   d 3     -0.00000   0.00001  -0.00001  -0.00316   0.00316  -0.00001
+ 144  F 3   d 4     -0.00000   0.00000   0.00000   0.00000   0.00000   0.00000
+ 145  F 3   d 5      0.00000   0.00001  -0.00001  -0.00276   0.00268  -0.00006
+ 146  F 3   d 1     -0.00000  -0.00008   0.00007  -0.01149   0.01167   0.00003
+ 147  F 3   d 2      0.00000  -0.00000  -0.00000   0.00000  -0.00000   0.00000
+ 148  F 3   d 3     -0.00000   0.00005  -0.00005   0.00771  -0.00770   0.00004
+ 149  F 3   d 4      0.00000  -0.00000  -0.00000  -0.00000  -0.00000   0.00000
+ 150  F 3   d 5     -0.00001   0.00004  -0.00005   0.00677  -0.00651   0.00023
+                         7         8         9        10        11        12
+ eigenvalues:         -0.789    -0.789    -0.788    -0.669    -0.669    -0.669
+   1  H 1   s       -0.20929   0.00000   0.67084   0.00128  -0.00000  -0.00000
+   2  H 1   s        0.10374  -0.00000  -0.38657  -0.00721  -0.00000   0.00000
+   3  H 1   s        0.01354  -0.00000   0.19193   0.03183  -0.00000  -0.00000
+   4  H 1   s        0.02253  -0.00000  -0.07868  -0.37836   0.00000   0.00000
+   5  H 1   s        0.00118   0.00000   0.01958   0.04866  -0.00000  -0.00000
+   6  H 1   s       -0.00050  -0.00000  -0.00401  -0.00208   0.00000   0.00000
+   7  H 1   px      -0.02001   0.00000   0.06544   0.00045  -0.00000  -0.00000
+   8  H 1   py      -0.00000  -0.00013  -0.00000  -0.00000   0.00000  -0.01236
+   9  H 1   pz      -0.00000   0.00000  -0.00000   0.00000  -0.00339  -0.00000
+  10  H 1   px       0.00438   0.00000  -0.03697  -0.00264   0.00000   0.00000
+  11  H 1   py       0.00000   0.00138  -0.00000  -0.00000   0.00000  -0.00591
+  12  H 1   pz       0.00000   0.00000   0.00000  -0.00000  -0.00140  -0.00000
+  13  F 1   s        0.00187  -0.00000  -0.00601  -0.00012   0.00000   0.00000
+  14  F 1   s        0.07412  -0.00000  -0.23688  -0.00053   0.00000   0.00000
+  15  F 1   s        0.14043  -0.00000  -0.48776  -0.03702   0.00000   0.00000
+  16  F 1   s       -0.11637   0.00000   0.56692   0.21314  -0.00000  -0.00000
+  17  F 1   s       -0.06399   0.00000   0.21861   0.01564  -0.00000  -0.00000
+  18  F 1   s       -0.06994   0.00000   0.28362   0.05031  -0.00000  -0.00000
+  19  F 1   s        0.12190  -0.00000  -0.51872  -0.17457   0.00000   0.00000
+  20  F 1   s        0.03096  -0.00000  -0.14141  -0.07531   0.00000   0.00000
+  21  F 1   s       -0.01649   0.00000  -0.13690  -0.01103  -0.00000  -0.00000
+  22  F 1   s       -0.02064  -0.00000   0.04690   0.29964  -0.00000  -0.00000
+  23  F 1   px       0.24044  -0.00000  -0.77365  -0.00158  -0.00000   0.00000
+  24  F 1   py      -0.00000  -0.00099   0.00000  -0.00000   0.00000  -0.47001
+  25  F 1   pz      -0.00000  -0.00000   0.00000   0.00000  -0.12773  -0.00000
+  26  F 1   px      -0.03288   0.00000   0.10306   0.00063  -0.00000  -0.00000
+  27  F 1   py       0.00000  -0.00036   0.00000  -0.00000   0.00000  -0.00319
+  28  F 1   pz      -0.00000   0.00000   0.00000   0.00000  -0.00071  -0.00000
+  29  F 1   px       0.01766  -0.00000  -0.08654  -0.00778   0.00000   0.00000
+  30  F 1   py      -0.00000  -0.00120   0.00000  -0.00000   0.00000  -0.02434
+  31  F 1   pz       0.00000  -0.00000  -0.00000   0.00000  -0.00813  -0.00000
+  32  F 1   px      -0.00531   0.00000   0.06084   0.01590  -0.00000  -0.00000
+  33  F 1   py       0.00000   0.00234  -0.00000  -0.00000   0.00000  -0.00761
+  34  F 1   pz      -0.00000   0.00000   0.00000  -0.00000   0.00129   0.00000
+  35  F 1   px       0.00499  -0.00000  -0.00028  -0.03005   0.00000   0.00000
+  36  F 1   py      -0.00000  -0.00009   0.00000   0.00000  -0.00000   0.01287
+  37  F 1   pz       0.00000  -0.00000  -0.00000   0.00000  -0.00159  -0.00000
+  38  F 1   px       0.00133   0.00000  -0.00578  -0.02375   0.00000   0.00000
+  39  F 1   py       0.00000   0.00042   0.00000  -0.00000   0.00000  -0.00473
+  40  F 1   pz      -0.00000  -0.00000   0.00000  -0.00000   0.00131   0.00000
+  41  F 1   d 1     -0.00000  -0.00004   0.00000   0.00000  -0.00000   0.00443
+  42  F 1   d 2      0.00000   0.00000   0.00000  -0.00000   0.00000   0.00000
+  43  F 1   d 3      0.00280  -0.00000  -0.00899   0.00000  -0.00000  -0.00000
+  44  F 1   d 4      0.00000  -0.00000  -0.00000  -0.00000   0.00119   0.00000
+  45  F 1   d 5     -0.00486   0.00000   0.01556  -0.00000   0.00000   0.00000
+  46  F 1   d 1      0.00000   0.00029  -0.00000   0.00000  -0.00000   0.00821
+  47  F 1   d 2     -0.00000  -0.00000  -0.00000   0.00000  -0.00000   0.00000
+  48  F 1   d 3     -0.00254   0.00000   0.00833   0.00004  -0.00000  -0.00000
+  49  F 1   d 4     -0.00000   0.00000  -0.00000  -0.00000   0.00228   0.00000
+  50  F 1   d 5      0.00446  -0.00000  -0.01443  -0.00004   0.00000   0.00000
+  51  H 2   s       -0.47558  -0.49803  -0.14820  -0.00064  -0.00000   0.00100
+  52  H 2   s        0.25969   0.29172   0.09316   0.00366   0.00000  -0.00571
+  53  H 2   s       -0.07246  -0.16206  -0.07543  -0.01603  -0.00000   0.02515
+  54  H 2   s        0.05173   0.05887   0.01939   0.19002   0.00000  -0.29631
+  55  H 2   s       -0.00751  -0.01657  -0.00758  -0.02437  -0.00000   0.03820
+  56  H 2   s        0.00136   0.00350   0.00165   0.00105   0.00000  -0.00166
+  57  H 2   px       0.02309   0.02433   0.00743  -0.01537   0.00000  -0.01363
+  58  H 2   py      -0.03978  -0.04212  -0.01260  -0.00916   0.00000  -0.00750
+  59  H 2   pz      -0.00000  -0.00000  -0.00000   0.00000  -0.01773  -0.00000
+  60  H 2   px      -0.01024  -0.01398  -0.00670  -0.00938   0.00000  -0.00749
+  61  H 2   py       0.01696   0.02552   0.00924  -0.00389   0.00000  -0.00675
+  62  H 2   pz       0.00000  -0.00000   0.00000   0.00000  -0.01043  -0.00000
+  63  F 2   s        0.00423   0.00443   0.00132   0.00006   0.00000  -0.00009
+  64  F 2   s        0.16818   0.17586   0.05226   0.00026   0.00000  -0.00041
+  65  F 2   s        0.33703   0.36642   0.11348   0.01839   0.00000  -0.02883
+  66  F 2   s       -0.35521  -0.44303  -0.15347  -0.10691  -0.00000   0.16665
+  67  F 2   s       -0.15147  -0.16342  -0.05024  -0.00775  -0.00000   0.01216
+  68  F 2   s       -0.18652  -0.21680  -0.07142  -0.02508  -0.00000   0.03925
+  69  F 2   s        0.33861   0.40128   0.13361   0.08741   0.00000  -0.13638
+  70  F 2   s        0.09052   0.11047   0.03733   0.03785   0.00000  -0.05891
+  71  F 2   s        0.04534   0.11694   0.05699   0.00558  -0.00000  -0.00886
+  72  F 2   s       -0.03637  -0.03293  -0.00869  -0.15063  -0.00000   0.23484
+  73  F 2   px      -0.27375  -0.28789  -0.08499  -0.58826   0.00000  -0.51221
+  74  F 2   py       0.47305   0.49592   0.14835  -0.33989   0.00000  -0.29817
+  75  F 2   pz       0.00000   0.00000   0.00000   0.00000  -0.67352  -0.00000
+  76  F 2   px       0.03729   0.03839   0.01159  -0.00345   0.00000  -0.00316
+  77  F 2   py      -0.06418  -0.06662  -0.01941  -0.00237  -0.00000  -0.00126
+  78  F 2   pz       0.00000  -0.00000   0.00000   0.00000  -0.00369  -0.00000
+  79  F 2   px      -0.02635  -0.03387  -0.01079  -0.03143  -0.00000  -0.02198
+  80  F 2   py       0.04609   0.05728   0.02065  -0.01367   0.00000  -0.01980
+  81  F 2   pz      -0.00000   0.00000  -0.00000   0.00000  -0.03569  -0.00000
+  82  F 2   px       0.01511   0.02543   0.00813  -0.00588   0.00000  -0.01514
+  83  F 2   py      -0.02725  -0.04158  -0.01792  -0.01267  -0.00000   0.00565
+  84  F 2   pz      -0.00000  -0.00000   0.00000   0.00000  -0.00531  -0.00000
+  85  F 2   px      -0.00212   0.00054   0.00111   0.00834  -0.00000   0.02552
+  86  F 2   py       0.00362  -0.00099  -0.00174   0.02227   0.00000  -0.01235
+  87  F 2   pz       0.00000   0.00000  -0.00000  -0.00000   0.00766   0.00000
+  88  F 2   px      -0.00187  -0.00203  -0.00109  -0.01313  -0.00000   0.00220
+  89  F 2   py       0.00304   0.00391   0.00118   0.00615   0.00000  -0.02023
+  90  F 2   pz      -0.00000  -0.00000   0.00000   0.00000  -0.00311  -0.00000
+  91  F 2   d 1      0.00958   0.01002   0.00300   0.00322  -0.00000   0.00282
+  92  F 2   d 2     -0.00000   0.00000  -0.00000  -0.00000   0.00555   0.00000
+  93  F 2   d 3      0.00637   0.00668   0.00199  -0.00000  -0.00000   0.00000
+  94  F 2   d 4      0.00000   0.00000   0.00000   0.00000  -0.00322  -0.00000
+  95  F 2   d 5      0.00548   0.00577   0.00168  -0.00561   0.00000  -0.00492
+  96  F 2   d 1     -0.00895  -0.00930  -0.00292   0.00577  -0.00000   0.00500
+  97  F 2   d 2      0.00000  -0.00000   0.00000  -0.00000   0.00994   0.00000
+  98  F 2   d 3     -0.00590  -0.00625  -0.00188  -0.00002  -0.00000   0.00003
+  99  F 2   d 4     -0.00000  -0.00000   0.00000   0.00000  -0.00575  -0.00000
+ 100  F 2   d 5     -0.00504  -0.00550  -0.00139  -0.01010   0.00000  -0.00867
+ 101  H 3   s       -0.47558   0.49803  -0.14820  -0.00064  -0.00000  -0.00100
+ 102  H 3   s        0.25969  -0.29172   0.09316   0.00366  -0.00000   0.00571
+ 103  H 3   s       -0.07246   0.16206  -0.07543  -0.01603   0.00000  -0.02515
+ 104  H 3   s        0.05173  -0.05887   0.01939   0.19002  -0.00000   0.29631
+ 105  H 3   s       -0.00751   0.01657  -0.00758  -0.02437   0.00000  -0.03820
+ 106  H 3   s        0.00136  -0.00350   0.00165   0.00105  -0.00000   0.00166
+ 107  H 3   px       0.02309  -0.02433   0.00743  -0.01537  -0.00000   0.01363
+ 108  H 3   py       0.03978  -0.04212   0.01260   0.00916   0.00000  -0.00750
+ 109  H 3   pz       0.00000   0.00000   0.00000   0.00000  -0.01773  -0.00000
+ 110  H 3   px      -0.01024   0.01398  -0.00670  -0.00938  -0.00000   0.00749
+ 111  H 3   py      -0.01696   0.02552  -0.00924   0.00389   0.00000  -0.00675
+ 112  H 3   pz       0.00000  -0.00000   0.00000   0.00000  -0.01043  -0.00000
+ 113  F 3   s        0.00423  -0.00443   0.00132   0.00006   0.00000   0.00009
+ 114  F 3   s        0.16818  -0.17586   0.05226   0.00026   0.00000   0.00041
+ 115  F 3   s        0.33703  -0.36642   0.11348   0.01839   0.00000   0.02883
+ 116  F 3   s       -0.35521   0.44303  -0.15347  -0.10691  -0.00000  -0.16665
+ 117  F 3   s       -0.15147   0.16342  -0.05024  -0.00775  -0.00000  -0.01216
+ 118  F 3   s       -0.18652   0.21680  -0.07142  -0.02508  -0.00000  -0.03925
+ 119  F 3   s        0.33861  -0.40128   0.13361   0.08741   0.00000   0.13638
+ 120  F 3   s        0.09052  -0.11047   0.03733   0.03785   0.00000   0.05891
+ 121  F 3   s        0.04534  -0.11694   0.05699   0.00558  -0.00000   0.00886
+ 122  F 3   s       -0.03637   0.03293  -0.00869  -0.15063   0.00000  -0.23484
+ 123  F 3   px      -0.27375   0.28789  -0.08499  -0.58826  -0.00000   0.51221
+ 124  F 3   py      -0.47305   0.49592  -0.14835   0.33989   0.00000  -0.29817
+ 125  F 3   pz      -0.00000   0.00000   0.00000   0.00000  -0.67352  -0.00000
+ 126  F 3   px       0.03729  -0.03839   0.01159  -0.00345  -0.00000   0.00316
+ 127  F 3   py       0.06418  -0.06662   0.01941   0.00237   0.00000  -0.00126
+ 128  F 3   pz       0.00000  -0.00000   0.00000   0.00000  -0.00369  -0.00000
+ 129  F 3   px      -0.02635   0.03387  -0.01079  -0.03143  -0.00000   0.02198
+ 130  F 3   py      -0.04609   0.05728  -0.02065   0.01367   0.00000  -0.01980
+ 131  F 3   pz      -0.00000   0.00000  -0.00000   0.00000  -0.03569  -0.00000
+ 132  F 3   px       0.01511  -0.02543   0.00813  -0.00588  -0.00000   0.01514
+ 133  F 3   py       0.02725  -0.04158   0.01792   0.01267  -0.00000   0.00565
+ 134  F 3   pz       0.00000   0.00000   0.00000   0.00000  -0.00531  -0.00000
+ 135  F 3   px      -0.00212  -0.00054   0.00111   0.00834   0.00000  -0.02552
+ 136  F 3   py      -0.00362  -0.00099   0.00174  -0.02227   0.00000  -0.01235
+ 137  F 3   pz      -0.00000  -0.00000   0.00000  -0.00000   0.00766   0.00000
+ 138  F 3   px      -0.00187   0.00203  -0.00109  -0.01313   0.00000  -0.00220
+ 139  F 3   py      -0.00304   0.00391  -0.00118  -0.00615   0.00000  -0.02023
+ 140  F 3   pz       0.00000   0.00000  -0.00000   0.00000  -0.00311  -0.00000
+ 141  F 3   d 1     -0.00958   0.01002  -0.00300  -0.00322  -0.00000   0.00282
+ 142  F 3   d 2     -0.00000   0.00000  -0.00000   0.00000  -0.00555  -0.00000
+ 143  F 3   d 3      0.00637  -0.00668   0.00199  -0.00000  -0.00000  -0.00000
+ 144  F 3   d 4     -0.00000   0.00000   0.00000   0.00000  -0.00322  -0.00000
+ 145  F 3   d 5      0.00548  -0.00577   0.00168  -0.00561  -0.00000   0.00492
+ 146  F 3   d 1      0.00895  -0.00930   0.00292  -0.00577  -0.00000   0.00500
+ 147  F 3   d 2      0.00000  -0.00000   0.00000   0.00000  -0.00994  -0.00000
+ 148  F 3   d 3     -0.00590   0.00625  -0.00188  -0.00002  -0.00000  -0.00003
+ 149  F 3   d 4      0.00000  -0.00000  -0.00000   0.00000  -0.00575  -0.00000
+ 150  F 3   d 5     -0.00504   0.00550  -0.00139  -0.01010  -0.00000   0.00867
+                        13        14        15        16        17        18
+ eigenvalues:         -0.669    -0.668    -0.668    -0.007     0.006     0.007
+   1  H 1   s       -0.00000   0.00000   0.00000  -0.02297  -0.00848   0.00000
+   2  H 1   s       -0.00000   0.00000  -0.00000   0.04158   0.04602  -0.00000
+   3  H 1   s        0.00000  -0.00000   0.00000  -1.17245  -0.35729   0.00000
+   4  H 1   s       -0.00000   0.00000  -0.00000  -0.30687  -0.52553  -0.00000
+   5  H 1   s        0.00000  -0.00000   0.00000  -0.02442  -1.92225  -0.00000
+   6  H 1   s        0.00000   0.00000   0.00000  -0.12722   1.27602   0.00000
+   7  H 1   px      -0.00000   0.00000   0.00000   0.01349   0.00507  -0.00000
+   8  H 1   py      -0.00000   0.00000  -0.02185  -0.00000  -0.00000   0.00005
+   9  H 1   pz       0.00000   0.02490   0.00000  -0.00000  -0.00000  -0.00000
+  10  H 1   px      -0.00000   0.00000  -0.00000   0.09637   0.05076  -0.00000
+  11  H 1   py      -0.00000   0.00000  -0.01472  -0.00000   0.00000  -0.00158
+  12  H 1   pz       0.00000   0.01543   0.00000   0.00000  -0.00000  -0.00000
+  13  F 1   s        0.00000  -0.00000   0.00000   0.00053   0.00137   0.00000
+  14  F 1   s        0.00000  -0.00000   0.00000   0.06088   0.02326  -0.00000
+  15  F 1   s        0.00000  -0.00000   0.00000  -0.07121   0.27146   0.00000
+  16  F 1   s       -0.00000   0.00000  -0.00000   0.60746  -2.50930  -0.00000
+  17  F 1   s       -0.00000   0.00000  -0.00000   0.05058  -0.11044  -0.00000
+  18  F 1   s       -0.00000   0.00000  -0.00000   0.07325  -0.39559  -0.00000
+  19  F 1   s        0.00000  -0.00000   0.00000  -0.49239   1.75177   0.00000
+  20  F 1   s        0.00000  -0.00000   0.00000  -0.31142   1.51339   0.00000
+  21  F 1   s       -0.00000   0.00000  -0.00000   1.15255  -0.98395  -0.00000
+  22  F 1   s        0.00000  -0.00000   0.00000   0.27187   2.03700   0.00000
+  23  F 1   px      -0.00000   0.00000  -0.00000  -0.09656  -0.03982   0.00000
+  24  F 1   py      -0.00000   0.00000  -0.83830  -0.00000  -0.00000   0.00602
+  25  F 1   pz       0.00000   0.95261   0.00000  -0.00000   0.00000   0.00000
+  26  F 1   px      -0.00000   0.00000  -0.00000  -0.00039   0.00048  -0.00000
+  27  F 1   py      -0.00000   0.00000  -0.00464   0.00000   0.00000   0.00089
+  28  F 1   pz       0.00000   0.00528   0.00000  -0.00000  -0.00000  -0.00000
+  29  F 1   px      -0.00000   0.00000  -0.00000   0.00178   0.01863  -0.00000
+  30  F 1   py      -0.00000   0.00000  -0.04046   0.00000  -0.00000  -0.00156
+  31  F 1   pz       0.00000   0.04907   0.00000   0.00000   0.00000   0.00000
+  32  F 1   px       0.00000  -0.00000   0.00000  -0.09723  -0.07515   0.00000
+  33  F 1   py       0.00000   0.00000  -0.01470  -0.00000   0.00000   0.01425
+  34  F 1   pz      -0.00000   0.00997   0.00000  -0.00000  -0.00000  -0.00000
+  35  F 1   px      -0.00000   0.00000  -0.00000  -0.22110   0.03861  -0.00000
+  36  F 1   py      -0.00000  -0.00000   0.02232   0.00000  -0.00000   0.00847
+  37  F 1   pz       0.00000  -0.01412  -0.00000   0.00000   0.00000   0.00000
+  38  F 1   px      -0.00000   0.00000  -0.00000   0.09944  -0.32972  -0.00000
+  39  F 1   py      -0.00000   0.00000  -0.01229  -0.00000   0.00000  -0.04489
+  40  F 1   pz      -0.00000   0.00648   0.00000  -0.00000  -0.00000  -0.00000
+  41  F 1   d 1      0.00000  -0.00000   0.00799   0.00000  -0.00000  -0.00007
+  42  F 1   d 2      0.00000   0.00000   0.00000   0.00000  -0.00000  -0.00000
+  43  F 1   d 3      0.00000  -0.00000  -0.00000  -0.00024  -0.00007  -0.00000
+  44  F 1   d 4     -0.00000  -0.00905  -0.00000  -0.00000   0.00000  -0.00000
+  45  F 1   d 5     -0.00000  -0.00000  -0.00000   0.00039   0.00015  -0.00000
+  46  F 1   d 1      0.00000  -0.00000   0.01408  -0.00000   0.00000   0.00014
+  47  F 1   d 2     -0.00001   0.00000  -0.00000   0.00000  -0.00000  -0.00000
+  48  F 1   d 3     -0.00000   0.00000  -0.00000   0.00044   0.00009  -0.00000
+  49  F 1   d 4     -0.00000  -0.01616  -0.00000   0.00000   0.00000   0.00000
+  50  F 1   d 5      0.00000  -0.00000   0.00000  -0.00075  -0.00027   0.00000
+  51  H 2   s        0.00000   0.00000   0.00047  -0.02217  -0.00816  -0.00296
+  52  H 2   s        0.00000   0.00000  -0.00276   0.04258   0.04650   0.00380
+  53  H 2   s       -0.00000  -0.00000   0.01202  -1.17443  -0.35517  -0.33096
+  54  H 2   s        0.00000   0.00000  -0.14008  -0.31044  -0.52903   0.32155
+  55  H 2   s       -0.00000  -0.00000   0.01802  -0.02386  -1.92958   3.84011
+  56  H 2   s       -0.00000  -0.00000  -0.00077  -0.12672   1.28929  -5.40759
+  57  H 2   px      -0.00000  -0.00000   0.00741  -0.00675  -0.00253  -0.00034
+  58  H 2   py      -0.00000  -0.00000   0.00448   0.01164   0.00437   0.00064
+  59  H 2   pz      -0.01784  -0.00234  -0.00000   0.00000  -0.00000  -0.00000
+  60  H 2   px      -0.00000  -0.00000   0.00674  -0.04828  -0.02542  -0.00233
+  61  H 2   py       0.00000   0.00000   0.00273   0.08334   0.04390   0.00245
+  62  H 2   pz      -0.01126  -0.00188  -0.00000   0.00000  -0.00000  -0.00000
+  63  F 2   s       -0.00000  -0.00000  -0.00005   0.00053   0.00137  -0.00123
+  64  F 2   s       -0.00000  -0.00000  -0.00020   0.06069   0.02316   0.00382
+  65  F 2   s       -0.00000  -0.00000  -0.01385  -0.07130   0.27220  -0.32636
+  66  F 2   s        0.00000   0.00000   0.07888   0.60664  -2.51678   2.99584
+  67  F 2   s        0.00000   0.00000   0.00585   0.05056  -0.11079   0.14364
+  68  F 2   s        0.00000   0.00000   0.01877   0.07316  -0.39672   0.45848
+  69  F 2   s       -0.00000  -0.00000  -0.06464  -0.49270   1.75669  -2.14893
+  70  F 2   s       -0.00000  -0.00000  -0.02776  -0.31115   1.51782  -1.79684
+  71  F 2   s        0.00000   0.00000  -0.00436   1.15499  -0.98903   1.77392
+  72  F 2   s       -0.00000  -0.00000   0.11105   0.27509   2.04485  -2.26266
+  73  F 2   px      -0.00000  -0.00000   0.28831   0.04807   0.01983   0.00344
+  74  F 2   py      -0.00000  -0.00000   0.16636  -0.08297  -0.03422   0.00009
+  75  F 2   pz      -0.67967  -0.09044  -0.00000  -0.00000  -0.00000   0.00000
+  76  F 2   px      -0.00000  -0.00000   0.00116   0.00013  -0.00027   0.00034
+  77  F 2   py       0.00000   0.00000   0.00094  -0.00021   0.00046   0.00030
+  78  F 2   pz      -0.00372  -0.00049  -0.00000   0.00000  -0.00000  -0.00000
+  79  F 2   px      -0.00000  -0.00000   0.01449  -0.00113  -0.00942  -0.00183
+  80  F 2   py       0.00000   0.00000   0.00504   0.00194   0.01625   0.00162
+  81  F 2   pz      -0.03433  -0.00369  -0.00000  -0.00000  -0.00000   0.00000
+  82  F 2   px       0.00000   0.00000   0.00244   0.04885   0.03756   0.01789
+  83  F 2   py      -0.00000  -0.00000   0.00823  -0.08438  -0.06492  -0.01683
+  84  F 2   pz      -0.00821  -0.00258  -0.00000   0.00000   0.00000  -0.00000
+  85  F 2   px       0.00000  -0.00000  -0.00198   0.11089  -0.01930   0.01734
+  86  F 2   py       0.00000   0.00000  -0.01394  -0.19139   0.03361  -0.02094
+  87  F 2   pz       0.01150   0.00349   0.00000  -0.00000  -0.00000   0.00000
+  88  F 2   px      -0.00000  -0.00000   0.00974  -0.04971   0.16541  -0.14001
+  89  F 2   py       0.00000   0.00000  -0.00454   0.08577  -0.28580   0.19595
+  90  F 2   pz      -0.00551  -0.00196  -0.00000  -0.00000   0.00000  -0.00000
+  91  F 2   d 1      0.00000   0.00000  -0.00160  -0.00035  -0.00013  -0.00002
+  92  F 2   d 2      0.00562   0.00076   0.00000   0.00000  -0.00000   0.00000
+  93  F 2   d 3     -0.00000  -0.00000   0.00000  -0.00024  -0.00007   0.00001
+  94  F 2   d 4     -0.00326  -0.00044  -0.00000  -0.00000  -0.00000  -0.00000
+  95  F 2   d 5     -0.00000  -0.00000   0.00280  -0.00020  -0.00008   0.00003
+  96  F 2   d 1      0.00000   0.00000  -0.00267   0.00066   0.00023   0.00016
+  97  F 2   d 2      0.00992   0.00127   0.00000   0.00000  -0.00000  -0.00000
+  98  F 2   d 3      0.00000   0.00000   0.00001   0.00044   0.00009   0.00005
+  99  F 2   d 4     -0.00575  -0.00072  -0.00000  -0.00000   0.00000  -0.00000
+ 100  F 2   d 5     -0.00000  -0.00000   0.00469   0.00038   0.00013   0.00001
+ 101  H 3   s       -0.00000  -0.00000  -0.00047  -0.02217  -0.00816   0.00296
+ 102  H 3   s       -0.00000  -0.00000   0.00276   0.04258   0.04650  -0.00380
+ 103  H 3   s        0.00000   0.00000  -0.01202  -1.17443  -0.35517   0.33096
+ 104  H 3   s        0.00000  -0.00000   0.14008  -0.31044  -0.52903  -0.32155
+ 105  H 3   s       -0.00000   0.00000  -0.01802  -0.02386  -1.92958  -3.84011
+ 106  H 3   s       -0.00000   0.00000   0.00077  -0.12672   1.28929   5.40759
+ 107  H 3   px       0.00000   0.00000  -0.00741  -0.00675  -0.00253   0.00034
+ 108  H 3   py      -0.00000  -0.00000   0.00448  -0.01164  -0.00437   0.00064
+ 109  H 3   pz       0.01784  -0.00234  -0.00000   0.00000  -0.00000  -0.00000
+ 110  H 3   px       0.00000   0.00000  -0.00674  -0.04828  -0.02542   0.00233
+ 111  H 3   py       0.00000   0.00000   0.00273  -0.08334  -0.04390   0.00245
+ 112  H 3   pz       0.01126  -0.00188  -0.00000   0.00000  -0.00000   0.00000
+ 113  F 3   s       -0.00000   0.00000   0.00005   0.00053   0.00137   0.00123
+ 114  F 3   s       -0.00000   0.00000   0.00020   0.06069   0.02316  -0.00382
+ 115  F 3   s       -0.00000   0.00000   0.01385  -0.07130   0.27220   0.32636
+ 116  F 3   s        0.00000  -0.00000  -0.07888   0.60664  -2.51678  -2.99584
+ 117  F 3   s        0.00000  -0.00000  -0.00585   0.05056  -0.11079  -0.14364
+ 118  F 3   s        0.00000  -0.00000  -0.01877   0.07316  -0.39672  -0.45848
+ 119  F 3   s       -0.00000   0.00000   0.06464  -0.49270   1.75669   2.14892
+ 120  F 3   s       -0.00000   0.00000   0.02776  -0.31115   1.51782   1.79684
+ 121  F 3   s       -0.00000  -0.00000   0.00436   1.15499  -0.98903  -1.77392
+ 122  F 3   s       -0.00000   0.00000  -0.11105   0.27509   2.04485   2.26266
+ 123  F 3   px       0.00000   0.00000  -0.28831   0.04807   0.01983  -0.00344
+ 124  F 3   py      -0.00000  -0.00000   0.16636   0.08297   0.03422   0.00009
+ 125  F 3   pz       0.67967  -0.09044  -0.00000   0.00000  -0.00000   0.00000
+ 126  F 3   px       0.00000   0.00000  -0.00116   0.00013  -0.00027  -0.00034
+ 127  F 3   py       0.00000   0.00000   0.00094   0.00021  -0.00046   0.00030
+ 128  F 3   pz       0.00372  -0.00049  -0.00000  -0.00000  -0.00000   0.00000
+ 129  F 3   px       0.00000   0.00000  -0.01449  -0.00113  -0.00942   0.00183
+ 130  F 3   py       0.00000   0.00000   0.00504  -0.00194  -0.01625   0.00162
+ 131  F 3   pz       0.03433  -0.00369  -0.00000   0.00000   0.00000   0.00000
+ 132  F 3   px      -0.00000  -0.00000  -0.00244   0.04885   0.03756  -0.01789
+ 133  F 3   py      -0.00000  -0.00000   0.00823   0.08438   0.06492  -0.01683
+ 134  F 3   pz       0.00821  -0.00258  -0.00000  -0.00000  -0.00000  -0.00000
+ 135  F 3   px       0.00000   0.00000   0.00198   0.11089  -0.01930  -0.01734
+ 136  F 3   py      -0.00000   0.00000  -0.01394   0.19139  -0.03361  -0.02094
+ 137  F 3   pz      -0.01150   0.00349   0.00000  -0.00000   0.00000   0.00000
+ 138  F 3   px      -0.00000   0.00000  -0.00974  -0.04971   0.16541   0.14001
+ 139  F 3   py      -0.00000   0.00000  -0.00454  -0.08577   0.28580   0.19595
+ 140  F 3   pz       0.00551  -0.00196  -0.00000   0.00000  -0.00000  -0.00000
+ 141  F 3   d 1      0.00000   0.00000  -0.00160   0.00035   0.00013  -0.00002
+ 142  F 3   d 2      0.00562  -0.00076  -0.00000  -0.00000  -0.00000   0.00000
+ 143  F 3   d 3      0.00000   0.00000  -0.00000  -0.00024  -0.00007  -0.00001
+ 144  F 3   d 4      0.00326  -0.00044  -0.00000   0.00000  -0.00000   0.00000
+ 145  F 3   d 5      0.00000   0.00000  -0.00280  -0.00020  -0.00008  -0.00003
+ 146  F 3   d 1      0.00000   0.00000  -0.00267  -0.00066  -0.00023   0.00016
+ 147  F 3   d 2      0.00992  -0.00127  -0.00000  -0.00000   0.00000   0.00000
+ 148  F 3   d 3     -0.00000  -0.00000  -0.00001   0.00044   0.00009  -0.00005
+ 149  F 3   d 4      0.00575  -0.00072  -0.00000  -0.00000   0.00000   0.00000
+ 150  F 3   d 5      0.00000   0.00000  -0.00469   0.00038   0.00013  -0.00001
+                        19        20
+ eigenvalues:          0.007     0.015
+   1  H 1   s       -0.00345   0.00000
+   2  H 1   s        0.00450  -0.00000
+   3  H 1   s       -0.38419   0.00000
+   4  H 1   s        0.40367  -0.00000
+   5  H 1   s        4.43459   0.00000
+   6  H 1   s       -6.24829  -0.00000
+   7  H 1   px       0.00082  -0.00000
+   8  H 1   py       0.00000   0.00000
+   9  H 1   pz      -0.00000  -0.00041
+  10  H 1   px       0.00375  -0.00000
+  11  H 1   py      -0.00000  -0.00000
+  12  H 1   pz       0.00000   0.02353
+  13  F 1   s       -0.00142  -0.00000
+  14  F 1   s        0.00436  -0.00000
+  15  F 1   s       -0.37737  -0.00000
+  16  F 1   s        3.46481   0.00000
+  17  F 1   s        0.16607   0.00000
+  18  F 1   s        0.53020   0.00000
+  19  F 1   s       -2.48531  -0.00000
+  20  F 1   s       -2.07844   0.00000
+  21  F 1   s        2.05331  -0.00000
+  22  F 1   s       -2.64224   0.00000
+  23  F 1   px      -0.00184   0.00000
+  24  F 1   py       0.00000  -0.00000
+  25  F 1   pz       0.00000  -0.02094
+  26  F 1   px       0.00010  -0.00000
+  27  F 1   py       0.00000   0.00000
+  28  F 1   pz      -0.00000   0.00249
+  29  F 1   px       0.00285  -0.00000
+  30  F 1   py      -0.00000   0.00000
+  31  F 1   pz      -0.00000  -0.10592
+  32  F 1   px      -0.02776   0.00000
+  33  F 1   py       0.00000  -0.00000
+  34  F 1   pz      -0.00000   0.27863
+  35  F 1   px      -0.02940  -0.00000
+  36  F 1   py       0.00000  -0.00000
+  37  F 1   pz       0.00000  -0.54035
+  38  F 1   px       0.28095  -0.00000
+  39  F 1   py      -0.00000   0.00000
+  40  F 1   pz      -0.00000   0.68400
+  41  F 1   d 1     -0.00000   0.00000
+  42  F 1   d 2     -0.00000   0.00000
+  43  F 1   d 3      0.00001  -0.00000
+  44  F 1   d 4      0.00000  -0.00025
+  45  F 1   d 5     -0.00000  -0.00000
+  46  F 1   d 1      0.00000  -0.00000
+  47  F 1   d 2     -0.00000  -0.00000
+  48  F 1   d 3      0.00006  -0.00000
+  49  F 1   d 4     -0.00000   0.00187
+  50  F 1   d 5     -0.00016   0.00000
+  51  H 2   s        0.00173  -0.00000
+  52  H 2   s       -0.00252   0.00000
+  53  H 2   s        0.19462   0.00000
+  54  H 2   s       -0.20164   0.00000
+  55  H 2   s       -2.21192  -0.00000
+  56  H 2   s        3.12078  -0.00000
+  57  H 2   px       0.00025   0.00000
+  58  H 2   py      -0.00035   0.00000
+  59  H 2   pz       0.00000  -0.00041
+  60  H 2   px      -0.00014  -0.00000
+  61  H 2   py      -0.00246  -0.00000
+  62  H 2   pz      -0.00000   0.02355
+  63  F 2   s        0.00071  -0.00000
+  64  F 2   s       -0.00227  -0.00000
+  65  F 2   s        0.18804   0.00000
+  66  F 2   s       -1.72621  -0.00000
+  67  F 2   s       -0.08278  -0.00000
+  68  F 2   s       -0.26412  -0.00000
+  69  F 2   s        1.23845   0.00000
+  70  F 2   s        1.03551   0.00000
+  71  F 2   s       -1.02573   0.00000
+  72  F 2   s        1.31680  -0.00000
+  73  F 2   px       0.00398  -0.00000
+  74  F 2   py       0.00351  -0.00000
+  75  F 2   pz      -0.00000  -0.02094
+  76  F 2   px       0.00070   0.00000
+  77  F 2   py       0.00033   0.00000
+  78  F 2   pz       0.00000   0.00248
+  79  F 2   px      -0.00044   0.00000
+  80  F 2   py      -0.00206   0.00000
+  81  F 2   pz       0.00000  -0.10596
+  82  F 2   px       0.00371  -0.00000
+  83  F 2   py       0.01864  -0.00000
+  84  F 2   pz      -0.00000   0.27861
+  85  F 2   px      -0.00146  -0.00000
+  86  F 2   py       0.01609   0.00000
+  87  F 2   pz       0.00000  -0.54009
+  88  F 2   px       0.03650  -0.00000
+  89  F 2   py      -0.13987   0.00000
+  90  F 2   pz      -0.00000   0.68349
+  91  F 2   d 1     -0.00003   0.00000
+  92  F 2   d 2     -0.00000  -0.00021
+  93  F 2   d 3     -0.00000  -0.00000
+  94  F 2   d 4     -0.00000   0.00012
+  95  F 2   d 5      0.00005  -0.00000
+  96  F 2   d 1     -0.00001  -0.00000
+  97  F 2   d 2      0.00000   0.00162
+  98  F 2   d 3     -0.00003   0.00000
+  99  F 2   d 4     -0.00000  -0.00094
+ 100  F 2   d 5     -0.00015   0.00000
+ 101  H 3   s        0.00173   0.00000
+ 102  H 3   s       -0.00252   0.00000
+ 103  H 3   s        0.19462  -0.00000
+ 104  H 3   s       -0.20164  -0.00000
+ 105  H 3   s       -2.21192   0.00000
+ 106  H 3   s        3.12078   0.00000
+ 107  H 3   px       0.00025  -0.00000
+ 108  H 3   py       0.00035   0.00000
+ 109  H 3   pz      -0.00000  -0.00041
+ 110  H 3   px      -0.00014  -0.00000
+ 111  H 3   py       0.00246  -0.00000
+ 112  H 3   pz      -0.00000   0.02355
+ 113  F 3   s        0.00071  -0.00000
+ 114  F 3   s       -0.00227  -0.00000
+ 115  F 3   s        0.18804  -0.00000
+ 116  F 3   s       -1.72621   0.00000
+ 117  F 3   s       -0.08278   0.00000
+ 118  F 3   s       -0.26412   0.00000
+ 119  F 3   s        1.23845  -0.00000
+ 120  F 3   s        1.03551  -0.00000
+ 121  F 3   s       -1.02573   0.00000
+ 122  F 3   s        1.31680   0.00000
+ 123  F 3   px       0.00398   0.00000
+ 124  F 3   py      -0.00351  -0.00000
+ 125  F 3   pz      -0.00000  -0.02094
+ 126  F 3   px       0.00070   0.00000
+ 127  F 3   py      -0.00033  -0.00000
+ 128  F 3   pz      -0.00000   0.00248
+ 129  F 3   px      -0.00044  -0.00000
+ 130  F 3   py       0.00206   0.00000
+ 131  F 3   pz       0.00000  -0.10596
+ 132  F 3   px       0.00371   0.00000
+ 133  F 3   py      -0.01864   0.00000
+ 134  F 3   pz      -0.00000   0.27861
+ 135  F 3   px      -0.00146   0.00000
+ 136  F 3   py      -0.01609   0.00000
+ 137  F 3   pz       0.00000  -0.54009
+ 138  F 3   px       0.03650   0.00000
+ 139  F 3   py       0.13987   0.00000
+ 140  F 3   pz      -0.00000   0.68349
+ 141  F 3   d 1      0.00003  -0.00000
+ 142  F 3   d 2      0.00000   0.00021
+ 143  F 3   d 3     -0.00000  -0.00000
+ 144  F 3   d 4     -0.00000   0.00012
+ 145  F 3   d 5      0.00005   0.00000
+ 146  F 3   d 1      0.00001   0.00000
+ 147  F 3   d 2     -0.00000  -0.00162
+ 148  F 3   d 3     -0.00003  -0.00000
+ 149  F 3   d 4      0.00000  -0.00094
+ 150  F 3   d 5     -0.00015  -0.00000
+
+          Ground-State Mulliken Net Atomic Charges
+
+     Atom                 Charge (a.u.)
+  ----------------------------------------
+      1 H                     0.162545
+      2 F                    -0.162530
+      3 H                     0.157326
+      4 F                    -0.157333
+      5 H                     0.157326
+      6 F                    -0.157333
+  ----------------------------------------
+  Sum of atomic charges =     0.000000
+
+ -----------------------------------------------------------------
+                    Cartesian Multipole Moments
+ -----------------------------------------------------------------
+    Charge (ESU x 10^10)
+                 0.0000
+    Dipole Moment (Debye)
+         X       0.0005      Y       0.0000      Z      -0.0000
+       Tot       0.0005
+    Quadrupole Moments (Debye-Ang)
+        XX     -29.8082     XY      -0.0000     YY     -29.7608
+        XZ      -0.0000     YZ      -0.0000     ZZ     -17.1456
+    Octopole Moments (Debye-Ang^2)
+       XXX     -21.2274    XXY       0.0000    XYY      21.1422
+       YYY       0.0000    XXZ       0.0000    XYZ       0.0000
+       YYZ       0.0000    XZZ      -0.0059    YZZ       0.0000
+       ZZZ      -0.0000
+    Hexadecapole Moments (Debye-Ang^3)
+      XXXX    -523.8327   XXXY       0.0000   XXYY    -174.3728
+      XYYY       0.0000   YYYY    -522.4504   XXXZ      -0.0000
+      XXYZ       0.0000   XYYZ      -0.0000   YYYZ      -0.0000
+      XXZZ     -73.8210   XYZZ       0.0000   YYZZ     -73.6640
+      XZZZ       0.0000   YZZZ      -0.0000   ZZZZ     -11.6638
+ -----------------------------------------------------------------
+ Total job time:  169.67s(wall), 414.96s(cpu) 
+ Tue May 27 14:42:56 2025
+
+        *************************************************************
+        *                                                           *
+        *  Thank you very much for using Q-Chem.  Have a nice day.  *
+        *                                                           *
+        *************************************************************
+
+
