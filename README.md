@@ -38,7 +38,10 @@ CoQ analogues, Q0(2,3-dimethoxy-5-methyl-p-benzoquinone) and Q1 (Q0 with one iso
 
 ## License
 
-This repository is licensed under [KU Leuven License](LICENSE).
+- The **thesis document** (in the `thesis/` directory) is © KU Leuven, 2025 and may not be reproduced or cited without written permission from the promotors and authors. See the `LICENSE` file for details.
+
+- All **other materials** in this repository (including code, data, and figures) are © Mauro Gascon Navas, 2025 and licensed under the **Creative Commons Attribution-NonCommercial 4.0 International License (CC BY-NC 4.0)**.  
+  See: https://creativecommons.org/licenses/by-nc/4.0/
 
 ---
 

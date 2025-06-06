@@ -1,4 +1,6 @@
-(C) Copyright by KU Leuven 2025 Mauro Gascon Navas 
+LICENSE FOR THESIS DOCUMENT
+
+(C) Copyright by KU Leuven 2025
 
 Without written permission of the promotors and the authors it is forbidden 
 to reproduce or adapt in any form or by any means any part of this 
@@ -16,19 +18,27 @@ possible errors after the defense. Referring to this thesis in papers and
 analogous documents is only allowed after written consent of the supervisor
 (s), mentioned on the title page.
 
-It is permitted to use the code, figures, data, and any file in this 
-repository for scientific research, publication and outreach provided they 
-notify the author and provide appropriate citation.
-For any industrial or commercial use, prior written permission from the 
-author is still required.
+---
 
-The above copyright notice and this permission notice shall be included in 
-all copies or substantial portions of the Software.
+LICENSE FOR ALL OTHER CONTENT (Code, Data, Figures, etc.)
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR 
+© Mauro Gascon Navas, 2025
+
+This work is licensed under the Creative Commons Attribution-NonCommercial
+4.0 International License.
+
+You are free to:
+- **Share** — copy and redistribute the material in any medium or format
+- **Adapt** — remix, transform, and build upon the material
+
+Under the following terms:
+- **Attribution** — You must give appropriate credit, provide a link to 
+the license, and indicate if changes were made. You may do so in any reasonable 
+manner, but not in any way that suggests the licensor endorses you or your use.
+- **NonCommercial** — You may not use the material for commercial purposes.
+
+Full license text: [https://creativecommons.org/licenses/by-nc/4.0/](https://creativecommons.org/licenses/by-nc/4.0/)
+
+THE MATERIALS ARE PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR 
 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, 
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE 
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER 
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING 
-FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS 
-IN THE SOFTWARE.
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
