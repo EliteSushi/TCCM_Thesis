@@ -1,4 +1,4 @@
-# TCCM MSc Thesis (2025): Computational Exploration of Non-Valence Anions from Biological Quinones
+# Computational Exploration of Non-Valence Anions from Biological Quinones (TCCM MSc Thesis 2025)
 
 Welcome to the repository for my MSc TCCM thesis! This repository contains all the files and resources related to my research on the computational exploration of non-valence anions from biological quinones.
 
@@ -6,13 +6,13 @@ Welcome to the repository for my MSc TCCM thesis! This repository contains all t
 
 ## Repository Structure
 
-- **`[LaTEX](./LaTEX)/`**  
+- **`[LaTEX](LaTEX)/`**  
     Contains the LaTeX source files for the thesis and related presentations.
 
-- **`[SI](./SI)/`**  
+- **`[SI](SI)/`**  
     Supporting information, including sample calculations, scripts, figures, and molecular structures.
 
-- **`[TCCM_thesis.pdf](./TCCM_thesis.pdf)`**  
+- **`[TCCM_thesis.pdf](TCCM_thesis.pdf)`**  
     The final PDF version of the MSc thesis.
 
 ---
@@ -29,13 +29,13 @@ CoQ analogues, Q0(2,3-dimethoxy-5-methyl-p-benzoquinone) and Q1 (Q0 with one iso
 
 ## Promotor
 
-**Prof. Thomas Jagau**  
+[Webpage](https://chem.kuleuven.be/en/research/qcpc/tue/)
 
 ---
 
 ## License
 
-This repository is licensed under [MIT License](LICENSE).
+This repository is licensed under [KU Leuven License](LICENSE).
 
 ---
 
