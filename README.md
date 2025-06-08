@@ -1,6 +1,6 @@
 # Computational Exploration of Non-Valence Anions from Biological Quinones (TCCM MSc Thesis 2025)
 
-Welcome to the repository for my MSc TCCM thesis! This repository contains all the files and resources related to my research on the computational exploration of non-valence anions from biological quinones.
+This repository hosts the complete set of files and resources associated with my MSc thesis in Theoretical Chemistry and Computational Modelling. The research focuses on the computational study of non-valence anions derived from biological quinones, exploring their properties and implications in electron transfer processes.
 
 ---
 
@@ -47,11 +47,7 @@ CoQ analogues, Q0(2,3-dimethoxy-5-methyl-p-benzoquinone) and Q1 (Q0 with one iso
 
 ## Contact
 
-For questions or collaboration opportunities, feel free to reach out:
-
 - **Author:** Mauro Gascon Navas
 - **Email:** [maurogasconnavas@egmail.com](mailto:maurogasconnavas@gmail.com)
 
 ---
-
-Thank you for exploring this repository! 🌟
