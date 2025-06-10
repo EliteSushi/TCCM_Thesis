@@ -1,0 +1,168 @@
+% GNUPLOT: LaTeX picture with Postscript
+\begingroup
+  \makeatletter
+  \providecommand\color[2][]{%
+    \GenericError{(gnuplot) \space\space\space\@spaces}{%
+      Package color not loaded in conjunction with
+      terminal option `colourtext'%
+    }{See the gnuplot documentation for explanation.%
+    }{Either use 'blacktext' in gnuplot or load the package
+      color.sty in LaTeX.}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\includegraphics[2][]{%
+    \GenericError{(gnuplot) \space\space\space\@spaces}{%
+      Package graphicx or graphics not loaded%
+    }{See the gnuplot documentation for explanation.%
+    }{The gnuplot epslatex terminal needs graphicx.sty or graphics.sty.}%
+    \renewcommand\includegraphics[2][]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \@ifundefined{ifGPcolor}{%
+    \newif\ifGPcolor
+    \GPcolortrue
+  }{}%
+  \@ifundefined{ifGPblacktext}{%
+    \newif\ifGPblacktext
+    \GPblacktexttrue
+  }{}%
+  % define a \g@addto@macro without @ in the name:
+  \let\gplgaddtomacro\g@addto@macro
+  % define empty templates for all commands taking text:
+  \gdef\gplbacktext{}%
+  \gdef\gplfronttext{}%
+  \makeatother
+  \ifGPblacktext
+    % no textcolor at all
+    \def\colorrgb#1{}%
+    \def\colorgray#1{}%
+  \else
+    % gray or color?
+    \ifGPcolor
+      \def\colorrgb#1{\color[rgb]{#1}}%
+      \def\colorgray#1{\color[gray]{#1}}%
+      \expandafter\def\csname LTw\endcsname{\color{white}}%
+      \expandafter\def\csname LTb\endcsname{\color{black}}%
+      \expandafter\def\csname LTa\endcsname{\color{black}}%
+      \expandafter\def\csname LT0\endcsname{\color[rgb]{1,0,0}}%
+      \expandafter\def\csname LT1\endcsname{\color[rgb]{0,1,0}}%
+      \expandafter\def\csname LT2\endcsname{\color[rgb]{0,0,1}}%
+      \expandafter\def\csname LT3\endcsname{\color[rgb]{1,0,1}}%
+      \expandafter\def\csname LT4\endcsname{\color[rgb]{0,1,1}}%
+      \expandafter\def\csname LT5\endcsname{\color[rgb]{1,1,0}}%
+      \expandafter\def\csname LT6\endcsname{\color[rgb]{0,0,0}}%
+      \expandafter\def\csname LT7\endcsname{\color[rgb]{1,0.3,0}}%
+      \expandafter\def\csname LT8\endcsname{\color[rgb]{0.5,0.5,0.5}}%
+    \else
+      % gray
+      \def\colorrgb#1{\color{black}}%
+      \def\colorgray#1{\color[gray]{#1}}%
+      \expandafter\def\csname LTw\endcsname{\color{white}}%
+      \expandafter\def\csname LTb\endcsname{\color{black}}%
+      \expandafter\def\csname LTa\endcsname{\color{black}}%
+      \expandafter\def\csname LT0\endcsname{\color{black}}%
+      \expandafter\def\csname LT1\endcsname{\color{black}}%
+      \expandafter\def\csname LT2\endcsname{\color{black}}%
+      \expandafter\def\csname LT3\endcsname{\color{black}}%
+      \expandafter\def\csname LT4\endcsname{\color{black}}%
+      \expandafter\def\csname LT5\endcsname{\color{black}}%
+      \expandafter\def\csname LT6\endcsname{\color{black}}%
+      \expandafter\def\csname LT7\endcsname{\color{black}}%
+      \expandafter\def\csname LT8\endcsname{\color{black}}%
+    \fi
+  \fi
+    \setlength{\unitlength}{0.0500bp}%
+    \ifx\gptboxheight\undefined%
+      \newlength{\gptboxheight}%
+      \newlength{\gptboxwidth}%
+      \newsavebox{\gptboxtext}%
+    \fi%
+    \setlength{\fboxrule}{0.5pt}%
+    \setlength{\fboxsep}{1pt}%
+    \definecolor{tbcol}{rgb}{1,1,1}%
+\begin{picture}(6500.00,2540.00)%
+    \gplgaddtomacro\gplbacktext{%
+      \csname LTb\endcsname%%
+      \put(420,453){\makebox(0,0)[r]{\strut{}$0$}}%
+      \csname LTb\endcsname%%
+      \put(420,729){\makebox(0,0)[r]{\strut{}$2$}}%
+      \csname LTb\endcsname%%
+      \put(420,1004){\makebox(0,0)[r]{\strut{}$4$}}%
+      \csname LTb\endcsname%%
+      \put(420,1280){\makebox(0,0)[r]{\strut{}$6$}}%
+      \csname LTb\endcsname%%
+      \put(420,1555){\makebox(0,0)[r]{\strut{}$8$}}%
+      \csname LTb\endcsname%%
+      \put(420,1831){\makebox(0,0)[r]{\strut{}$10$}}%
+      \csname LTb\endcsname%%
+      \put(420,2106){\makebox(0,0)[r]{\strut{}$12$}}%
+      \csname LTb\endcsname%%
+      \put(420,2382){\makebox(0,0)[r]{\strut{}$14$}}%
+      \csname LTb\endcsname%%
+      \put(518,277){\makebox(0,0){\strut{}$1.5$}}%
+      \csname LTb\endcsname%%
+      \put(1181,277){\makebox(0,0){\strut{}$2$}}%
+      \csname LTb\endcsname%%
+      \put(1843,277){\makebox(0,0){\strut{}$2.5$}}%
+      \csname LTb\endcsname%%
+      \put(2506,277){\makebox(0,0){\strut{}$3$}}%
+      \csname LTb\endcsname%%
+      \put(3169,277){\makebox(0,0){\strut{}$3.5$}}%
+      \csname LTb\endcsname%%
+      \put(810,2354){\makebox(0,0){\strut{}Q0}}%
+    }%
+    \gplgaddtomacro\gplfronttext{%
+      \csname LTb\endcsname%%
+      \put(2913,2297){\makebox(0,0)[r]{\strut{}Region A}}%
+      \csname LTb\endcsname%%
+      \put(2913,2122){\makebox(0,0)[r]{\strut{}Region B}}%
+      \csname LTb\endcsname%%
+      \put(63,1486){\rotatebox{-270.00}{\makebox(0,0){\strut{}DBS Binding Energy (meV)}}}%
+      \csname LTb\endcsname%%
+      \put(1976,13){\makebox(0,0){\strut{}Dipole Strength (Debye)}}%
+    }%
+    \gplgaddtomacro\gplbacktext{%
+      \csname LTb\endcsname%%
+      \put(3466,453){\makebox(0,0)[r]{\strut{}}}%
+      \csname LTb\endcsname%%
+      \put(3466,729){\makebox(0,0)[r]{\strut{}}}%
+      \csname LTb\endcsname%%
+      \put(3466,1004){\makebox(0,0)[r]{\strut{}}}%
+      \csname LTb\endcsname%%
+      \put(3466,1280){\makebox(0,0)[r]{\strut{}}}%
+      \csname LTb\endcsname%%
+      \put(3466,1555){\makebox(0,0)[r]{\strut{}}}%
+      \csname LTb\endcsname%%
+      \put(3466,1831){\makebox(0,0)[r]{\strut{}}}%
+      \csname LTb\endcsname%%
+      \put(3466,2106){\makebox(0,0)[r]{\strut{}}}%
+      \csname LTb\endcsname%%
+      \put(3466,2382){\makebox(0,0)[r]{\strut{}}}%
+      \csname LTb\endcsname%%
+      \put(3564,277){\makebox(0,0){\strut{}$1.5$}}%
+      \csname LTb\endcsname%%
+      \put(4226,277){\makebox(0,0){\strut{}$2$}}%
+      \csname LTb\endcsname%%
+      \put(4889,277){\makebox(0,0){\strut{}$2.5$}}%
+      \csname LTb\endcsname%%
+      \put(5552,277){\makebox(0,0){\strut{}$3$}}%
+      \csname LTb\endcsname%%
+      \put(6214,277){\makebox(0,0){\strut{}$3.5$}}%
+      \csname LTb\endcsname%%
+      \put(3855,2354){\makebox(0,0){\strut{}Q1}}%
+    }%
+    \gplgaddtomacro\gplfronttext{%
+      \csname LTb\endcsname%%
+      \put(5959,2385){\makebox(0,0)[r]{\strut{}Region A}}%
+      \csname LTb\endcsname%%
+      \put(5959,2209){\makebox(0,0)[r]{\strut{}Region B}}%
+      \csname LTb\endcsname%%
+      \put(5959,2034){\makebox(0,0)[r]{\strut{}Region C}}%
+      \csname LTb\endcsname%%
+      \put(5021,13){\makebox(0,0){\strut{}Dipole Strength (Debye)}}%
+    }%
+    \gplbacktext
+    \put(0,0){\includegraphics[width={325.00bp},height={127.00bp}]{Figs/DvsDBS}}%
+    \gplfronttext
+  \end{picture}%
+\endgroup
