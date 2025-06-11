@@ -94,9 +94,9 @@
 	%head frametitle	
 	\setbeamertemplate{frametitle}
 	{
-		\vspace{8pt}
-		{\large\textbf{\insertframetitle}}\\
-		{\small{\insertframesubtitle}}
+		\vspace{0pt}
+		{\large\textbf{\insertframetitle}}%\\
+		%{\small{\insertframesubtitle}}
 		% frame title	
 	}
 
@@ -238,6 +238,8 @@
  %%		
  %%  TABLE OF CONTENTS (displayed before each section)
  %%
+
+ \iffalse
 	\AtBeginSection[] {
 		\begin{frame}
 	    	\frametitle{Outline} 
@@ -246,7 +248,7 @@
 				\hfill	{\large\parbox{.95\textwidth}{\tableofcontents[currentsection,hideothersubsections]}}
 				}
 		\end{frame}
-	}
+	} \fi
 
 
 \mode

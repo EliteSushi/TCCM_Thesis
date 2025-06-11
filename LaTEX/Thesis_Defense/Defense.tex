@@ -1,4 +1,7 @@
 \documentclass[9pt,t,xcolor=table]{beamer}
+\geometry{papersize={171mm,96mm}}
+\setlength{\textheight}{300pt}
+\useoutertheme[subsection=false]{smoothbars}
 \usetheme{kuleuven2}
 \usepackage[english]{babel}
 \usepackage{amsfonts}
@@ -31,7 +34,7 @@
 \pgfplotsset{compat=1.18}
 \def\Put(#1,#2)#3{\leavevmode\makebox(0,0){\put(#1,#2){#3}}}
 
-\title{Computational Exploration of Non-Valence Anions from Biological Quinones}
+\title{Computational Exploration of Non-Valence Anions from\\ Biological Quinones}
 \subtitle{TCCM Thesis Defense}
 \author{Mauro Gascón}
 \institute{Promotor: Prof. Thomas C. Jagau \\ Mentor: Robin E. Moorby}
@@ -43,31 +46,18 @@
 % title frame
 \begin{frame}[plain,noframenumbering]
 	\titlepage
-	\Put(120,-460){\includegraphics[width=0.6\textwidth]{Figs/Q1_cover.png}}
-	
+	\Put(155,-530){\includegraphics[width=0.6\textwidth]{Figs/Q1_cover.png}}
 \end{frame}
 
-\begin{frame}{\huge Outline}\large
-	\vspace{5pt}
-	\centering
-	\begin{itemize}
-		\item \textbf{Background}
-		\begin{itemize}
-		\item Non-Valence Anions
-		\item Equation-of-Motion CC
-		\item Ubiquinone
-		\end{itemize}
-		\item \textbf{Results}
-		\begin{itemize}
-		\item Potential Energy Surfaces
-		\item Simple Cluster Models
-		\end{itemize}
-		\item \textbf{Conclusions and Outlook} 
-	\end{itemize}
+\begin{frame}{\huge Overview}
+\tableofcontents
 \end{frame}
 
+\section{Introduction}
+\subsection{Non-valence anions}
 \begin{frame}{\huge Non-valence anions}\large
     \vspace{5pt}
+	\the\textheight
 	The excess electron is bound by long-range forces (e.g., dipole, quadrupole). The `extra' electron density is located far from the molecule.\\
 	Found in atmospheric, interstellar, and biological environments; they act as `doorway' states for electron attachment. 
     \begin{itemize} 
@@ -81,68 +71,26 @@
 	\begin{columns}
 		\begin{column}{0.27\textwidth}
 			\centering
-			\includegraphics[width=0.7\textwidth]{Figs/MeNO2_VBS.png}\\
+			\includegraphics[width=0.55\textwidth]{Figs/MeNO2_VBS.png}\\
 			\vspace{3pt}
 			\small Valence-bound anion of nitromethane
 		\end{column}
 		\begin{column}{0.3\textwidth}
 			\centering
-			\includegraphics[width=0.7\textwidth]{Figs/MeNO2_DBS.png}\\
+			\includegraphics[width=0.55\textwidth]{Figs/MeNO2_DBS.png}\\
 			\vspace{3pt}
     		\small Dipole-bound anion of nitromethane
 		\end{column}
 		\begin{column}{0.27\textwidth}
 			\centering
-			\includegraphics[width=\textwidth]{Figs/hf3.png}\\
+			\includegraphics[width=0.7\textwidth]{Figs/hf3.png}\\
 			\vspace{3pt}
 			\small (HF)\textsubscript{3} solvated electron
 		\end{column}	
 	\end{columns}
 \end{frame}
 
-\begin{frame}{\huge CC2}\large
-	Second-order approximate coupled-cluster singles and doubles (CC2) method is obtained from a perturbative analysis of the CCSD model
-	\vspace{4pt}
-	\begin{itemize}
-		\item Allows treatment of “big” molecules: $>$ 25 heavy atoms
-	\end{itemize}
-	\vspace{4pt}
-	\centering
-	\[ |\Psi_{\mathrm{CC2}} \rangle = e^{\hat{T}_{\mathrm{CC2}}} | \Psi_0 \rangle \]
-	\vspace{3pt}
-	\[
-	\hat{T}_{\mathrm{CC2}} = 1 + \sum_{ai} t^a a_a^\dagger a_i + \frac{1}{2} \sum_{ab} \sum_{ij} t_{ij}^{ab} a_a^\dagger a_b^\dagger a_j a_i  \] 
-	\vspace{3pt}
-	\[ t^{ab}_{ij} = \frac{1}{1+\delta_{ij}\delta_{ab}}\frac{\langle \phi_a \phi_b || \phi_i \phi_j \rangle}{\epsilon_a + \epsilon_b - \epsilon_i - \epsilon_j}
-	\]
-	\vspace{3pt}
-	\begin{table}
-		\centering
-		\begin{tabular}{lcc}\toprule
-		\textbf{Method} & \textbf{Scaling} & \textbf{Memory}\\\midrule
-		CCSD & $O(N^6)$ & $O(N^{4})$\\
-		CC2 & $O(N^5)$ & $O(N^{4})^*$\\\bottomrule
-		\multicolumn{3}{l}{\small $^*\,O(N^3)$ with RI approximation.}
-		\end{tabular}
-	\end{table}
-\end{frame}
-
-\begin{frame}{\huge EOM-EA}\large
-	\begin{flushleft}
-    Equation-of-motion electron-attachment coupled-cluster (EOM-EA-CC) methods are particularly well suited to study non-valence anions.
-	The description is based on the wave function of the parent neutral molecule
-	\end{flushleft}
-	\centering
-	\vspace{4pt}
-	    \[ |\Psi_{\mathrm{EA}} \rangle = \hat{R}_{\mathrm{EA}} | \Psi_0 \rangle \]
-	\vspace{3pt}
-		\[ \hat{R}_{\mathrm{EA}} = \sum_{a} r^a a_a^\dagger + \frac{1}{2} \sum_{ab} \sum_{i} r_{i}^{ab} a_a^\dagger a_i a_b^\dagger + \dots \]
-	%\vspace{5pt}
-	\vspace{3pt}
-	\includegraphics[width=0.8\textwidth]{Figs/EOM_EA.pdf}
-	\vspace{3pt}
-\end{frame}
-
+\subsection{Ubiquinone}
 \begin{frame}{\huge Biological Quinones: Ubiquinone (CoQ)}\large
 	Quinones are essential electron carriers in biological processes
 		\vspace{5pt}
@@ -154,48 +102,112 @@
 		\begin{columns}[b]
 			\begin{column}[b]{0.5\textwidth}
 				\centering
-				\includegraphics[width=0.8\textwidth]{Figs/Mitochondrial_electron_transport_chain—Etc4.svg.png}\\
+				\includegraphics[width=0.7\textwidth]{Figs/Mitochondrial_electron_transport_chain—Etc4.svg.png}\\
 				\vspace{3pt}
-				\small From Wikimedia Commons
+				\small Mitochondrial Electron Transport Chain
 			\end{column}
 			\begin{column}[b]{0.25\textwidth}
 				\centering
-				\includegraphics[width=\textwidth]{Figs/Q0_181.png}\\
+				\includegraphics[width=0.8\textwidth]{Figs/Q0_181.png}\\
 				\vspace{10pt}
 				\small Dipole-bound state
 			\end{column}
 			\begin{column}[b]{0.25\textwidth}
 				\centering
-				\includegraphics[width=\textwidth]{Figs/Q0_H2O_VBS.png}\\
+				\includegraphics[width=0.8\textwidth]{Figs/Q0_H2O_VBS.png}\\
 				\vspace{25pt}
 				\small Valence-bound state
 			\end{column}
 		\end{columns}
 \end{frame}
 
-\begin{frame}{\huge Quinone structure}\large
+\begin{frame}{\huge Ubiquinone Structure}\large
 	Each part of the molecule plays a distinct function:
 	\begin{itemize}
 		\item Quinone head involved in the electron transfer
 		\item Isoprenoid tail responsible for the solubility in the membrane
 		\item Methoxy chains determine the dipole moment
 	\end{itemize}
-	\Put(-30,-265){\includegraphics[width=0.55\textwidth]{Figs/uQ_6i0d.png}}
-	\Put(85,-285){\includegraphics[width=0.57\textwidth]{Figs/Q1.png}}
-	\Put(200,-238){\includegraphics[width=0.465\textwidth]{Figs/Q0189.png}}
-
-	\Put(20,-265){\fontsize{8}{4}\selectfont\text{Q10, Cluster Model}}
-	\Put(80,-235){\fontsize{5}{4}\selectfont\text{PDB: 6I0D}}
-	\Put(165,-265){\fontsize{8}{4}\selectfont\color{darkgray}\text{Q1}}
-	\Put(270,-265){\fontsize{8}{4}\selectfont\color{darkgray}\text{Q0}}
+	\vspace{130pt}
+	\begin{columns}[b]
+			\begin{column}{0.25\textwidth}
+				\centering
+				\Put(-70,150){\includegraphics[width=1.6\textwidth]{Figs/Q0189.png}}
+				Q\textsubscript{0}
+			\end{column}
+			\begin{column}{0.25\textwidth}
+				\centering
+				\Put(-80,150){\includegraphics[width=1.8\textwidth]{Figs/Q1.png}}
+				Q\textsubscript{1}
+			\end{column}
+			\begin{column}{0.4\textwidth}
+				\centering
+				\Put(-90,220){\includegraphics[width=1.4\textwidth]{Figs/uQ_6i0d.png}}
+				Q\textsubscript{10} (PDB: 6I0D)
+			\end{column}
+		\end{columns}
 \end{frame}
 
+\section{Theory}
+
+\subsection{Second-Order Approximate Coupled Cluster}
+\begin{frame}{\huge CC2}\large
+	Second-order approximate coupled-cluster singles and doubles (CC2) method is obtained from a perturbative analysis of the CCSD model
+	\vspace{4pt}
+	\begin{itemize}
+		\item Doubles amplitudes are identical to MP2, singles are treated exactly
+		\item Lowers computational scaling from CCSD: $O(N^5)$ vs. $O(N^6)$
+		\item Allows treatment of “big” molecules: $>$ 25 heavy atoms
+	\end{itemize}
+	\vspace{5pt}
+	\begin{columns}[c]
+		\begin{column}{0.55\textwidth}
+			\centering
+			\[ |\Psi_{\mathrm{CC2}} \rangle = e^{\hat{T}_{\mathrm{CC2}}} | \Psi_0 \rangle \]
+			\vspace{5pt}
+			\[
+			\hat{T}_{\mathrm{CC2}} = 1 + \sum_{ai} t^a a_a^\dagger a_i + \frac{1}{2} \sum_{ab} \sum_{ij} t_{ij}^{ab} a_a^\dagger a_b^\dagger a_j a_i  \] 
+			\vspace{5pt}
+			\[ t^{ab}_{ij} = \frac{1}{1+\delta_{ij}\delta_{ab}}\frac{\langle \phi_a \phi_b || \phi_i \phi_j \rangle}{\epsilon_a + \epsilon_b - \epsilon_i - \epsilon_j}
+			\]
+		\end{column}
+		\begin{column}{0.45\textwidth}
+			\begin{table}
+				\centering
+				\begin{tabular}{lcc}\toprule
+				\textbf{Method} & \textbf{Scaling} & \textbf{Memory}\\\midrule
+				CCSD & $O(N^6)$ & $O(N^{4})$\\
+				CC2 & $O(N^5)$ & $O(N^{4})^*$\\\bottomrule
+				\multicolumn{3}{l}{\small $^*\,O(N^3)$ with RI approximation.}
+				\end{tabular}
+			\end{table}
+		\end{column}
+	\end{columns}
+	\vfill
+\end{frame}
+
+\subsection{Equation-of-Motion Electron-Attachment}
+\begin{frame}{\huge EOM-EA}\large
+	\begin{flushleft}
+    Equation-of-motion electron-attachment coupled-cluster (EOM-EA-CC) methods are particularly well suited to study non-valence anions.
+	The description is based on the wave function of the parent neutral molecule
+	\end{flushleft}
+	\centering
+	\vspace{-2pt}
+	    \[ |\Psi_{\mathrm{EA}} \rangle = \hat{R}_{\mathrm{EA}} | \Psi_0 \rangle \]
+	\vspace{1pt}
+		\[ \hat{R}_{\mathrm{EA}} = \sum_{a} r^a a_a^\dagger + \frac{1}{2} \sum_{ab} \sum_{i} r_{i}^{ab} a_a^\dagger a_i a_b^\dagger + \dots \]
+	\includegraphics[width=0.8\textwidth]{Figs/EOM_EA.pdf}
+	\vspace{3pt}
+\end{frame}
+
+\section{Computational Methods}
 \begin{frame}{\huge Computational methods}\large
 	All calculations were performed using the \textit{Q-Chem} software.
 	\begin{itemize}
 		\item Optimizations performed at TPSS+D3BJ/ma-def2-TZVP
 		EA calculated at the RI-EOM-EA-CC2 using the neutral ground state as CC reference state
-		\item aug-cc-pVDZ basis further augmented by 3 s-shells on Hydrogen atoms and 6 s- and 3 p-shells on all non-hydrogen atoms
+		\item aug-cc-pVDZ basis further augmented by 3 s-shells on hydrogen atoms and 6 s- and 3 p-shells on all non-hydrogen atoms
 		\item Dyson orbitals calculated at the RI-EOM-EA-CC2 level (implemented in this thesis)
 	\end{itemize}
 	\vfill
@@ -204,88 +216,171 @@
 	\vfill
 \end{frame}
 
+\section{Results}
+
+\subsection{Methoxy chains rotation}
 \begin{frame}{\huge Potential Energy Surface}\large
 	We can construct surfaces from the methoxy rotations ($\Psi$ and $\Phi$) of the Q0 model.
-	\vspace{-7pt}
-	\begin{columns}
-		\begin{column}[c]{0.5\textwidth}
+	\begin{itemize}
+		\item PES is constructed by scanning the dihedral angles $\Phi$ and $\Psi$ and visualized as a 2D map.
+		\item Rest of the molecule, which is quite rigid, is optimized at each point.
+	\end{itemize}
+	\vspace{-20pt}
+	\begin{columns}[c]
+		\begin{column}{0.5\textwidth}
 			\centering
 			\include{Figs/Q0_E.tex}
-			\vspace{10pt}
 		\end{column}
-		\begin{column}[c]{0.5\textwidth}
+		\begin{column}{0.5\textwidth}
 			\centering
-			\includegraphics[width=1\textwidth]{Figs/dihedrals.png}
-			\put(-130,40){\textbf{\large \textcolor{black}{$\mathrm{\Phi=80}\degree$}}}
-			\put(-80,40){\textbf{\large \textcolor{black}{$\mathrm{\Psi=-140}\degree$}}}
-			\vspace{20pt}
+			\includegraphics[width=0.9\textwidth]{Figs/dihedrals.png}
+			\put(-160,40){\textbf{\large \textcolor{black}{$\mathrm{\Phi=80}\degree$}}}
+			\put(-110,40){\textbf{\large \textcolor{black}{$\mathrm{\Psi=-140}\degree$}}}
 		\end{column}
 	\end{columns}
 	\vspace{10pt}
 \end{frame}
 
 \begin{frame}{\huge Potential Energy Surfaces of Q0}\large
-	\begin{columns}
-		\begin{column}[c]{0.7\textwidth}
+	\begin{columns}[t]
+		\begin{column}{0.45\textwidth}
 			\footnotesize
-			\vspace{-10pt}
+			\vspace{-22pt}
 			\include{Figs/Q0_maps.tex}
 		\end{column}
-		\begin{column}[c]{0.3\textwidth}
-			\centering
-			\vspace{-30pt}
-			\includegraphics[width=\textwidth]{Figs/dihedrals.png}
-			\put(-65,25){\textbf{\large \textcolor{black}{$\mathrm{\Phi}$}}}
-			\put(-50,25){\textbf{\large \textcolor{black}{$\mathrm{\Psi}$}}}\\
-			\vspace{-20pt}
-			\includegraphics[width=0.6\textwidth]{Figs/Q0_181.png}
-			\includegraphics[width=0.6\textwidth]{Figs/Q0_H2O_VBS.png}
-			\vspace{30pt}
+		\hfill
+		\begin{column}{0.45\textwidth}
+			Hola q ase
+			\begin{itemize}
+				\item estudia o k ase
+			\end{itemize}
+			\vspace{5pt}
+			\begin{columns}[b]
+				\begin{column}{0.3\textwidth}
+					\centering
+					\put(-20,5){\includegraphics[width=1.4\textwidth]{Figs/dihedrals.png}}
+					$\Psi$ and $\Phi$
+				\end{column}
+				\begin{column}{0.3\textwidth}
+					\centering
+					\put(-15,10){\includegraphics[width=1.1\textwidth]{Figs/Q0_181.png}}
+					DBS
+				\end{column}
+				\begin{column}{0.3\textwidth}
+					\centering
+					\put(-20,25){\includegraphics[width=1.1\textwidth]{Figs/Q0_H2O_VBS.png}}
+					VBA
+				\end{column}
+			\end{columns}
 		\end{column}
 	\end{columns}
-	\Put(240,200){\small\selectfont\text{DBA}}
-	\Put(237,80){\small\selectfont\text{VBA}}
 \end{frame}
 
 \begin{frame}{\huge Potential Energy Surfaces of Q1}\large
-	\begin{columns}
-		\begin{column}[c]{0.7\textwidth}
+	\begin{columns}[t]
+		\begin{column}{0.45\textwidth}
 			\footnotesize
-			\vspace{-10pt}
+			\vspace{-22pt}
 			\include{Figs/Q1_maps.tex}
 		\end{column}
-		\begin{column}[c]{0.3\textwidth}
-			\centering
-			\includegraphics[width=0.65\textwidth]{Figs/Q1_199.png}
-			\includegraphics[width=0.65\textwidth]{Figs/Q1_249.png}
-			\includegraphics[width=0.65\textwidth]{Figs/Q1_112.png}
-			\vspace{30pt}
+		\hfill
+		\begin{column}{0.45\textwidth}
+			Hola q ase
+			\begin{itemize}
+				\item estudia o k ase
+			\end{itemize}
+			\vspace{8pt}
+			\begin{columns}[b]
+				\begin{column}{0.3\textwidth}
+					\centering 
+					\put(-35,10){\includegraphics[width=1.2\textwidth]{Figs/Q1_199.png}}
+					\textbf{A}
+				\end{column}
+				\begin{column}{0.3\textwidth}
+					\centering
+					\put(-30,10){\includegraphics[width=1.2\textwidth]{Figs/Q1_249.png}}
+					\textbf{B}
+				\end{column}
+				\begin{column}{0.3\textwidth}
+					\centering 
+					\put(-30,5){\includegraphics[width=1.2\textwidth]{Figs/Q1_112.png}}
+					\textbf{C}
+				\end{column}
+			\end{columns}
 		\end{column}
 	\end{columns}
-	\Put(237,390){\large\selectfont\textbf{A}}
-	\Put(233,265){\large\selectfont\textbf{B}}
-	\Put(230,120){\large\selectfont\textbf{C}}
 \end{frame}
 
 \begin{frame}
-	\frametitle{\huge DBA Populations}\large
-	%Distinct populations of dipole-bound anions (DBA) are observed.\\
-	\centering
-	 \includegraphics[width=0.2\textwidth]{Figs/Q1_199.png}\textbf{A} \hfill
-	\includegraphics[width=0.2\textwidth]{Figs/Q1_249.png}\textbf{B} \hfill
-	\includegraphics[width=0.2\textwidth]{Figs/Q1_112.png}\textbf{C} \hfill \\
-	\vspace{-5pt}
-	\small	
-	\include{Figs/DvsDBS.tex}	
+	\frametitle{\huge DBS Populations}\large
+	Distinct populations of dipole-bound anions (DBS) are observed.\\
+	\begin{itemize}
+		\item cabesa
+	\end{itemize}
+	\vspace{5pt}
+	\begin{columns}[c]
+		\begin{column}{0.62\textwidth}
+			\centering
+			\small	
+			\include{Figs/DvsDBS.tex}
+		\end{column}
+		\hspace{30pt}
+		\begin{column}{0.3\textwidth}
+			\centering
+	 		\textbf{A} \includegraphics[width=0.41\textwidth]{Figs/Q1_199.png} \hfill\\
+			\textbf{B} \includegraphics[width=0.41\textwidth]{Figs/Q1_249.png} \hfill
+			\textbf{C} \includegraphics[width=0.41\textwidth]{Figs/Q1_112.png} \hfill 
+		\end{column}
+	\end{columns}		
 \end{frame}
 
-\begin{frame}{\huge A simple cluster model}\large
-	A directed interaction with small molecules\\ strongly stabilises the DBA.
-	\vspace{10pt}
-	\Put(100,3){\includegraphics[width=0.3\textwidth]{Figs/Q0_H2O_H.png}}
-	\include{Figs/scan_X.tex}
+\begin{frame}
+	\frametitle{\huge Interaction with solvent molecules (DBS)}\large
+	A directed interaction with small molecules strongly stabilises the DBS.\\
+	\begin{itemize}
+		\item cabesa
+	\end{itemize}
+	\vspace{5pt}
+	\begin{columns}[c]
+		\begin{column}{0.7\textwidth}
+			\centering
+			\small	
+			\include{Figs/scan_DBS.tex}
+		\end{column}
+		\hspace{40pt}
+		\begin{column}{0.3\textwidth}
+			\centering
+	 		\includegraphics[width=0.6\textwidth]{Figs/Q0_H2O_H.png}\\
+			\vfill
+			\includegraphics[width=0.6\textwidth]{Figs/Q0_H2O_O.png}	
+		\end{column}
+	\end{columns}		
 \end{frame}
 
+\begin{frame}
+	\frametitle{\huge Interaction with solvent molecules (VBS)}\large
+	A directed interaction with small molecules strongly stabilises the VBS.\\
+	\begin{itemize}
+		\item cabesa
+	\end{itemize}
+	\vspace{5pt}
+	\begin{columns}[c]
+		\begin{column}{0.7\textwidth}
+			\centering
+			\small	
+			\include{Figs/scan_VBS.tex}
+		\end{column}
+		\hspace{40pt}
+		\begin{column}{0.3\textwidth}
+			\centering
+	 		\includegraphics[width=0.6\textwidth]{Figs/Q0_H2O_VBS.png}\\
+			\vfill
+			\includegraphics[width=0.6\textwidth]{Figs/Q0_H2O_H_VBS.png}	
+		\end{column}
+	\end{columns}		
+\end{frame}
+
+\section{Conclusions}
 \begin{frame}{\huge Conclusions}\large
 	\begin{itemize}
 		\item No conclusions
@@ -295,31 +390,36 @@
 	\Huge \textcolor{kul-blue}{\textbf{Thanks for your attention!}}
 \end{frame}
 
+\appendix
+
 \begin{frame}{\huge Acknowledgements}\large
 	\centering
 	\begin{columns}
-		\begin{column}[c]{0.7\textwidth}
+		\begin{column}[c]{0.48\textwidth}
 			\centering
+			\vfill
 			\includegraphics[width=\textwidth]{Figs/TJ.jpeg}
+			\vfill
 		\end{column}
 		\begin{column}[c]{0.3\textwidth}
 			\centering
-			\includegraphics[width=\textwidth]{Figs/VSC-Combilogo.png}\\\vfill
-			\includegraphics[width=0.6\textwidth]{Figs/FCI.png}\\\vfill
-			\includegraphics[width=0.7\textwidth]{Figs/erc.png}\\\vfill
 			\includegraphics[width=0.45\textwidth]{Figs/La-Caixa.png}\\\vfill
-			\includegraphics[width=\textwidth]{Figs/QCLogo.png}\\\vfill
+			\includegraphics[width=0.5\textwidth]{Figs/erc.png}\\\vfill
+			\includegraphics[width=\textwidth]{Figs/VSC-Combilogo.png}\\\vfill
+			%\includegraphics[width=0.8\textwidth]{Figs/QCLogo.png}\\\vfill
 		\end{column}
 	\end{columns}
 
 	\vspace{3pt}
 \end{frame}
 
-\begin{frame}{\huge DBS Basis set convergence}\large
+\begin{frame}{\huge DBS Basis set convergence}\normalsize
+	\vspace{-20pt}
 	\begin{table}[p]
 	\centering
 	\caption{ Electron affinity of dipole-bound radical anions computed using different augmented Dunning basis sets and EOM-EA RI-CC2 and EOM-EA RI-CCSD. Koopman' theorem (KT), and dipole moment, \textmu, calculated at the HF/aug-cc-pVTZ+6s3p level, and mean absolute error (MAE) taking CCSD/aug-cc-pVTZ+6s3p as reference are also given. The values are in meV and Debye respectively.}
-	\tiny
+	\footnotesize
+	\vspace{-5pt}
 	\begin{tabular}{cccccccccccc}
 		\toprule
 		& & \multicolumn{6}{c}{RI-CC2} & \multicolumn{2}{c}{RI-CCSD} & & \\
