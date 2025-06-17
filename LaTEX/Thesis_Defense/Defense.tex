@@ -29,6 +29,7 @@
 \usepackage[absolute, overlay]{textpos}
 \usepackage[T1]{fontenc}
 \usepackage{pgfplots}
+\usepackage{tikz}
 \usepackage{gensymb}
 \usepackage{mhchem} % For chemical formulas
 \pgfplotsset{compat=1.18}
@@ -37,7 +38,7 @@
 \title{Computational Exploration of Non-Valence Anions from\\ Biological Quinones}
 \subtitle{TCCM Thesis Defense}
 \author{Mauro Gascón}
-\institute{Promotor: Prof. Thomas C. Jagau \\ Mentor: Robin E. Moorby}
+\institute{Promotor: Prof. Thomas-C. Jagau \\ Mentor: Robin E. Moorby}
 \date{30th June 2025}
 \renewcommand\fbox{\fcolorbox{blue}{white}}
 
@@ -46,25 +47,24 @@
 % title frame
 \begin{frame}[plain,noframenumbering]
 	\titlepage
-	\Put(155,-530){\includegraphics[width=0.6\textwidth]{Figs/Q1_cover.png}}
+	\Put(165,-535){\includegraphics[width=0.6\textwidth]{Figs/Q1_cover.png}}
 \end{frame}
 
-\begin{frame}{\huge Overview}
-\tableofcontents
-\end{frame}
+%\begin{frame}{\huge Overview}
+%\tableofcontents
+%\end{frame}
 
 \section{Introduction}
 \subsection{Non-valence anions}
 \begin{frame}{\huge Non-valence anions}\large
     \vspace{5pt}
-	The excess electron is bound by long-range forces (e.g., dipole, quadrupole). The `extra' electron density is located far from the molecule\\
-	Found in atmospheric, interstellar, and biological environments; they act as `doorway' states for electron attachment
+	The excess electron is bound by long-range forces (e.g. dipole, quadrupole) and is located far from the molecule\\
     \begin{itemize} 
-
-            \item Extremely diffuse electron clouds
+			\item Found in atmospheric, interstellar, and biological environments
+			\item `Doorway' states for electron attachment
+            \item Large spatial extent
             \item Sensitive to correlation and environmental effects
-            %\item Difficult to describe theoretically
-            \item Require huge basis sets and accurate correlation treatment
+            \item Require extremely diffuse basis sets and accurate correlation treatment
     \end{itemize}
     \vspace{5pt}
 	\begin{columns}
@@ -90,76 +90,103 @@
 \end{frame}
 
 \subsection{Ubiquinone}
-\begin{frame}{\huge Biological Quinones: Ubiquinone (CoQ)}\large
+\begin{frame}{\huge Biological Quinones: Ubiquinone (Q\textsubscript{n})}\large
 	Quinones are essential electron carriers in biological processes
 		\vspace{5pt}
 		\begin{itemize}
-		%	\item Ubiquinone (coenzyme Q or CoQ) is a component of electron transport chains in bacterial photosynthesis and aerobic respiration.
-		\item Component of electron transport chains in bacterial photosynthesis and aerobic respiration	
-		\item Capable of both valence and dipole bound anion states
+		\item Ubiquinone (Q\textsubscript{n}) is a key molecule in aerobic respiration and photosynthesis
+		\item Membrane soluble, tranpsorts electrons between enzymes
+		\item Ubiquinone accepts two electrons and two protons to form ubiquinol
 		\end{itemize}
 		\begin{columns}[b]
 			\begin{column}[b]{0.5\textwidth}
 				\centering
-				\includegraphics[width=0.8\textwidth]{Figs/Mitochondrial_electron_transport_chain—Etc4.svg.png}\\
+				\includegraphics[width=0.65\textwidth]{Figs/Mitochondrial_electron_transport_chain—Etc4.svg.png}\\
 				%\vspace{3pt}
-				\small Mitochondrial Electron Transport Chain\\
+				Mitochondrial Electron Transport Chain\\
 				\footnotesize Source: Wikimedia Commons
 			\end{column}
-			\begin{column}[b]{0.25\textwidth}
-				\centering
-				\includegraphics[width=0.9\textwidth]{Figs/Q0_181.png}\\
-				\vspace{10pt}
-				\small Dipole-bound state\\
-				\footnotesize \vspace{\baselineskip}
-			\end{column}
-			\begin{column}[b]{0.25\textwidth}
-				\centering
-				\includegraphics[width=1\textwidth]{Figs/Q0_52_VBS.png}\\
-				\vspace{25pt}
-				\small Valence-bound state\\
-				\footnotesize \vspace{\baselineskip}
-			\end{column}
+			\begin{column}[b]{0.5\textwidth}
+			\centering
+			\includegraphics[width=0.7\textwidth]{Figs/Ubiquinone–ubiquinol_conversion.svg.png}\\
+			Ubiquinone reduction
+			\vspace{\baselineskip}
+		\end{column}
 		\end{columns}
 \end{frame}
 
-\begin{frame}{\huge Ubiquinone Structure}\large
+\begin{frame}{\huge Ubiquinone Function}\large
+	Ubiquinone is a lipid-soluble molecule that plays a crucial role in the electron transport chain of mitochondria.
+	\begin{itemize}
+		\item Quinone head involved in the electron transfer
+		\item Isoprenoid tail responsible for the solubility in the membrane
+		\item Supports both a valence and a dipole bound anion state
+		
+	\end{itemize}
+	\vspace{-50pt}
+	\begin{columns}[b]
+		\hspace{10pt}
+		\begin{column}[b]{0.3\textwidth}
+				\centering
+				\includegraphics[width=0.7\textwidth]{Figs/Q0_181.png}\\
+				%\vspace{10pt}
+				Dipole-bound state\\
+				\footnotesize 
+		\end{column}
+		\begin{column}[b]{0.3\textwidth}
+				\centering
+				\includegraphics[width=0.9\textwidth]{Figs/Q0_52_VBS.png}\\
+				\vspace{15pt}
+				Valence-bound state\\
+				\footnotesize 
+		\end{column}
+		\hfill
+		\begin{column}[b]{0.4\textwidth}
+			\centering
+			\put(-90,0){\includegraphics[width=1.3\textwidth]{Figs/uQ_6i0d.png}}
+			Q\textsubscript{10} (PDB: 6I0D)\\
+		\end{column}
+	\end{columns}
+	
+\end{frame}
+
+\iffalse \begin{frame}{\huge Ubiquinone Structure}\large
 	Each part of the molecule plays a distinct function:
 	\begin{itemize}
 		\item Quinone head involved in the electron transfer
 		\item Isoprenoid tail responsible for the solubility in the membrane
+		\item Ubiquinone-10 (CoQ\textsubscript{10}) is the most common form in humans
 		\item Methoxy chains determine the dipole moment
 	\end{itemize}
-	\vspace{130pt}
+	\vspace{125pt}
 	\begin{columns}[b]
 			\begin{column}{0.25\textwidth}
 				\centering
-				\Put(-70,150){\includegraphics[width=1.6\textwidth]{Figs/Q0189.png}}
+				\Put(-70,150){\includegraphics[width=1.5\textwidth]{Figs/Q0189.png}}
 				Q\textsubscript{0}
 			\end{column}
 			\begin{column}{0.25\textwidth}
 				\centering
-				\Put(-80,150){\includegraphics[width=1.8\textwidth]{Figs/Q1.png}}
+				\Put(-90,150){\includegraphics[width=1.7\textwidth]{Figs/Q1.png}}
 				Q\textsubscript{1}
 			\end{column}
 			\begin{column}{0.4\textwidth}
 				\centering
-				\Put(-90,220){\includegraphics[width=1.4\textwidth]{Figs/uQ_6i0d.png}}
-				Q\textsubscript{10} (PDB: 6I0D)
+				\Put(-90,150){\includegraphics[width=1.1\textwidth]{Figs/UQ_Struct.pdf}}
+				Q\textsubscript{n}
 			\end{column}
 		\end{columns}
-\end{frame}
+\end{frame} \fi
 
 \section{Theory}
 
 \subsection{Second-Order Approximate Coupled Cluster}
-\begin{frame}{\huge CC2}\large
-	Second-order approximate coupled-cluster singles and doubles (CC2) method is obtained from a perturbative analysis of the CCSD model
+\iffalse \begin{frame}{\huge RI-CC2}\large
+	Resolution-of-the-Identity (RI) approximation Second-order approximate coupled-cluster singles and doubles (CC2) method is obtained from a perturbative analysis of the CCSD model
 	\vspace{4pt}
 	\begin{itemize}
-		\item Doubles amplitudes are identical to MP2, singles are treated exactly
-		\item Lowers computational scaling from CCSD: $O(N^5)$ vs. $O(N^6)$
-		\item Allows treatment of “big” molecules: $>$ 25 heavy atoms
+		\item Doubles amplitudes are similar to MP2
+		\item Lowers computational scaling from CCSD
 	\end{itemize}
 	\vspace{5pt}
 	\begin{columns}[c]
@@ -168,9 +195,9 @@
 			\[ |\Psi_{\mathrm{CC2}} \rangle = e^{\hat{T}_{\mathrm{CC2}}} | \Psi_0 \rangle \]
 			\vspace{5pt}
 			\[
-			\hat{T}_{\mathrm{CC2}} = 1 + \sum_{ai} t^a a_a^\dagger a_i + \frac{1}{2} \sum_{ab} \sum_{ij} t_{ij}^{ab} a_a^\dagger a_b^\dagger a_j a_i  \] 
+			\hat{T}_{\mathrm{CC2}} = \sum_{ai} t^a_i a_a^\dagger a_i + \frac{1}{4}\sum_{aibj} t_{ij}^{ab} a_a^\dagger a_i a_b^\dagger a_j  \] 
 			\vspace{5pt}
-			\[ t^{ab}_{ij} = \frac{1}{1+\delta_{ij}\delta_{ab}}\frac{\langle \phi_a \phi_b || \phi_i \phi_j \rangle}{\epsilon_a + \epsilon_b - \epsilon_i - \epsilon_j}
+			\[ t^{ab}_{ij} =\frac{\langle \phi_a \phi_b || \phi_i \phi_j \rangle}{\epsilon_i + \epsilon_j - \epsilon_a - \epsilon_b}
 			\]
 		\end{column}
 		\begin{column}{0.45\textwidth}
@@ -179,12 +206,33 @@
 				\begin{tabular}{lcc}\toprule
 				\textbf{Method} & \textbf{Scaling} & \textbf{Memory}\\\midrule
 				CCSD & $O(N^6)$ & $O(N^{4})$\\
-				CC2 & $O(N^5)$ & $O(N^{4})^*$\\\bottomrule
-				\multicolumn{3}{l}{\small $^*\,O(N^3)$ with RI approximation.}
+				RI-CC2 & $O(N^5)$ & $O(N^{3})$\\\bottomrule
 				\end{tabular}
 			\end{table}
 		\end{column}
 	\end{columns}
+	\vfill
+\end{frame}\fi
+
+\begin{frame}{\huge RI-CC2}\large
+	Resolution-of-the-Identity (RI) approximation Second-order approximate coupled-cluster singles and doubles (CC2) method is obtained from a perturbative analysis of the CCSD model
+	\vspace{4pt}
+	\begin{itemize}
+		\item $|\Psi_{\mathrm{CC}} \rangle = e^{\hat{T}} | \Psi_0 \rangle$
+		\item $\textsf{for CCSD and CC2:} ~
+	\hat{T} = \sum_{ai} t^a_i a_a^\dagger a_i + \frac{1}{4}\sum_{aibj} t_{ij}^{ab} a_a^\dagger a_i a_b^\dagger a_j$
+		\item CC2 double amplitudes are similar to MP2
+	\end{itemize} 
+	\vspace{10pt}
+	\begin{table}
+		\centering
+		\begin{tabular}{lcccc}\toprule
+		\textbf{Method} & \textbf{Single Amp.} & \textbf{Double Amp.} & \textbf{Scaling} & \textbf{Memory}\\\midrule
+		CCSD & $\langle \Psi^{a}_{i} | \bar{H} | \Psi_{0} \rangle$ = 0 & $\langle \Psi^{ab}_{ij} | \bar{H} | \Psi_{0} \rangle = 0 $ & $O(N^6)$ & $O(N^{4})$\\
+		RI-CC2 & $\langle \Psi^{a}_{i} | \bar{H} | \Psi_{0} \rangle$ = 0 & $\displaystyle{t^{ab}_{ij} =\frac{(a b \hat{|} i j)}{\epsilon_i + \epsilon_j - \epsilon_a - \epsilon_b}}$ & $O(N^5)$ & $O(N^{3})$\\\bottomrule
+		\small $\bar{H} = e^{-\hat{T}}\hat{H} e^{\hat{T}} $
+		\end{tabular}
+	\end{table}
 	\vfill
 \end{frame}
 
@@ -196,10 +244,108 @@
 	\end{flushleft}
 	\centering
 	\vspace{-2pt}
-	    \[ |\Psi_{\mathrm{EA}} \rangle = \hat{R}_{\mathrm{EA}} | \Psi_0 \rangle \]
+	    \[ |\Psi_{\mathrm{EA}} \rangle = \hat{R}_{\mathrm{EA}} | \Psi_{CC} \rangle \]
 	\vspace{1pt}
 		\[ \hat{R}_{\mathrm{EA}} = \sum_{a} r^a a_a^\dagger + \frac{1}{2} \sum_{ab} \sum_{i} r_{i}^{ab} a_a^\dagger a_i a_b^\dagger + \dots \]
-	\includegraphics[width=0.8\textwidth]{Figs/EOM_EA.pdf}
+	%\includegraphics[width=0.8\textwidth]{Figs/EOM_EA.pdf}
+	\begin{figure}
+    	\centering
+		\begin{tikzpicture}[scale=0.7]
+			\huge
+			% Define styles
+			\tikzset{
+				level/.style={thick},
+				arrow/.style={->, thick},
+				label/.style={font=\small}
+			}
+
+			% Draw CC wavefunction levels (left)
+			\draw[level] (-2,3) -- (-1,3); 
+			\draw[level] (-2,2) -- (-1,2); 
+			\draw[level] (-2,2) -- (-1,2); 
+			\draw[level] (-2,1) -- (-1,1);
+			\draw[level] (-2,0) -- (-1,0);
+			% Draw electron occupancies for CC
+			\node at (-1.5,0) {\(\uparrow\downarrow\)};
+			\node at (-1.5,1) {\(\uparrow\downarrow\)};
+			% Label CC wavefunction
+			%\node[label] at (-1.5,-1) {\large\(|\Psi_{0}\rangle\)};    
+
+			% Draw transition arrow and label
+			\draw [->,line width=0.4mm] (-0.5,1.5) -- (1.5,1.5);
+			\node[label] at (0.5,2) {\large\(\hat{R}_{\mathrm{EA}} e^{\hat{T}} \)};
+
+			% Draw EA wavefunction levels (right)
+			\draw[level] (2,3) -- (3,3);
+			\draw[level] (2,2) -- (3,2);
+			\draw[level] (2,1) -- (3,1);
+			\draw[level] (2,0) -- (3,0);
+			% Draw electron occupancies for EA
+			\node at (2.3,2) {\(\uparrow\)};
+			\node at (2.5,0) {\(\uparrow\downarrow\)};
+			\node at (2.5,1) {\(\uparrow\downarrow\)};
+			% Label EA wavefunction
+			%\node[label] at (2.5,-1) {\large\(|\Psi^{3}\rangle\)};
+
+			% Draw EA2 wavefunction levels (right)
+			\draw[level] (4.5,3) -- (5.5,3);
+			\draw[level] (4.5,2) -- (5.5,2);
+			\draw[level] (4.5,1) -- (5.5,1);
+			\draw[level] (4.5,0) -- (5.5,0);
+			% Draw electron occupancies for EA
+			\node at (5,2) {\(\uparrow\downarrow\)};
+			\node at (4.8,1) {\(\uparrow\)};
+			\node at (5,0) {\(\uparrow\downarrow\)};
+			% Label EA wavefunction
+			%\node[label] at (5,-1) {\large\(|\Psi_{\bar{2}}^{3\bar{3}}\rangle\)};
+
+			% Draw EA3 wavefunction levels (right)
+			\draw[level] (7,3) -- (8,3);
+			\draw[level] (7,2) -- (8,2);
+			\draw[level] (7,1) -- (8,1);
+			\draw[level] (7,0) -- (8,0);
+			% Draw electron occupancies for EA
+			\node at (7.3,3) {\(\uparrow\)};
+			\node at (7.5,0) {\(\uparrow\downarrow\)};
+			\node at (7.5,1) {\(\uparrow\downarrow\)};
+			% Label EA wavefunction
+			%\node[label] at (7.5,-1) {\large\(|\Psi^{4}\rangle\)};
+
+			% Draw EA wavefunction levels (right)
+			\draw[level] (9.5,3) -- (10.5,3);
+			\draw[level] (9.5,2) -- (10.5,2);
+			\draw[level] (9.5,1) -- (10.5,1);
+			\draw[level] (9.5,0) -- (10.5,0);
+			% Draw electron occupancies for EA
+			\node at (10.2,3) {\(\downarrow\)};
+			\node at (9.8,2) {\(\uparrow\)};
+			\node at (9.8,1) {\(\uparrow\)};
+			\node at (10,0) {\(\uparrow\downarrow\)};
+			% Label EA wavefunction
+			%\node[label] at (10,-1) {\large\(|\Psi_{2}^{\bar{4}3}\rangle\)};
+
+			% Draw EA2 wavefunction levels (right)
+			\draw[level] (12,3) -- (13,3);
+			\draw[level] (12,2) -- (13,2);
+			\draw[level] (12,1) -- (13,1);
+			\draw[level] (12,0) -- (13,0);
+			% Draw electron occupancies for EA
+			\node at (12.5,2) {\(\uparrow\downarrow\)};
+			\node at (12.5,1) {\(\uparrow\downarrow\)};
+			\node at (12.3,0) {\(\uparrow\)};
+			% Label EA wavefunction
+			%\node[label] at (12.5,-1) {\large\(|\Psi_{1}^{3\bar{3}}\rangle\)};    
+
+			%Plus signs
+			\node[label] at (11.25,1.5) {\huge\(+\)}; 
+			\node[label] at (8.75,1.5) {\huge\(+\)}; 
+			\node[label] at (6.25,1.5) {\huge\(+\)}; 
+			\node[label] at (3.75,1.5) {\huge\(+\)}; 
+
+			% dots
+			\node[label] at (14.5,1) {\huge\(...\)}; 
+		\end{tikzpicture}
+	\end{figure}
 	\vspace{3pt}
 \end{frame}
 
@@ -207,13 +353,30 @@
 \begin{frame}{\huge Computational methods}\large
 	All calculations were performed using the \textit{Q-Chem} software.
 	\begin{itemize}
-		\item Optimizations performed at TPSS+D3BJ/ma-def2-TZVP
-		EA calculated at the RI-EOM-EA-CC2 using the neutral ground state as CC reference state
-		\item aug-cc-pVDZ basis further augmented by 3 s-shells on hydrogen atoms and 6 s- and 3 p-shells on all non-hydrogen atoms
-		\item Dyson orbitals calculated at the RI-EOM-EA-CC2 level (implemented in this thesis)
+		\item Molecules investigated: Q\textsubscript{0} and Q\textsubscript{1}
+		\item Optimizations performed with DFT (TPSS+D3BJ/ma-def2-TZVP)
+		\item Electron attachment energies calculated at the RI-EOM-EA-CC2/aug-cc-pVDZ+6s3p
+		\item Implementation of Dyson orbitals at the RI-EOM-EA-CC2 level in \textit{Q-Chem} \texttt{ccman2} module
 	\end{itemize}
-	\vfill
 	\centering
+	\vspace{125pt}
+	\begin{columns}[b]
+		\begin{column}{0.25\textwidth}
+			\centering
+			\Put(-70,150){\includegraphics[width=1.5\textwidth]{Figs/Q0189.png}}
+			Q\textsubscript{0}
+		\end{column}
+		\begin{column}{0.25\textwidth}
+			\centering
+			\Put(-90,150){\includegraphics[width=1.7\textwidth]{Figs/Q1.png}}
+			Q\textsubscript{1}
+		\end{column}
+		\begin{column}{0.4\textwidth}
+			\centering
+			\Put(-90,150){\includegraphics[width=1.1\textwidth]{Figs/UQ_Struct.pdf}}
+			Q\textsubscript{n}
+		\end{column}
+	\end{columns}
 	%\includegraphics[width=0.5\textwidth]{Figs/QCLogo.png}
 	\vfill
 \end{frame}
@@ -222,10 +385,10 @@
 
 \subsection{Methoxy chains rotation}
 \begin{frame}{\huge Potential Energy Surface}\large
-	We can construct surfaces from the methoxy rotations ($\Psi$ and $\Phi$) of the Q0 model.
+	We can construct surfaces from the methoxy rotations of the Q\textsubscript{0} model.
 	\begin{itemize}
-		\item PES is constructed by scanning the dihedral angles $\Phi$ and $\Psi$ and visualized as a 2D map
-		\item Rest of the molecule, which is quite rigid, is optimized at each point
+		\item PES is constructed by scanning the dihedral angles $\Phi$ and $\Psi$
+		\item Constrained optimisation at each point
 	\end{itemize}
 	\vspace{-20pt}
 	\begin{columns}[c]
@@ -243,7 +406,7 @@
 	\vspace{10pt}
 \end{frame}
 
-\begin{frame}{\huge Potential Energy Surfaces of Q0}\large
+\begin{frame}{\huge Potential Energy Surfaces of Q\textsubscript{0}}\large
 	\begin{columns}[t]
 		\begin{column}{0.4\textwidth}
 			\footnotesize
@@ -252,7 +415,7 @@
 		\end{column}
 		\hfill
 		\begin{column}{0.50\textwidth}
-			C\textsubscript{2} symmetry
+			The system presents C\textsubscript{2} symmetry
 			\begin{itemize}
 				\item \textbf{PES}: Several minima
 				\item \textbf{Dipole Moment}: Two strong dipole regions
@@ -282,7 +445,7 @@
 	\end{columns}
 \end{frame}
 
-\begin{frame}{\huge Potential Energy Surfaces of Q1}\large
+\begin{frame}{\huge Potential Energy Surfaces of Q\textsubscript{1}}\large
 	\begin{columns}[t]
 		\begin{column}{0.4\textwidth}
 			\footnotesize
@@ -291,12 +454,12 @@
 		\end{column}
 		\hfill
 		\begin{column}{0.50\textwidth}
-			  Similar to Q0, though isoprene tail breaks the symmetry.
+			  Similar to Q\textsubscript{0}, though isoprene tail breaks the symmetry.
 			\begin{itemize}
-				\item \textbf{PES}: Isoprene tail distant, analogous to Q0.
+				\item \textbf{PES}: Isoprene tail distant, analogous to Q\textsubscript{0}.
 				\item \textbf{Dipole Moment}: Isoprene adds fixed dipole. 
 				\item \textbf{VBS}: Isoprene tail has minor effect. 
-				\item \textbf{DBS}: Isoprene has a pronounced effect.
+				\item \textbf{DBS}: Isoprene tail has a pronounced effect.
 			\end{itemize}
 			\vspace{8pt}
 			\begin{columns}[b]
@@ -323,34 +486,36 @@
 
 \begin{frame}
 	\frametitle{\huge DBS Populations}\large
-	Distinct populations of dipole-bound anions (DBS) are observed\\
-	\begin{itemize}
-		\item Different regions correlate differently to the dipole strength
-		\item \textbf{Region A}: Nearly linear relationship between binding energy and dipole strength
-		\item \textbf{Regions B \& C}: Less pronounced correlation. DBS closer to $\pi$ system
-	\end{itemize}
-	\vspace{5pt}
 	\begin{columns}[c]
-		\begin{column}{0.62\textwidth}
+		\begin{column}{0.75\textwidth}
+			Distinct populations of dipole-bound anions (DBS) are observed\\
+			\begin{itemize}
+				\item Different regions correlate differently to the dipole strength
+				\item \textbf{Region A}: DBS density far from other electrons. Strong correlation.
+				\item \textbf{Regions B \& C}: Less pronounced correlation. DBS closer to $\pi$ system
+			\end{itemize}
+			%\vspace{5pt}
 			\centering
 			\small	
 			\include{Figs/DvsDBS.tex}
+			\vspace{10pt}
 		\end{column}
-		\hspace{30pt}
-		\begin{column}{0.3\textwidth}
+		\begin{column}{0.25\textwidth}
 			\centering
-	 		\textbf{A} \includegraphics[width=0.41\textwidth]{Figs/Q1_199.png} \hfill\\
-			\textbf{B} \includegraphics[width=0.41\textwidth]{Figs/Q1_249.png} \hfill
-			\textbf{C} \includegraphics[width=0.41\textwidth]{Figs/Q1_112.png} \hfill 
+			\textbf{A} \includegraphics[height=0.27\textheight]{Figs/Q1_199.png} \\
+			\textbf{B} \includegraphics[height=0.27\textheight]{Figs/Q1_249.png} \\
+			\textbf{C} \includegraphics[height=0.27\textheight]{Figs/Q1_112.png} \\
+			\vspace{30pt} 
 		\end{column}
 	\end{columns}		
 \end{frame}
 
+\subsection{Interaction with solvent molecules}
 \begin{frame}
 	\frametitle{\huge Interaction with solvent molecules (DBS)}\large
 	%A directed interaction with small molecules strongly stabilises the DBS.\\
 	\begin{itemize}
-		%\item Model: Q0 (region B, $\mu=3.4$ D) + CH$_4$, NH$_3$, H$_2$O, HF.
+		%\item Model: Q\textsubscript{0} (region B, $\mu=3.4$ D) + CH$_4$, NH$_3$, H$_2$O, HF.
 		\item \textbf{Antiparallel dipoles}: Polar molecules create a potential well with up to 10x in electron binding energy.
 		\item \textbf{Aligned dipoles}: Repulsion at large distances. At short range, dipoles add up.
 	\end{itemize}
@@ -401,21 +566,19 @@
 	\begin{itemize}
 		%\item EA-EOM-CC2 is suitable for DBS; diffuse functions are critical. VBS energies are consistently overbound.
 		%\item EOM-CC2 Dyson orbitals implemented in Q-Chem show good agreement with EOM-CCSD.
-		\item Methoxy chain rotation in Q0 and Q1 significantly alters dipole moment, VBS, and DBS energies.
-		\item In general, DBS electron binding energy isloosely correlated with dipole strength.
+		\item Methoxy chain rotation in Q\textsubscript{0} and Q\textsubscript{1} controls dipole moment and DBS energies
+		\item Intermolecular interactions have a larger effect on VBS than methoxy chain rotations
+		\item In general, DBS electron binding energy is loosely correlated with dipole strength
 		\item For equivalent conformers, the correlation can be very strong
 		\item Solvent interactions dramatically affect VBS and DBS stability
-		\item Intermolecular interactions larger effect on VBS than methoxy chain rotations.
 	\end{itemize}	
-	\centering
-	\vspace{40pt}
-	\Huge \textcolor{kul-blue}{\textbf{Thanks for your attention!}}
 \end{frame}
 
 \appendix
 
 \begin{frame}{\huge Acknowledgements}\large
 	\centering
+	\vspace{-5pt}
 	\begin{columns}
 		\begin{column}[c]{0.48\textwidth}
 			\centering
@@ -424,11 +587,17 @@
 			\vfill
 		\end{column}
 		\begin{column}[c]{0.3\textwidth}
+			\newcommand\dist{\vspace{3pt}}
 			\centering
-			\includegraphics[width=0.45\textwidth]{Figs/La-Caixa.png}\\\vfill
-			\includegraphics[width=0.5\textwidth]{Figs/erc.png}\\\vfill
-			\includegraphics[width=\textwidth]{Figs/VSC-Combilogo.png}\\\vfill
-			%\includegraphics[width=0.8\textwidth]{Figs/QCLogo.png}\\\vfill
+			\dist
+			\includegraphics[width=0.45\textwidth]{Figs/La-Caixa.png}\\
+			\dist
+			\includegraphics[width=0.5\textwidth]{Figs/erc.png}\\
+			\dist
+			\includegraphics[width=\textwidth]{Figs/VSC-Combilogo.png}\\
+			\dist
+			\includegraphics[width=0.8\textwidth]{Figs/QCLogo.png}\\
+			\dist
 		\end{column}
 	\end{columns}
 
