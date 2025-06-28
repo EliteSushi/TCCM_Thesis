@@ -32,7 +32,11 @@
 \usepackage{tikz}
 \usepackage{gensymb}
 \usepackage{mhchem} % For chemical formulas
+\newcommand{\Subitem}[1]{
+  {\begin{itemize} \item #1 \end{itemize}}
+}
 \pgfplotsset{compat=1.18}
+\usetikzlibrary{decorations.pathmorphing, arrows.meta}
 \def\Put(#1,#2)#3{\leavevmode\makebox(0,0){\put(#1,#2){#3}}}
 
 \title{Computational Exploration of Non-Valence Anions from\\ Biological Quinones}
@@ -215,7 +219,7 @@
 \end{frame}\fi
 
 \begin{frame}{\huge RI-CC2}\large
-	Resolution-of-the-Identity (RI) approximation Second-order approximate coupled-cluster singles and doubles (CC2) method is obtained from a perturbative analysis of the CCSD model
+	Resolution-of-the-identity (RI) approximation second-order approximate coupled-cluster (CC2) method is obtained from a perturbative analysis of the CCSD model
 	\vspace{4pt}
 	\begin{itemize}
 		\item $|\Psi_{\mathrm{CC}} \rangle = e^{\hat{T}} | \Psi_0 \rangle$
@@ -228,9 +232,9 @@
 		\centering
 		\begin{tabular}{lcccc}\toprule
 		\textbf{Method} & \textbf{Single Amp.} & \textbf{Double Amp.} & \textbf{Scaling} & \textbf{Memory}\\\midrule
-		CCSD & $\langle \Psi^{a}_{i} | \bar{H} | \Psi_{0} \rangle$ = 0 & $\langle \Psi^{ab}_{ij} | \bar{H} | \Psi_{0} \rangle = 0 $ & $O(N^6)$ & $O(N^{4})$\\
+		CCSD & $\langle \Psi^{a}_{i} | \bar{H} | \Psi_{0} \rangle$ = 0 & $\langle \Psi^{ab}_{ij} | \bar{H} | \Psi_{0} \rangle = 0 $ & $O(N^6)$ & $O(N^{4})$\\ 
 		RI-CC2 & $\langle \Psi^{a}_{i} | \bar{H} | \Psi_{0} \rangle$ = 0 & $\displaystyle{t^{ab}_{ij} =\frac{(a b \hat{|} i j)}{\epsilon_i + \epsilon_j - \epsilon_a - \epsilon_b}}$ & $O(N^5)$ & $O(N^{3})$\\\bottomrule
-		\small $\bar{H} = e^{-\hat{T}}\hat{H} e^{\hat{T}} $
+		 \small $\bar{H} = e^{-\hat{T}}\hat{H} e^{\hat{T}} $
 		\end{tabular}
 	\end{table}
 	\vfill
@@ -239,7 +243,7 @@
 \subsection{Equation-of-Motion Electron-Attachment}
 \begin{frame}{\huge EOM-EA}\large
 	\begin{flushleft}
-    Equation-of-motion electron-attachment coupled-cluster (EOM-EA-CC) methods are particularly well suited to study non-valence anions.
+    Equation-of-motion electron-attachment coupled-cluster (EOM-EA-CC) methods are well suited to study NVSs.
 	The description is based on the wave function of the parent neutral molecule
 	\end{flushleft}
 	\centering
@@ -381,8 +385,6 @@
 	\vfill
 \end{frame}
 
-\section{Results}
-
 \subsection{Methoxy chains rotation}
 \begin{frame}{\huge Potential Energy Surface}\large
 	We can construct surfaces from the methoxy rotations of the Q\textsubscript{0} model.
@@ -406,6 +408,8 @@
 	\vspace{10pt}
 \end{frame}
 
+\section{Results}
+
 \begin{frame}{\huge Potential Energy Surfaces of Q\textsubscript{0}}\large
 	\begin{columns}[t]
 		\begin{column}{0.4\textwidth}
@@ -415,7 +419,7 @@
 		\end{column}
 		\hfill
 		\begin{column}{0.50\textwidth}
-			The system presents C\textsubscript{2} symmetry
+			Q\textsubscript{0} has C\textsubscript{S} symmetry
 			\begin{itemize}
 				\item \textbf{PES}: Several minima
 				\item \textbf{Dipole Moment}: Two strong dipole regions
@@ -456,10 +460,10 @@
 		\begin{column}{0.50\textwidth}
 			  Similar to Q\textsubscript{0}, though isoprene tail breaks the symmetry.
 			\begin{itemize}
-				\item \textbf{PES}: Isoprene tail distant, analogous to Q\textsubscript{0}.
-				\item \textbf{Dipole Moment}: Isoprene adds fixed dipole. 
-				\item \textbf{VBS}: Isoprene tail has minor effect. 
-				\item \textbf{DBS}: Isoprene tail has a pronounced effect.
+				\item \textbf{PES}: Isoprene tail distant, analogous to Q\textsubscript{0}
+				\item \textbf{Dipole Moment}: Isoprene adds fixed dipole
+				\item \textbf{VBS}: Isoprene tail has minor effect 
+				\item \textbf{DBS}: Isoprene tail has a pronounced effect
 			\end{itemize}
 			\vspace{8pt}
 			\begin{columns}[b]
@@ -482,6 +486,147 @@
 			\end{columns}
 		\end{column}
 	\end{columns}
+\end{frame}
+
+\subsection{Interaction with solvent molecules}
+\begin{frame}
+	\frametitle{\huge Interaction with solvent molecules (DBS)}\large
+	%A directed interaction with small molecules strongly stabilises the DBS.\\
+	\begin{itemize}
+		\item Binding energy increases tenfold
+		%\item Model: Q\textsubscript{0} (region B, $\mu=3.4$ D) + CH$_4$, NH$_3$, H$_2$O, HF.
+		\item \textbf{Antiparallel dipoles}: Potential well
+		\item \textbf{Aligned dipoles}: Repulsion at large distances. At short range, dipoles add up
+	\end{itemize}
+	\vspace{5pt}
+	\begin{columns}[c]
+		\begin{column}{0.7\textwidth}
+			\centering
+			\small	
+			\include{Figs/scan_DBS.tex}
+		\end{column}
+		\hspace{40pt}
+		\begin{column}{0.3\textwidth}
+			\centering
+	 		\includegraphics[width=0.6\textwidth]{Figs/Q0_H2O_H.png}\\
+			\vfill
+			\includegraphics[width=0.6\textwidth]{Figs/Q0_H2O_O.png}	
+		\end{column}
+	\end{columns}		
+\end{frame}
+
+\begin{frame}
+	\frametitle{\huge Interaction with solvent molecules (VBS)}\large
+	%A directed interaction with small molecules strongly stabilises the VBS.\\
+	\begin{itemize}
+		\item Intermolecular interactions larger effect than methoxy chains rotation
+		\item \textbf{Antiparallel dipoles}: VBS strongly stabilised at short distances
+		\item \textbf{Aligned dipoles}: VBS destabilised
+	\end{itemize}
+	\vspace{5pt}
+	\begin{columns}[c]
+		\begin{column}{0.7\textwidth}
+			\centering
+			\small	
+			\include{Figs/scan_VBS.tex}
+		\end{column}
+		\hspace{40pt}
+		\begin{column}{0.3\textwidth}
+			\centering
+	 		\includegraphics[width=0.6\textwidth]{Figs/Q0_H2O_VBS.png}\\
+			\vfill
+			\includegraphics[width=0.6\textwidth]{Figs/Q0_H2O_H_VBS.png}	
+		\end{column}
+	\end{columns}		
+\end{frame}
+
+\section{Conclusions}
+\begin{frame}{\huge Conclusions}\large
+	\begin{itemize}
+		%\item EA-EOM-CC2 is suitable for DBS; diffuse functions are critical. VBS energies are consistently overbound.
+		%\item EOM-CC2 Dyson orbitals implemented in Q-Chem show good agreement with EOM-CCSD.
+		\item Methoxy chain rotation in Q\textsubscript{0} and Q\textsubscript{1} controls dipole moment and DBS energies
+		\item In ubiquinone intermolecular interactions have a larger effect on VBS than methoxy chain rotations
+		\item Non-valence states could play a role in long-range biological electron transfer
+		\item Future steps: collaborative residue interactions supporting DBS
+	\end{itemize}
+	\begin{center}
+	\vspace{5pt}
+	\begin{tikzpicture}
+		\begin{axis}[
+			width=\textwidth,
+			height=0.7\textheight,
+			samples=200,
+		    axis lines=none,
+			xtick=\empty, ytick=\empty,
+			xmin=0, xmax=1,
+			ymin=0, ymax=1,
+			clip=false]
+
+		%\addplot [very thick, black, domain=0.15:0.25,samples=100] {0.5};
+		%wells
+		\addplot [mark=none, very thick, black,] coordinates {(0.15, 0.3) (0.25, 0.3)};
+		\addplot [mark=none, very thick, black,] coordinates {(0.15, 0.85) (0.13, 0.85)};
+		\addplot [mark=none, very thick, black,] coordinates {(0.15, 0.3) (0.15, 0.85)};
+		\addplot [mark=none, very thick, black,] coordinates {(0.25, 0.3) (0.25, 0.85)};
+		\addplot [mark=none, very thick, black,] coordinates {(0.25, 0.85) (0.75, 0.85)};
+		\addplot [mark=none, very thick, black,] coordinates {(0.75, 0.85) (0.75, 0.15)};
+		\addplot [mark=none, very thick, black,] coordinates {(0.75, 0.15) (0.85, 0.15)};
+		\addplot [mark=none, very thick, black,] coordinates {(0.85, 0.85) (0.85, 0.15)};
+		\addplot [mark=none, very thick, black,] coordinates {(0.85, 0.85) (0.87, 0.85)};
+
+		\addplot [mark=none, very thick, blue] coordinates {(0.5, 0.85) (0.5, 0.55)};
+		\addplot [mark=none, very thick, blue] coordinates {(0.5, 0.55) (0.75, 0.55)};
+		\addplot [mark=none, very thick, red] coordinates {(0.5, 0.85) (0.75, 0.85)};
+		\addplot [mark=none, very thick, red] coordinates {(0.75, 0.85) (0.75, 0.55)};
+
+		%Wavepackets
+		\addplot [very thick, olive, domain=0.15:0.25,samples=100] {0.3*e^(-((x-0.2)^2)/0.0007)+0.3};
+		\addplot [very thick, olive, domain=0.75:0.85,samples=100] {0.3*e^(-((x-0.8)^2)/0.0007)+0.15};
+
+		%arrows
+		\addplot [very thick, red, ->, arrows={-Triangle[angle=60:2mm,fill=red]}] coordinates {(0.2, 0.3) (0.8, 0.15)};
+		\addplot [very thick, blue, ->, arrows={-Triangle[angle=60:2mm,fill=red]}] coordinates {(0.2, 0.3) (0.625, 0.55)};
+		\addplot [very thick, blue, ->, arrows={-Triangle[angle=60:2mm,fill=red]}] coordinates {(0.625, 0.55) (0.8,0.15)};
+
+		%images
+		\node at (0.2,0.19) {\includegraphics[width=0.06\textwidth]{Figs/FeS.png}};
+		\node at (0.8,0.05) {\includegraphics[width=0.12\textwidth]{Figs/Q0_52_VBS.png}};
+		\node at (0.625,0.65) {\includegraphics[width=0.12\textwidth]{Figs/Q0_181.png}};
+
+		\end{axis}
+\end{tikzpicture}
+\end{center}	
+\end{frame}
+
+\appendix
+
+\begin{frame}{\huge Acknowledgements}\large
+	\centering
+	\vspace{-5pt}
+	\begin{columns}
+		\begin{column}[c]{0.85\textwidth}
+			\centering
+			\vfill
+			\includegraphics[width=0.59\textwidth]{Figs/TJ.jpeg}
+			\vfill
+		\end{column}
+		\hspace{-70pt}
+		\begin{column}[c]{0.28\textwidth}
+			\newcommand\dist{\vspace{3pt}}
+			\centering
+			\dist
+			\includegraphics[width=0.45\textwidth]{Figs/La-Caixa.png}\\
+			\dist
+			\includegraphics[width=0.5\textwidth]{Figs/erc.png}\\
+			\dist
+			\includegraphics[width=\textwidth]{Figs/VSC-Combilogo.png}\\
+			\dist
+			\includegraphics[width=0.8\textwidth]{Figs/QCLogo.png}\\
+			\dist
+		\end{column}
+	\end{columns}
+	\vspace{3pt}
 \end{frame}
 
 \begin{frame}
@@ -508,100 +653,6 @@
 			\vspace{30pt} 
 		\end{column}
 	\end{columns}		
-\end{frame}
-
-\subsection{Interaction with solvent molecules}
-\begin{frame}
-	\frametitle{\huge Interaction with solvent molecules (DBS)}\large
-	%A directed interaction with small molecules strongly stabilises the DBS.\\
-	\begin{itemize}
-		%\item Model: Q\textsubscript{0} (region B, $\mu=3.4$ D) + CH$_4$, NH$_3$, H$_2$O, HF.
-		\item \textbf{Antiparallel dipoles}: Polar molecules create a potential well with up to 10x in electron binding energy.
-		\item \textbf{Aligned dipoles}: Repulsion at large distances. At short range, dipoles add up.
-	\end{itemize}
-	\vspace{5pt}
-	\begin{columns}[c]
-		\begin{column}{0.7\textwidth}
-			\centering
-			\small	
-			\include{Figs/scan_DBS.tex}
-		\end{column}
-		\hspace{40pt}
-		\begin{column}{0.3\textwidth}
-			\centering
-	 		\includegraphics[width=0.6\textwidth]{Figs/Q0_H2O_H.png}\\
-			\vfill
-			\includegraphics[width=0.6\textwidth]{Figs/Q0_H2O_O.png}	
-		\end{column}
-	\end{columns}		
-\end{frame}
-
-\begin{frame}
-	\frametitle{\huge Interaction with solvent molecules (VBS)}\large
-	%A directed interaction with small molecules strongly stabilises the VBS.\\
-	\begin{itemize}
-		\item \textbf{Antiparallel dipoles}: VBS strongly stabilised at short distances.
-		\item \textbf{Aligned dipoles}: VBS destabilised.
-		\item Intermolecular interactions larger effect on VBS than methoxy chain rotations.
-	\end{itemize}
-	\vspace{5pt}
-	\begin{columns}[c]
-		\begin{column}{0.7\textwidth}
-			\centering
-			\small	
-			\include{Figs/scan_VBS.tex}
-		\end{column}
-		\hspace{40pt}
-		\begin{column}{0.3\textwidth}
-			\centering
-	 		\includegraphics[width=0.6\textwidth]{Figs/Q0_H2O_VBS.png}\\
-			\vfill
-			\includegraphics[width=0.6\textwidth]{Figs/Q0_H2O_H_VBS.png}	
-		\end{column}
-	\end{columns}		
-\end{frame}
-
-\section{Conclusions}
-\begin{frame}{\huge Conclusions}\large
-	\begin{itemize}
-		%\item EA-EOM-CC2 is suitable for DBS; diffuse functions are critical. VBS energies are consistently overbound.
-		%\item EOM-CC2 Dyson orbitals implemented in Q-Chem show good agreement with EOM-CCSD.
-		\item Methoxy chain rotation in Q\textsubscript{0} and Q\textsubscript{1} controls dipole moment and DBS energies
-		\item Intermolecular interactions have a larger effect on VBS than methoxy chain rotations
-		\item In general, DBS electron binding energy is loosely correlated with dipole strength
-		\item For equivalent conformers, the correlation can be very strong
-		\item Solvent interactions dramatically affect VBS and DBS stability
-	\end{itemize}	
-\end{frame}
-
-\appendix
-
-\begin{frame}{\huge Acknowledgements}\large
-	\centering
-	\vspace{-5pt}
-	\begin{columns}
-		\begin{column}[c]{0.48\textwidth}
-			\centering
-			\vfill
-			\includegraphics[width=\textwidth]{Figs/TJ.jpeg}
-			\vfill
-		\end{column}
-		\begin{column}[c]{0.3\textwidth}
-			\newcommand\dist{\vspace{3pt}}
-			\centering
-			\dist
-			\includegraphics[width=0.45\textwidth]{Figs/La-Caixa.png}\\
-			\dist
-			\includegraphics[width=0.5\textwidth]{Figs/erc.png}\\
-			\dist
-			\includegraphics[width=\textwidth]{Figs/VSC-Combilogo.png}\\
-			\dist
-			\includegraphics[width=0.8\textwidth]{Figs/QCLogo.png}\\
-			\dist
-		\end{column}
-	\end{columns}
-
-	\vspace{3pt}
 \end{frame}
 
 \begin{frame}{\huge DBS Basis set convergence}\normalsize
