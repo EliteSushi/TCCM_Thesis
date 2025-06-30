@@ -5,7 +5,7 @@ filename = 'Q1_EOM_grid.dat'
 ncontour = 6
 space_width = 4
 offset = 8
-set terminal cairolatex size 2.6 ,2.8
+set terminal cairolatex size 2.3 ,2.3
 set output 'Q1_DBA.tex'
 
 # Write gawk script to file
@@ -26,7 +26,7 @@ set print gawk_script
     print "END {"
     print "  if(d==0) {"
     print "    for(j=1;j<=i;j++)"
-    print "      printf \"set label %d \\\"\\\\\\\\textcolor{black}{\\\\\\\\footnotesize %.0f}\\\" at %g, %g centre front rotate by %d\\n\", j, c[j], a[j], b[j], r[j]"
+    print "      printf \"set label %d \\\"\\\\\\\\textcolor{black}{\\\\\\\\small %.0f}\\\" at %g, %g centre front rotate by %d\\n\", j, c[j], a[j], b[j], r[j]"
     print "  }"
     print "}"
 unset print
@@ -57,16 +57,20 @@ unset key
 set size ratio 1
 
 set xlabel '{\normalsize $\Phi$}'
-set title '{DBA EA (meV)}'
+set ylabel '{\normalsize $\Phi$}'
+set title '{DBS EA (meV)}'
 unset colorbox
 set xtics 60
 set mxtics 3         
-set ytics 40 format "" 
-set mytics 2           
+set ytics 60
+set mytics 3           
 set rmargin 0
-set lmargin 0.1
+set lmargin 2.5
 set tmargin 2.5
 set bmargin 2.5
+    set label 27 "\\textcolor{black}{\\normalsize \\textbf{A}}" at graph 0.38, graph 0.4 centre front
+    set label 18 "\\textcolor{black}{\\normalsize \\textbf{C}}" at graph 0.18, graph 0.7 centre front
+    set label 19 "\\textcolor{black}{\\normalsize \\textbf{B}}" at graph 0.85, graph 0.2 centre front
 
 # Plot
 l '<'.sprintf('gawk -f %s cont_D_Q1.dat 0 %d %d 1', gawk_script, space_width, offset)

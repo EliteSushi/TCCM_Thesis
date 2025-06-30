@@ -140,7 +140,7 @@
 		\begin{column}[b]{0.3\textwidth}
 				\centering
 				\includegraphics[width=0.9\textwidth]{Figs/Q0_52_VBS.png}\\
-				\vspace{15pt}
+				\vspace{10pt}
 				Valence-bound state\\
 				\footnotesize 
 		\end{column}
@@ -225,16 +225,18 @@
 		\item $|\Psi_{\mathrm{CC}} \rangle = e^{\hat{T}} | \Psi_0 \rangle$
 		\item $\textsf{for CCSD and CC2:} ~
 	\hat{T} = \sum_{ai} t^a_i a_a^\dagger a_i + \frac{1}{4}\sum_{aibj} t_{ij}^{ab} a_a^\dagger a_i a_b^\dagger a_j$
-		\item CC2 double amplitudes are similar to MP2
+		\item CC2 double amplitudes are similar to MP2: $\displaystyle{t^{ai}_{bj} =\frac{(a b \hat{|} i j)}{\epsilon_i + \epsilon_j - \epsilon_a - \epsilon_b}}$
 	\end{itemize} 
 	\vspace{10pt}
 	\begin{table}
 		\centering
 		\begin{tabular}{lcccc}\toprule
 		\textbf{Method} & \textbf{Single Amp.} & \textbf{Double Amp.} & \textbf{Scaling} & \textbf{Memory}\\\midrule
-		CCSD & $\langle \Psi^{a}_{i} | \bar{H} | \Psi_{0} \rangle$ = 0 & $\langle \Psi^{ab}_{ij} | \bar{H} | \Psi_{0} \rangle = 0 $ & $O(N^6)$ & $O(N^{4})$\\ 
-		RI-CC2 & $\langle \Psi^{a}_{i} | \bar{H} | \Psi_{0} \rangle$ = 0 & $\displaystyle{t^{ab}_{ij} =\frac{(a b \hat{|} i j)}{\epsilon_i + \epsilon_j - \epsilon_a - \epsilon_b}}$ & $O(N^5)$ & $O(N^{3})$\\\bottomrule
-		 \small $\bar{H} = e^{-\hat{T}}\hat{H} e^{\hat{T}} $
+		CCSD & $\langle \Psi^{a}_{i} | \bar{H} + [\bar{H},\hat{T}_2] | \Psi_{0} \rangle$ = 0 & $\langle \Psi^{ab}_{ij} | \bar{H} + [\bar{H},\hat{T}_2] $  & $\mathcal{O}(N^6)$ & $\mathcal{O}(N^{4})$\\
+				& & $+ \frac{1}{2}[[\bar{H},\hat{T}_2],\hat{T}_2]| \Psi_{0} \rangle = 0 $ & & \\ 
+		RI-CC2 & $\langle \Psi^{a}_{i} | \bar{H} + [\bar{H},\hat{T}_2] | \Psi_{0} \rangle$ = 0 & $\langle \Psi^{ab}_{ij} | \bar{H} + [\hat{F},\hat{T}_2] | \Psi_{0} \rangle$ = 0 & $\mathcal{O}(N^5)$ & $\mathcal{O}(N^{3})$\\\bottomrule
+		 \small $\bar{H} = e^{-\hat{T}_1}\hat{H} e^{\hat{T}_1} $\\
+		 \small $\hat{H} = \hat{F} + \hat{W}$
 		\end{tabular}
 	\end{table}
 	\vfill
@@ -419,7 +421,7 @@
 		\end{column}
 		\hfill
 		\begin{column}{0.50\textwidth}
-			Q\textsubscript{0} has C\textsubscript{S} symmetry
+			Q\textsubscript{0} has C\textsubscript{S} symmetry for the methoxy rotations
 			\begin{itemize}
 				\item \textbf{PES}: Several minima
 				\item \textbf{Dipole Moment}: Two strong dipole regions
@@ -458,7 +460,7 @@
 		\end{column}
 		\hfill
 		\begin{column}{0.50\textwidth}
-			  Similar to Q\textsubscript{0}, though isoprene tail breaks the symmetry.
+			  Isoprene tail breaks the symmetry
 			\begin{itemize}
 				\item \textbf{PES}: Isoprene tail distant, analogous to Q\textsubscript{0}
 				\item \textbf{Dipole Moment}: Isoprene adds fixed dipole
@@ -486,6 +488,95 @@
 			\end{columns}
 		\end{column}
 	\end{columns}
+\end{frame}
+
+\begin{frame}
+\frametitle{\huge DBS Populations}\large
+	\centering
+	\include{Figs/Q1_DBA.tex}
+	\vspace{-0.9\paperheight}
+	\begin{tikzpicture}
+		\begin{axis}[
+			width=\paperwidth,
+			height=\paperheight,
+			samples=200,
+			axis lines=none,
+			xtick=\empty, ytick=\empty,
+			xmin=0, xmax=1,
+			ymin=0, ymax=1,
+			clip=false]
+		\node at (0.15,0.5) {\includegraphics[width=0.3\textwidth]{Figs/Q1_199.png}};
+		\node at (0.83,0.8) {\includegraphics[width=0.28\textwidth]{Figs/Q1_112.png}};
+		\node at (0.83,0.25) {\includegraphics[width=0.26\textwidth]{Figs/Q1_249.png}};
+
+		\addplot [very thick, black, ->, arrows={-Triangle[angle=60:2mm,fill=red]}] coordinates {(0.43, 0.64) (0.7, 0.75)};
+		\addplot [very thick, black, ->, arrows={-Triangle[angle=60:2mm,fill=red]}] coordinates {(0.46, 0.46) (0.28, 0.38)};
+		\addplot [very thick, black, ->, arrows={-Triangle[angle=60:2mm,fill=red]}] coordinates {(0.61, 0.37) (0.73, 0.33)};
+		\end{axis}	
+	\end{tikzpicture}
+\end{frame}
+
+\begin{frame}
+	\frametitle{\huge DBS Populations}\large
+	\begin{columns}[c]
+		\begin{column}{0.75\textwidth}
+			\begin{itemize}
+				\item Different regions correlate differently to the dipole strength
+				\item \textbf{Region A}: DBS density far from other electrons
+				\item \textbf{Regions B \& C}: DBS closer to $\pi$ system
+			\end{itemize}
+			%\vspace{5pt}
+			\centering
+			\small	
+			\include{Figs/DvsDBS.tex}
+			\vspace{10pt}
+		\end{column}
+		\begin{column}{0.25\textwidth}
+			\centering
+			\textbf{A} \includegraphics[height=0.27\textheight]{Figs/Q1_199.png} \\
+			\textbf{B} \includegraphics[height=0.27\textheight]{Figs/Q1_249.png} \\
+			\textbf{C} \includegraphics[height=0.27\textheight]{Figs/Q1_112.png} \\
+			\vspace{30pt} 
+		\end{column}
+	\end{columns}		
+\end{frame}
+
+\begin{frame}
+	\frametitle{\huge Interaction with solvent molecules}\LARGE
+	\vspace{20pt}
+	\begin{columns}
+		\begin{column}[c]{0.4\textwidth}
+			\centering
+			\includegraphics[width=0.9\textwidth]{Figs/antiparallel.png}\\
+			`Antiparallel'
+		\end{column}
+		%\hfill
+		\begin{column}[c]{0.4\textwidth}
+			\centering
+			\includegraphics[width=1\textwidth]{Figs/parallel.png}\\
+			`Parallel'
+		\end{column}
+	\end{columns}
+	\vspace{-0.5\paperheight}
+	\hspace{35pt}
+	\begin{tikzpicture}
+		\begin{axis}[
+			width=\paperwidth,
+			height=\paperheight,
+			samples=200,
+			axis lines=none,
+			xtick=\empty, ytick=\empty,
+			xmin=0, xmax=1,
+			ymin=0, ymax=1,
+			clip=false]
+
+		\addplot [ultra thick, blue, ->, arrows={-Triangle[angle=60:2mm,fill=red]}] coordinates {(0.28, 0.5) (0.2, 0.6)};
+		\addplot [ultra thick, blue, ->, arrows={-Triangle[angle=60:2mm,fill=red]}] coordinates {(0.09, 0.71) (0.15, 0.65)};
+		
+		\addplot [ultra thick, blue, ->, arrows={-Triangle[angle=60:2mm,fill=red]}] coordinates {(0.8, 0.5) (0.72, 0.6)};
+		\addplot [ultra thick, blue, ->, arrows={-Triangle[angle=60:2mm,fill=red]}] coordinates {(0.61, 0.7) (0.55, 0.76)};
+		\end{axis}	
+	\end{tikzpicture}
 \end{frame}
 
 \subsection{Interaction with solvent molecules}
@@ -613,12 +704,13 @@
 		\end{column}
 		\hspace{-70pt}
 		\begin{column}[c]{0.28\textwidth}
-			\newcommand\dist{\vspace{3pt}}
+			\newcommand\dist{\vspace{7pt}}
 			\centering
 			\dist
 			\includegraphics[width=0.45\textwidth]{Figs/La-Caixa.png}\\
 			\dist
-			\includegraphics[width=0.5\textwidth]{Figs/erc.png}\\
+			%\includegraphics[width=0.5\textwidth]{Figs/erc.png}\\
+			\includegraphics[width=0.75\textwidth]{Figs/TCCM.png}\\
 			\dist
 			\includegraphics[width=\textwidth]{Figs/VSC-Combilogo.png}\\
 			\dist
@@ -627,32 +719,6 @@
 		\end{column}
 	\end{columns}
 	\vspace{3pt}
-\end{frame}
-
-\begin{frame}
-	\frametitle{\huge DBS Populations}\large
-	\begin{columns}[c]
-		\begin{column}{0.75\textwidth}
-			Distinct populations of dipole-bound anions (DBS) are observed\\
-			\begin{itemize}
-				\item Different regions correlate differently to the dipole strength
-				\item \textbf{Region A}: DBS density far from other electrons. Strong correlation.
-				\item \textbf{Regions B \& C}: Less pronounced correlation. DBS closer to $\pi$ system
-			\end{itemize}
-			%\vspace{5pt}
-			\centering
-			\small	
-			\include{Figs/DvsDBS.tex}
-			\vspace{10pt}
-		\end{column}
-		\begin{column}{0.25\textwidth}
-			\centering
-			\textbf{A} \includegraphics[height=0.27\textheight]{Figs/Q1_199.png} \\
-			\textbf{B} \includegraphics[height=0.27\textheight]{Figs/Q1_249.png} \\
-			\textbf{C} \includegraphics[height=0.27\textheight]{Figs/Q1_112.png} \\
-			\vspace{30pt} 
-		\end{column}
-	\end{columns}		
 \end{frame}
 
 \begin{frame}{\huge DBS Basis set convergence}\normalsize
